@@ -1,6 +1,6 @@
 ﻿namespace BakeryDash2531
 {
-    partial class LogIn
+    partial class DashBoard
     {
         /// <summary>
         /// Required designer variable.
@@ -30,14 +30,13 @@
         {
             this.SuspendLayout();
             // 
-            // LogIn
+            // DashBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(944, 501);
-            this.Name = "LogIn";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Loging in...";
+            this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Name = "DashBoard";
+            this.Text = "DashBoard";
             this.ResumeLayout(false);
 
         }
@@ -45,4 +44,3 @@
         #endregion
     }
 }
-
