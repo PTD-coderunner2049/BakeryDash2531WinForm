@@ -35,8 +35,8 @@
             this.xXToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xXToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.xXToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripTextUserName = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripTextGreet = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripTextUserName = new System.Windows.Forms.ToolStripTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dashMenuStrip.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -108,24 +108,26 @@
             this.xXToolStripMenuItem2.Size = new System.Drawing.Size(60, 20);
             this.xXToolStripMenuItem2.Text = ">(V.V)<";
             // 
+            // toolStripTextGreet
+            // 
+            this.toolStripTextGreet.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.toolStripTextGreet.Enabled = false;
+            this.toolStripTextGreet.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.toolStripTextGreet.Name = "toolStripTextGreet";
+            this.toolStripTextGreet.Size = new System.Drawing.Size(55, 20);
+            this.toolStripTextGreet.Text = "Greeting!!";
+            // 
             // toolStripTextUserName
             // 
             this.toolStripTextUserName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.toolStripTextUserName.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.toolStripTextUserName.Enabled = false;
+            this.toolStripTextUserName.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextUserName.MaxLength = 50767;
             this.toolStripTextUserName.Name = "toolStripTextUserName";
             this.toolStripTextUserName.ReadOnly = true;
             this.toolStripTextUserName.Size = new System.Drawing.Size(500, 20);
             this.toolStripTextUserName.Text = "user ....";
-            // 
-            // toolStripTextGreet
-            // 
-            this.toolStripTextGreet.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.toolStripTextGreet.Enabled = false;
-            this.toolStripTextGreet.Name = "toolStripTextGreet";
-            this.toolStripTextGreet.Size = new System.Drawing.Size(55, 20);
-            this.toolStripTextGreet.Text = "Greeting!!";
             // 
             // panel1
             // 
