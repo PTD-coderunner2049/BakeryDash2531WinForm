@@ -13,11 +13,11 @@ namespace BakeryDash2531
         }
         private void LogIn_Load()
         {
-            userField.Hint = "Username";
+            emailField.Hint = "(v.laStrange@bakery.com)";
             passField.Hint = "Password";
             passField.UseSystemPasswordChar = true; // Secure the password field, its a cool built-in hider
             loginBtn.Enabled = false;
-            userField.TextChanged += ValidateInputs;
+            emailField.TextChanged += ValidateInputs;
             passField.TextChanged += ValidateInputs;
 
             toSignUpBtn.Click += (s, e) => {
@@ -28,7 +28,7 @@ namespace BakeryDash2531
 
                 if (SearchUser())
                 {
-                    MessageBox.Show("Loging in...");
+                    MessageBox.Show("Wellcome back to Solberg's Bakery, Loging in...");
                     new DashBoard().Show();
                     this.Hide();
                 }
@@ -40,14 +40,14 @@ namespace BakeryDash2531
         }
         private void ValidateInputs(object sender, EventArgs e)
         {
-            loginBtn.Enabled = !string.IsNullOrWhiteSpace(userField.Text) &&
+            loginBtn.Enabled = !string.IsNullOrWhiteSpace(emailField.Text) &&
                                !string.IsNullOrWhiteSpace(passField.Text);
         }
 
         private bool SearchUser()
         {
             //AutorizationService looker = new AutorizationService();
-            return new AutorizationService().UserLooker(userField.Text, passField.Text);
+            return new AutorizationService().UserLooker(emailField.Text, passField.Text);
         }
     }
 }

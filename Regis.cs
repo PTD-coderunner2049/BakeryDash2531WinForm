@@ -15,7 +15,7 @@ namespace BakeryDash2531
         private void SignUp_Load()
         {
             userField.Hint = "Username";
-            emailField.Hint = "Email (example@domain.com)";
+            employeeGUIDField.Hint = "Submit your Employee GUID";
             passField.Hint = "Password";
             cpassField.Hint = "Confirm Password";
 
@@ -25,7 +25,7 @@ namespace BakeryDash2531
             regisBtn.Enabled = false;
 
             userField.TextChanged += ValidateRegisInputs;
-            emailField.TextChanged += ValidateRegisInputs;
+            employeeGUIDField.TextChanged += ValidateRegisInputs;
             passField.TextChanged += ValidateRegisInputs;
             cpassField.TextChanged += ValidateRegisInputs;
 
@@ -49,7 +49,7 @@ namespace BakeryDash2531
         }
         private void ValidateRegisInputs(object sender, EventArgs e)
         {
-            bool isEmailValid = Regex.IsMatch(emailField.Text, @"^[^@\s]+@[^@\s]+\.[^@\s]+$");
+            bool isEmailValid = !string.IsNullOrWhiteSpace(userField.Text);
             bool passwordsMatch = passField.Text == cpassField.Text && !string.IsNullOrWhiteSpace(passField.Text);
             bool userFilled = !string.IsNullOrWhiteSpace(userField.Text);
 
@@ -57,7 +57,7 @@ namespace BakeryDash2531
         }
         private bool SignUpUser()
         {
-            return new RegistryService().UserRegister(emailField.Text, userField.Text, passField.Text);
+            return new RegistryService().UserRegister(employeeGUIDField.Text, userField.Text, passField.Text);
         }
     }
 }

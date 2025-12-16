@@ -32,25 +32,29 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.passField = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
             this.loginBtn = new MaterialSkin.Controls.MaterialFlatButton();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.toSignUpBtn = new MaterialSkin.Controls.MaterialFlatButton();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.userField = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.label1 = new System.Windows.Forms.Label();
+            this.emailField = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.Title = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
             this.panel4.SuspendLayout();
             this.panel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // materialLabel2
@@ -58,12 +62,12 @@
             this.materialLabel2.AutoSize = true;
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Enabled = false;
-            this.materialLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel2.Location = new System.Drawing.Point(180, 377);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(160, 18);
+            this.materialLabel2.Size = new System.Drawing.Size(161, 19);
             this.materialLabel2.TabIndex = 10;
             this.materialLabel2.Text = "Never had an account?";
             this.materialLabel2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -101,6 +105,17 @@
             this.passField.Size = new System.Drawing.Size(284, 23);
             this.passField.TabIndex = 1;
             this.passField.UseSystemPasswordChar = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.OldLace;
+            this.pictureBox4.BackgroundImage = global::BakeryDash2531.Properties.Resources.lock_circle_fill;
+            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox4.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox4.TabIndex = 0;
+            this.pictureBox4.TabStop = false;
             // 
             // materialDivider1
             // 
@@ -165,38 +180,28 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.OldLace;
-            this.panel3.Controls.Add(this.userField);
+            this.panel3.Controls.Add(this.emailField);
             this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Location = new System.Drawing.Point(85, 107);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(352, 50);
             this.panel3.TabIndex = 20;
             // 
-            // userField
+            // emailField
             // 
-            this.userField.Depth = 0;
-            this.userField.Font = new System.Drawing.Font("Sans Serif Collection", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userField.Hint = "";
-            this.userField.Location = new System.Drawing.Point(56, 13);
-            this.userField.MouseState = MaterialSkin.MouseState.HOVER;
-            this.userField.Name = "userField";
-            this.userField.PasswordChar = '\0';
-            this.userField.SelectedText = "";
-            this.userField.SelectionLength = 0;
-            this.userField.SelectionStart = 0;
-            this.userField.Size = new System.Drawing.Size(284, 23);
-            this.userField.TabIndex = 1;
-            this.userField.UseSystemPasswordChar = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(179, 55);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(162, 29);
-            this.label1.TabIndex = 21;
-            this.label1.Text = "BAKERY DASH";
+            this.emailField.Depth = 0;
+            this.emailField.Font = new System.Drawing.Font("Sans Serif Collection", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emailField.Hint = "";
+            this.emailField.Location = new System.Drawing.Point(56, 13);
+            this.emailField.MouseState = MaterialSkin.MouseState.HOVER;
+            this.emailField.Name = "emailField";
+            this.emailField.PasswordChar = '\0';
+            this.emailField.SelectedText = "";
+            this.emailField.SelectionLength = 0;
+            this.emailField.SelectionStart = 0;
+            this.emailField.Size = new System.Drawing.Size(284, 23);
+            this.emailField.TabIndex = 1;
+            this.emailField.UseSystemPasswordChar = false;
             // 
             // pictureBox1
             // 
@@ -227,16 +232,38 @@
             this.panel1.Size = new System.Drawing.Size(80, 503);
             this.panel1.TabIndex = 13;
             // 
-            // pictureBox4
+            // panel6
             // 
-            this.pictureBox4.BackColor = System.Drawing.Color.OldLace;
-            this.pictureBox4.BackgroundImage = global::BakeryDash2531.Properties.Resources.lock_circle_fill;
-            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox4.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox4.TabIndex = 0;
-            this.pictureBox4.TabStop = false;
+            this.panel6.Controls.Add(this.Title);
+            this.panel6.Location = new System.Drawing.Point(85, 48);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(352, 53);
+            this.panel6.TabIndex = 18;
+            // 
+            // Title
+            // 
+            this.Title.AutoSize = true;
+            this.Title.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Title.ForeColor = System.Drawing.Color.Maroon;
+            this.Title.Location = new System.Drawing.Point(81, 12);
+            this.Title.Name = "Title";
+            this.Title.Size = new System.Drawing.Size(182, 29);
+            this.Title.TabIndex = 21;
+            this.Title.Text = "Solberg\'s Bakery";
+            // 
+            // panel7
+            // 
+            this.panel7.Location = new System.Drawing.Point(85, -2);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(352, 44);
+            this.panel7.TabIndex = 22;
+            // 
+            // panel10
+            // 
+            this.panel10.Location = new System.Drawing.Point(85, 284);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(352, 53);
+            this.panel10.TabIndex = 22;
             // 
             // LogIn
             // 
@@ -244,7 +271,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.OldLace;
             this.ClientSize = new System.Drawing.Size(524, 501);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.panel10);
+            this.Controls.Add(this.panel7);
+            this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel5);
@@ -260,13 +289,15 @@
             this.Text = "Loging in...";
             this.panel4.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -286,9 +317,12 @@
         private MaterialSkin.Controls.MaterialFlatButton toSignUpBtn;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel3;
-        private MaterialSkin.Controls.MaterialSingleLineTextField userField;
-        private System.Windows.Forms.Label label1;
+        private MaterialSkin.Controls.MaterialSingleLineTextField emailField;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Label Title;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel10;
     }
 }
 
