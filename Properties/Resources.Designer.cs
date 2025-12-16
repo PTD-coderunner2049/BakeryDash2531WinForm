@@ -63,9 +63,9 @@ namespace BakeryDash2531.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap A {
+        internal static System.Drawing.Bitmap E1 {
             get {
-                object obj = ResourceManager.GetObject("A", resourceCulture);
+                object obj = ResourceManager.GetObject("E1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,59 @@ namespace BakeryDash2531.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap B {
+        internal static System.Drawing.Bitmap E2 {
             get {
-                object obj = ResourceManager.GetObject("B", resourceCulture);
+                object obj = ResourceManager.GetObject("E2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lock_circle {
+            get {
+                object obj = ResourceManager.GetObject("lock-circle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lock_circle__1_ {
+            get {
+                object obj = ResourceManager.GetObject("lock-circle (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lock_circle2 {
+            get {
+                object obj = ResourceManager.GetObject("lock-circle2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tag_user {
+            get {
+                object obj = ResourceManager.GetObject("tag-user", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap user_circle_add {
+            get {
+                object obj = ResourceManager.GetObject("user-circle-add", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

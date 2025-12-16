@@ -33,9 +33,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.materialSingleLineTextField1 = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
             this.materialFlatButton2 = new MaterialSkin.Controls.MaterialFlatButton();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -43,15 +40,18 @@
             this.materialFlatButton3 = new MaterialSkin.Controls.MaterialFlatButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.materialSingleLineTextField2 = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel4.SuspendLayout();
             this.panel9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // materialFlatButton1
@@ -75,12 +75,12 @@
             this.materialLabel2.AutoSize = true;
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Enabled = false;
-            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel2.Location = new System.Drawing.Point(180, 377);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(161, 19);
+            this.materialLabel2.Size = new System.Drawing.Size(160, 18);
             this.materialLabel2.TabIndex = 10;
             this.materialLabel2.Text = "Never had an account?";
             this.materialLabel2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -91,12 +91,12 @@
             this.panel4.Controls.Add(this.materialFlatButton1);
             this.panel4.Location = new System.Drawing.Point(85, 107);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(352, 135);
+            this.panel4.Size = new System.Drawing.Size(352, 112);
             this.panel4.TabIndex = 12;
             // 
             // panel9
             // 
-            this.panel9.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel9.BackColor = System.Drawing.Color.OldLace;
             this.panel9.Controls.Add(this.materialSingleLineTextField1);
             this.panel9.Controls.Add(this.pictureBox4);
             this.panel9.Location = new System.Drawing.Point(0, 62);
@@ -118,39 +118,11 @@
             this.materialSingleLineTextField1.SelectionStart = 0;
             this.materialSingleLineTextField1.Size = new System.Drawing.Size(284, 23);
             this.materialSingleLineTextField1.TabIndex = 1;
-            this.materialSingleLineTextField1.Text = "...";
             this.materialSingleLineTextField1.UseSystemPasswordChar = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.pictureBox4.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox4.TabIndex = 0;
-            this.pictureBox4.TabStop = false;
-            // 
-            // panel1
-            // 
-            this.panel1.BackgroundImage = global::BakeryDash2531.Properties.Resources.B;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Location = new System.Drawing.Point(-1, -2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(80, 503);
-            this.panel1.TabIndex = 13;
-            // 
-            // panel2
-            // 
-            this.panel2.BackgroundImage = global::BakeryDash2531.Properties.Resources.A;
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Location = new System.Drawing.Point(444, -2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(80, 503);
-            this.panel2.TabIndex = 14;
             // 
             // materialDivider1
             // 
-            this.materialDivider1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.materialDivider1.BackColor = System.Drawing.Color.RosyBrown;
             this.materialDivider1.Depth = 0;
             this.materialDivider1.Location = new System.Drawing.Point(85, 399);
             this.materialDivider1.MouseState = MaterialSkin.MouseState.HOVER;
@@ -179,7 +151,7 @@
             // panel5
             // 
             this.panel5.Controls.Add(this.materialFlatButton2);
-            this.panel5.Location = new System.Drawing.Point(85, 253);
+            this.panel5.Location = new System.Drawing.Point(85, 225);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(352, 53);
             this.panel5.TabIndex = 17;
@@ -210,7 +182,7 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel3.BackColor = System.Drawing.Color.OldLace;
             this.panel3.Controls.Add(this.materialSingleLineTextField2);
             this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Location = new System.Drawing.Point(85, 107);
@@ -232,27 +204,57 @@
             this.materialSingleLineTextField2.SelectionStart = 0;
             this.materialSingleLineTextField2.Size = new System.Drawing.Size(284, 23);
             this.materialSingleLineTextField2.TabIndex = 1;
-            this.materialSingleLineTextField2.Text = "...";
             this.materialSingleLineTextField2.UseSystemPasswordChar = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(179, 55);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(162, 29);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "BAKERY DASH";
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.pictureBox1.BackColor = System.Drawing.Color.OldLace;
+            this.pictureBox1.BackgroundImage = global::BakeryDash2531.Properties.Resources.tag_user;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(50, 50);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // label1
+            // panel2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(179, 55);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(162, 25);
-            this.label1.TabIndex = 21;
-            this.label1.Text = "BAKERY DASH";
+            this.panel2.BackgroundImage = global::BakeryDash2531.Properties.Resources.E2;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Location = new System.Drawing.Point(443, -2);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(81, 503);
+            this.panel2.TabIndex = 14;
+            // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = global::BakeryDash2531.Properties.Resources.E1;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Location = new System.Drawing.Point(-1, -2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(80, 503);
+            this.panel1.TabIndex = 13;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.OldLace;
+            this.pictureBox4.BackgroundImage = global::BakeryDash2531.Properties.Resources.lock_circle__1_;
+            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox4.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox4.TabIndex = 0;
+            this.pictureBox4.TabStop = false;
             // 
             // LogIn
             // 
@@ -275,13 +277,13 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel9.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -303,8 +305,8 @@
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel3;
         private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField2;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
