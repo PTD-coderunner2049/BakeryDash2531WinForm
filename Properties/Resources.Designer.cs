@@ -83,9 +83,9 @@ namespace BakeryDash2531.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap lock_circle {
+        internal static System.Drawing.Bitmap google {
             get {
-                object obj = ResourceManager.GetObject("lock-circle", resourceCulture);
+                object obj = ResourceManager.GetObject("google", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +103,19 @@ namespace BakeryDash2531.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap lock_circle2 {
+        internal static System.Drawing.Bitmap lock_circle_fill {
             get {
-                object obj = ResourceManager.GetObject("lock-circle2", resourceCulture);
+                object obj = ResourceManager.GetObject("lock-circle-fill", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lock_circlethin {
+            get {
+                object obj = ResourceManager.GetObject("lock-circlethin", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -126,6 +136,26 @@ namespace BakeryDash2531.Properties {
         internal static System.Drawing.Bitmap user_circle_add {
             get {
                 object obj = ResourceManager.GetObject("user-circle-add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap user_circle_addthin {
+            get {
+                object obj = ResourceManager.GetObject("user-circle-addthin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap user_tagfill {
+            get {
+                object obj = ResourceManager.GetObject("user-tagfill", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

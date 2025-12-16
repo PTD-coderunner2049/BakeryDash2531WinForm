@@ -28,18 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.materialSingleLineTextField1 = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.passField = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
-            this.materialFlatButton2 = new MaterialSkin.Controls.MaterialFlatButton();
+            this.loginBtn = new MaterialSkin.Controls.MaterialFlatButton();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.materialFlatButton3 = new MaterialSkin.Controls.MaterialFlatButton();
+            this.toSignUpBtn = new MaterialSkin.Controls.MaterialFlatButton();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.materialSingleLineTextField2 = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.userField = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -53,22 +52,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
-            // 
-            // materialFlatButton1
-            // 
-            this.materialFlatButton1.AutoSize = true;
-            this.materialFlatButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialFlatButton1.Depth = 0;
-            this.materialFlatButton1.Font = new System.Drawing.Font("Sans Serif Collection", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.materialFlatButton1.Location = new System.Drawing.Point(99, 158);
-            this.materialFlatButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialFlatButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialFlatButton1.Name = "materialFlatButton1";
-            this.materialFlatButton1.Primary = false;
-            this.materialFlatButton1.Size = new System.Drawing.Size(52, 36);
-            this.materialFlatButton1.TabIndex = 9;
-            this.materialFlatButton1.Text = "LOGIN";
-            this.materialFlatButton1.UseVisualStyleBackColor = true;
             // 
             // materialLabel2
             // 
@@ -88,7 +71,6 @@
             // panel4
             // 
             this.panel4.Controls.Add(this.panel9);
-            this.panel4.Controls.Add(this.materialFlatButton1);
             this.panel4.Location = new System.Drawing.Point(85, 107);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(352, 112);
@@ -97,28 +79,28 @@
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.OldLace;
-            this.panel9.Controls.Add(this.materialSingleLineTextField1);
+            this.panel9.Controls.Add(this.passField);
             this.panel9.Controls.Add(this.pictureBox4);
             this.panel9.Location = new System.Drawing.Point(0, 62);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(352, 50);
             this.panel9.TabIndex = 19;
             // 
-            // materialSingleLineTextField1
+            // passField
             // 
-            this.materialSingleLineTextField1.Depth = 0;
-            this.materialSingleLineTextField1.Font = new System.Drawing.Font("Sans Serif Collection", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.materialSingleLineTextField1.Hint = "";
-            this.materialSingleLineTextField1.Location = new System.Drawing.Point(56, 13);
-            this.materialSingleLineTextField1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSingleLineTextField1.Name = "materialSingleLineTextField1";
-            this.materialSingleLineTextField1.PasswordChar = '\0';
-            this.materialSingleLineTextField1.SelectedText = "";
-            this.materialSingleLineTextField1.SelectionLength = 0;
-            this.materialSingleLineTextField1.SelectionStart = 0;
-            this.materialSingleLineTextField1.Size = new System.Drawing.Size(284, 23);
-            this.materialSingleLineTextField1.TabIndex = 1;
-            this.materialSingleLineTextField1.UseSystemPasswordChar = false;
+            this.passField.Depth = 0;
+            this.passField.Font = new System.Drawing.Font("Sans Serif Collection", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passField.Hint = "";
+            this.passField.Location = new System.Drawing.Point(56, 13);
+            this.passField.MouseState = MaterialSkin.MouseState.HOVER;
+            this.passField.Name = "passField";
+            this.passField.PasswordChar = '\0';
+            this.passField.SelectedText = "";
+            this.passField.SelectionLength = 0;
+            this.passField.SelectionStart = 0;
+            this.passField.Size = new System.Drawing.Size(284, 23);
+            this.passField.TabIndex = 1;
+            this.passField.UseSystemPasswordChar = false;
             // 
             // materialDivider1
             // 
@@ -131,26 +113,26 @@
             this.materialDivider1.TabIndex = 15;
             this.materialDivider1.Text = "materialDivider1";
             // 
-            // materialFlatButton2
+            // loginBtn
             // 
-            this.materialFlatButton2.AutoSize = true;
-            this.materialFlatButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialFlatButton2.Depth = 0;
-            this.materialFlatButton2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.materialFlatButton2.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.materialFlatButton2.Location = new System.Drawing.Point(0, 0);
-            this.materialFlatButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialFlatButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialFlatButton2.Name = "materialFlatButton2";
-            this.materialFlatButton2.Primary = false;
-            this.materialFlatButton2.Size = new System.Drawing.Size(352, 53);
-            this.materialFlatButton2.TabIndex = 16;
-            this.materialFlatButton2.Text = "LOGIN";
-            this.materialFlatButton2.UseVisualStyleBackColor = true;
+            this.loginBtn.AutoSize = true;
+            this.loginBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.loginBtn.Depth = 0;
+            this.loginBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.loginBtn.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.loginBtn.Location = new System.Drawing.Point(0, 0);
+            this.loginBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.loginBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.loginBtn.Name = "loginBtn";
+            this.loginBtn.Primary = false;
+            this.loginBtn.Size = new System.Drawing.Size(352, 53);
+            this.loginBtn.TabIndex = 16;
+            this.loginBtn.Text = "LOGIN";
+            this.loginBtn.UseVisualStyleBackColor = true;
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.materialFlatButton2);
+            this.panel5.Controls.Add(this.loginBtn);
             this.panel5.Location = new System.Drawing.Point(85, 225);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(352, 53);
@@ -158,53 +140,53 @@
             // 
             // panel8
             // 
-            this.panel8.Controls.Add(this.materialFlatButton3);
+            this.panel8.Controls.Add(this.toSignUpBtn);
             this.panel8.Location = new System.Drawing.Point(85, 405);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(352, 53);
             this.panel8.TabIndex = 18;
             // 
-            // materialFlatButton3
+            // toSignUpBtn
             // 
-            this.materialFlatButton3.AutoSize = true;
-            this.materialFlatButton3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialFlatButton3.Depth = 0;
-            this.materialFlatButton3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.materialFlatButton3.Location = new System.Drawing.Point(0, 0);
-            this.materialFlatButton3.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialFlatButton3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialFlatButton3.Name = "materialFlatButton3";
-            this.materialFlatButton3.Primary = false;
-            this.materialFlatButton3.Size = new System.Drawing.Size(352, 53);
-            this.materialFlatButton3.TabIndex = 16;
-            this.materialFlatButton3.Text = "SIGN UP";
-            this.materialFlatButton3.UseVisualStyleBackColor = true;
+            this.toSignUpBtn.AutoSize = true;
+            this.toSignUpBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.toSignUpBtn.Depth = 0;
+            this.toSignUpBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.toSignUpBtn.Location = new System.Drawing.Point(0, 0);
+            this.toSignUpBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.toSignUpBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.toSignUpBtn.Name = "toSignUpBtn";
+            this.toSignUpBtn.Primary = false;
+            this.toSignUpBtn.Size = new System.Drawing.Size(352, 53);
+            this.toSignUpBtn.TabIndex = 16;
+            this.toSignUpBtn.Text = "SIGN UP";
+            this.toSignUpBtn.UseVisualStyleBackColor = true;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.OldLace;
-            this.panel3.Controls.Add(this.materialSingleLineTextField2);
+            this.panel3.Controls.Add(this.userField);
             this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Location = new System.Drawing.Point(85, 107);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(352, 50);
             this.panel3.TabIndex = 20;
             // 
-            // materialSingleLineTextField2
+            // userField
             // 
-            this.materialSingleLineTextField2.Depth = 0;
-            this.materialSingleLineTextField2.Font = new System.Drawing.Font("Sans Serif Collection", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.materialSingleLineTextField2.Hint = "";
-            this.materialSingleLineTextField2.Location = new System.Drawing.Point(56, 13);
-            this.materialSingleLineTextField2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSingleLineTextField2.Name = "materialSingleLineTextField2";
-            this.materialSingleLineTextField2.PasswordChar = '\0';
-            this.materialSingleLineTextField2.SelectedText = "";
-            this.materialSingleLineTextField2.SelectionLength = 0;
-            this.materialSingleLineTextField2.SelectionStart = 0;
-            this.materialSingleLineTextField2.Size = new System.Drawing.Size(284, 23);
-            this.materialSingleLineTextField2.TabIndex = 1;
-            this.materialSingleLineTextField2.UseSystemPasswordChar = false;
+            this.userField.Depth = 0;
+            this.userField.Font = new System.Drawing.Font("Sans Serif Collection", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userField.Hint = "";
+            this.userField.Location = new System.Drawing.Point(56, 13);
+            this.userField.MouseState = MaterialSkin.MouseState.HOVER;
+            this.userField.Name = "userField";
+            this.userField.PasswordChar = '\0';
+            this.userField.SelectedText = "";
+            this.userField.SelectionLength = 0;
+            this.userField.SelectionStart = 0;
+            this.userField.Size = new System.Drawing.Size(284, 23);
+            this.userField.TabIndex = 1;
+            this.userField.UseSystemPasswordChar = false;
             // 
             // label1
             // 
@@ -219,7 +201,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.OldLace;
-            this.pictureBox1.BackgroundImage = global::BakeryDash2531.Properties.Resources.tag_user;
+            this.pictureBox1.BackgroundImage = global::BakeryDash2531.Properties.Resources.user_tagfill;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
@@ -248,7 +230,7 @@
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.OldLace;
-            this.pictureBox4.BackgroundImage = global::BakeryDash2531.Properties.Resources.lock_circle__1_;
+            this.pictureBox4.BackgroundImage = global::BakeryDash2531.Properties.Resources.lock_circle_fill;
             this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox4.Location = new System.Drawing.Point(0, 0);
             this.pictureBox4.Name = "pictureBox4";
@@ -271,11 +253,12 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.materialLabel2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
             this.Name = "LogIn";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Loging in...";
             this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.panel9.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
@@ -290,21 +273,20 @@
         }
 
         #endregion
-        private MaterialSkin.Controls.MaterialFlatButton materialFlatButton1;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private MaterialSkin.Controls.MaterialDivider materialDivider1;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField1;
-        private MaterialSkin.Controls.MaterialFlatButton materialFlatButton2;
+        private MaterialSkin.Controls.MaterialSingleLineTextField passField;
+        private MaterialSkin.Controls.MaterialFlatButton loginBtn;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel8;
-        private MaterialSkin.Controls.MaterialFlatButton materialFlatButton3;
+        private MaterialSkin.Controls.MaterialFlatButton toSignUpBtn;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel3;
-        private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField2;
+        private MaterialSkin.Controls.MaterialSingleLineTextField userField;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
