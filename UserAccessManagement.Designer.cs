@@ -42,10 +42,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.staffGUIDText = new System.Windows.Forms.TextBox();
             this.UserCheckBox = new System.Windows.Forms.CheckedListBox();
-            this.crDateText = new System.Windows.Forms.MaskedTextBox();
             this.passLab = new System.Windows.Forms.Label();
             this.passText = new System.Windows.Forms.TextBox();
-            this.creLab = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.usernameText = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -58,6 +56,11 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.delBtn = new MaterialSkin.Controls.MaterialFlatButton();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.filterLab = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.collumBox = new System.Windows.Forms.ComboBox();
+            this.valueBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.UserGrid)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -65,6 +68,7 @@
             this.panel6.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // title
@@ -158,10 +162,8 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.staffGUIDText);
             this.groupBox1.Controls.Add(this.UserCheckBox);
-            this.groupBox1.Controls.Add(this.crDateText);
             this.groupBox1.Controls.Add(this.passLab);
             this.groupBox1.Controls.Add(this.passText);
-            this.groupBox1.Controls.Add(this.creLab);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.usernameText);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -176,7 +178,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(34, 137);
+            this.label2.Location = new System.Drawing.Point(34, 30);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(135, 20);
             this.label2.TabIndex = 15;
@@ -184,10 +186,11 @@
             // 
             // staffGUIDText
             // 
-            this.staffGUIDText.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.staffGUIDText.Location = new System.Drawing.Point(202, 130);
+            this.staffGUIDText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.staffGUIDText.Location = new System.Drawing.Point(202, 23);
+            this.staffGUIDText.Multiline = true;
             this.staffGUIDText.Name = "staffGUIDText";
-            this.staffGUIDText.Size = new System.Drawing.Size(190, 31);
+            this.staffGUIDText.Size = new System.Drawing.Size(190, 64);
             this.staffGUIDText.TabIndex = 14;
             // 
             // UserCheckBox
@@ -197,24 +200,16 @@
             this.UserCheckBox.Items.AddRange(new object[] {
             "Is System Manager",
             "Is Activated"});
-            this.UserCheckBox.Location = new System.Drawing.Point(202, 167);
+            this.UserCheckBox.Location = new System.Drawing.Point(202, 157);
             this.UserCheckBox.Name = "UserCheckBox";
             this.UserCheckBox.Size = new System.Drawing.Size(151, 38);
             this.UserCheckBox.TabIndex = 3;
-            // 
-            // crDateText
-            // 
-            this.crDateText.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.crDateText.Location = new System.Drawing.Point(202, 56);
-            this.crDateText.Name = "crDateText";
-            this.crDateText.Size = new System.Drawing.Size(190, 31);
-            this.crDateText.TabIndex = 13;
             // 
             // passLab
             // 
             this.passLab.AutoSize = true;
             this.passLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passLab.Location = new System.Drawing.Point(83, 100);
+            this.passLab.Location = new System.Drawing.Point(83, 96);
             this.passLab.Name = "passLab";
             this.passLab.Size = new System.Drawing.Size(86, 20);
             this.passLab.TabIndex = 12;
@@ -222,27 +217,17 @@
             // 
             // passText
             // 
-            this.passText.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passText.Location = new System.Drawing.Point(202, 93);
             this.passText.Name = "passText";
-            this.passText.Size = new System.Drawing.Size(190, 31);
+            this.passText.Size = new System.Drawing.Size(190, 26);
             this.passText.TabIndex = 11;
-            // 
-            // creLab
-            // 
-            this.creLab.AutoSize = true;
-            this.creLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.creLab.Location = new System.Drawing.Point(58, 63);
-            this.creLab.Name = "creLab";
-            this.creLab.Size = new System.Drawing.Size(111, 20);
-            this.creLab.TabIndex = 10;
-            this.creLab.Text = "Creation time :";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(78, 26);
+            this.label1.Location = new System.Drawing.Point(78, 128);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(91, 20);
             this.label1.TabIndex = 8;
@@ -250,10 +235,10 @@
             // 
             // usernameText
             // 
-            this.usernameText.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernameText.Location = new System.Drawing.Point(202, 19);
+            this.usernameText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usernameText.Location = new System.Drawing.Point(202, 125);
             this.usernameText.Name = "usernameText";
-            this.usernameText.Size = new System.Drawing.Size(190, 31);
+            this.usernameText.Size = new System.Drawing.Size(190, 26);
             this.usernameText.TabIndex = 7;
             // 
             // panel1
@@ -261,9 +246,9 @@
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Location = new System.Drawing.Point(747, 119);
+            this.panel1.Location = new System.Drawing.Point(706, 119);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(425, 530);
+            this.panel1.Size = new System.Drawing.Size(425, 355);
             this.panel1.TabIndex = 3;
             // 
             // panel4
@@ -364,10 +349,58 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.valueBox);
+            this.panel2.Controls.Add(this.collumBox);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.filterLab);
             this.panel2.Location = new System.Drawing.Point(12, 67);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(632, 46);
+            this.panel2.Size = new System.Drawing.Size(456, 46);
             this.panel2.TabIndex = 4;
+            // 
+            // filterLab
+            // 
+            this.filterLab.AutoSize = true;
+            this.filterLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.filterLab.Location = new System.Drawing.Point(15, 14);
+            this.filterLab.Name = "filterLab";
+            this.filterLab.Size = new System.Drawing.Size(83, 20);
+            this.filterLab.TabIndex = 16;
+            this.filterLab.Text = "Search for";
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel7.Location = new System.Drawing.Point(709, 122);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(434, 362);
+            this.panel7.TabIndex = 20;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(281, 13);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(33, 20);
+            this.label3.TabIndex = 18;
+            this.label3.Text = "by :";
+            // 
+            // collumBox
+            // 
+            this.collumBox.FormattingEnabled = true;
+            this.collumBox.Location = new System.Drawing.Point(320, 13);
+            this.collumBox.Name = "collumBox";
+            this.collumBox.Size = new System.Drawing.Size(121, 21);
+            this.collumBox.TabIndex = 19;
+            // 
+            // valueBox
+            // 
+            this.valueBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valueBox.Location = new System.Drawing.Point(104, 14);
+            this.valueBox.Name = "valueBox";
+            this.valueBox.Size = new System.Drawing.Size(166, 20);
+            this.valueBox.TabIndex = 16;
             // 
             // UserAccessManagement
             // 
@@ -380,6 +413,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.UserGrid);
+            this.Controls.Add(this.panel7);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "UserAccessManagement";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -396,6 +430,8 @@
             this.panel3.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -408,13 +444,11 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label passLab;
         private System.Windows.Forms.TextBox passText;
-        private System.Windows.Forms.Label creLab;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox usernameText;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.CheckedListBox UserCheckBox;
-        private System.Windows.Forms.MaskedTextBox crDateText;
         private System.Windows.Forms.DataGridViewTextBoxColumn GUIDCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn UsernameCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn RoleCol;
@@ -432,5 +466,10 @@
         private System.Windows.Forms.Label removeWarnLab;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label filterLab;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.TextBox valueBox;
+        private System.Windows.Forms.ComboBox collumBox;
+        private System.Windows.Forms.Label label3;
     }
 }
