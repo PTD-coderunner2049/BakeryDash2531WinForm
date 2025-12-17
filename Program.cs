@@ -18,8 +18,7 @@ namespace BakeryDash2531
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new LogIn());
-            //Application.Run(new Regis());
-            Application.Run(new DashBoard());
+            Application.Run(new UserAccessManagement());
         }
     }
 }

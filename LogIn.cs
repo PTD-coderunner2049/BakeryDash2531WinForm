@@ -10,6 +10,8 @@ namespace BakeryDash2531
         {
             InitializeComponent();
             LogIn_Load();
+            emailField.Text = "m.johansen@bakery.com";
+            passField.Text = "123123";
         }
         private void LogIn_Load()
         {
@@ -28,7 +30,7 @@ namespace BakeryDash2531
 
                 if (SearchUser())
                 {
-                    MessageBox.Show("Wellcome back to Solberg's Bakery, Loging in...");
+                    //MessageBox.Show("Wellcome back to Solberg's Bakery, Loging in...");
                     new DashBoard().Show();
                     this.Hide();
                 }

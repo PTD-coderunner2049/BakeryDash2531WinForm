@@ -359,7 +359,7 @@
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.materialDivider1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.Name = "Regis";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

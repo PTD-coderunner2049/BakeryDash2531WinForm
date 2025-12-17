@@ -93,6 +93,26 @@ namespace BakeryDash2531.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap HDHD {
+            get {
+                object obj = ResourceManager.GetObject("HDHD", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HDHD_1080 {
+            get {
+                object obj = ResourceManager.GetObject("HDHD_1080", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap lock_circle__1_ {
             get {
                 object obj = ResourceManager.GetObject("lock-circle (1)", resourceCulture);
@@ -116,6 +136,26 @@ namespace BakeryDash2531.Properties {
         internal static System.Drawing.Bitmap lock_circlethin {
             get {
                 object obj = ResourceManager.GetObject("lock-circlethin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap security_safe {
+            get {
+                object obj = ResourceManager.GetObject("security-safe", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap security_userx {
+            get {
+                object obj = ResourceManager.GetObject("security-userx", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
