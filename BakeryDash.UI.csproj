@@ -85,6 +85,12 @@
     <Compile Include="Regis.Designer.cs">
       <DependentUpon>Regis.cs</DependentUpon>
     </Compile>
+    <Compile Include="StaffInfoManagment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StaffInfoManagment.Designer.cs">
+      <DependentUpon>StaffInfoManagment.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserAccessManagement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Regis.resx">
       <DependentUpon>Regis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StaffInfoManagment.resx">
+      <DependentUpon>StaffInfoManagment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserAccessManagement.resx">
       <DependentUpon>UserAccessManagement.cs</DependentUpon>

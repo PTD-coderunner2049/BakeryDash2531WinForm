@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.title = new System.Windows.Forms.Label();
             this.UserGrid = new System.Windows.Forms.DataGridView();
             this.GUIDCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,11 +56,11 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.delBtn = new MaterialSkin.Controls.MaterialFlatButton();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.valueBox = new System.Windows.Forms.TextBox();
+            this.collumBox = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.filterLab = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.collumBox = new System.Windows.Forms.ComboBox();
-            this.valueBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.UserGrid)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -99,16 +99,18 @@
             this.EmployeeGUIDCol});
             this.UserGrid.GridColor = System.Drawing.Color.Brown;
             this.UserGrid.Location = new System.Drawing.Point(12, 119);
+            this.UserGrid.MultiSelect = false;
             this.UserGrid.Name = "UserGrid";
+            this.UserGrid.ReadOnly = true;
             this.UserGrid.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.UserGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.UserGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.UserGrid.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.UserGrid.Size = new System.Drawing.Size(632, 530);
             this.UserGrid.TabIndex = 1;
@@ -130,6 +132,7 @@
             // 
             this.RoleCol.HeaderText = "Role";
             this.RoleCol.Name = "RoleCol";
+            this.RoleCol.ReadOnly = true;
             // 
             // CreatedTimeCol
             // 
@@ -358,6 +361,32 @@
             this.panel2.Size = new System.Drawing.Size(456, 46);
             this.panel2.TabIndex = 4;
             // 
+            // valueBox
+            // 
+            this.valueBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valueBox.Location = new System.Drawing.Point(104, 14);
+            this.valueBox.Name = "valueBox";
+            this.valueBox.Size = new System.Drawing.Size(166, 20);
+            this.valueBox.TabIndex = 16;
+            // 
+            // collumBox
+            // 
+            this.collumBox.FormattingEnabled = true;
+            this.collumBox.Location = new System.Drawing.Point(320, 13);
+            this.collumBox.Name = "collumBox";
+            this.collumBox.Size = new System.Drawing.Size(121, 21);
+            this.collumBox.TabIndex = 19;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(281, 13);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(33, 20);
+            this.label3.TabIndex = 18;
+            this.label3.Text = "by :";
+            // 
             // filterLab
             // 
             this.filterLab.AutoSize = true;
@@ -375,32 +404,6 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(434, 362);
             this.panel7.TabIndex = 20;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(281, 13);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(33, 20);
-            this.label3.TabIndex = 18;
-            this.label3.Text = "by :";
-            // 
-            // collumBox
-            // 
-            this.collumBox.FormattingEnabled = true;
-            this.collumBox.Location = new System.Drawing.Point(320, 13);
-            this.collumBox.Name = "collumBox";
-            this.collumBox.Size = new System.Drawing.Size(121, 21);
-            this.collumBox.TabIndex = 19;
-            // 
-            // valueBox
-            // 
-            this.valueBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valueBox.Location = new System.Drawing.Point(104, 14);
-            this.valueBox.Name = "valueBox";
-            this.valueBox.Size = new System.Drawing.Size(166, 20);
-            this.valueBox.TabIndex = 16;
             // 
             // UserAccessManagement
             // 
