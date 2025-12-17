@@ -1,210 +1,366 @@
 ﻿using BakeryDash.BLL;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
+using System.Runtime.Remoting.Contexts;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace BakeryDash2531
 {
-    public partial class StaffInfoManagment : Form
-    {
-        UserService _userve;
-        DataTable _fullDataTable;
-        public StaffInfoManagment()
-        {
-            InitializeComponent();
-            _userve = new UserService();
+    public partial class StaffInfoManagment : Form
+    {
+        StaffService _staffService;
+        DataTable _fullDataTable;
 
-            if (collumBox.Items.Count == 0)
-            {
-                collumBox.Items.AddRange(new string[] { "Username", "Role", "Status", "Date", "User GUID", "Staff GUID" });
-                collumBox.SelectedIndex = 0;
-            }
-            StaffCheckBox.MouseDown += (s, e) => {
-                int index = StaffCheckBox.IndexFromPoint(e.Location);
-                if (index == 0) { }
-            };
+        public StaffInfoManagment()
+        {
+            InitializeComponent();
+            _staffService = new StaffService();
 
-            StaffCheckBox.ItemCheck += (s, e) => {
-                if (e.Index == 0 && StaffCheckBox.Focused)
-                {
-                    e.NewValue = e.CurrentValue;
-                }
-            };
-            LoadUserData();
+            if (collumBox.Items.Count == 0)
+            {
+                collumBox.Items.AddRange(new string[] { "FirstName", "LastName", "Email", "PhoneContact", "SSN", "EmployeeGlobalId" });
+                collumBox.SelectedIndex = 0;
+            }
 
-            StaffGrid.SelectionChanged += UserGrid_SelectionChanged;
-            valueBox.TextChanged += ValueBox_TextChanged;
-            collumBox.SelectedIndexChanged += (s, e) => ApplyFilter();
+            SetupCheckedListBoxes();
+
+            LoadStaffData();
+
+            StaffGrid.SelectionChanged += StaffGrid_SelectionChanged;
+            valueBox.TextChanged += ValueBox_TextChanged;
+            collumBox.SelectedIndexChanged += (s, e) => ApplyFilter();
+        }
+
+        private void SetupCheckedListBoxes()
+        {
+            if (genderBox.Items.Count == 0)
+            {
+                genderBox.Items.AddRange(new string[] { "Male", "Female" });
+            }
+            genderBox.ItemCheck += (s, e) => {
+                if (e.NewValue == CheckState.Checked)
+                {
+                    for (int i = 0; i < genderBox.Items.Count; i++)
+                    {
+                        if (i != e.Index)
+                        {
+                            genderBox.SetItemChecked(i, false);
+                        }
+                    }
+                }
+            };
+
+            if (StatusRoleBox.Items.Count == 0)
+            {
+                StatusRoleBox.Items.AddRange(new string[] { "Activated", "System Manager" });
+            }
+        }
+
+        /// <summary>
+        /// Loads all staff data into the DataGridView.
+        /// </summary>
+        private void LoadStaffData()
+        {
+            try
+            {
+                _fullDataTable = _staffService.Fetch();
+                StaffGrid.DataSource = _fullDataTable;
+
+                StaffGrid.Columns["GUIDCol"].DataPropertyName = "EmployeeGlobalId";
+                StaffGrid.Columns["FNameCol"].DataPropertyName = "FirstName";
+                StaffGrid.Columns["LNameCol"].DataPropertyName = "LastName";
+                StaffGrid.Columns["EmailCol"].DataPropertyName = "Email";
+                StaffGrid.Columns["PhoneCol"].DataPropertyName = "PhoneContact";
+                StaffGrid.Columns["GenderCol"].DataPropertyName = "Gender";
+                StaffGrid.Columns["BirthCol"].DataPropertyName = "Birth";
+                StaffGrid.Columns["SSNCol"].DataPropertyName = "SSN";
+                StaffGrid.Columns["EmployDateCol"].DataPropertyName = "EmployedAt";
+                StaffGrid.Columns["PayrateCol"].DataPropertyName = "PayratePerHrs";
+                StaffGrid.Columns["RoleCol"].DataPropertyName = "IsSystemManager";
+                StaffGrid.Columns["ActiveCol"].DataPropertyName = "IsActive";
+
+
+                foreach (DataGridViewColumn col in StaffGrid.Columns)
+                {
+                    col.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    if (col.Name == "GUIDCol")
+                    {
+                        col.ReadOnly = true;
+                        col.Visible = false;
+                    }
+                }
+
+                StaffGrid.AutoResizeColumns();
+                StaffGrid.ClearSelection();
+                ClearInputs();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading staff data: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        /// <summary>
+        /// Filters the DataGridView based on the selected column and value.
+        /// </summary>
+        private void ApplyFilter()
+        {
+            string filterColumn = collumBox.SelectedItem.ToString();
+            string filterValue = valueBox.Text.Trim();
+
+            if (_fullDataTable == null) return;
+
+            try
+            {
+                string filterExpression = string.Empty;
+
+                if (!string.IsNullOrEmpty(filterValue))
+                {
+                    filterExpression = $"CONVERT({filterColumn}, 'System.String') LIKE '%{filterValue.Replace("'", "''")}%'";
+                }
+
+                _fullDataTable.DefaultView.RowFilter = filterExpression;
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"Filter Error: {ex.Message}");
+            }
+        }
+
+        private void ValueBox_TextChanged(object sender, EventArgs e)
+        {
+            ApplyFilter();
+        }
+
+        /// <summary>
+        /// Clears all input controls on the form.
+        /// </summary>
+        private void ClearInputs()
+        {
+            staffGUIDText.Text = Guid.Empty.ToString();
+            FnameText.Clear();
+            LnameText.Clear();
+            emailText.Clear();
+            phoneText.Clear();
+            ssnText.Clear(); 
+            employdateText.Clear();
+            payrateText.Clear();
+
+            for (int i = 0; i < genderBox.Items.Count; i++) genderBox.SetItemChecked(i, false);
+            for (int i = 0; i < StatusRoleBox.Items.Count; i++) StatusRoleBox.SetItemChecked(i, false);
+
+            staffGUIDText.ReadOnly = false;
+            ssnText.ReadOnly = false;
+            svWarnLab.Text = string.Empty;
+        }
+
+        /// <summary>
+        /// Binds selected staff data from the grid to the input fields.
+        /// </summary>
+        private void StaffGrid_SelectionChanged(object sender, EventArgs e)
+        {
+            if (StaffGrid.SelectedRows.Count > 0)
+            {
+                DataGridViewRow row = StaffGrid.SelectedRows[0];
+                DataRowView rowView = (DataRowView)row.DataBoundItem;
+                DataRow dataRow = rowView.Row;
+
+                staffGUIDText.Text = dataRow["EmployeeGlobalId"].ToString();
+                staffGUIDText.ReadOnly = true; // Read-only for existing records
+
+                FnameText.Text = dataRow["FirstName"].ToString();
+                LnameText.Text = dataRow["LastName"].ToString();
+                emailText.Text = dataRow["Email"].ToString();
+                phoneText.Text = dataRow["PhoneContact"].ToString();
+                ssnText.Text = dataRow["SSN"].ToString();
+                ssnText.ReadOnly = true; // SSN is not mutable after creation
+                payrateText.Text = dataRow["PayratePerHrs"].ToString();
+
+                string gender = dataRow["Gender"].ToString();
+                genderBox.SetItemChecked(0, gender == "M");
+                genderBox.SetItemChecked(1, gender == "F");
+
+                if (DateTime.TryParse(dataRow["Birth"].ToString(), out DateTime birthDate))
+                {
+                    birthText.Text = birthDate.ToShortDateString();
+                }
+                if (DateTime.TryParse(dataRow["EmployedAt"].ToString(), out DateTime employDate))
+                {
+                    employdateText.Text = employDate.ToShortDateString();
+                }
+
+                bool isRoleManager = (bool)dataRow["IsSystemManager"];
+                bool isActive = (bool)dataRow["IsActive"];
+
+                StatusRoleBox.SetItemChecked(0, isActive);
+                StatusRoleBox.SetItemChecked(1, isRoleManager);
+            }
+            else
+            {
+                ClearInputs();
+            }
+        }
+
+        /// <summary>
+        /// Validates all required inputs before calling the save operation.
+        /// </summary>
+        private bool ValidateInputs()
+        {
+            svWarnLab.ForeColor = Color.Red;
+            if (string.IsNullOrWhiteSpace(FnameText.Text) ||
+                string.IsNullOrWhiteSpace(LnameText.Text) ||
+                string.IsNullOrWhiteSpace(emailText.Text) ||
+                string.IsNullOrWhiteSpace(phoneText.Text) ||
+                string.IsNullOrWhiteSpace(ssnText.Text) ||
+                string.IsNullOrWhiteSpace(payrateText.Text))
+            {
+                svWarnLab.Text = "All staff information fields are required.";
+                return false;
+            }
+
+            if (genderBox.CheckedItems.Count != 1)
+            {
+                svWarnLab.Text = "Please select one gender.";
+                return false;
+            }
+            if (!decimal.TryParse(payrateText.Text, out decimal payrate))
+            {
+                svWarnLab.Text = "Pay Rate must be a valid decimal number.";
+                return false;
+            }
+
+            if (!DateTime.TryParse(birthText.Text, out DateTime birthDate))
+            {
+                svWarnLab.Text = "Invalid Birth Date format. Use MM/DD/YYYY.";
+                return false;
+            }
+
+            if (!DateTime.TryParse(employdateText.Text, out DateTime employedDate))
+            {
+                svWarnLab.Text = "Invalid Employed At Date format. Use MM/DD/YYYY.";
+                return false;
+            }
+
+            return true;
+        }
+
+        private void svBtn_Click(object sender, EventArgs e)
+        {
+            if (!ValidateInputs()) return;
+
+            Guid empGuid = Guid.Empty;
+            if (staffGUIDText.ReadOnly)
+            {
+                Guid.TryParse(staffGUIDText.Text, out empGuid);
+            }
+            string fName = FnameText.Text.Trim();
+            string lName = LnameText.Text.Trim();
+            string email = emailText.Text.Trim();
+            string phone = phoneText.Text.Trim();
+            string ssn = ssnText.Text.Trim();
+            decimal pay = decimal.Parse(payrateText.Text);
+            DateTime birth = DateTime.Parse(birthText.Text);
+            DateTime employedAt = DateTime.Parse(employdateText.Text);
+
+            string gender = genderBox.GetItemChecked(0) ? "M" : "F";
+            bool isActive = StatusRoleBox.GetItemChecked(0);
+            bool isManager = StatusRoleBox.GetItemChecked(1);
+
+            try
+            {
+                bool success = _staffService.SaveStaff(
+                    empGuid,
+                    email,
+                    fName,
+                    lName,
+                    phone,
+                    gender,
+                    birth,
+                    ssn,
+                    pay,
+                    employedAt,
+                    isManager,
+                    isActive
+                );
+
+                if (success)
+                {
+                    svWarnLab.Text = (empGuid == Guid.Empty ? "New staff record created successfully!" : "Staff record updated successfully!");
+                    svWarnLab.ForeColor = Color.Green;
+                    LoadStaffData(); // Reload grid
+
         }
+                else
+                {
+                    svWarnLab.Text = "Failed to save record. SSN or Email might already exist or a database error occurred.";
+                    svWarnLab.ForeColor = Color.Red;
+                }
+            }
+            catch (Exception ex)
+            {
+                svWarnLab.Text = $"An error occurred during save: {ex.Message}";
+                svWarnLab.ForeColor = Color.Red;
+            }
+        }
 
-        private void LoadUserData()
+        private void delBtn_Click(object sender, EventArgs e)
+        {
+            if (StaffGrid.SelectedRows.Count == 0 || !staffGUIDText.ReadOnly)
+            {
+                svWarnLab.Text = "Please select an existing staff member to delete.";
+                svWarnLab.ForeColor = Color.Red;
+                return;
+            }
+
+            if (Guid.TryParse(staffGUIDText.Text, out Guid empGuid))
+            {
+                DialogResult dialogResult = MessageBox.Show(
+                    "Are you sure you want to delete this staff record? This action cannot be undone.",
+                    "Confirm Deletion",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning);
+
+                if (dialogResult == DialogResult.Yes)
+                {
+                    try
+                    {
+                        bool success = _staffService.DelStaff(empGuid);
+                        if (success)
+                        {
+                            svWarnLab.Text = "Staff record deleted successfully.";
+                            svWarnLab.ForeColor = Color.Green;
+                            LoadStaffData();
+                        }
+                        else
+                        {
+                            svWarnLab.Text = "Deletion failed. Staff GUID not found.";
+                            svWarnLab.ForeColor = Color.Red;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        svWarnLab.Text = $"An error occurred during deletion: {ex.Message}";
+                        svWarnLab.ForeColor = Color.Red;
+                    }
+                }
+            }
+        }
+
+        private void instBtn_Click(object sender, EventArgs e)
         {
-            _fullDataTable = _userve.Fetch();
-            ApplyFilter();
+            staffGUIDText.Text = Guid.NewGuid().ToString();
+            ssnText.ReadOnly = false;
+            ssnText.Clear();
+            phoneText.Clear();
+            FnameText.Clear();
+            LnameText.Clear();
+            emailText.Clear();
+            payrateText.Clear();
+            employdateText.Clear();
+            birthText.Clear();
 
-            //UserGrid.Rows.Clear();
-            //DataTable usersTable = _userve.Fetch();
 
-            //foreach (DataRow rowData in usersTable.Rows)
-            //{
-            //    int rowIndex = UserGrid.Rows.Add();
-            //    DataGridViewRow row = UserGrid.Rows[rowIndex];
-
-            //    row.Cells["GUIDCol"].Value = rowData["UserGlobalId"].ToString().Substring(0, 8);
-            //    row.Cells["UsernameCol"].Value = rowData["Username"];
-            //    row.Cells["CreatedTimeCol"].Value = Convert.ToDateTime(rowData["CreatedAt"]).ToShortDateString();
-            //    row.Cells["StatusCol"].Value = (bool)rowData["Active"] ? "Active" : "Inactive";
-            //    row.Cells["PasswordCol"].Value = rowData["PasswordHash"];
-            //    row.Cells["EmployeeGUIDCol"].Value = rowData["EmployeeGlobalId"];
-            //    row.Cells["RoleCol"].Value = (bool)rowData["IsSystemManager"] ? "Manager" : "Staff";
-            //}
-        }
-        private void ApplyFilter()
-        {
-            if (_fullDataTable == null) return;
-
-            DataView dv = _fullDataTable.DefaultView;
-            string filterValue = valueBox.Text.Replace("'", "''");
-            string selectedCollum = collumBox.SelectedItem?.ToString();
-
-            if (string.IsNullOrWhiteSpace(filterValue))
-            {
-                dv.RowFilter = "";
-            }
-            else
-            {
-                try
-                {
-                    switch (selectedCollum)
-                    {
-                        case "Username":
-                            dv.RowFilter = $"Username LIKE '%{filterValue}%'";
-                            break;
-                        case "User GUID":
-                            dv.RowFilter = $"Convert(UserGlobalId, 'System.String') LIKE '%{filterValue}%'";
-                            break;
-                        case "Staff GUID":
-                            dv.RowFilter = $"Convert(EmployeeGlobalId, 'System.String') LIKE '%{filterValue}%'";
-                            break;
-                        case "Date":
-                            dv.RowFilter = $"Convert(CreatedAt, 'System.String') LIKE '%{filterValue}%'";
-                            break;
-                        case "Role":
-                            if (filterValue.ToLower().Contains("man")) dv.RowFilter = "IsSystemManager = true";
-                            else if (filterValue.ToLower().Contains("sta")) dv.RowFilter = "IsSystemManager = false";
-                            break;
-                        case "Status":
-                            if (filterValue.ToLower().Contains("act")) dv.RowFilter = "Active = true";
-                            else if (filterValue.ToLower().Contains("ina")) dv.RowFilter = "Active = false";
-                            break;
-                    }
-                }
-                catch { }
-            }
-
-            PopulateGrid(dv);
-        }
-        private void PopulateGrid(DataView dv)
-        {
-            StaffGrid.Rows.Clear();
-            foreach (DataRowView rowView in dv)
-            {
-                DataRow rowData = rowView.Row;
-                int rowIndex = StaffGrid.Rows.Add();
-                DataGridViewRow row = StaffGrid.Rows[rowIndex];
-
-                row.Cells["GUIDCol"].Value = rowData["UserGlobalId"].ToString().Substring(0, 8);
-                row.Cells["UsernameCol"].Value = rowData["Username"];
-                row.Cells["CreatedTimeCol"].Value = Convert.ToDateTime(rowData["CreatedAt"]).ToShortDateString();
-                row.Cells["StatusCol"].Value = (bool)rowData["Active"] ? "Active" : "Inactive";
-                row.Cells["PasswordCol"].Value = rowData["PasswordHash"];
-                row.Cells["EmployeeGUIDCol"].Value = rowData["EmployeeGlobalId"];
-                row.Cells["RoleCol"].Value = (bool)rowData["IsSystemManager"] ? "Manager" : "Staff";
-            }
-        }
-        private void ValueBox_TextChanged(object sender, EventArgs e)
-        {
-            ApplyFilter();
-        }
-        private void UserGrid_SelectionChanged(object sender, EventArgs e)
-        {
-            if (StaffGrid.SelectedRows.Count > 0)
-            {
-                // Bind
-                DataGridViewRow row = StaffGrid.SelectedRows[0];
-                SSNText.Text = row.Cells["UsernameCol"].Value?.ToString();
-                //passText.Text = row.Cells["PasswordCol"].Value?.ToString();
-                staffGUIDText.Text = row.Cells["EmployeeGUIDCol"].Value?.ToString();
-
-                bool isManager = row.Cells["RoleCol"].Value?.ToString() == "Manager";
-                bool isActive = row.Cells["StatusCol"].Value?.ToString() == "Active";
-                StaffCheckBox.SetItemChecked(0, isManager);
-                StaffCheckBox.SetItemChecked(1, isActive);
-            }
-        }
-        private bool ValidateInputs()
-        {
-            if (string.IsNullOrWhiteSpace(SSNText.Text) ||
-                string.IsNullOrWhiteSpace(staffGUIDText.Text))
-            {
-                svWarnLab.Text = "Username and Staff GUID are required!";
-                svWarnLab.ForeColor = Color.Red;
-                return false;
-            }
-
-            if (string.IsNullOrWhiteSpace(emailText.Text))
-            {
-                svWarnLab.Text = "Password cannot be empty!";
-                svWarnLab.ForeColor = Color.Red;
-                return false;
-            }
-
-            return true;
-        }
-        private void svBtn_Click(object sender, EventArgs e)
-        {
-            if (!ValidateInputs()) return;
-
-            if (Guid.TryParse(staffGUIDText.Text, out Guid empGuid))
-            {
-                bool activeStatusFromUI = StaffCheckBox.GetItemChecked(1);
-
-                bool success = _userve.SaveUser(
-                    empGuid,
-                    SSNText.Text,
-                    emailText.Text,
-                    activeStatusFromUI
-                );
-
-                if (success)
-                {
-                    svWarnLab.Text = "User updated successfully!";
-                    svWarnLab.ForeColor = Color.Green;
-                    LoadUserData();
-                }
-                else
-                {
-                    svWarnLab.Text = "Failed! Staff GUID not found or Username taken.";
-                    svWarnLab.ForeColor = Color.Red;
-                }
-            }
-            else
-            {
-                svWarnLab.Text = "Invalid Staff GUID format.";
-                svWarnLab.ForeColor = Color.Red;
-            }
-        }
-
-        private void delBtn_Click(object sender, EventArgs e)
-        {
-            if (Guid.TryParse(staffGUIDText.Text, out Guid empGuid))
-            {
-                bool success = _userve.DelUser(empGuid);
-                if (success) LoadUserData();
-            }
         }
     }
 }
