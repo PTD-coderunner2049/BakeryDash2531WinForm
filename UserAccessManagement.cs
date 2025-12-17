@@ -53,5 +53,29 @@ namespace BakeryDash2531
                 UserCheckBox.SetItemChecked(1, isActive);
             }
         }
+
+        private void svBtn_Click(object sender, EventArgs e)
+        {
+            if (Guid.TryParse(staffGUIDText.Text, out Guid empGuid))
+            {
+                bool success = _userve.SaveUser(
+                    empGuid,
+                    usernameText.Text,
+                    passText.Text,
+                    UserCheckBox.GetItemChecked(1)
+                );
+
+                if (success) LoadUserData();
+            }
+        }
+
+        private void delBtn_Click(object sender, EventArgs e)
+        {
+            if (Guid.TryParse(staffGUIDText.Text, out Guid empGuid))
+            {
+                bool success = _userve.DelUser(empGuid);
+                if (success) LoadUserData();
+            }
+        }
     }
 }
