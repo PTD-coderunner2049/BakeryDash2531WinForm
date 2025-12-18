@@ -127,13 +127,6 @@ namespace BakeryDash2531
             //    row.Cells["RoleCol"].Value = (bool)rowData["IsSystemManager"] ? "Manager" : "Staff";
             //}
         }
-        private void ApplyxFilter()
-        {
-            string filterColumn = collumBox.SelectedItem.ToString();
-            string filterValue = valueBox.Text.Trim();
-            StaffService  _staffService = new StaffService();
-            _staffService.GetFilteredStaff(_fullDataTable, filterColumn, filterValue);
-        }
         private void ApplyFilter()
         {
             string filterColumn = collumBox.SelectedItem.ToString();
