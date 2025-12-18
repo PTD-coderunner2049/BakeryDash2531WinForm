@@ -283,7 +283,7 @@ namespace BakeryDash2531
 
         private void rtnBtn_Click(object sender, EventArgs e)
         {
-            _parent.ResetToHome();
+            //_parent.ResetToHome();
         }
     }
 }
