@@ -1,10 +1,12 @@
 ﻿using BakeryDash.BLL;
+using BakeryDash.Utils;
 using BakeryDash2531._utils;
 using System;
 using System.Data;
 using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System.Drawing;
 using System.Runtime.Remoting.Contexts;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BakeryDash2531
@@ -23,11 +25,11 @@ namespace BakeryDash2531
 
             SetupCheckedListBoxes();
 
-            LoadStaffData();
+            LoadStaffDataAsync();
 
             StaffGrid.SelectionChanged += StaffGrid_SelectionChanged;
             valueBox.TextChanged += ValueBox_TextChanged;
-            collumBox.SelectedIndexChanged += (s, e) => ApplyFilter();
+            collumBox.SelectedIndexChanged += (s, e) => ApplyFilterAsync();
         }
 
 
@@ -67,10 +69,12 @@ namespace BakeryDash2531
             }
         }
 
-        private void LoadStaffData()
+        private async void LoadStaffDataAsync()
         {
-            try
-            {
+            await UIUtils.ShowToast("Loading...", "SolbergBakery", 1000);
+
+            try
+            {
                 StaffGrid.AutoGenerateColumns = false;
                 _fullDataTable = _staffService.Fetch();
                 StaffGrid.DataSource = _fullDataTable;
@@ -135,17 +139,18 @@ namespace BakeryDash2531
             StatusRoleBox.SetItemChecked(1, isRoleManager);
         }
 
-        private void ApplyFilter()
+        private async void ApplyFilterAsync()
         {
             string filterColumn = collumBox.SelectedItem.ToString();
             string filterValue = valueBox.Text.Trim();
+            await UIUtils.ShowToast("Updating...", "SolbergBakery", 1000);
 
             _staffService.GetFilteredStaff(_fullDataTable, filterColumn, filterValue);
         }
 
         private void ValueBox_TextChanged(object sender, EventArgs e)
         {
-            ApplyFilter();
+            ApplyFilterAsync();
         }
         private bool ValidateInputs()
                 {
@@ -199,9 +204,8 @@ namespace BakeryDash2531
                 {
                     svWarnLab.Text = (empGuid == Guid.Empty ? "New staff record created successfully!" : "Staff record updated successfully!");
                     svWarnLab.ForeColor = Color.Green;
-                    LoadStaffData(); // Reload grid
-
-        }
+                    LoadStaffDataAsync();
+                }
                 else
                 {
                     svWarnLab.Text = "Failed to save record. SSN or Email might already exist or a database error occurred.";
@@ -240,7 +244,7 @@ namespace BakeryDash2531
                         {
                             svWarnLab.Text = "Staff record deleted successfully.";
                             svWarnLab.ForeColor = Color.Green;
-                            LoadStaffData();
+                            LoadStaffDataAsync();
                         }
                         else
                         {

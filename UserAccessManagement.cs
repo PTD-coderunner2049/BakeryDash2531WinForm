@@ -1,12 +1,14 @@
 ﻿using BakeryDash.BLL;
+using BakeryDash.Utils;
+using BakeryDash2531._utils;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Runtime.Remoting.Contexts;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using BakeryDash2531._utils;
 
 namespace BakeryDash2531
 {
@@ -21,7 +23,7 @@ namespace BakeryDash2531
             SetupfilterBoxes();
             SetupCheckedListBoxes();
 
-            LoadUserData();
+            LoadUserDataAsync();
 
             UserGrid.SelectionChanged += UserGrid_SelectionChanged;
             valueBox.TextChanged += ValueBox_TextChanged;
@@ -53,8 +55,10 @@ namespace BakeryDash2531
                 }
             };
         }
-        private void LoadUserData()
+        private async void LoadUserDataAsync()
         {
+            await UIUtils.ShowToast("Loading...", "SolbergBakery", 1000);
+
             try
             {
                 UserGrid.AutoGenerateColumns = false;
@@ -127,8 +131,10 @@ namespace BakeryDash2531
             //    row.Cells["RoleCol"].Value = (bool)rowData["IsSystemManager"] ? "Manager" : "Staff";
             //}
         }
-        private void ApplyFilter()
+        private async void ApplyFilter()
         {
+            await UIUtils.ShowToast("Updating...", "SolbergBakery", 1000);
+
             string filterColumn = collumBox.SelectedItem.ToString();
             string filterValue = valueBox.Text.Trim();
 
@@ -166,7 +172,7 @@ namespace BakeryDash2531
                 {
                     svWarnLab.Text = "User updated successfully!";
                     svWarnLab.ForeColor = Color.Green;
-                    LoadUserData();
+                    LoadUserDataAsync();
                 }
                 else
                 {
@@ -185,7 +191,7 @@ namespace BakeryDash2531
             if (Guid.TryParse(staffGUIDText.Text, out Guid empGuid))
             {
                 bool success = _userve.DelUser(empGuid);
-                if (success) LoadUserData();
+                if (success) LoadUserDataAsync();
             }
         }
     }

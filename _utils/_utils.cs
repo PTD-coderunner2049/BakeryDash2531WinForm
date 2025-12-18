@@ -77,7 +77,7 @@ namespace BakeryDash.Utils
                 for (double i = 0.5; i > 0; i -= 0.05)
                 {
                     toast.Opacity = i;
-                    await Task.Delay(50);
+                    await Task.Delay(25);
                 }
 
                 toast.Close();
