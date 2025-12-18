@@ -148,15 +148,26 @@ namespace BakeryDash2531
         {
             panelBack.Controls.Clear();
             this.Text = "Solberg's Bakery - User's Assess Managment";
-            Panel bgPanel = new Panel();
-            bgPanel.BackColor = Color.Transparent;
-            bgPanel.Dock = DockStyle.Fill;
-            bgPanel.BackgroundImage = Properties.Resources.HDHD_1080;
-            bgPanel.BackgroundImageLayout = ImageLayout.Stretch;
+            LoadFormToPanel(Dashing(), new UserAccessManagement());
+        }
 
-            panelBack.Controls.Add(bgPanel);
-
-            LoadFormToPanel(bgPanel, new UserAccessManagement());
+        private void employeesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            panelBack.Controls.Clear();
+            this.Text = "Solberg's Bakery - Employee Managment";
+            LoadFormToPanel(Dashing(), new StaffInfoManagment());
+        }
+        private Panel Dashing()
+        {
+            panelBack.Controls.Clear();
+            Panel foundation = new Panel();
+            foundation.BackColor = Color.Transparent;
+            foundation.Dock = DockStyle.Fill;
+            foundation.BackgroundImage =
+            foundation.BackgroundImage = Properties.Resources.HDHD_1080;
+            foundation.BackgroundImageLayout = ImageLayout.Stretch;
+            panelBack.Controls.Add(foundation);
+            return foundation;
         }
     }
 }

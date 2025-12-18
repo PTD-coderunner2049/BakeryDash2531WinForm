@@ -17,13 +17,9 @@ namespace BakeryDash2531
             InitializeComponent();
             _staffService = new StaffService();
 
-            if (collumBox.Items.Count == 0)
-            {
-                collumBox.Items.AddRange(new string[] { "FirstName", "LastName", "Email", "PhoneContact", "SSN", "EmployeeGlobalId" });
-                collumBox.SelectedIndex = 0;
-            }
+            SetupfilterBoxes();
 
-            SetupCheckedListBoxes();
+            SetupCheckedListBoxes();
 
             LoadStaffData();
 
@@ -31,8 +27,16 @@ namespace BakeryDash2531
             valueBox.TextChanged += ValueBox_TextChanged;
             collumBox.SelectedIndexChanged += (s, e) => ApplyFilter();
         }
+        private void SetupfilterBoxes()
+        {
+            if (collumBox.Items.Count == 0)
+            {
+                collumBox.Items.AddRange(new string[] { "FirstName", "LastName", "Email", "PhoneContact", "SSN", "EmployeeGlobalId" });
+                collumBox.SelectedIndex = 0;
+            }
+        }
 
-        private void SetupCheckedListBoxes()
+        private void SetupCheckedListBoxes()
         {
             if (genderBox.Items.Count == 0)
             {
@@ -57,17 +61,13 @@ namespace BakeryDash2531
             }
         }
 
-        /// <summary>
-        /// Loads all staff data into the DataGridView.
-        /// </summary>
         private void LoadStaffData()
         {
             try
             {
-                _fullDataTable = _staffService.Fetch();
-                StaffGrid.DataSource = _fullDataTable;
-
-                StaffGrid.Columns["GUIDCol"].DataPropertyName = "EmployeeGlobalId";
+                StaffGrid.AutoGenerateColumns = false;
+                
+                StaffGrid.Columns["GUIDCol"].DataPropertyName = "EmployeeGlobalId";
                 StaffGrid.Columns["FNameCol"].DataPropertyName = "FirstName";
                 StaffGrid.Columns["LNameCol"].DataPropertyName = "LastName";
                 StaffGrid.Columns["EmailCol"].DataPropertyName = "Email";
@@ -79,19 +79,10 @@ namespace BakeryDash2531
                 StaffGrid.Columns["PayrateCol"].DataPropertyName = "PayratePerHrs";
                 StaffGrid.Columns["RoleCol"].DataPropertyName = "IsSystemManager";
                 StaffGrid.Columns["ActiveCol"].DataPropertyName = "IsActive";
+                
+                _fullDataTable = _staffService.Fetch();
+                StaffGrid.DataSource = _fullDataTable;
 
-
-                foreach (DataGridViewColumn col in StaffGrid.Columns)
-                {
-                    col.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    if (col.Name == "GUIDCol")
-                    {
-                        col.ReadOnly = true;
-                        col.Visible = false;
-                    }
-                }
-
-                StaffGrid.AutoResizeColumns();
                 StaffGrid.ClearSelection();
                 ClearInputs();
             }
@@ -133,9 +124,7 @@ namespace BakeryDash2531
             ApplyFilter();
         }
 
-        /// <summary>
-        /// Clears all input controls on the form.
-        /// </summary>
+
         private void ClearInputs()
         {
             staffGUIDText.Text = Guid.Empty.ToString();
@@ -144,7 +133,7 @@ namespace BakeryDash2531
             emailText.Clear();
             phoneText.Clear();
             ssnText.Clear(); 
-            employdateText.Clear();
+            //employdateText.Clear();
             payrateText.Clear();
 
             for (int i = 0; i < genderBox.Items.Count; i++) genderBox.SetItemChecked(i, false);
@@ -155,9 +144,6 @@ namespace BakeryDash2531
             svWarnLab.Text = string.Empty;
         }
 
-        /// <summary>
-        /// Binds selected staff data from the grid to the input fields.
-        /// </summary>
         private void StaffGrid_SelectionChanged(object sender, EventArgs e)
         {
             if (StaffGrid.SelectedRows.Count > 0)
@@ -185,10 +171,10 @@ namespace BakeryDash2531
                 {
                     birthText.Text = birthDate.ToShortDateString();
                 }
-                if (DateTime.TryParse(dataRow["EmployedAt"].ToString(), out DateTime employDate))
-                {
-                    employdateText.Text = employDate.ToShortDateString();
-                }
+                //if (DateTime.TryParse(dataRow["EmployedAt"].ToString(), out DateTime employDate))
+                //{
+                //    employdateText.Text = employDate.ToShortDateString();
+                //}
 
                 bool isRoleManager = (bool)dataRow["IsSystemManager"];
                 bool isActive = (bool)dataRow["IsActive"];
@@ -202,9 +188,6 @@ namespace BakeryDash2531
             }
         }
 
-        /// <summary>
-        /// Validates all required inputs before calling the save operation.
-        /// </summary>
         private bool ValidateInputs()
         {
             svWarnLab.ForeColor = Color.Red;
@@ -236,11 +219,11 @@ namespace BakeryDash2531
                 return false;
             }
 
-            if (!DateTime.TryParse(employdateText.Text, out DateTime employedDate))
-            {
-                svWarnLab.Text = "Invalid Employed At Date format. Use MM/DD/YYYY.";
-                return false;
-            }
+            //if (!DateTime.TryParse(employdateText.Text, out DateTime employedDate))
+            //{
+            //    svWarnLab.Text = "Invalid Employed At Date format. Use MM/DD/YYYY.";
+            //    return false;
+            //}
 
             return true;
         }
@@ -261,7 +244,7 @@ namespace BakeryDash2531
             string ssn = ssnText.Text.Trim();
             decimal pay = decimal.Parse(payrateText.Text);
             DateTime birth = DateTime.Parse(birthText.Text);
-            DateTime employedAt = DateTime.Parse(employdateText.Text);
+            //DateTime employedAt = DateTime.Parse(employdateText.Text);
 
             string gender = genderBox.GetItemChecked(0) ? "M" : "F";
             bool isActive = StatusRoleBox.GetItemChecked(0);
@@ -279,7 +262,7 @@ namespace BakeryDash2531
                     birth,
                     ssn,
                     pay,
-                    employedAt,
+                    //employedAt,
                     isManager,
                     isActive
                 );
@@ -357,7 +340,7 @@ namespace BakeryDash2531
             LnameText.Clear();
             emailText.Clear();
             payrateText.Clear();
-            employdateText.Clear();
+            //employdateText.Clear();
             birthText.Clear();
 
 

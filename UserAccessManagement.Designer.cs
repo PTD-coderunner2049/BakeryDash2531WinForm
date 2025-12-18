@@ -352,6 +352,7 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.OldLace;
             this.panel2.Controls.Add(this.valueBox);
             this.panel2.Controls.Add(this.collumBox);
             this.panel2.Controls.Add(this.label3);
