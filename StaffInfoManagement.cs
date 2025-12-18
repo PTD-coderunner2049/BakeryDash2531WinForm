@@ -1,18 +1,20 @@
 ﻿using BakeryDash.BLL;
+using BakeryDash2531._utils;
 using System;
 using System.Data;
+using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System.Drawing;
 using System.Runtime.Remoting.Contexts;
 using System.Windows.Forms;
 
 namespace BakeryDash2531
 {
-    public partial class StaffInfoManagment : Form
+    public partial class StaffInfoManagement : Form
     {
         StaffService _staffService;
         DataTable _fullDataTable;
 
-        public StaffInfoManagment()
+        public StaffInfoManagement()
         {
             InitializeComponent();
             _staffService = new StaffService();
@@ -27,6 +29,10 @@ namespace BakeryDash2531
             valueBox.TextChanged += ValueBox_TextChanged;
             collumBox.SelectedIndexChanged += (s, e) => ApplyFilter();
         }
+
+
+
+
         private void SetupfilterBoxes()
         {
             if (collumBox.Items.Count == 0)
@@ -66,20 +72,6 @@ namespace BakeryDash2531
             try
             {
                 StaffGrid.AutoGenerateColumns = false;
-                
-                StaffGrid.Columns["GUIDCol"].DataPropertyName = "EmployeeGlobalId";
-                StaffGrid.Columns["FNameCol"].DataPropertyName = "FirstName";
-                StaffGrid.Columns["LNameCol"].DataPropertyName = "LastName";
-                StaffGrid.Columns["EmailCol"].DataPropertyName = "Email";
-                StaffGrid.Columns["PhoneCol"].DataPropertyName = "PhoneContact";
-                StaffGrid.Columns["GenderCol"].DataPropertyName = "Gender";
-                StaffGrid.Columns["BirthCol"].DataPropertyName = "Birth";
-                StaffGrid.Columns["SSNCol"].DataPropertyName = "SSN";
-                StaffGrid.Columns["EmployDateCol"].DataPropertyName = "EmployedAt";
-                StaffGrid.Columns["PayrateCol"].DataPropertyName = "PayratePerHrs";
-                StaffGrid.Columns["RoleCol"].DataPropertyName = "IsSystemManager";
-                StaffGrid.Columns["ActiveCol"].DataPropertyName = "IsActive";
-                
                 _fullDataTable = _staffService.Fetch();
                 StaffGrid.DataSource = _fullDataTable;
 
@@ -92,39 +84,6 @@ namespace BakeryDash2531
             }
         }
 
-        /// <summary>
-        /// Filters the DataGridView based on the selected column and value.
-        /// </summary>
-        private void ApplyFilter()
-        {
-            string filterColumn = collumBox.SelectedItem.ToString();
-            string filterValue = valueBox.Text.Trim();
-
-            if (_fullDataTable == null) return;
-
-            try
-            {
-                string filterExpression = string.Empty;
-
-                if (!string.IsNullOrEmpty(filterValue))
-                {
-                    filterExpression = $"CONVERT({filterColumn}, 'System.String') LIKE '%{filterValue.Replace("'", "''")}%'";
-                }
-
-                _fullDataTable.DefaultView.RowFilter = filterExpression;
-            }
-            catch (Exception ex)
-            {
-                System.Diagnostics.Debug.WriteLine($"Filter Error: {ex.Message}");
-            }
-        }
-
-        private void ValueBox_TextChanged(object sender, EventArgs e)
-        {
-            ApplyFilter();
-        }
-
-
         private void ClearInputs()
         {
             staffGUIDText.Text = Guid.Empty.ToString();
@@ -136,97 +95,66 @@ namespace BakeryDash2531
             //employdateText.Clear();
             payrateText.Clear();
 
-            for (int i = 0; i < genderBox.Items.Count; i++) genderBox.SetItemChecked(i, false);
-            for (int i = 0; i < StatusRoleBox.Items.Count; i++) StatusRoleBox.SetItemChecked(i, false);
-
-            staffGUIDText.ReadOnly = false;
+            foreach (int i in genderBox.CheckedIndices) genderBox.SetItemChecked(i, false);
+            foreach (int i in StatusRoleBox.CheckedIndices) StatusRoleBox.SetItemChecked(i, false);
+            
+            staffGUIDText.ReadOnly = false;
             ssnText.ReadOnly = false;
             svWarnLab.Text = string.Empty;
         }
 
         private void StaffGrid_SelectionChanged(object sender, EventArgs e)
         {
-            if (StaffGrid.SelectedRows.Count > 0)
-            {
-                DataGridViewRow row = StaffGrid.SelectedRows[0];
-                DataRowView rowView = (DataRowView)row.DataBoundItem;
-                DataRow dataRow = rowView.Row;
+            DataRow dataRow = StaffGrid.GetSelectedRow();
+            if ( dataRow == null ) 
+            {
+                ClearInputs();
+                return;
+            }
 
-                staffGUIDText.Text = dataRow["EmployeeGlobalId"].ToString();
-                staffGUIDText.ReadOnly = true; // Read-only for existing records
+            staffGUIDText.Text = dataRow["EmployeeGlobalId"].ToString();
+            staffGUIDText.ReadOnly = true;
+            FnameText.Text = dataRow["FirstName"].ToString();
+            LnameText.Text = dataRow["LastName"].ToString();
+            emailText.Text = dataRow["Email"].ToString();
+            phoneText.Text = dataRow["PhoneContact"].ToString();
+            ssnText.Text = dataRow["SSN"].ToString();
+            ssnText.ReadOnly = true;
+            payrateText.Text = dataRow["PayratePerHrs"].ToString();
 
-                FnameText.Text = dataRow["FirstName"].ToString();
-                LnameText.Text = dataRow["LastName"].ToString();
-                emailText.Text = dataRow["Email"].ToString();
-                phoneText.Text = dataRow["PhoneContact"].ToString();
-                ssnText.Text = dataRow["SSN"].ToString();
-                ssnText.ReadOnly = true; // SSN is not mutable after creation
-                payrateText.Text = dataRow["PayratePerHrs"].ToString();
+            string gender = dataRow["Gender"].ToString();
+            genderBox.SetItemChecked(0, gender == "M");
+            genderBox.SetItemChecked(1, gender == "F");
 
-                string gender = dataRow["Gender"].ToString();
-                genderBox.SetItemChecked(0, gender == "M");
-                genderBox.SetItemChecked(1, gender == "F");
+            if (DateTime.TryParse(dataRow["Birth"].ToString(), out DateTime birthDate))
+                birthText.Text = birthDate.ToShortDateString();
 
-                if (DateTime.TryParse(dataRow["Birth"].ToString(), out DateTime birthDate))
-                {
-                    birthText.Text = birthDate.ToShortDateString();
-                }
-                //if (DateTime.TryParse(dataRow["EmployedAt"].ToString(), out DateTime employDate))
-                //{
-                //    employdateText.Text = employDate.ToShortDateString();
-                //}
+            bool isRoleManager = (bool)dataRow["IsSystemManager"];
+            bool Active = (bool)dataRow["Active"];
+            StatusRoleBox.SetItemChecked(0, Active);
+            StatusRoleBox.SetItemChecked(1, isRoleManager);
+        }
 
-                bool isRoleManager = (bool)dataRow["IsSystemManager"];
-                bool isActive = (bool)dataRow["IsActive"];
+        private void ApplyFilter()
+        {
+            string filterColumn = collumBox.SelectedItem.ToString();
+            string filterValue = valueBox.Text.Trim();
 
-                StatusRoleBox.SetItemChecked(0, isActive);
-                StatusRoleBox.SetItemChecked(1, isRoleManager);
-            }
-            else
-            {
-                ClearInputs();
-            }
-        }
+            _staffService.GetFilteredStaff(_fullDataTable, filterColumn, filterValue);
+        }
 
-        private bool ValidateInputs()
-        {
-            svWarnLab.ForeColor = Color.Red;
-            if (string.IsNullOrWhiteSpace(FnameText.Text) ||
-                string.IsNullOrWhiteSpace(LnameText.Text) ||
-                string.IsNullOrWhiteSpace(emailText.Text) ||
-                string.IsNullOrWhiteSpace(phoneText.Text) ||
-                string.IsNullOrWhiteSpace(ssnText.Text) ||
-                string.IsNullOrWhiteSpace(payrateText.Text))
-            {
-                svWarnLab.Text = "All staff information fields are required.";
-                return false;
-            }
+        private void ValueBox_TextChanged(object sender, EventArgs e)
+        {
+            ApplyFilter();
+        }
+        private bool ValidateInputs()
+                {
+                    string res = _staffService.ValidateInputs(FnameText.Text, LnameText.Text, emailText.Text,
+                        phoneText.Text, ssnText.Text, payrateText.Text, birthText.Text, genderBox.CheckedItems.Count);
 
-            if (genderBox.CheckedItems.Count != 1)
-            {
-                svWarnLab.Text = "Please select one gender.";
-                return false;
-            }
-            if (!decimal.TryParse(payrateText.Text, out decimal payrate))
-            {
-                svWarnLab.Text = "Pay Rate must be a valid decimal number.";
-                return false;
-            }
-
-            if (!DateTime.TryParse(birthText.Text, out DateTime birthDate))
-            {
-                svWarnLab.Text = "Invalid Birth Date format. Use MM/DD/YYYY.";
-                return false;
-            }
-
-            //if (!DateTime.TryParse(employdateText.Text, out DateTime employedDate))
-            //{
-            //    svWarnLab.Text = "Invalid Employed At Date format. Use MM/DD/YYYY.";
-            //    return false;
-            //}
-
-            return true;
-        }
+                    svWarnLab.Text = res;
+                    return string.IsNullOrEmpty(res);
+                }
 
         private void svBtn_Click(object sender, EventArgs e)
         {
@@ -247,7 +175,7 @@ namespace BakeryDash2531
             //DateTime employedAt = DateTime.Parse(employdateText.Text);
 
             string gender = genderBox.GetItemChecked(0) ? "M" : "F";
-            bool isActive = StatusRoleBox.GetItemChecked(0);
+            bool Active = StatusRoleBox.GetItemChecked(0);
             bool isManager = StatusRoleBox.GetItemChecked(1);
 
             try
@@ -264,7 +192,7 @@ namespace BakeryDash2531
                     pay,
                     //employedAt,
                     isManager,
-                    isActive
+                    Active
                 );
 
                 if (success)
@@ -292,7 +220,6 @@ namespace BakeryDash2531
             if (StaffGrid.SelectedRows.Count == 0 || !staffGUIDText.ReadOnly)
             {
                 svWarnLab.Text = "Please select an existing staff member to delete.";
-                svWarnLab.ForeColor = Color.Red;
                 return;
             }
 
@@ -342,8 +269,6 @@ namespace BakeryDash2531
             payrateText.Clear();
             //employdateText.Clear();
             birthText.Clear();
-
-
         }
     }
 }

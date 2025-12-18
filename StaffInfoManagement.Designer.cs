@@ -1,6 +1,6 @@
 ﻿namespace BakeryDash2531
 {
-    partial class StaffInfoManagment
+    partial class StaffInfoManagement
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.title = new System.Windows.Forms.Label();
             this.StaffGrid = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -123,14 +123,14 @@
             this.StaffGrid.Name = "StaffGrid";
             this.StaffGrid.ReadOnly = true;
             this.StaffGrid.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.StaffGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.StaffGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.StaffGrid.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.StaffGrid.Size = new System.Drawing.Size(1156, 348);
             this.StaffGrid.TabIndex = 1;
@@ -494,6 +494,7 @@
             // 
             // GUIDCol
             // 
+            this.GUIDCol.DataPropertyName = "EmployeeGlobalId";
             this.GUIDCol.Frozen = true;
             this.GUIDCol.HeaderText = "GUID";
             this.GUIDCol.Name = "GUIDCol";
@@ -503,6 +504,7 @@
             // 
             // FnameCol
             // 
+            this.FnameCol.DataPropertyName = "FirstName";
             this.FnameCol.HeaderText = "Fname";
             this.FnameCol.Name = "FnameCol";
             this.FnameCol.ReadOnly = true;
@@ -511,6 +513,7 @@
             // 
             // LnameCol
             // 
+            this.LnameCol.DataPropertyName = "LastName";
             this.LnameCol.HeaderText = "Lname";
             this.LnameCol.Name = "LnameCol";
             this.LnameCol.ReadOnly = true;
@@ -519,6 +522,7 @@
             // 
             // EmailCol
             // 
+            this.EmailCol.DataPropertyName = "Email";
             this.EmailCol.HeaderText = "Email";
             this.EmailCol.Name = "EmailCol";
             this.EmailCol.ReadOnly = true;
@@ -527,6 +531,7 @@
             // 
             // PhoneCol
             // 
+            this.PhoneCol.DataPropertyName = "PhoneContact";
             this.PhoneCol.HeaderText = "Contact";
             this.PhoneCol.Name = "PhoneCol";
             this.PhoneCol.ReadOnly = true;
@@ -535,6 +540,7 @@
             // 
             // GenderCol
             // 
+            this.GenderCol.DataPropertyName = "Gender";
             this.GenderCol.HeaderText = "Gender";
             this.GenderCol.Name = "GenderCol";
             this.GenderCol.ReadOnly = true;
@@ -543,6 +549,7 @@
             // 
             // BirthCol
             // 
+            this.BirthCol.DataPropertyName = "Birth";
             this.BirthCol.HeaderText = "Birth";
             this.BirthCol.Name = "BirthCol";
             this.BirthCol.ReadOnly = true;
@@ -551,6 +558,7 @@
             // 
             // SSNCol
             // 
+            this.SSNCol.DataPropertyName = "SSN";
             this.SSNCol.HeaderText = "SSN";
             this.SSNCol.Name = "SSNCol";
             this.SSNCol.ReadOnly = true;
@@ -559,6 +567,7 @@
             // 
             // EmployDateCol
             // 
+            this.EmployDateCol.DataPropertyName = "EmployedAt";
             this.EmployDateCol.HeaderText = "LastEmployment";
             this.EmployDateCol.Name = "EmployDateCol";
             this.EmployDateCol.ReadOnly = true;
@@ -567,6 +576,7 @@
             // 
             // PayrateCol
             // 
+            this.PayrateCol.DataPropertyName = "PayratePerHrs";
             this.PayrateCol.HeaderText = "Payrate";
             this.PayrateCol.Name = "PayrateCol";
             this.PayrateCol.ReadOnly = true;
@@ -574,7 +584,8 @@
             // 
             // RoleCol
             // 
-            this.RoleCol.HeaderText = "Role";
+            this.RoleCol.DataPropertyName = "IsSystemManager";
+            this.RoleCol.HeaderText = "IsSystemManager";
             this.RoleCol.Name = "RoleCol";
             this.RoleCol.ReadOnly = true;
             this.RoleCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -582,13 +593,14 @@
             // 
             // ActiveCol
             // 
+            this.ActiveCol.DataPropertyName = "Active";
             this.ActiveCol.HeaderText = "Active";
             this.ActiveCol.Name = "ActiveCol";
             this.ActiveCol.ReadOnly = true;
             this.ActiveCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.ActiveCol.Width = 45;
             // 
-            // StaffInfoManagment
+            // StaffInfoManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -600,7 +612,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.StaffGrid);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "StaffInfoManagment";
+            this.Name = "StaffInfoManagement";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StaffInfoManagment";
             ((System.ComponentModel.ISupportInitialize)(this.StaffGrid)).EndInit();

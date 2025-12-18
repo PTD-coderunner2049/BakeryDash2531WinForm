@@ -31,13 +31,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.title = new System.Windows.Forms.Label();
             this.UserGrid = new System.Windows.Forms.DataGridView();
-            this.GUIDCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UsernameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RoleCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CreatedTimeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StatusCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PasswordCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EmployeeGUIDCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.staffGUIDText = new System.Windows.Forms.TextBox();
@@ -61,6 +54,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.filterLab = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.GUIDCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UsernameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RoleCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CreatedTimeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StatusCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PasswordCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmployeeGUIDCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.UserGrid)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -114,50 +114,6 @@
             this.UserGrid.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.UserGrid.Size = new System.Drawing.Size(632, 530);
             this.UserGrid.TabIndex = 1;
-            // 
-            // GUIDCol
-            // 
-            this.GUIDCol.HeaderText = "GUID";
-            this.GUIDCol.Name = "GUIDCol";
-            this.GUIDCol.ReadOnly = true;
-            this.GUIDCol.Width = 40;
-            // 
-            // UsernameCol
-            // 
-            this.UsernameCol.HeaderText = "Username";
-            this.UsernameCol.Name = "UsernameCol";
-            this.UsernameCol.ReadOnly = true;
-            // 
-            // RoleCol
-            // 
-            this.RoleCol.HeaderText = "Role";
-            this.RoleCol.Name = "RoleCol";
-            this.RoleCol.ReadOnly = true;
-            // 
-            // CreatedTimeCol
-            // 
-            this.CreatedTimeCol.HeaderText = "CreatedAt";
-            this.CreatedTimeCol.Name = "CreatedTimeCol";
-            this.CreatedTimeCol.ReadOnly = true;
-            // 
-            // StatusCol
-            // 
-            this.StatusCol.HeaderText = "Status";
-            this.StatusCol.Name = "StatusCol";
-            this.StatusCol.ReadOnly = true;
-            this.StatusCol.Width = 60;
-            // 
-            // PasswordCol
-            // 
-            this.PasswordCol.HeaderText = "Password";
-            this.PasswordCol.Name = "PasswordCol";
-            this.PasswordCol.ReadOnly = true;
-            // 
-            // EmployeeGUIDCol
-            // 
-            this.EmployeeGUIDCol.HeaderText = "EmployeeGUID";
-            this.EmployeeGUIDCol.Name = "EmployeeGUIDCol";
-            this.EmployeeGUIDCol.ReadOnly = true;
             // 
             // groupBox1
             // 
@@ -406,6 +362,57 @@
             this.panel7.Size = new System.Drawing.Size(434, 362);
             this.panel7.TabIndex = 20;
             // 
+            // GUIDCol
+            // 
+            this.GUIDCol.DataPropertyName = "UserGlobalId";
+            this.GUIDCol.HeaderText = "GUID";
+            this.GUIDCol.Name = "GUIDCol";
+            this.GUIDCol.ReadOnly = true;
+            this.GUIDCol.Width = 40;
+            // 
+            // UsernameCol
+            // 
+            this.UsernameCol.DataPropertyName = "Username";
+            this.UsernameCol.HeaderText = "Username";
+            this.UsernameCol.Name = "UsernameCol";
+            this.UsernameCol.ReadOnly = true;
+            // 
+            // RoleCol
+            // 
+            this.RoleCol.DataPropertyName = "IsSystemManager";
+            this.RoleCol.HeaderText = "Role";
+            this.RoleCol.Name = "RoleCol";
+            this.RoleCol.ReadOnly = true;
+            // 
+            // CreatedTimeCol
+            // 
+            this.CreatedTimeCol.DataPropertyName = "CreatedAt";
+            this.CreatedTimeCol.HeaderText = "CreatedAt";
+            this.CreatedTimeCol.Name = "CreatedTimeCol";
+            this.CreatedTimeCol.ReadOnly = true;
+            // 
+            // StatusCol
+            // 
+            this.StatusCol.DataPropertyName = "Active";
+            this.StatusCol.HeaderText = "Status";
+            this.StatusCol.Name = "StatusCol";
+            this.StatusCol.ReadOnly = true;
+            this.StatusCol.Width = 60;
+            // 
+            // PasswordCol
+            // 
+            this.PasswordCol.DataPropertyName = "PasswordHash";
+            this.PasswordCol.HeaderText = "Password";
+            this.PasswordCol.Name = "PasswordCol";
+            this.PasswordCol.ReadOnly = true;
+            // 
+            // EmployeeGUIDCol
+            // 
+            this.EmployeeGUIDCol.DataPropertyName = "EmployeeGlobalId";
+            this.EmployeeGUIDCol.HeaderText = "EmployeeGUID";
+            this.EmployeeGUIDCol.Name = "EmployeeGUIDCol";
+            this.EmployeeGUIDCol.ReadOnly = true;
+            // 
             // UserAccessManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -453,13 +460,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.CheckedListBox UserCheckBox;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GUIDCol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn UsernameCol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RoleCol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CreatedTimeCol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn StatusCol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PasswordCol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeGUIDCol;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox staffGUIDText;
         private MaterialSkin.Controls.MaterialFlatButton svBtn;
@@ -475,5 +475,12 @@
         private System.Windows.Forms.TextBox valueBox;
         private System.Windows.Forms.ComboBox collumBox;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GUIDCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UsernameCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RoleCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CreatedTimeCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StatusCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PasswordCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeGUIDCol;
     }
 }

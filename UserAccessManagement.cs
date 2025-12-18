@@ -3,8 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
+using System.Runtime.Remoting.Contexts;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using BakeryDash2531._utils;
 
 namespace BakeryDash2531
 {
@@ -16,12 +18,29 @@ namespace BakeryDash2531
         {
             InitializeComponent();
             _userve = new UserService();
+            SetupfilterBoxes();
+            SetupCheckedListBoxes();
 
+            LoadUserData();
+
+            UserGrid.SelectionChanged += UserGrid_SelectionChanged;
+            valueBox.TextChanged += ValueBox_TextChanged;
+            collumBox.SelectedIndexChanged += (s, e) => ApplyFilter();
+        }
+
+
+
+
+        private void SetupfilterBoxes()
+        {
             if (collumBox.Items.Count == 0)
             {
                 collumBox.Items.AddRange(new string[] { "Username", "Role", "Status", "Date", "User GUID", "Staff GUID" });
                 collumBox.SelectedIndex = 0;
             }
+        }
+        private void SetupCheckedListBoxes()
+        {
             UserCheckBox.MouseDown += (s, e) => {
                 int index = UserCheckBox.IndexFromPoint(e.Location);
                 if (index == 0) { }
@@ -33,14 +52,60 @@ namespace BakeryDash2531
                     e.NewValue = e.CurrentValue;
                 }
             };
-            LoadUserData();
-
-            UserGrid.SelectionChanged += UserGrid_SelectionChanged;
-            valueBox.TextChanged += ValueBox_TextChanged;
-            collumBox.SelectedIndexChanged += (s, e) => ApplyFilter();
         }
-
         private void LoadUserData()
+        {
+            try
+            {
+                UserGrid.AutoGenerateColumns = false;
+                _fullDataTable = _userve.Fetch();
+                UserGrid.DataSource = _fullDataTable;
+
+                UserGrid.ClearSelection();
+                ClearInputs();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading staff data: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void ClearInputs()
+        {
+            staffGUIDText.Text = Guid.Empty.ToString();
+            passText.Clear();
+            usernameText.Clear();
+            staffGUIDText.Clear();
+            UserCheckBox.SetItemChecked(0, false);
+
+            foreach (int i in UserCheckBox.CheckedIndices) UserCheckBox.SetItemChecked(i, false);
+        }
+        private void UserGrid_SelectionChanged(object sender, EventArgs e)
+        {
+            DataRow dataRow = UserGrid.GetSelectedRow();
+            if (dataRow == null)
+            {
+                ClearInputs();
+                return;
+            }
+            //DataGridViewRow row = UserGrid.SelectedRows[0];
+
+            //if (UserGrid.SelectedRows.Count == 0 || row == null || row.IsNewRow)
+            //{
+            //    ClearInputs();
+            //    return;
+            //}
+            //DataRow dataRow = ((DataRowView)row.DataBoundItem).Row;
+
+            staffGUIDText.Text = dataRow["EmployeeGlobalId"].ToString();
+            usernameText.Text = dataRow["Username"].ToString();
+            //passText.Text = dataRow["PasswordHash"].ToString();
+
+            bool isRoleManager = (bool)dataRow["IsSystemManager"];
+            bool Active = (bool)dataRow["Active"];
+            UserCheckBox.SetItemChecked(0, Active);
+            UserCheckBox.SetItemChecked(1, isRoleManager);
+        }
+        private void LoadUserxxxxxxxxxxxxxData()
         {
             _fullDataTable = _userve.Fetch();
             ApplyFilter();
@@ -62,108 +127,33 @@ namespace BakeryDash2531
             //    row.Cells["RoleCol"].Value = (bool)rowData["IsSystemManager"] ? "Manager" : "Staff";
             //}
         }
+        private void ApplyxFilter()
+        {
+            string filterColumn = collumBox.SelectedItem.ToString();
+            string filterValue = valueBox.Text.Trim();
+            StaffService  _staffService = new StaffService();
+            _staffService.GetFilteredStaff(_fullDataTable, filterColumn, filterValue);
+        }
         private void ApplyFilter()
         {
-            if (_fullDataTable == null) return;
+            string filterColumn = collumBox.SelectedItem.ToString();
+            string filterValue = valueBox.Text.Trim();
 
-            DataView dv = _fullDataTable.DefaultView;
-            string filterValue = valueBox.Text.Replace("'", "''");
-            string selectedCollum = collumBox.SelectedItem?.ToString();
-
-            if (string.IsNullOrWhiteSpace(filterValue))
-            {
-                dv.RowFilter = "";
-            }
-            else
-            {
-                try
-                {
-                    switch (selectedCollum)
-                    {
-                        case "Username":
-                            dv.RowFilter = $"Username LIKE '%{filterValue}%'";
-                            break;
-                        case "User GUID":
-                            dv.RowFilter = $"Convert(UserGlobalId, 'System.String') LIKE '%{filterValue}%'";
-                            break;
-                        case "Staff GUID":
-                            dv.RowFilter = $"Convert(EmployeeGlobalId, 'System.String') LIKE '%{filterValue}%'";
-                            break;
-                        case "Date":
-                            dv.RowFilter = $"Convert(CreatedAt, 'System.String') LIKE '%{filterValue}%'";
-                            break;
-                        case "Role":
-                            if (filterValue.ToLower().Contains("man")) dv.RowFilter = "IsSystemManager = true";
-                            else if (filterValue.ToLower().Contains("sta")) dv.RowFilter = "IsSystemManager = false";
-                            break;
-                        case "Status":
-                            if (filterValue.ToLower().Contains("act")) dv.RowFilter = "Active = true";
-                            else if (filterValue.ToLower().Contains("ina")) dv.RowFilter = "Active = false";
-                            break;
-                    }
-                }
-                catch {}
-            }
-
-            PopulateGrid(dv);
-        }
-        private void PopulateGrid(DataView dv)
-        {
-            UserGrid.Rows.Clear();
-            foreach (DataRowView rowView in dv)
-            {
-                DataRow rowData = rowView.Row;
-                int rowIndex = UserGrid.Rows.Add();
-                DataGridViewRow row = UserGrid.Rows[rowIndex];
-
-                row.Cells["GUIDCol"].Value = rowData["UserGlobalId"].ToString().Substring(0, 8);
-                row.Cells["UsernameCol"].Value = rowData["Username"];
-                row.Cells["CreatedTimeCol"].Value = Convert.ToDateTime(rowData["CreatedAt"]).ToShortDateString();
-                row.Cells["StatusCol"].Value = (bool)rowData["Active"] ? "Active" : "Inactive";
-                row.Cells["PasswordCol"].Value = rowData["PasswordHash"];
-                row.Cells["EmployeeGUIDCol"].Value = rowData["EmployeeGlobalId"];
-                row.Cells["RoleCol"].Value = (bool)rowData["IsSystemManager"] ? "Manager" : "Staff";
-            }
+            _userve.GetFilteredUser(_fullDataTable, filterColumn, filterValue);
         }
         private void ValueBox_TextChanged(object sender, EventArgs e)
         {
             ApplyFilter();
         }
-        private void UserGrid_SelectionChanged(object sender, EventArgs e)
-        {
-            if (UserGrid.SelectedRows.Count > 0)
-            {
-                // Bind
-                DataGridViewRow row = UserGrid.SelectedRows[0];
-                usernameText.Text = row.Cells["UsernameCol"].Value?.ToString();
-                //passText.Text = row.Cells["PasswordCol"].Value?.ToString();
-                staffGUIDText.Text = row.Cells["EmployeeGUIDCol"].Value?.ToString();
 
-                bool isManager = row.Cells["RoleCol"].Value?.ToString() == "Manager";
-                bool isActive = row.Cells["StatusCol"].Value?.ToString() == "Active";
-                UserCheckBox.SetItemChecked(0, isManager);
-                UserCheckBox.SetItemChecked(1, isActive);
-            }
-        }
         private bool ValidateInputs()
         {
-            if (string.IsNullOrWhiteSpace(usernameText.Text) ||
-                string.IsNullOrWhiteSpace(staffGUIDText.Text))
-            {
-                svWarnLab.Text = "Username and Staff GUID are required!";
-                svWarnLab.ForeColor = Color.Red;
-                return false;
-            }
+            string res = _userve.ValidateInputs(usernameText.Text, passText.Text);
 
-            if (string.IsNullOrWhiteSpace(passText.Text))
-            {
-                svWarnLab.Text = "Password cannot be empty!";
-                svWarnLab.ForeColor = Color.Red;
-                return false;
-            }
-
-            return true;
+            svWarnLab.Text = res;
+            return string.IsNullOrEmpty(res);
         }
+
         private void svBtn_Click(object sender, EventArgs e)
         {
             if (!ValidateInputs()) return;
@@ -197,7 +187,6 @@ namespace BakeryDash2531
                 svWarnLab.ForeColor = Color.Red;
             }
         }
-
         private void delBtn_Click(object sender, EventArgs e)
         {
             if (Guid.TryParse(staffGUIDText.Text, out Guid empGuid))

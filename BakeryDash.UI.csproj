@@ -85,11 +85,11 @@
     <Compile Include="Regis.Designer.cs">
       <DependentUpon>Regis.cs</DependentUpon>
     </Compile>
-    <Compile Include="StaffInfoManagment.cs">
+    <Compile Include="StaffInfoManagement.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StaffInfoManagment.Designer.cs">
-      <DependentUpon>StaffInfoManagment.cs</DependentUpon>
+    <Compile Include="StaffInfoManagement.Designer.cs">
+      <DependentUpon>StaffInfoManagement.cs</DependentUpon>
     </Compile>
     <Compile Include="UserAccessManagement.cs">
       <SubType>Form</SubType>
@@ -97,6 +97,7 @@
     <Compile Include="UserAccessManagement.Designer.cs">
       <DependentUpon>UserAccessManagement.cs</DependentUpon>
     </Compile>
+    <Compile Include="_utils\DataGridExtensions.cs" />
     <EmbeddedResource Include="DashBoard.resx">
       <DependentUpon>DashBoard.cs</DependentUpon>
     </EmbeddedResource>
@@ -111,8 +112,8 @@
     <EmbeddedResource Include="Regis.resx">
       <DependentUpon>Regis.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StaffInfoManagment.resx">
-      <DependentUpon>StaffInfoManagment.cs</DependentUpon>
+    <EmbeddedResource Include="StaffInfoManagement.resx">
+      <DependentUpon>StaffInfoManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserAccessManagement.resx">
       <DependentUpon>UserAccessManagement.cs</DependentUpon>

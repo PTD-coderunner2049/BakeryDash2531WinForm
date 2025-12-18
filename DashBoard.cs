@@ -155,7 +155,7 @@ namespace BakeryDash2531
         {
             panelBack.Controls.Clear();
             this.Text = "Solberg's Bakery - Employee Managment";
-            LoadFormToPanel(Dashing(), new StaffInfoManagment());
+            LoadFormToPanel(Dashing(), new StaffInfoManagement());
         }
         private Panel Dashing()
         {

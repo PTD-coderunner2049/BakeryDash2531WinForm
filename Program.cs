@@ -17,7 +17,8 @@ namespace BakeryDash2531
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new StaffInfoManagment());
+            //Application.Run(new StaffInfoManagement());
+            Application.Run(new UserAccessManagement());
         }
     }
 }
