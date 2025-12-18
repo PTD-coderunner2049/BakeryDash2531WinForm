@@ -12,8 +12,8 @@ namespace BakeryDash2531
 {
     public partial class UserAccessManagement : Form
     {
-        UserService _userve;
-        DataTable _fullDataTable;
+        private readonly UserService _userve;
+        private DataTable _fullDataTable;
         public UserAccessManagement()
         {
             InitializeComponent();

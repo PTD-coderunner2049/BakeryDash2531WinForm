@@ -11,8 +11,8 @@ namespace BakeryDash2531
 {
     public partial class StaffInfoManagement : Form
     {
-        StaffService _staffService;
-        DataTable _fullDataTable;
+        private readonly StaffService _staffService;
+        private DataTable _fullDataTable;
 
         public StaffInfoManagement()
         {

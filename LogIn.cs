@@ -1,4 +1,6 @@
 ﻿using BakeryDash.BLL;
+using BakeryDash.Utils;
+using BakeryDash2531._utils;
 using System;
 using System.Windows.Forms;
 
@@ -21,24 +23,6 @@ namespace BakeryDash2531
             loginBtn.Enabled = false;
             emailField.TextChanged += ValidateInputs;
             passField.TextChanged += ValidateInputs;
-
-            toSignUpBtn.Click += (s, e) => {
-                new Regis().Show();
-                this.Hide();
-            };
-            loginBtn.Click += (s, e) => {
-
-                if (SearchUser())
-                {
-                    //MessageBox.Show("Wellcome back to Solberg's Bakery, Loging in...");
-                    new DashBoard().Show();
-                    this.Hide();
-                }
-                else
-                {
-                    MessageBox.Show("Invalid Username or Password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            };
         }
         private void ValidateInputs(object sender, EventArgs e)
         {
@@ -50,6 +34,37 @@ namespace BakeryDash2531
         {
             //AutorizationService looker = new AutorizationService();
             return new AutorizationService().UserLooker(emailField.Text, passField.Text);
+        }
+
+        private async void loginBtn_Click(object sender, EventArgs e)
+        {
+            await UIUtils.ShowToast("Loging in...", "SolbergBakery:", 1000);
+
+            if (SearchUser())
+            {
+                await UIUtils.ShowToast("Welcome back to Solberg's Bakery!", "Login Success", 1000);
+                //await ShowAutoClosingMessageBox("Welcome back to Solberg's Bakery!", 1000);
+                new DashBoard().Show();
+                this.Dispose();
+            }
+            else
+            {
+                MessageBox.Show("Invalid Username or Password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void toSignUpBtn_Click(object sender, EventArgs e)
+        {
+            new Regis().Show();
+            this.Dispose();
+        }
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            base.OnFormClosing(e);
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                Application.Exit();
+            }
         }
     }
 }

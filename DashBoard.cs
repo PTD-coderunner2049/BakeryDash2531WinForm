@@ -55,17 +55,9 @@ namespace BakeryDash2531
         }
         private void logoutToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            logout(sender, e);
-        }
-        private void logout(object sender, EventArgs e)
-        {
-            SessionService _session = new SessionService();
             _session.PerformLogout();
-
-            this.Hide();
-            LogIn loginForm = new LogIn();
-            loginForm.ShowDialog();
-            this.Close();
+            new LogIn().Show();
+            this.Dispose();
         }
         private void SetupHoverEffect(Label lbl)
         {
@@ -168,6 +160,14 @@ namespace BakeryDash2531
             foundation.BackgroundImageLayout = ImageLayout.Stretch;
             panelBack.Controls.Add(foundation);
             return foundation;
+        }
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            base.OnFormClosing(e);
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                Application.Exit();
+            }
         }
     }
 }

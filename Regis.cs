@@ -1,15 +1,19 @@
 ﻿using BakeryDash.BLL;
+using BakeryDash.Utils;
 using System;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BakeryDash2531
 {
     public partial class Regis : Form
     {
+        private readonly RegistryService _reserve;
         public Regis()
         {
             InitializeComponent();
+            _reserve = new RegistryService();
             SignUp_Load();
         }
         private void SignUp_Load()
@@ -28,24 +32,6 @@ namespace BakeryDash2531
             employeeGUIDField.TextChanged += ValidateRegisInputs;
             passField.TextChanged += ValidateRegisInputs;
             cpassField.TextChanged += ValidateRegisInputs;
-
-            toLogInBtn.Click += (s, e) => {
-                new LogIn().Show();
-                this.Hide();
-            };
-
-            regisBtn.Click += (s, e) => {
-                if (SignUpUser())
-                {
-                    MessageBox.Show("Registration successful! You can now log in.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    new LogIn().Show();
-                    this.Hide();
-                }
-                else
-                {
-                    MessageBox.Show("Registration failed! Username or Email may already be in use.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            };
         }
         private void ValidateRegisInputs(object sender, EventArgs e)
         {
@@ -55,9 +41,34 @@ namespace BakeryDash2531
 
             regisBtn.Enabled = isEmailValid && passwordsMatch && userFilled;
         }
-        private bool SignUpUser()
+
+        private void toLogInBtn_Click(object sender, EventArgs e)
         {
-            return new RegistryService().UserRegister(employeeGUIDField.Text, userField.Text, passField.Text);
+            new LogIn().Show();
+            this.Dispose();
+        }
+
+        private async void regisBtn_ClickAsync(object sender, EventArgs e)
+        {
+            bool? res = _reserve.UserRegister(employeeGUIDField.Text, userField.Text, passField.Text);
+            if (res == true)
+            {
+                await UIUtils.ShowToast("Registration successful! You can now log in.", "RegistryService:", 1000);
+                new LogIn().Show();
+                this.Dispose();
+            }
+            else if (res == null)
+                await UIUtils.ShowToast("Invalid Employee GUID. Please check and try again.", "RegistryService:", 1000);
+            else
+                MessageBox.Show("Registration failed! Username or Email may already be in use.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            base.OnFormClosing(e);
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                Application.Exit();
+            }
         }
     }
 }

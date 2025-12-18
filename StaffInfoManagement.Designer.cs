@@ -567,7 +567,7 @@
             // 
             // EmployDateCol
             // 
-            this.EmployDateCol.DataPropertyName = "EmployedAt";
+            this.EmployDateCol.DataPropertyName = "LastHistoryStart";
             this.EmployDateCol.HeaderText = "LastEmployment";
             this.EmployDateCol.Name = "EmployDateCol";
             this.EmployDateCol.ReadOnly = true;

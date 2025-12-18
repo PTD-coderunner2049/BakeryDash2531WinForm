@@ -118,6 +118,7 @@
             this.toLogInBtn.TabIndex = 16;
             this.toLogInBtn.Text = "LOG IN";
             this.toLogInBtn.UseVisualStyleBackColor = true;
+            this.toLogInBtn.Click += new System.EventHandler(this.toLogInBtn_Click);
             // 
             // panel8
             // 
@@ -151,6 +152,7 @@
             this.regisBtn.TabIndex = 16;
             this.regisBtn.Text = "Resigter me";
             this.regisBtn.UseVisualStyleBackColor = true;
+            this.regisBtn.Click += new System.EventHandler(this.regisBtn_ClickAsync);
             // 
             // userField
             // 
