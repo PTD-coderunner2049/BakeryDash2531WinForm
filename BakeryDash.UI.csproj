@@ -61,16 +61,16 @@
   <ItemGroup>
     <Compile Include="AnimateService.cs" />
     <Compile Include="_utils\_utils.cs" />
-    <Compile Include="DashBoard.cs">
+    <Compile Include="Forms\DashBoard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DashBoard.Designer.cs">
+    <Compile Include="Forms\DashBoard.Designer.cs">
       <DependentUpon>DashBoard.cs</DependentUpon>
     </Compile>
-    <Compile Include="LogIn.cs">
+    <Compile Include="Forms\AuthenticationForms\LogIn.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LogIn.Designer.cs">
+    <Compile Include="Forms\AuthenticationForms\LogIn.Designer.cs">
       <DependentUpon>LogIn.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -80,29 +80,29 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Regis.cs">
+    <Compile Include="Forms\AuthenticationForms\Regis.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Regis.Designer.cs">
+    <Compile Include="Forms\AuthenticationForms\Regis.Designer.cs">
       <DependentUpon>Regis.cs</DependentUpon>
     </Compile>
-    <Compile Include="StaffInfoManagement.cs">
+    <Compile Include="Forms\AdministForms\StaffInfoManagement.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StaffInfoManagement.Designer.cs">
+    <Compile Include="Forms\AdministForms\StaffInfoManagement.Designer.cs">
       <DependentUpon>StaffInfoManagement.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserAccessManagement.cs">
+    <Compile Include="Forms\AdministForms\UserAccessManagement.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserAccessManagement.Designer.cs">
+    <Compile Include="Forms\AdministForms\UserAccessManagement.Designer.cs">
       <DependentUpon>UserAccessManagement.cs</DependentUpon>
     </Compile>
     <Compile Include="_utils\DataGridExtensions.cs" />
-    <EmbeddedResource Include="DashBoard.resx">
+    <EmbeddedResource Include="Forms\DashBoard.resx">
       <DependentUpon>DashBoard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LogIn.resx">
+    <EmbeddedResource Include="Forms\AuthenticationForms\LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -110,13 +110,13 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Regis.resx">
+    <EmbeddedResource Include="Forms\AuthenticationForms\Regis.resx">
       <DependentUpon>Regis.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StaffInfoManagement.resx">
+    <EmbeddedResource Include="Forms\AdministForms\StaffInfoManagement.resx">
       <DependentUpon>StaffInfoManagement.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserAccessManagement.resx">
+    <EmbeddedResource Include="Forms\AdministForms\UserAccessManagement.resx">
       <DependentUpon>UserAccessManagement.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />

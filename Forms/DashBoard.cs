@@ -8,7 +8,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+public interface IDashboardController
+{
+    void ResetToHome();
+    void resetProgress();
+    void UpdateProgress(int value);
+    void endProgress();
+}
 namespace BakeryDash2531
 {
     public partial class DashBoard : Form
@@ -19,35 +25,70 @@ namespace BakeryDash2531
         public DashBoard()
         {
             InitializeComponent();
+            resetProgress();
+            UpdateProgress(25);
             _session = new SessionService();
             _anima = new AnimateService();
+            UpdateProgress(25);
             Board_Load();
+            UpdateProgress(25);
             this.MaximizeBox = false;
+            endProgress();
+        }
+        public void ResetToHome()
+        {
+            panelBack.Controls.Clear();
+            this.Text = "Solberg's Bakery - Dashboard";
+            GeneralProgBar.Value = 0;
+            Dashing();
+        }
+        public void resetProgress()
+        {
+            GeneralProgBar.Value = 0;
+        }
+        public void endProgress()
+        {
+            GeneralProgBar.Value = 100;
+        }
+        public void UpdateProgress(int value)
+        {
+            if (value >= 0 && value <= 100)
+                GeneralProgBar.Value = value;
         }
         public void Board_Load()
         {
+            GeneralProgBar.Value = 0;
+            GeneralProgBar.Step = 20;
+
             toolStripTextUserName.Text = _session.GetStaffFullName();
 
             this.Text = "Solberg's Bakery - Dashboard";
             xXToolStripMenuItem2.Enabled = _session.IsAdmin();
             SetupHoverEffect(orderBtn);
             SetupHoverEffect(statBtn);
-
             //SetupPanelHoverEffect(LogOutPad);
         }
 
         private void LoadFormToPanel(Panel panel, Form form)
         {
+            GeneralProgBar.Value = 0;
+
             panel.Controls.Clear();
+            GeneralProgBar.PerformStep();
 
             form.TopLevel = false;
             form.FormBorderStyle = FormBorderStyle.None;
             form.Dock = DockStyle.Fill;
+            GeneralProgBar.PerformStep();
 
             panel.Controls.Add(form);
+            GeneralProgBar.PerformStep();
+
             panel.Visible = true;
             form.Show();
             form.BringToFront();
+
+            GeneralProgBar.Value = 100;
         }
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -140,14 +181,14 @@ namespace BakeryDash2531
         {
             panelBack.Controls.Clear();
             this.Text = "Solberg's Bakery - User's Assess Managment";
-            LoadFormToPanel(Dashing(), new UserAccessManagement());
+            LoadFormToPanel(Dashing(), new UserAccessManagement(this));
         }
 
         private void employeesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             panelBack.Controls.Clear();
             this.Text = "Solberg's Bakery - Employee Managment";
-            LoadFormToPanel(Dashing(), new StaffInfoManagement());
+            LoadFormToPanel(Dashing(), new StaffInfoManagement(this));
         }
         private Panel Dashing()
         {

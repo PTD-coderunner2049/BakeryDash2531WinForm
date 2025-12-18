@@ -54,6 +54,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.filterLab = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.rtnBtn = new MaterialSkin.Controls.MaterialFlatButton();
             this.GUIDCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UsernameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RoleCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -362,6 +363,22 @@
             this.panel7.Size = new System.Drawing.Size(434, 362);
             this.panel7.TabIndex = 20;
             // 
+            // rtnBtn
+            // 
+            this.rtnBtn.AutoSize = true;
+            this.rtnBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.rtnBtn.Depth = 0;
+            this.rtnBtn.Location = new System.Drawing.Point(1107, 26);
+            this.rtnBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.rtnBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.rtnBtn.Name = "rtnBtn";
+            this.rtnBtn.Primary = false;
+            this.rtnBtn.Size = new System.Drawing.Size(64, 36);
+            this.rtnBtn.TabIndex = 21;
+            this.rtnBtn.Text = "Return";
+            this.rtnBtn.UseVisualStyleBackColor = true;
+            this.rtnBtn.Click += new System.EventHandler(this.rtnBtn_Click);
+            // 
             // GUIDCol
             // 
             this.GUIDCol.DataPropertyName = "UserGlobalId";
@@ -380,7 +397,7 @@
             // RoleCol
             // 
             this.RoleCol.DataPropertyName = "IsSystemManager";
-            this.RoleCol.HeaderText = "Role";
+            this.RoleCol.HeaderText = "IsSystemManager";
             this.RoleCol.Name = "RoleCol";
             this.RoleCol.ReadOnly = true;
             // 
@@ -420,6 +437,7 @@
             this.BackgroundImage = global::BakeryDash2531.Properties.Resources.HDHD_1080;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1184, 654);
+            this.Controls.Add(this.rtnBtn);
             this.Controls.Add(this.title);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -475,6 +493,7 @@
         private System.Windows.Forms.TextBox valueBox;
         private System.Windows.Forms.ComboBox collumBox;
         private System.Windows.Forms.Label label3;
+        private MaterialSkin.Controls.MaterialFlatButton rtnBtn;
         private System.Windows.Forms.DataGridViewTextBoxColumn GUIDCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn UsernameCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn RoleCol;

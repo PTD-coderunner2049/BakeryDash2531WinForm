@@ -15,13 +15,14 @@ namespace BakeryDash2531
     {
         private readonly StaffService _staffService;
         private DataTable _fullDataTable;
+        private DashBoard _parent;
 
-        public StaffInfoManagement()
+        public StaffInfoManagement(DashBoard Parent)
         {
             InitializeComponent();
             _staffService = new StaffService();
-
-            SetupfilterBoxes();
+            _parent = Parent;
+            SetupfilterBoxes();
 
             SetupCheckedListBoxes();
 
@@ -39,7 +40,7 @@ namespace BakeryDash2531
         {
             if (collumBox.Items.Count == 0)
             {
-                collumBox.Items.AddRange(new string[] { "FirstName", "LastName", "Email", "PhoneContact", "SSN", "EmployeeGlobalId" });
+                collumBox.Items.AddRange(new string[] { "FirstName", "LastName", "Email", "PhoneContact", "SSN", "Id" });
                 collumBox.SelectedIndex = 0;
             }
         }
@@ -116,7 +117,7 @@ namespace BakeryDash2531
                 return;
             }
 
-            staffGUIDText.Text = dataRow["EmployeeGlobalId"].ToString();
+            staffGUIDText.Text = dataRow["Id"].ToString();
             staffGUIDText.ReadOnly = true;
             FnameText.Text = dataRow["FirstName"].ToString();
             LnameText.Text = dataRow["LastName"].ToString();
@@ -273,6 +274,16 @@ namespace BakeryDash2531
             payrateText.Clear();
             //employdateText.Clear();
             birthText.Clear();
+        }
+
+        private void historyBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rtnBtn_Click(object sender, EventArgs e)
+        {
+            _parent.ResetToHome();
         }
     }
 }

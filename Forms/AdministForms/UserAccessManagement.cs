@@ -16,10 +16,13 @@ namespace BakeryDash2531
     {
         private readonly UserService _userve;
         private DataTable _fullDataTable;
-        public UserAccessManagement()
+        private DashBoard _parent;
+        public UserAccessManagement(DashBoard Parent)
         {
             InitializeComponent();
             _userve = new UserService();
+            _parent = Parent;
+
             SetupfilterBoxes();
             SetupCheckedListBoxes();
 
@@ -100,7 +103,7 @@ namespace BakeryDash2531
             //}
             //DataRow dataRow = ((DataRowView)row.DataBoundItem).Row;
 
-            staffGUIDText.Text = dataRow["EmployeeGlobalId"].ToString();
+            staffGUIDText.Text = dataRow["Id"].ToString();
             usernameText.Text = dataRow["Username"].ToString();
             //passText.Text = dataRow["PasswordHash"].ToString();
 
@@ -127,7 +130,7 @@ namespace BakeryDash2531
             //    row.Cells["CreatedTimeCol"].Value = Convert.ToDateTime(rowData["CreatedAt"]).ToShortDateString();
             //    row.Cells["StatusCol"].Value = (bool)rowData["Active"] ? "Active" : "Inactive";
             //    row.Cells["PasswordCol"].Value = rowData["PasswordHash"];
-            //    row.Cells["EmployeeGUIDCol"].Value = rowData["EmployeeGlobalId"];
+            //    row.Cells["EmployeeGUIDCol"].Value = rowData["Id"];
             //    row.Cells["RoleCol"].Value = (bool)rowData["IsSystemManager"] ? "Manager" : "Staff";
             //}
         }
@@ -193,6 +196,11 @@ namespace BakeryDash2531
                 bool success = _userve.DelUser(empGuid);
                 if (success) LoadUserDataAsync();
             }
+        }
+
+        private void rtnBtn_Click(object sender, EventArgs e)
+        {
+            _parent.ResetToHome();
         }
     }
 }

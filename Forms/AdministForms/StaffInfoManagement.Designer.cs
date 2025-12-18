@@ -28,9 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.title = new System.Windows.Forms.Label();
             this.StaffGrid = new System.Windows.Forms.DataGridView();
+            this.GUIDCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FnameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LnameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmailCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PhoneCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GenderCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BirthCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SSNCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmployDateCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PayrateCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RoleCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ActiveCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.payrateText = new System.Windows.Forms.TextBox();
             this.payrateLab = new System.Windows.Forms.Label();
@@ -51,9 +63,12 @@
             this.nameLab = new System.Windows.Forms.Label();
             this.FnameText = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.svWarnLab = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
             this.instBtn = new MaterialSkin.Controls.MaterialFlatButton();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.historyBtn = new MaterialSkin.Controls.MaterialFlatButton();
+            this.svWarnLab = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.svBtn = new MaterialSkin.Controls.MaterialFlatButton();
@@ -64,22 +79,13 @@
             this.collumBox = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.filterLab = new System.Windows.Forms.Label();
-            this.GUIDCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FnameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LnameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EmailCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PhoneCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GenderCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BirthCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SSNCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EmployDateCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PayrateCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RoleCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ActiveCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rtnBtn = new MaterialSkin.Controls.MaterialFlatButton();
             ((System.ComponentModel.ISupportInitialize)(this.StaffGrid)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel7.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel8.SuspendLayout();
+            this.panel9.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -123,17 +129,125 @@
             this.StaffGrid.Name = "StaffGrid";
             this.StaffGrid.ReadOnly = true;
             this.StaffGrid.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.StaffGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.StaffGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.StaffGrid.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.StaffGrid.Size = new System.Drawing.Size(1156, 348);
             this.StaffGrid.TabIndex = 1;
+            // 
+            // GUIDCol
+            // 
+            this.GUIDCol.DataPropertyName = "EmployeeGlobalId";
+            this.GUIDCol.Frozen = true;
+            this.GUIDCol.HeaderText = "GUID";
+            this.GUIDCol.Name = "GUIDCol";
+            this.GUIDCol.ReadOnly = true;
+            this.GUIDCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.GUIDCol.Width = 40;
+            // 
+            // FnameCol
+            // 
+            this.FnameCol.DataPropertyName = "FirstName";
+            this.FnameCol.HeaderText = "Fname";
+            this.FnameCol.Name = "FnameCol";
+            this.FnameCol.ReadOnly = true;
+            this.FnameCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.FnameCol.Width = 70;
+            // 
+            // LnameCol
+            // 
+            this.LnameCol.DataPropertyName = "LastName";
+            this.LnameCol.HeaderText = "Lname";
+            this.LnameCol.Name = "LnameCol";
+            this.LnameCol.ReadOnly = true;
+            this.LnameCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.LnameCol.Width = 62;
+            // 
+            // EmailCol
+            // 
+            this.EmailCol.DataPropertyName = "Email";
+            this.EmailCol.HeaderText = "Email";
+            this.EmailCol.Name = "EmailCol";
+            this.EmailCol.ReadOnly = true;
+            this.EmailCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.EmailCol.Width = 150;
+            // 
+            // PhoneCol
+            // 
+            this.PhoneCol.DataPropertyName = "PhoneContact";
+            this.PhoneCol.HeaderText = "Contact";
+            this.PhoneCol.Name = "PhoneCol";
+            this.PhoneCol.ReadOnly = true;
+            this.PhoneCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.PhoneCol.Width = 130;
+            // 
+            // GenderCol
+            // 
+            this.GenderCol.DataPropertyName = "Gender";
+            this.GenderCol.HeaderText = "Gender";
+            this.GenderCol.Name = "GenderCol";
+            this.GenderCol.ReadOnly = true;
+            this.GenderCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.GenderCol.Width = 45;
+            // 
+            // BirthCol
+            // 
+            this.BirthCol.DataPropertyName = "Birth";
+            this.BirthCol.HeaderText = "Birth";
+            this.BirthCol.Name = "BirthCol";
+            this.BirthCol.ReadOnly = true;
+            this.BirthCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.BirthCol.Width = 130;
+            // 
+            // SSNCol
+            // 
+            this.SSNCol.DataPropertyName = "SSN";
+            this.SSNCol.HeaderText = "SSN";
+            this.SSNCol.Name = "SSNCol";
+            this.SSNCol.ReadOnly = true;
+            this.SSNCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.SSNCol.Width = 130;
+            // 
+            // EmployDateCol
+            // 
+            this.EmployDateCol.DataPropertyName = "LastHistoryStart";
+            this.EmployDateCol.HeaderText = "LastEmployment";
+            this.EmployDateCol.Name = "EmployDateCol";
+            this.EmployDateCol.ReadOnly = true;
+            this.EmployDateCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.EmployDateCol.Width = 130;
+            // 
+            // PayrateCol
+            // 
+            this.PayrateCol.DataPropertyName = "PayratePerHrs";
+            this.PayrateCol.HeaderText = "Payrate";
+            this.PayrateCol.Name = "PayrateCol";
+            this.PayrateCol.ReadOnly = true;
+            this.PayrateCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // RoleCol
+            // 
+            this.RoleCol.DataPropertyName = "IsSystemManager";
+            this.RoleCol.HeaderText = "IsSystemManager";
+            this.RoleCol.Name = "RoleCol";
+            this.RoleCol.ReadOnly = true;
+            this.RoleCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.RoleCol.Width = 80;
+            // 
+            // ActiveCol
+            // 
+            this.ActiveCol.DataPropertyName = "Active";
+            this.ActiveCol.HeaderText = "Active";
+            this.ActiveCol.Name = "ActiveCol";
+            this.ActiveCol.ReadOnly = true;
+            this.ActiveCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ActiveCol.Width = 45;
             // 
             // groupBox1
             // 
@@ -332,8 +446,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.OldLace;
+            this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.svWarnLab);
-            this.panel1.Controls.Add(this.panel7);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Location = new System.Drawing.Point(16, 473);
@@ -341,24 +455,24 @@
             this.panel1.Size = new System.Drawing.Size(1156, 169);
             this.panel1.TabIndex = 3;
             // 
-            // svWarnLab
+            // panel3
             // 
-            this.svWarnLab.AutoSize = true;
-            this.svWarnLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.svWarnLab.ForeColor = System.Drawing.Color.Maroon;
-            this.svWarnLab.Location = new System.Drawing.Point(947, 15);
-            this.svWarnLab.Name = "svWarnLab";
-            this.svWarnLab.Size = new System.Drawing.Size(0, 13);
-            this.svWarnLab.TabIndex = 18;
+            this.panel3.Controls.Add(this.panel8);
+            this.panel3.Controls.Add(this.panel9);
+            this.panel3.Location = new System.Drawing.Point(1032, 46);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(100, 100);
+            this.panel3.TabIndex = 22;
             // 
-            // panel7
+            // panel8
             // 
-            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel7.Controls.Add(this.instBtn);
-            this.panel7.Location = new System.Drawing.Point(1032, 43);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(100, 40);
-            this.panel7.TabIndex = 22;
+            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel8.Controls.Add(this.instBtn);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel8.Location = new System.Drawing.Point(0, 0);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(100, 40);
+            this.panel8.TabIndex = 21;
             // 
             // instBtn
             // 
@@ -379,11 +493,50 @@
             this.instBtn.UseVisualStyleBackColor = false;
             this.instBtn.Click += new System.EventHandler(this.instBtn_Click);
             // 
+            // panel9
+            // 
+            this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel9.Controls.Add(this.historyBtn);
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel9.Location = new System.Drawing.Point(0, 60);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(100, 40);
+            this.panel9.TabIndex = 20;
+            // 
+            // historyBtn
+            // 
+            this.historyBtn.AutoSize = true;
+            this.historyBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.historyBtn.BackColor = System.Drawing.Color.PapayaWhip;
+            this.historyBtn.Depth = 0;
+            this.historyBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.historyBtn.Location = new System.Drawing.Point(0, 0);
+            this.historyBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.historyBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.historyBtn.Name = "historyBtn";
+            this.historyBtn.Primary = false;
+            this.historyBtn.Size = new System.Drawing.Size(98, 38);
+            this.historyBtn.TabIndex = 4;
+            this.historyBtn.Text = "history";
+            this.historyBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.historyBtn.UseVisualStyleBackColor = false;
+            this.historyBtn.Click += new System.EventHandler(this.historyBtn_Click);
+            // 
+            // svWarnLab
+            // 
+            this.svWarnLab.AutoSize = true;
+            this.svWarnLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.svWarnLab.ForeColor = System.Drawing.Color.Maroon;
+            this.svWarnLab.Location = new System.Drawing.Point(947, 15);
+            this.svWarnLab.Name = "svWarnLab";
+            this.svWarnLab.Size = new System.Drawing.Size(0, 13);
+            this.svWarnLab.TabIndex = 18;
+            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.panel6);
             this.panel4.Controls.Add(this.panel5);
-            this.panel4.Location = new System.Drawing.Point(926, 43);
+            this.panel4.Location = new System.Drawing.Point(926, 46);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(100, 100);
             this.panel4.TabIndex = 19;
@@ -492,113 +645,21 @@
             this.filterLab.TabIndex = 16;
             this.filterLab.Text = "Search for";
             // 
-            // GUIDCol
+            // rtnBtn
             // 
-            this.GUIDCol.DataPropertyName = "EmployeeGlobalId";
-            this.GUIDCol.Frozen = true;
-            this.GUIDCol.HeaderText = "GUID";
-            this.GUIDCol.Name = "GUIDCol";
-            this.GUIDCol.ReadOnly = true;
-            this.GUIDCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.GUIDCol.Width = 40;
-            // 
-            // FnameCol
-            // 
-            this.FnameCol.DataPropertyName = "FirstName";
-            this.FnameCol.HeaderText = "Fname";
-            this.FnameCol.Name = "FnameCol";
-            this.FnameCol.ReadOnly = true;
-            this.FnameCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.FnameCol.Width = 70;
-            // 
-            // LnameCol
-            // 
-            this.LnameCol.DataPropertyName = "LastName";
-            this.LnameCol.HeaderText = "Lname";
-            this.LnameCol.Name = "LnameCol";
-            this.LnameCol.ReadOnly = true;
-            this.LnameCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.LnameCol.Width = 62;
-            // 
-            // EmailCol
-            // 
-            this.EmailCol.DataPropertyName = "Email";
-            this.EmailCol.HeaderText = "Email";
-            this.EmailCol.Name = "EmailCol";
-            this.EmailCol.ReadOnly = true;
-            this.EmailCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.EmailCol.Width = 150;
-            // 
-            // PhoneCol
-            // 
-            this.PhoneCol.DataPropertyName = "PhoneContact";
-            this.PhoneCol.HeaderText = "Contact";
-            this.PhoneCol.Name = "PhoneCol";
-            this.PhoneCol.ReadOnly = true;
-            this.PhoneCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.PhoneCol.Width = 130;
-            // 
-            // GenderCol
-            // 
-            this.GenderCol.DataPropertyName = "Gender";
-            this.GenderCol.HeaderText = "Gender";
-            this.GenderCol.Name = "GenderCol";
-            this.GenderCol.ReadOnly = true;
-            this.GenderCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.GenderCol.Width = 45;
-            // 
-            // BirthCol
-            // 
-            this.BirthCol.DataPropertyName = "Birth";
-            this.BirthCol.HeaderText = "Birth";
-            this.BirthCol.Name = "BirthCol";
-            this.BirthCol.ReadOnly = true;
-            this.BirthCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.BirthCol.Width = 130;
-            // 
-            // SSNCol
-            // 
-            this.SSNCol.DataPropertyName = "SSN";
-            this.SSNCol.HeaderText = "SSN";
-            this.SSNCol.Name = "SSNCol";
-            this.SSNCol.ReadOnly = true;
-            this.SSNCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.SSNCol.Width = 130;
-            // 
-            // EmployDateCol
-            // 
-            this.EmployDateCol.DataPropertyName = "LastHistoryStart";
-            this.EmployDateCol.HeaderText = "LastEmployment";
-            this.EmployDateCol.Name = "EmployDateCol";
-            this.EmployDateCol.ReadOnly = true;
-            this.EmployDateCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.EmployDateCol.Width = 130;
-            // 
-            // PayrateCol
-            // 
-            this.PayrateCol.DataPropertyName = "PayratePerHrs";
-            this.PayrateCol.HeaderText = "Payrate";
-            this.PayrateCol.Name = "PayrateCol";
-            this.PayrateCol.ReadOnly = true;
-            this.PayrateCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // RoleCol
-            // 
-            this.RoleCol.DataPropertyName = "IsSystemManager";
-            this.RoleCol.HeaderText = "IsSystemManager";
-            this.RoleCol.Name = "RoleCol";
-            this.RoleCol.ReadOnly = true;
-            this.RoleCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.RoleCol.Width = 80;
-            // 
-            // ActiveCol
-            // 
-            this.ActiveCol.DataPropertyName = "Active";
-            this.ActiveCol.HeaderText = "Active";
-            this.ActiveCol.Name = "ActiveCol";
-            this.ActiveCol.ReadOnly = true;
-            this.ActiveCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.ActiveCol.Width = 45;
+            this.rtnBtn.AutoSize = true;
+            this.rtnBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.rtnBtn.Depth = 0;
+            this.rtnBtn.Location = new System.Drawing.Point(1107, 26);
+            this.rtnBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.rtnBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.rtnBtn.Name = "rtnBtn";
+            this.rtnBtn.Primary = false;
+            this.rtnBtn.Size = new System.Drawing.Size(64, 36);
+            this.rtnBtn.TabIndex = 1;
+            this.rtnBtn.Text = "Return";
+            this.rtnBtn.UseVisualStyleBackColor = true;
+            this.rtnBtn.Click += new System.EventHandler(this.rtnBtn_Click);
             // 
             // StaffInfoManagement
             // 
@@ -607,6 +668,7 @@
             this.BackgroundImage = global::BakeryDash2531.Properties.Resources.HDHD_1080;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1184, 654);
+            this.Controls.Add(this.rtnBtn);
             this.Controls.Add(this.title);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -620,8 +682,11 @@
             this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
@@ -667,7 +732,6 @@
         private System.Windows.Forms.CheckedListBox genderBox;
         private System.Windows.Forms.TextBox payrateText;
         private System.Windows.Forms.Label payrateLab;
-        private System.Windows.Forms.Panel panel7;
         private MaterialSkin.Controls.MaterialFlatButton instBtn;
         private System.Windows.Forms.Label svWarnLab;
         private System.Windows.Forms.DataGridViewTextBoxColumn GUIDCol;
@@ -682,5 +746,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn PayrateCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn RoleCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn ActiveCol;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Panel panel9;
+        private MaterialSkin.Controls.MaterialFlatButton historyBtn;
+        private MaterialSkin.Controls.MaterialFlatButton rtnBtn;
     }
 }
