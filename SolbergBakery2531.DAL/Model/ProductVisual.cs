@@ -7,11 +7,12 @@ namespace SolbergBakery2531.DAL.Model
     [Table("ProductVisuals")]
     public class ProductVisual
     {
-        [Key, ForeignKey("AssociatedProduct")]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Key]
         public Guid Id { get; set; }
         [Required]
         public byte[] VisualinByte { get; set; }
+        public Guid ProductId { get; set; }
+        [ForeignKey("ProductId")]
         public virtual Product AssociatedProduct { get; set; }
     }
 }

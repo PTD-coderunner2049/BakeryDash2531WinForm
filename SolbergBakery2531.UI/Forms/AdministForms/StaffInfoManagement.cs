@@ -110,13 +110,15 @@ namespace SolbergBakery2531.UI
         }
 
         private void StaffGrid_SelectionChanged(object sender, EventArgs e)
-        {
+        {
+            _parent.resetProgress();
             DataRow dataRow = StaffGrid.GetSelectedRow();
             if ( dataRow == null ) 
             {
                 ClearInputs();
                 return;
             }
+            _parent.UpdateProgress(20);
 
             staffGUIDText.Text = dataRow["Id"].ToString();
             staffGUIDText.ReadOnly = true;
@@ -128,26 +130,38 @@ namespace SolbergBakery2531.UI
             ssnText.ReadOnly = true;
             payrateText.Text = dataRow["PayratePerHrs"].ToString();
 
+            _parent.UpdateProgress(20);
+
             string gender = dataRow["Gender"].ToString();
             genderBox.SetItemChecked(0, gender == "M");
             genderBox.SetItemChecked(1, gender == "F");
 
+            _parent.UpdateProgress(20);
+
             if (DateTime.TryParse(dataRow["Birth"].ToString(), out DateTime birthDate))
                 birthText.Text = birthDate.ToShortDateString();
+
+            _parent.UpdateProgress(20);
 
             bool isRoleManager = (bool)dataRow["IsSystemManager"];
             bool Active = (bool)dataRow["Active"];
             StatusRoleBox.SetItemChecked(0, Active);
             StatusRoleBox.SetItemChecked(1, isRoleManager);
+            
+            _parent.endProgress();
         }
 
         private async void ApplyFilterAsync()
         {
+            _parent.resetProgress();
+
             await UIUtils.ShowToast("Updating...", "SolbergBakery", 1000);
             string filterColumn = collumBox.SelectedItem.ToString();
             string filterValue = valueBox.Text.Trim();
+            _parent.UpdateProgress(50);
 
             _staffService.GetFilteredStaff(_fullDataTable, filterColumn, filterValue);
+            _parent.endProgress();
         }
 
         private void ValueBox_TextChanged(object sender, EventArgs e)
@@ -164,8 +178,9 @@ namespace SolbergBakery2531.UI
                 }
 
         private void svBtn_Click(object sender, EventArgs e)
-        {
-            if (!ValidateInputs()) return;
+        {
+            _parent.resetProgress();
+            if (!ValidateInputs()) return;
 
             Guid empGuid = Guid.Empty;
             if (staffGUIDText.ReadOnly)
@@ -219,10 +234,13 @@ namespace SolbergBakery2531.UI
                 svWarnLab.Text = $"An error occurred during save: {ex.Message}";
                 svWarnLab.ForeColor = Color.Red;
             }
-        }
 
-        private void delBtn_Click(object sender, EventArgs e)
+            _parent.endProgress();
+        }
+
+        private void delBtn_Click(object sender, EventArgs e)
         {
+            _parent.resetProgress();
             if (StaffGrid.SelectedRows.Count == 0 || !staffGUIDText.ReadOnly)
             {
                 svWarnLab.Text = "Please select an existing staff member to delete.";
@@ -261,10 +279,13 @@ namespace SolbergBakery2531.UI
                     }
                 }
             }
-        }
+            _parent.endProgress();
+        }
 
         private void instBtn_Click(object sender, EventArgs e)
         {
+            _parent.resetProgress();
+
             staffGUIDText.Text = Guid.NewGuid().ToString();
             staffGUIDText.ReadOnly = false;
             ssnText.ReadOnly = false;
@@ -276,10 +297,14 @@ namespace SolbergBakery2531.UI
             payrateText.Clear();
             //employdateText.Clear();
             birthText.Clear();
+         
+            _parent.endProgress();
         }
 
         private async void historyBtn_Click(object sender, EventArgs e)
         {
+            _parent.resetProgress();
+
             DataRow dataRow = StaffGrid.GetSelectedRow();
             if (dataRow == null)
             {
@@ -289,10 +314,13 @@ namespace SolbergBakery2531.UI
             Guid empGuid = Guid.Empty;
             Guid.TryParse(staffGUIDText.Text, out empGuid);
             new EmploymentHistory(empGuid, FnameText.Text + " " + LnameText.Text).Show();
+            _parent.endProgress();
         }
 
         private void rtnBtn_Click(object sender, EventArgs e)
         {
+            _parent.resetProgress();
+            _parent.endProgress();
             //_parent.ResetToHome();
         }
     }

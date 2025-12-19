@@ -31,18 +31,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.title = new System.Windows.Forms.Label();
             this.StaffGrid = new System.Windows.Forms.DataGridView();
-            this.GUIDCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FnameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LnameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EmailCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PhoneCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GenderCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BirthCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SSNCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EmployDateCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PayrateCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RoleCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ActiveCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.payrateText = new System.Windows.Forms.TextBox();
             this.payrateLab = new System.Windows.Forms.Label();
@@ -82,6 +70,18 @@
             this.collumBox = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.filterLab = new System.Windows.Forms.Label();
+            this.GUIDCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FnameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LnameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmailCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PhoneCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GenderCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BirthCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SSNCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmployDateCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PayrateCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RoleCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ActiveCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.StaffGrid)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -144,114 +144,6 @@
             this.StaffGrid.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.StaffGrid.Size = new System.Drawing.Size(1156, 348);
             this.StaffGrid.TabIndex = 1;
-            // 
-            // GUIDCol
-            // 
-            this.GUIDCol.DataPropertyName = "EmployeeGlobalId";
-            this.GUIDCol.Frozen = true;
-            this.GUIDCol.HeaderText = "GUID";
-            this.GUIDCol.Name = "GUIDCol";
-            this.GUIDCol.ReadOnly = true;
-            this.GUIDCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.GUIDCol.Width = 40;
-            // 
-            // FnameCol
-            // 
-            this.FnameCol.DataPropertyName = "FirstName";
-            this.FnameCol.HeaderText = "Fname";
-            this.FnameCol.Name = "FnameCol";
-            this.FnameCol.ReadOnly = true;
-            this.FnameCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.FnameCol.Width = 70;
-            // 
-            // LnameCol
-            // 
-            this.LnameCol.DataPropertyName = "LastName";
-            this.LnameCol.HeaderText = "Lname";
-            this.LnameCol.Name = "LnameCol";
-            this.LnameCol.ReadOnly = true;
-            this.LnameCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.LnameCol.Width = 62;
-            // 
-            // EmailCol
-            // 
-            this.EmailCol.DataPropertyName = "Email";
-            this.EmailCol.HeaderText = "Email";
-            this.EmailCol.Name = "EmailCol";
-            this.EmailCol.ReadOnly = true;
-            this.EmailCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.EmailCol.Width = 150;
-            // 
-            // PhoneCol
-            // 
-            this.PhoneCol.DataPropertyName = "PhoneContact";
-            this.PhoneCol.HeaderText = "Contact";
-            this.PhoneCol.Name = "PhoneCol";
-            this.PhoneCol.ReadOnly = true;
-            this.PhoneCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.PhoneCol.Width = 130;
-            // 
-            // GenderCol
-            // 
-            this.GenderCol.DataPropertyName = "Gender";
-            this.GenderCol.HeaderText = "Gender";
-            this.GenderCol.Name = "GenderCol";
-            this.GenderCol.ReadOnly = true;
-            this.GenderCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.GenderCol.Width = 45;
-            // 
-            // BirthCol
-            // 
-            this.BirthCol.DataPropertyName = "Birth";
-            this.BirthCol.HeaderText = "Birth";
-            this.BirthCol.Name = "BirthCol";
-            this.BirthCol.ReadOnly = true;
-            this.BirthCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.BirthCol.Width = 130;
-            // 
-            // SSNCol
-            // 
-            this.SSNCol.DataPropertyName = "SSN";
-            this.SSNCol.HeaderText = "SSN";
-            this.SSNCol.Name = "SSNCol";
-            this.SSNCol.ReadOnly = true;
-            this.SSNCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.SSNCol.Width = 130;
-            // 
-            // EmployDateCol
-            // 
-            this.EmployDateCol.DataPropertyName = "LastHistoryStart";
-            this.EmployDateCol.HeaderText = "LastEmployment";
-            this.EmployDateCol.Name = "EmployDateCol";
-            this.EmployDateCol.ReadOnly = true;
-            this.EmployDateCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.EmployDateCol.Width = 130;
-            // 
-            // PayrateCol
-            // 
-            this.PayrateCol.DataPropertyName = "PayratePerHrs";
-            this.PayrateCol.HeaderText = "Payrate";
-            this.PayrateCol.Name = "PayrateCol";
-            this.PayrateCol.ReadOnly = true;
-            this.PayrateCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // RoleCol
-            // 
-            this.RoleCol.DataPropertyName = "IsSystemManager";
-            this.RoleCol.HeaderText = "IsSystemManager";
-            this.RoleCol.Name = "RoleCol";
-            this.RoleCol.ReadOnly = true;
-            this.RoleCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.RoleCol.Width = 80;
-            // 
-            // ActiveCol
-            // 
-            this.ActiveCol.DataPropertyName = "Active";
-            this.ActiveCol.HeaderText = "Active";
-            this.ActiveCol.Name = "ActiveCol";
-            this.ActiveCol.ReadOnly = true;
-            this.ActiveCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.ActiveCol.Width = 45;
             // 
             // groupBox1
             // 
@@ -688,6 +580,114 @@
             this.filterLab.TabIndex = 16;
             this.filterLab.Text = "Search for";
             // 
+            // GUIDCol
+            // 
+            this.GUIDCol.DataPropertyName = "EmployeeGlobalId";
+            this.GUIDCol.Frozen = true;
+            this.GUIDCol.HeaderText = "GUID";
+            this.GUIDCol.Name = "GUIDCol";
+            this.GUIDCol.ReadOnly = true;
+            this.GUIDCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.GUIDCol.Width = 40;
+            // 
+            // FnameCol
+            // 
+            this.FnameCol.DataPropertyName = "FirstName";
+            this.FnameCol.HeaderText = "Fname";
+            this.FnameCol.Name = "FnameCol";
+            this.FnameCol.ReadOnly = true;
+            this.FnameCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.FnameCol.Width = 70;
+            // 
+            // LnameCol
+            // 
+            this.LnameCol.DataPropertyName = "LastName";
+            this.LnameCol.HeaderText = "Lname";
+            this.LnameCol.Name = "LnameCol";
+            this.LnameCol.ReadOnly = true;
+            this.LnameCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.LnameCol.Width = 62;
+            // 
+            // EmailCol
+            // 
+            this.EmailCol.DataPropertyName = "Email";
+            this.EmailCol.HeaderText = "Email";
+            this.EmailCol.Name = "EmailCol";
+            this.EmailCol.ReadOnly = true;
+            this.EmailCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.EmailCol.Width = 150;
+            // 
+            // PhoneCol
+            // 
+            this.PhoneCol.DataPropertyName = "PhoneContact";
+            this.PhoneCol.HeaderText = "Contact";
+            this.PhoneCol.Name = "PhoneCol";
+            this.PhoneCol.ReadOnly = true;
+            this.PhoneCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.PhoneCol.Width = 130;
+            // 
+            // GenderCol
+            // 
+            this.GenderCol.DataPropertyName = "Gender";
+            this.GenderCol.HeaderText = "Gender";
+            this.GenderCol.Name = "GenderCol";
+            this.GenderCol.ReadOnly = true;
+            this.GenderCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.GenderCol.Width = 45;
+            // 
+            // BirthCol
+            // 
+            this.BirthCol.DataPropertyName = "Birth";
+            this.BirthCol.HeaderText = "Birth";
+            this.BirthCol.Name = "BirthCol";
+            this.BirthCol.ReadOnly = true;
+            this.BirthCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.BirthCol.Width = 130;
+            // 
+            // SSNCol
+            // 
+            this.SSNCol.DataPropertyName = "SSN";
+            this.SSNCol.HeaderText = "SSN";
+            this.SSNCol.Name = "SSNCol";
+            this.SSNCol.ReadOnly = true;
+            this.SSNCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.SSNCol.Width = 130;
+            // 
+            // EmployDateCol
+            // 
+            this.EmployDateCol.DataPropertyName = "LastHistoryStart";
+            this.EmployDateCol.HeaderText = "LastEmployment";
+            this.EmployDateCol.Name = "EmployDateCol";
+            this.EmployDateCol.ReadOnly = true;
+            this.EmployDateCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.EmployDateCol.Width = 130;
+            // 
+            // PayrateCol
+            // 
+            this.PayrateCol.DataPropertyName = "PayratePerHrs";
+            this.PayrateCol.HeaderText = "Payrate [€]";
+            this.PayrateCol.Name = "PayrateCol";
+            this.PayrateCol.ReadOnly = true;
+            this.PayrateCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // RoleCol
+            // 
+            this.RoleCol.DataPropertyName = "IsSystemManager";
+            this.RoleCol.HeaderText = "IsSystemManager";
+            this.RoleCol.Name = "RoleCol";
+            this.RoleCol.ReadOnly = true;
+            this.RoleCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.RoleCol.Width = 80;
+            // 
+            // ActiveCol
+            // 
+            this.ActiveCol.DataPropertyName = "Active";
+            this.ActiveCol.HeaderText = "Active";
+            this.ActiveCol.Name = "ActiveCol";
+            this.ActiveCol.ReadOnly = true;
+            this.ActiveCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ActiveCol.Width = 45;
+            // 
             // StaffInfoManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -764,6 +764,13 @@
         private System.Windows.Forms.Panel panel9;
         private MaterialSkin.Controls.MaterialFlatButton historyBtn;
         private MaterialSkin.Controls.MaterialFlatButton rtnBtn;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TextBox valueBox;
+        private System.Windows.Forms.ComboBox collumBox;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label filterLab;
+        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn GUIDCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn FnameCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn LnameCol;
@@ -776,12 +783,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn PayrateCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn RoleCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn ActiveCol;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox valueBox;
-        private System.Windows.Forms.ComboBox collumBox;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label filterLab;
-        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

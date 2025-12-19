@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Collections.Generic;
 
 namespace SolbergBakery2531.DAL.Model
 {
@@ -9,7 +10,9 @@ namespace SolbergBakery2531.DAL.Model
     {
         [Key]
         public Guid Id { get; set; } = Guid.NewGuid();
-        
+        [Required]
+        [StringLength(30)]
+        public string Name { get; set; }
         [Required]
         [StringLength(300)]
         public string Description { get; set; }
@@ -21,9 +24,9 @@ namespace SolbergBakery2531.DAL.Model
 
         [Required]
         public decimal Pricing { get; set; }
-
-        public Guid CateID { get; set; }
-        [ForeignKey("CateID")]
+        public Guid ProdCategoryId { get; set; }
+        [ForeignKey("ProdCategoryId")]
         public virtual ProdCategory AssociatedCategory { get; set; }
+        public virtual ICollection<ProductVisual> ProductVisuals { get; set; }
     }
 }

@@ -12,7 +12,7 @@ namespace SolbergBakery2531.DAL
             using (var db = new BakeryDbContext())
             {
                 DataTable dt = new DataTable();
-                dt.Columns.Add("EmployeeGlobalId", typeof(Guid)); // Staff's GUID
+                //dt.Columns.Add("EmployeeGlobalId", typeof(Guid)); // Staff's GUID
                 dt.Columns.Add("Id", typeof(Guid));     // User's GUID
                 dt.Columns.Add("Username", typeof(string));
                 dt.Columns.Add("CreatedAt", typeof(DateTime));
@@ -28,14 +28,14 @@ namespace SolbergBakery2531.DAL
                     u.Active,
                     u.PasswordHash,
                     // navigation
-                    EmpGuid = u.AccociatedStaff.Id,
+                    //EmpGuid = u.AccociatedStaff.Id,
                     IsManager = u.AccociatedStaff.IsSystemManager
                 }).ToList();
 
                 foreach (var u in userList)
                 {
                     dt.Rows.Add(
-                        u.EmpGuid,
+                        //u.EmpGuid,
                         u.Id,
                         u.Username,
                         u.CreatedAt,

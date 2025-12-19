@@ -62,6 +62,7 @@
     <Compile Include="RegistryService.cs" />
     <Compile Include="SessionService.cs" />
     <Compile Include="StaffService.cs" />
+    <Compile Include="ProductService.cs" />
     <Compile Include="UserService.cs" />
   </ItemGroup>
   <ItemGroup>

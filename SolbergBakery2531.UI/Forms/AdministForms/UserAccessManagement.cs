@@ -40,7 +40,7 @@ namespace SolbergBakery2531.UI
         {
             if (collumBox.Items.Count == 0)
             {
-                collumBox.Items.AddRange(new string[] { "Username", "Id", "CreatedAt", "EmployeeGlobalId" });
+                collumBox.Items.AddRange(new string[] { "Username", "Id", "CreatedAt"});
                 collumBox.SelectedIndex = 0;
             }
         }
@@ -197,7 +197,6 @@ namespace SolbergBakery2531.UI
                 if (success) LoadUserDataAsync();
             }
         }
-
         private void rtnBtn_Click(object sender, EventArgs e)
         {
             //_parent.ResetToHome();

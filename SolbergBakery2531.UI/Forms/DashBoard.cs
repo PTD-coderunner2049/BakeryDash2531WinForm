@@ -1,4 +1,5 @@
 ﻿using SolbergBakery2531.BLL;
+using SolbergBakery2531.UI.Forms.AdministForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -207,6 +208,13 @@ namespace SolbergBakery2531.UI
             {
                 Application.Exit();
             }
+        }
+
+        private void productsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            panelBack.Controls.Clear();
+            this.Text = "Solberg's Bakery - Product Managment";
+            LoadFormToPanel(Dashing(), new ProdInfoManagement(this));
         }
     }
 }

@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Node1");
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Node0", new System.Windows.Forms.TreeNode[] {
-            treeNode7});
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Node2");
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Node1");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Node0", new System.Windows.Forms.TreeNode[] {
+            treeNode1});
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Node2");
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
             this.svBtn = new MaterialSkin.Controls.MaterialFlatButton();
             this.delBtn = new MaterialSkin.Controls.MaterialFlatButton();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -44,14 +44,8 @@
             this.filterLab = new System.Windows.Forms.Label();
             this.rtnBtn = new MaterialSkin.Controls.MaterialFlatButton();
             this.title = new System.Windows.Forms.Label();
-            this.StaffGrid = new System.Windows.Forms.DataGridView();
-            this.GUIDCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DescriptionCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NoteCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AvailableDateCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiscontinueDateCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PricingCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.ProdGrid = new System.Windows.Forms.DataGridView();
+            this.ProdTree = new System.Windows.Forms.TreeView();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -67,17 +61,27 @@
             this.DDateLab = new System.Windows.Forms.Label();
             this.PriceLab = new System.Windows.Forms.Label();
             this.PriceText = new System.Windows.Forms.TextBox();
-            this.ADateText = new System.Windows.Forms.TextBox();
-            this.DDateText = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.VisualList = new System.Windows.Forms.ListView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.svWarnLab = new System.Windows.Forms.Label();
+            this.ADateText = new System.Windows.Forms.MaskedTextBox();
+            this.DDateText = new System.Windows.Forms.MaskedTextBox();
+            this.GUIDCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DescriptionCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PricingCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AvailableDateCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiscontinueDateCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameText = new System.Windows.Forms.TextBox();
+            this.NameLab = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.StaffGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProdGrid)).BeginInit();
             this.panel7.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -106,6 +110,7 @@
             this.svBtn.TabIndex = 3;
             this.svBtn.Text = "Save Changes";
             this.svBtn.UseVisualStyleBackColor = false;
+            this.svBtn.Click += new System.EventHandler(this.svBtn_Click);
             // 
             // delBtn
             // 
@@ -123,6 +128,7 @@
             this.delBtn.TabIndex = 4;
             this.delBtn.Text = "Remove";
             this.delBtn.UseVisualStyleBackColor = false;
+            this.delBtn.Click += new System.EventHandler(this.delBtn_Click);
             // 
             // pictureBox4
             // 
@@ -210,108 +216,53 @@
             this.title.TabIndex = 25;
             this.title.Text = "Product\'s Managment Interface";
             // 
-            // StaffGrid
+            // ProdGrid
             // 
-            this.StaffGrid.BackgroundColor = System.Drawing.Color.PapayaWhip;
-            this.StaffGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.StaffGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
-            this.StaffGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.StaffGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ProdGrid.BackgroundColor = System.Drawing.Color.PapayaWhip;
+            this.ProdGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.ProdGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            this.ProdGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ProdGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.GUIDCol,
             this.DescriptionCol,
-            this.NoteCol,
+            this.NameCol,
+            this.PricingCol,
             this.AvailableDateCol,
-            this.DiscontinueDateCol,
-            this.PricingCol});
-            this.StaffGrid.GridColor = System.Drawing.Color.Brown;
-            this.StaffGrid.Location = new System.Drawing.Point(193, 110);
-            this.StaffGrid.MultiSelect = false;
-            this.StaffGrid.Name = "StaffGrid";
-            this.StaffGrid.ReadOnly = true;
-            this.StaffGrid.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.StaffGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.StaffGrid.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.StaffGrid.Size = new System.Drawing.Size(630, 528);
-            this.StaffGrid.TabIndex = 27;
+            this.DiscontinueDateCol});
+            this.ProdGrid.GridColor = System.Drawing.Color.Brown;
+            this.ProdGrid.Location = new System.Drawing.Point(193, 110);
+            this.ProdGrid.MultiSelect = false;
+            this.ProdGrid.Name = "ProdGrid";
+            this.ProdGrid.ReadOnly = true;
+            this.ProdGrid.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ProdGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.ProdGrid.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.ProdGrid.Size = new System.Drawing.Size(630, 528);
+            this.ProdGrid.TabIndex = 27;
             // 
-            // GUIDCol
+            // ProdTree
             // 
-            this.GUIDCol.DataPropertyName = "Id";
-            this.GUIDCol.Frozen = true;
-            this.GUIDCol.HeaderText = "GUID";
-            this.GUIDCol.Name = "GUIDCol";
-            this.GUIDCol.ReadOnly = true;
-            this.GUIDCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.GUIDCol.Width = 40;
-            // 
-            // DescriptionCol
-            // 
-            this.DescriptionCol.DataPropertyName = "Description";
-            this.DescriptionCol.HeaderText = "Description";
-            this.DescriptionCol.Name = "DescriptionCol";
-            this.DescriptionCol.ReadOnly = true;
-            this.DescriptionCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.DescriptionCol.Width = 120;
-            // 
-            // NoteCol
-            // 
-            this.NoteCol.DataPropertyName = "Note";
-            this.NoteCol.HeaderText = "Note";
-            this.NoteCol.Name = "NoteCol";
-            this.NoteCol.ReadOnly = true;
-            this.NoteCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.NoteCol.Width = 120;
-            // 
-            // AvailableDateCol
-            // 
-            this.AvailableDateCol.DataPropertyName = "AvailableDate";
-            this.AvailableDateCol.HeaderText = "AvailableDate";
-            this.AvailableDateCol.Name = "AvailableDateCol";
-            this.AvailableDateCol.ReadOnly = true;
-            this.AvailableDateCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.AvailableDateCol.Width = 130;
-            // 
-            // DiscontinueDateCol
-            // 
-            this.DiscontinueDateCol.DataPropertyName = "DiscontinueDate";
-            this.DiscontinueDateCol.HeaderText = "DiscontinueDate";
-            this.DiscontinueDateCol.Name = "DiscontinueDateCol";
-            this.DiscontinueDateCol.ReadOnly = true;
-            this.DiscontinueDateCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.DiscontinueDateCol.Width = 130;
-            // 
-            // PricingCol
-            // 
-            this.PricingCol.DataPropertyName = "Pricing";
-            this.PricingCol.HeaderText = "Pricing";
-            this.PricingCol.Name = "PricingCol";
-            this.PricingCol.ReadOnly = true;
-            this.PricingCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.PricingCol.Width = 50;
-            // 
-            // treeView1
-            // 
-            this.treeView1.BackColor = System.Drawing.Color.OldLace;
-            this.treeView1.Location = new System.Drawing.Point(19, 58);
-            this.treeView1.Name = "treeView1";
-            treeNode7.Name = "Node1";
-            treeNode7.Text = "Node1";
-            treeNode8.Name = "Node0";
-            treeNode8.Text = "Node0";
-            treeNode9.Name = "Node2";
-            treeNode9.Text = "Node2";
-            this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode8,
-            treeNode9});
-            this.treeView1.Size = new System.Drawing.Size(148, 580);
-            this.treeView1.TabIndex = 31;
+            this.ProdTree.BackColor = System.Drawing.Color.OldLace;
+            this.ProdTree.Location = new System.Drawing.Point(19, 58);
+            this.ProdTree.Name = "ProdTree";
+            treeNode1.Name = "Node1";
+            treeNode1.Text = "Node1";
+            treeNode2.Name = "Node0";
+            treeNode2.Text = "Node0";
+            treeNode3.Name = "Node2";
+            treeNode3.Text = "Node2";
+            this.ProdTree.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode2,
+            treeNode3});
+            this.ProdTree.Size = new System.Drawing.Size(148, 580);
+            this.ProdTree.TabIndex = 31;
             // 
             // panel7
             // 
@@ -339,6 +290,7 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox2.Controls.Add(this.NameLab);
             this.groupBox2.Controls.Add(this.DesLab);
             this.groupBox2.Controls.Add(this.flowLayoutPanel1);
             this.groupBox2.Controls.Add(this.PriceLab);
@@ -348,13 +300,14 @@
             this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox2.Location = new System.Drawing.Point(15, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(293, 250);
+            this.groupBox2.Size = new System.Drawing.Size(293, 269);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "ProductInfo";
             // 
             // panel9
             // 
+            this.panel9.Controls.Add(this.panel4);
             this.panel9.Controls.Add(this.panel11);
             this.panel9.Controls.Add(this.panel10);
             this.panel9.Location = new System.Drawing.Point(15, 475);
@@ -385,7 +338,7 @@
             // DesText
             // 
             this.DesText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DesText.Location = new System.Drawing.Point(3, 3);
+            this.DesText.Location = new System.Drawing.Point(3, 31);
             this.DesText.Multiline = true;
             this.DesText.Name = "DesText";
             this.DesText.Size = new System.Drawing.Size(187, 61);
@@ -393,6 +346,7 @@
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.Controls.Add(this.NameText);
             this.flowLayoutPanel1.Controls.Add(this.DesText);
             this.flowLayoutPanel1.Controls.Add(this.NoteText);
             this.flowLayoutPanel1.Controls.Add(this.PriceText);
@@ -401,14 +355,14 @@
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(100, 19);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(193, 225);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(193, 250);
             this.flowLayoutPanel1.TabIndex = 32;
             // 
             // DesLab
             // 
             this.DesLab.AutoSize = true;
             this.DesLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DesLab.Location = new System.Drawing.Point(7, 25);
+            this.DesLab.Location = new System.Drawing.Point(7, 53);
             this.DesLab.Name = "DesLab";
             this.DesLab.Size = new System.Drawing.Size(81, 16);
             this.DesLab.TabIndex = 17;
@@ -427,7 +381,7 @@
             // NoteText
             // 
             this.NoteText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NoteText.Location = new System.Drawing.Point(3, 70);
+            this.NoteText.Location = new System.Drawing.Point(3, 98);
             this.NoteText.Multiline = true;
             this.NoteText.Name = "NoteText";
             this.NoteText.Size = new System.Drawing.Size(187, 61);
@@ -459,36 +413,20 @@
             // 
             this.PriceLab.AutoSize = true;
             this.PriceLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PriceLab.Location = new System.Drawing.Point(34, 162);
+            this.PriceLab.Location = new System.Drawing.Point(19, 159);
             this.PriceLab.Name = "PriceLab";
-            this.PriceLab.Size = new System.Drawing.Size(54, 16);
+            this.PriceLab.Size = new System.Drawing.Size(69, 16);
             this.PriceLab.TabIndex = 27;
-            this.PriceLab.Text = "Pricing :";
+            this.PriceLab.Text = "Pricing [€]:";
             this.PriceLab.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // PriceText
             // 
             this.PriceText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PriceText.Location = new System.Drawing.Point(3, 137);
+            this.PriceText.Location = new System.Drawing.Point(3, 165);
             this.PriceText.Name = "PriceText";
             this.PriceText.Size = new System.Drawing.Size(187, 22);
             this.PriceText.TabIndex = 35;
-            // 
-            // ADateText
-            // 
-            this.ADateText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ADateText.Location = new System.Drawing.Point(3, 165);
-            this.ADateText.Name = "ADateText";
-            this.ADateText.Size = new System.Drawing.Size(187, 22);
-            this.ADateText.TabIndex = 36;
-            // 
-            // DDateText
-            // 
-            this.DDateText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DDateText.Location = new System.Drawing.Point(3, 193);
-            this.DDateText.Name = "DDateText";
-            this.DDateText.Size = new System.Drawing.Size(187, 22);
-            this.DDateText.TabIndex = 37;
             // 
             // pictureBox2
             // 
@@ -504,25 +442,26 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.listView1);
+            this.groupBox1.Controls.Add(this.svWarnLab);
+            this.groupBox1.Controls.Add(this.VisualList);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox1.Location = new System.Drawing.Point(15, 259);
+            this.groupBox1.Location = new System.Drawing.Point(15, 278);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(293, 154);
+            this.groupBox1.Size = new System.Drawing.Size(293, 135);
             this.groupBox1.TabIndex = 33;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "ProductInfo";
+            this.groupBox1.Text = "ProductVisualList";
             // 
-            // listView1
+            // VisualList
             // 
-            this.listView1.HideSelection = false;
-            this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem2});
-            this.listView1.Location = new System.Drawing.Point(1, 19);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(292, 134);
-            this.listView1.TabIndex = 33;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.VisualList.HideSelection = false;
+            this.VisualList.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem1});
+            this.VisualList.Location = new System.Drawing.Point(1, 19);
+            this.VisualList.Name = "VisualList";
+            this.VisualList.Size = new System.Drawing.Size(292, 114);
+            this.VisualList.TabIndex = 33;
+            this.VisualList.UseCompatibleStateImageBehavior = false;
             // 
             // panel1
             // 
@@ -560,6 +499,120 @@
             this.materialFlatButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.materialFlatButton1.UseVisualStyleBackColor = false;
             // 
+            // panel4
+            // 
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(100, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(93, 40);
+            this.panel4.TabIndex = 24;
+            // 
+            // svWarnLab
+            // 
+            this.svWarnLab.AutoSize = true;
+            this.svWarnLab.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.svWarnLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.svWarnLab.ForeColor = System.Drawing.Color.Firebrick;
+            this.svWarnLab.Location = new System.Drawing.Point(5, 135);
+            this.svWarnLab.Name = "svWarnLab";
+            this.svWarnLab.Size = new System.Drawing.Size(49, 16);
+            this.svWarnLab.TabIndex = 33;
+            this.svWarnLab.Text = "              ";
+            this.svWarnLab.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // ADateText
+            // 
+            this.ADateText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ADateText.Location = new System.Drawing.Point(3, 193);
+            this.ADateText.Mask = "00/00/0000";
+            this.ADateText.Name = "ADateText";
+            this.ADateText.Size = new System.Drawing.Size(187, 22);
+            this.ADateText.TabIndex = 35;
+            this.ADateText.ValidatingType = typeof(System.DateTime);
+            // 
+            // DDateText
+            // 
+            this.DDateText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DDateText.Location = new System.Drawing.Point(3, 221);
+            this.DDateText.Mask = "00/00/0000";
+            this.DDateText.Name = "DDateText";
+            this.DDateText.Size = new System.Drawing.Size(187, 22);
+            this.DDateText.TabIndex = 36;
+            this.DDateText.ValidatingType = typeof(System.DateTime);
+            // 
+            // GUIDCol
+            // 
+            this.GUIDCol.DataPropertyName = "Id";
+            this.GUIDCol.Frozen = true;
+            this.GUIDCol.HeaderText = "GUID";
+            this.GUIDCol.Name = "GUIDCol";
+            this.GUIDCol.ReadOnly = true;
+            this.GUIDCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.GUIDCol.Width = 40;
+            // 
+            // DescriptionCol
+            // 
+            this.DescriptionCol.DataPropertyName = "Description";
+            this.DescriptionCol.HeaderText = "Description";
+            this.DescriptionCol.Name = "DescriptionCol";
+            this.DescriptionCol.ReadOnly = true;
+            this.DescriptionCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.DescriptionCol.Width = 115;
+            // 
+            // NameCol
+            // 
+            this.NameCol.DataPropertyName = "Name";
+            this.NameCol.HeaderText = "Name";
+            this.NameCol.Name = "NameCol";
+            this.NameCol.ReadOnly = true;
+            this.NameCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.NameCol.Width = 115;
+            // 
+            // PricingCol
+            // 
+            this.PricingCol.DataPropertyName = "Pricing";
+            this.PricingCol.HeaderText = "Pricing [€]";
+            this.PricingCol.Name = "PricingCol";
+            this.PricingCol.ReadOnly = true;
+            this.PricingCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.PricingCol.Width = 80;
+            // 
+            // AvailableDateCol
+            // 
+            this.AvailableDateCol.DataPropertyName = "AvailableDate";
+            this.AvailableDateCol.HeaderText = "AvailableDate";
+            this.AvailableDateCol.Name = "AvailableDateCol";
+            this.AvailableDateCol.ReadOnly = true;
+            this.AvailableDateCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.AvailableDateCol.Width = 120;
+            // 
+            // DiscontinueDateCol
+            // 
+            this.DiscontinueDateCol.DataPropertyName = "DiscontinueDate";
+            this.DiscontinueDateCol.HeaderText = "DiscontinueDate";
+            this.DiscontinueDateCol.Name = "DiscontinueDateCol";
+            this.DiscontinueDateCol.ReadOnly = true;
+            this.DiscontinueDateCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.DiscontinueDateCol.Width = 120;
+            // 
+            // NameText
+            // 
+            this.NameText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NameText.Location = new System.Drawing.Point(3, 3);
+            this.NameText.Name = "NameText";
+            this.NameText.Size = new System.Drawing.Size(187, 22);
+            this.NameText.TabIndex = 37;
+            // 
+            // NameLab
+            // 
+            this.NameLab.AutoSize = true;
+            this.NameLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NameLab.Location = new System.Drawing.Point(38, 25);
+            this.NameLab.Name = "NameLab";
+            this.NameLab.Size = new System.Drawing.Size(50, 16);
+            this.NameLab.TabIndex = 33;
+            this.NameLab.Text = "Name :";
+            // 
             // ProdInfoManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -568,12 +621,12 @@
             this.ClientSize = new System.Drawing.Size(1190, 650);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel7);
-            this.Controls.Add(this.treeView1);
+            this.Controls.Add(this.ProdTree);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.rtnBtn);
             this.Controls.Add(this.title);
-            this.Controls.Add(this.StaffGrid);
+            this.Controls.Add(this.ProdGrid);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ProdInfoManagement";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -581,7 +634,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.StaffGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProdGrid)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -595,6 +648,7 @@
             this.flowLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -614,14 +668,8 @@
         private System.Windows.Forms.Label filterLab;
         private MaterialSkin.Controls.MaterialFlatButton rtnBtn;
         private System.Windows.Forms.Label title;
-        private System.Windows.Forms.DataGridView StaffGrid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GUIDCol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DescriptionCol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NoteCol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AvailableDateCol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DiscontinueDateCol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PricingCol;
-        private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.DataGridView ProdGrid;
+        private System.Windows.Forms.TreeView ProdTree;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel10;
@@ -636,14 +684,24 @@
         private System.Windows.Forms.Label ADateLab;
         private System.Windows.Forms.Label DDateLab;
         private System.Windows.Forms.Label PriceLab;
-        private System.Windows.Forms.TextBox ADateText;
         private System.Windows.Forms.TextBox PriceText;
-        private System.Windows.Forms.TextBox DDateText;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView VisualList;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
         private MaterialSkin.Controls.MaterialFlatButton materialFlatButton1;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label svWarnLab;
+        private System.Windows.Forms.MaskedTextBox ADateText;
+        private System.Windows.Forms.MaskedTextBox DDateText;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GUIDCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DescriptionCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NameCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PricingCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AvailableDateCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DiscontinueDateCol;
+        private System.Windows.Forms.Label NameLab;
+        private System.Windows.Forms.TextBox NameText;
     }
 }
