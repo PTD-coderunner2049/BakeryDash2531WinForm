@@ -37,7 +37,6 @@
             this.CreatedTimeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IsActiveCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PasswordCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EmployeeGUIDCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.staffGUIDText = new System.Windows.Forms.TextBox();
@@ -56,13 +55,14 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.delBtn = new MaterialSkin.Controls.MaterialFlatButton();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.valueBox = new System.Windows.Forms.TextBox();
             this.collumBox = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.filterLab = new System.Windows.Forms.Label();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.rtnBtn = new MaterialSkin.Controls.MaterialFlatButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.UserGrid)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -72,6 +72,7 @@
             this.panel5.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // title
@@ -98,8 +99,7 @@
             this.IsSystemManagerCol,
             this.CreatedTimeCol,
             this.IsActiveCol,
-            this.PasswordCol,
-            this.EmployeeGUIDCol});
+            this.PasswordCol});
             this.UserGrid.GridColor = System.Drawing.Color.Brown;
             this.UserGrid.Location = new System.Drawing.Point(16, 119);
             this.UserGrid.MultiSelect = false;
@@ -124,7 +124,7 @@
             this.GUIDCol.HeaderText = "GUID";
             this.GUIDCol.Name = "GUIDCol";
             this.GUIDCol.ReadOnly = true;
-            this.GUIDCol.Width = 40;
+            this.GUIDCol.Width = 50;
             // 
             // UsernameCol
             // 
@@ -132,6 +132,7 @@
             this.UsernameCol.HeaderText = "Username";
             this.UsernameCol.Name = "UsernameCol";
             this.UsernameCol.ReadOnly = true;
+            this.UsernameCol.Width = 130;
             // 
             // IsSystemManagerCol
             // 
@@ -146,6 +147,7 @@
             this.CreatedTimeCol.HeaderText = "CreatedAt";
             this.CreatedTimeCol.Name = "CreatedTimeCol";
             this.CreatedTimeCol.ReadOnly = true;
+            this.CreatedTimeCol.Width = 150;
             // 
             // IsActiveCol
             // 
@@ -161,13 +163,6 @@
             this.PasswordCol.HeaderText = "Password";
             this.PasswordCol.Name = "PasswordCol";
             this.PasswordCol.ReadOnly = true;
-            // 
-            // EmployeeGUIDCol
-            // 
-            this.EmployeeGUIDCol.DataPropertyName = "EmployeeGlobalId";
-            this.EmployeeGUIDCol.HeaderText = "EmployeeGUID";
-            this.EmployeeGUIDCol.Name = "EmployeeGUIDCol";
-            this.EmployeeGUIDCol.ReadOnly = true;
             // 
             // groupBox1
             // 
@@ -363,31 +358,19 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.OldLace;
-            this.panel2.Controls.Add(this.pictureBox4);
             this.panel2.Controls.Add(this.valueBox);
             this.panel2.Controls.Add(this.collumBox);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.filterLab);
             this.panel2.Location = new System.Drawing.Point(16, 67);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(500, 46);
+            this.panel2.Size = new System.Drawing.Size(471, 46);
             this.panel2.TabIndex = 4;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackColor = System.Drawing.Color.OldLace;
-            this.pictureBox4.BackgroundImage = global::SolbergBakery2531.UI.Properties.Resources.global_search;
-            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox4.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(46, 46);
-            this.pictureBox4.TabIndex = 22;
-            this.pictureBox4.TabStop = false;
             // 
             // valueBox
             // 
             this.valueBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valueBox.Location = new System.Drawing.Point(145, 12);
+            this.valueBox.Location = new System.Drawing.Point(108, 12);
             this.valueBox.Name = "valueBox";
             this.valueBox.Size = new System.Drawing.Size(166, 20);
             this.valueBox.TabIndex = 16;
@@ -395,7 +378,7 @@
             // collumBox
             // 
             this.collumBox.FormattingEnabled = true;
-            this.collumBox.Location = new System.Drawing.Point(361, 11);
+            this.collumBox.Location = new System.Drawing.Point(324, 11);
             this.collumBox.Name = "collumBox";
             this.collumBox.Size = new System.Drawing.Size(121, 21);
             this.collumBox.TabIndex = 19;
@@ -404,7 +387,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(322, 11);
+            this.label3.Location = new System.Drawing.Point(285, 11);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(33, 20);
             this.label3.TabIndex = 18;
@@ -414,11 +397,22 @@
             // 
             this.filterLab.AutoSize = true;
             this.filterLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.filterLab.Location = new System.Drawing.Point(56, 12);
+            this.filterLab.Location = new System.Drawing.Point(19, 12);
             this.filterLab.Name = "filterLab";
             this.filterLab.Size = new System.Drawing.Size(83, 20);
             this.filterLab.TabIndex = 16;
             this.filterLab.Text = "Search for";
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox4.BackgroundImage = global::SolbergBakery2531.UI.Properties.Resources.global_searchfill;
+            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox4.Location = new System.Drawing.Point(602, 67);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(46, 46);
+            this.pictureBox4.TabIndex = 22;
+            this.pictureBox4.TabStop = false;
             // 
             // panel7
             // 
@@ -444,19 +438,33 @@
             this.rtnBtn.UseVisualStyleBackColor = true;
             this.rtnBtn.Click += new System.EventHandler(this.rtnBtn_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = global::SolbergBakery2531.UI.Properties.Resources.edit_2fill;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(1073, 67);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(46, 46);
+            this.pictureBox1.TabIndex = 26;
+            this.pictureBox1.TabStop = false;
+            // 
             // UserAccessManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::SolbergBakery2531.UI.Properties.Resources.HDHD_1080;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1184, 654);
+            this.ClientSize = new System.Drawing.Size(1190, 650);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.rtnBtn);
             this.Controls.Add(this.title);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.UserGrid);
             this.Controls.Add(this.panel7);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "UserAccessManagement";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -476,6 +484,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -509,13 +518,13 @@
         private System.Windows.Forms.ComboBox collumBox;
         private System.Windows.Forms.Label label3;
         private MaterialSkin.Controls.MaterialFlatButton rtnBtn;
+        private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.DataGridViewTextBoxColumn GUIDCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn UsernameCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn IsSystemManagerCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn CreatedTimeCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn IsActiveCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn PasswordCol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeGUIDCol;
-        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

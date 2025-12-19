@@ -13,5 +13,7 @@ namespace SolbergBakery2531.DAL.Model
         [Required]
         [StringLength(30)]
         public string Name { get; set; }
+        [StringLength(30)]
+        public string EngName { get; set; }
     }
 }

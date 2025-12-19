@@ -9,7 +9,8 @@ namespace SolbergBakery2531.DAL.Data
         public DbSet<User> Users { get; set; }
         public DbSet<Staff> Staffs { get; set; }
         public DbSet<Product> Products { get; set; }
-        public DbSet<ProductOpt> ProductOtps { get; set; }
+        public DbSet<ProductVisual> ProductVisuals { get; set; }
+        //public DbSet<ProductOpt> ProductOtps { get; set; }
         public DbSet<StaffHistory> StaffHistories { get; set; }
         public DbSet<ProdCategory> ProdCategories { get; set; }
         public BakeryDbContext(string connectionString) : base(connectionString)

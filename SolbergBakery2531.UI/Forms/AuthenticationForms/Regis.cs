@@ -42,9 +42,10 @@ namespace SolbergBakery2531.UI
             regisBtn.Enabled = isEmailValid && passwordsMatch && userFilled;
         }
 
-        private void toLogInBtn_Click(object sender, EventArgs e)
+        private async void toLogInBtn_Click(object sender, EventArgs e)
         {
             new LogIn().Show();
+            await UIUtils.ShowToast("Loading...", "SolbergBakery:", 200);
             this.Dispose();
         }
 

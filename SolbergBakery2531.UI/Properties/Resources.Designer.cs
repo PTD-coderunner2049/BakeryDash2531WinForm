@@ -73,6 +73,16 @@ namespace SolbergBakery2531.UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ARDECHOISVUEHAUTcopie {
+            get {
+                object obj = ResourceManager.GetObject("ARDECHOISVUEHAUTcopie", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap B {
             get {
                 object obj = ResourceManager.GetObject("B", resourceCulture);
@@ -113,6 +123,26 @@ namespace SolbergBakery2531.UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap edit_2 {
+            get {
+                object obj = ResourceManager.GetObject("edit-2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap edit_2fill {
+            get {
+                object obj = ResourceManager.GetObject("edit-2fill", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap filter_addxxx_ {
             get {
                 object obj = ResourceManager.GetObject("filter-addxxx.", resourceCulture);
@@ -136,6 +166,16 @@ namespace SolbergBakery2531.UI.Properties {
         internal static System.Drawing.Bitmap global_search1 {
             get {
                 object obj = ResourceManager.GetObject("global-search1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap global_searchfill {
+            get {
+                object obj = ResourceManager.GetObject("global-searchfill", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

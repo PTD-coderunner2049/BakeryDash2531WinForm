@@ -63,6 +63,7 @@
             this.nameLab = new System.Windows.Forms.Label();
             this.FnameText = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.instBtn = new MaterialSkin.Controls.MaterialFlatButton();
@@ -74,24 +75,25 @@
             this.svBtn = new MaterialSkin.Controls.MaterialFlatButton();
             this.panel5 = new System.Windows.Forms.Panel();
             this.delBtn = new MaterialSkin.Controls.MaterialFlatButton();
+            this.rtnBtn = new MaterialSkin.Controls.MaterialFlatButton();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.valueBox = new System.Windows.Forms.TextBox();
             this.collumBox = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.filterLab = new System.Windows.Forms.Label();
-            this.rtnBtn = new MaterialSkin.Controls.MaterialFlatButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.StaffGrid)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // title
@@ -448,6 +450,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.OldLace;
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.svWarnLab);
             this.panel1.Controls.Add(this.groupBox1);
@@ -456,6 +459,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1156, 169);
             this.panel1.TabIndex = 3;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = global::SolbergBakery2531.UI.Properties.Resources.edit_2;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(1086, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(46, 46);
+            this.pictureBox1.TabIndex = 25;
+            this.pictureBox1.TabStop = false;
             // 
             // panel3
             // 
@@ -599,55 +613,6 @@
             this.delBtn.UseVisualStyleBackColor = false;
             this.delBtn.Click += new System.EventHandler(this.delBtn_Click);
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.OldLace;
-            this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Controls.Add(this.valueBox);
-            this.panel2.Controls.Add(this.collumBox);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.filterLab);
-            this.panel2.Location = new System.Drawing.Point(16, 67);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(500, 46);
-            this.panel2.TabIndex = 4;
-            // 
-            // valueBox
-            // 
-            this.valueBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valueBox.Location = new System.Drawing.Point(145, 14);
-            this.valueBox.Name = "valueBox";
-            this.valueBox.Size = new System.Drawing.Size(166, 20);
-            this.valueBox.TabIndex = 16;
-            // 
-            // collumBox
-            // 
-            this.collumBox.FormattingEnabled = true;
-            this.collumBox.Location = new System.Drawing.Point(361, 13);
-            this.collumBox.Name = "collumBox";
-            this.collumBox.Size = new System.Drawing.Size(121, 21);
-            this.collumBox.TabIndex = 19;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(322, 13);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(33, 20);
-            this.label3.TabIndex = 18;
-            this.label3.Text = "by :";
-            // 
-            // filterLab
-            // 
-            this.filterLab.AutoSize = true;
-            this.filterLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.filterLab.Location = new System.Drawing.Point(56, 14);
-            this.filterLab.Name = "filterLab";
-            this.filterLab.Size = new System.Drawing.Size(83, 20);
-            this.filterLab.TabIndex = 16;
-            this.filterLab.Text = "Search for";
-            // 
             // rtnBtn
             // 
             this.rtnBtn.AutoSize = true;
@@ -664,16 +629,64 @@
             this.rtnBtn.UseVisualStyleBackColor = true;
             this.rtnBtn.Click += new System.EventHandler(this.rtnBtn_Click);
             // 
-            // pictureBox1
+            // pictureBox4
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.OldLace;
-            this.pictureBox1.BackgroundImage = global::SolbergBakery2531.UI.Properties.Resources.global_search;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(46, 46);
-            this.pictureBox1.TabIndex = 22;
-            this.pictureBox1.TabStop = false;
+            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox4.BackgroundImage = global::SolbergBakery2531.UI.Properties.Resources.global_searchfill;
+            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox4.Location = new System.Drawing.Point(602, 67);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(46, 46);
+            this.pictureBox4.TabIndex = 24;
+            this.pictureBox4.TabStop = false;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.OldLace;
+            this.panel2.Controls.Add(this.valueBox);
+            this.panel2.Controls.Add(this.collumBox);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.filterLab);
+            this.panel2.Location = new System.Drawing.Point(16, 67);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(471, 46);
+            this.panel2.TabIndex = 23;
+            // 
+            // valueBox
+            // 
+            this.valueBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valueBox.Location = new System.Drawing.Point(108, 12);
+            this.valueBox.Name = "valueBox";
+            this.valueBox.Size = new System.Drawing.Size(166, 20);
+            this.valueBox.TabIndex = 16;
+            // 
+            // collumBox
+            // 
+            this.collumBox.FormattingEnabled = true;
+            this.collumBox.Location = new System.Drawing.Point(324, 11);
+            this.collumBox.Name = "collumBox";
+            this.collumBox.Size = new System.Drawing.Size(121, 21);
+            this.collumBox.TabIndex = 19;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(285, 11);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(33, 20);
+            this.label3.TabIndex = 18;
+            this.label3.Text = "by :";
+            // 
+            // filterLab
+            // 
+            this.filterLab.AutoSize = true;
+            this.filterLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.filterLab.Location = new System.Drawing.Point(19, 12);
+            this.filterLab.Name = "filterLab";
+            this.filterLab.Size = new System.Drawing.Size(83, 20);
+            this.filterLab.TabIndex = 16;
+            this.filterLab.Text = "Search for";
             // 
             // StaffInfoManagement
             // 
@@ -681,10 +694,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::SolbergBakery2531.UI.Properties.Resources.HDHD_1080;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1184, 654);
+            this.ClientSize = new System.Drawing.Size(1190, 650);
+            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.rtnBtn);
             this.Controls.Add(this.title);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.StaffGrid);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -696,6 +710,7 @@
             this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
@@ -706,9 +721,9 @@
             this.panel6.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -721,7 +736,6 @@
         private System.Windows.Forms.TextBox emailText;
         private System.Windows.Forms.TextBox ssnText;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.CheckedListBox StatusRoleBox;
         private System.Windows.Forms.Label guidLab;
         private System.Windows.Forms.TextBox staffGUIDText;
@@ -730,10 +744,6 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label filterLab;
-        private System.Windows.Forms.TextBox valueBox;
-        private System.Windows.Forms.ComboBox collumBox;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label emailLab;
         private System.Windows.Forms.Label ssnLab;
         private System.Windows.Forms.TextBox phoneText;
@@ -766,6 +776,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn PayrateCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn RoleCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn ActiveCol;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TextBox valueBox;
+        private System.Windows.Forms.ComboBox collumBox;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label filterLab;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

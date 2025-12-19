@@ -53,11 +53,6 @@ namespace SolbergBakery2531.UI
             }
         }
 
-        private void toSignUpBtn_Click(object sender, EventArgs e)
-        {
-            new Regis().Show();
-            this.Dispose();
-        }
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             base.OnFormClosing(e);
@@ -65,6 +60,13 @@ namespace SolbergBakery2531.UI
             {
                 Application.Exit();
             }
+        }
+
+        private async void toSignUpBtn_Click(object sender, EventArgs e)
+        {
+            new Regis().Show();
+            await UIUtils.ShowToast("Loading...", "SolbergBakery:", 200);
+            this.Dispose();
         }
     }
 }

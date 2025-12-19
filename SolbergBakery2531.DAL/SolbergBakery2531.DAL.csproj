@@ -78,7 +78,20 @@
     <Compile Include="Migrations\202512191954203_addmodelcate.Designer.cs">
       <DependentUpon>202512191954203_addmodelcate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202512192007271_addmodelcate2.cs" />
+    <Compile Include="Migrations\202512192007271_addmodelcate2.Designer.cs">
+      <DependentUpon>202512192007271_addmodelcate2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202512192013311_addmodelcate3.cs" />
+    <Compile Include="Migrations\202512192013311_addmodelcate3.Designer.cs">
+      <DependentUpon>202512192013311_addmodelcate3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202512192020120_addProdVisual.cs" />
+    <Compile Include="Migrations\202512192020120_addProdVisual.Designer.cs">
+      <DependentUpon>202512192020120_addProdVisual.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\ProdCategory.cs" />
+    <Compile Include="Model\ProductVisual.cs" />
     <Compile Include="Session\CurrSess.cs" />
     <Compile Include="Data\BakeryDbContext.cs" />
     <Compile Include="Migrations\Configuration.cs" />
@@ -96,6 +109,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202512191954203_addmodelcate.resx">
       <DependentUpon>202512191954203_addmodelcate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202512192007271_addmodelcate2.resx">
+      <DependentUpon>202512192007271_addmodelcate2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202512192013311_addmodelcate3.resx">
+      <DependentUpon>202512192013311_addmodelcate3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202512192020120_addProdVisual.resx">
+      <DependentUpon>202512192020120_addProdVisual.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

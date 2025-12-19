@@ -448,8 +448,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PapayaWhip;
-            this.BackgroundImage = global::SolbergBakery2531.UI.Properties.Resources.HDHD_1080;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BackgroundImage = global::SolbergBakery2531.UI.Properties.Resources.ARDECHOISVUEHAUTcopie;
             this.ClientSize = new System.Drawing.Size(1180, 677);
             this.Controls.Add(this.panelBack);
             this.Controls.Add(this.GeneralProgBar);

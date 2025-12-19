@@ -17,8 +17,9 @@ namespace SolbergBakery2531.UI
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new StaffInfoManagement());
             //Application.Run(new UserAccessManagement());
-            new LogIn().Show();
+            //new LogIn().Show();
             //new EmploymentHistory().Show();
+            new ProdInfoManagement().Show();
 
             Application.Run();
         }
