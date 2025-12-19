@@ -4,15 +4,14 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SolbergBakery2531.DAL.Model
 {
-    [Table("ProductOpts")]
-    public class ProductOpt
+    [Table("ProdCategories")]
+    public class ProdCategory
     {
         [Key]
         public Guid Id { get; set; } = Guid.NewGuid();
 
         [Required]
-        [StringLength(300)]
-        public string Option { get; set; }
-        public virtual Product AssociatedProduct { get; set; }
+        [StringLength(30)]
+        public string Name { get; set; }
     }
 }

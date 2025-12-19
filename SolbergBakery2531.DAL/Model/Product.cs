@@ -8,9 +8,7 @@ namespace SolbergBakery2531.DAL.Model
     public class Product
     {
         [Key]
-        public int Id { get; set; }
-        [Required]
-        public Guid ProductGlobalId { get; set; } = Guid.NewGuid();
+        public Guid Id { get; set; } = Guid.NewGuid();
         
         [Required]
         [StringLength(300)]
@@ -23,5 +21,9 @@ namespace SolbergBakery2531.DAL.Model
 
         [Required]
         public decimal Pricing { get; set; }
+
+        public Guid CateID { get; set; }
+        [ForeignKey("CateID")]
+        public virtual ProdCategory AssociatedCategory { get; set; }
     }
 }

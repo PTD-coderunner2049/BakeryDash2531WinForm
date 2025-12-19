@@ -7,13 +7,13 @@ namespace SolbergBakery2531.DAL.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.5.1")]
-    public sealed partial class Initial : IMigrationMetadata
+    public sealed partial class addmodelcate : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Initial));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(addmodelcate));
         
         string IMigrationMetadata.Id
         {
-            get { return "202512181945250_Initial"; }
+            get { return "202512191954203_addmodelcate"; }
         }
         
         string IMigrationMetadata.Source

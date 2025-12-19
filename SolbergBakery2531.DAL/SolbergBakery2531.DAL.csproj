@@ -69,25 +69,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CRUD.Authorization.cs" />
-    <Compile Include="CRUD.Histories.cs" />
-    <Compile Include="CRUD.Registry.cs" />
-    <Compile Include="CRUD.Staff.cs" />
-    <Compile Include="CRUD.User.cs" />
-    <Compile Include="CurrSess.cs" />
+    <Compile Include="CRUD\CRUD.Authorization.cs" />
+    <Compile Include="CRUD\CRUD.Histories.cs" />
+    <Compile Include="CRUD\CRUD.Registry.cs" />
+    <Compile Include="CRUD\CRUD.Staff.cs" />
+    <Compile Include="CRUD\CRUD.User.cs" />
+    <Compile Include="Migrations\202512191954203_addmodelcate.cs" />
+    <Compile Include="Migrations\202512191954203_addmodelcate.Designer.cs">
+      <DependentUpon>202512191954203_addmodelcate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ProdCategory.cs" />
+    <Compile Include="Session\CurrSess.cs" />
     <Compile Include="Data\BakeryDbContext.cs" />
-    <Compile Include="Migrations\202512181945250_Initial.cs" />
-    <Compile Include="Migrations\202512181945250_Initial.Designer.cs">
-      <DependentUpon>202512181945250_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202512182219031_Initial2.cs" />
-    <Compile Include="Migrations\202512182219031_Initial2.Designer.cs">
-      <DependentUpon>202512182219031_Initial2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202512182251053_Initial21.cs" />
-    <Compile Include="Migrations\202512182251053_Initial21.Designer.cs">
-      <DependentUpon>202512182251053_Initial21.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Product.cs" />
     <Compile Include="Model\ProductOpt.cs" />
@@ -97,19 +90,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202512181945250_Initial.resx">
-      <DependentUpon>202512181945250_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202512182219031_Initial2.resx">
-      <DependentUpon>202512182219031_Initial2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202512182251053_Initial21.resx">
-      <DependentUpon>202512182251053_Initial21.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202512191954203_addmodelcate.resx">
+      <DependentUpon>202512191954203_addmodelcate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

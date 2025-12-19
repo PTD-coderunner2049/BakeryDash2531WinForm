@@ -163,6 +163,9 @@
     <Content Include="assets\BANNIERE_BUCHE_TAIGA_HAUT_copie.png" />
     <Content Include="assets\E1.png" />
     <Content Include="assets\E2.png" />
+    <None Include="assets\filter-add.png" />
+    <None Include="assets\filter-addxxx..png" />
+    <None Include="assets\global-search.png" />
     <Content Include="assets\google.png" />
     <Content Include="assets\HDHD.jpg" />
     <Content Include="assets\HDHD_1080.jpg" />

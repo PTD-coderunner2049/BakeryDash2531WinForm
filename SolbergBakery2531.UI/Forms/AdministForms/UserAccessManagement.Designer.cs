@@ -31,6 +31,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.title = new System.Windows.Forms.Label();
             this.UserGrid = new System.Windows.Forms.DataGridView();
+            this.GUIDCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UsernameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IsSystemManagerCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CreatedTimeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IsActiveCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PasswordCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmployeeGUIDCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.staffGUIDText = new System.Windows.Forms.TextBox();
@@ -49,19 +56,13 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.delBtn = new MaterialSkin.Controls.MaterialFlatButton();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.valueBox = new System.Windows.Forms.TextBox();
             this.collumBox = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.filterLab = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.rtnBtn = new MaterialSkin.Controls.MaterialFlatButton();
-            this.GUIDCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UsernameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IsSystemManagerCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CreatedTimeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IsActiveCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PasswordCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EmployeeGUIDCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.UserGrid)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -70,6 +71,7 @@
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // title
@@ -78,7 +80,7 @@
             this.title.BackColor = System.Drawing.Color.Transparent;
             this.title.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.title.ForeColor = System.Drawing.SystemColors.Control;
-            this.title.Location = new System.Drawing.Point(12, 26);
+            this.title.Location = new System.Drawing.Point(16, 26);
             this.title.Name = "title";
             this.title.Size = new System.Drawing.Size(270, 22);
             this.title.TabIndex = 0;
@@ -99,7 +101,7 @@
             this.PasswordCol,
             this.EmployeeGUIDCol});
             this.UserGrid.GridColor = System.Drawing.Color.Brown;
-            this.UserGrid.Location = new System.Drawing.Point(12, 119);
+            this.UserGrid.Location = new System.Drawing.Point(16, 119);
             this.UserGrid.MultiSelect = false;
             this.UserGrid.Name = "UserGrid";
             this.UserGrid.ReadOnly = true;
@@ -115,6 +117,57 @@
             this.UserGrid.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.UserGrid.Size = new System.Drawing.Size(632, 530);
             this.UserGrid.TabIndex = 1;
+            // 
+            // GUIDCol
+            // 
+            this.GUIDCol.DataPropertyName = "Id";
+            this.GUIDCol.HeaderText = "GUID";
+            this.GUIDCol.Name = "GUIDCol";
+            this.GUIDCol.ReadOnly = true;
+            this.GUIDCol.Width = 40;
+            // 
+            // UsernameCol
+            // 
+            this.UsernameCol.DataPropertyName = "Username";
+            this.UsernameCol.HeaderText = "Username";
+            this.UsernameCol.Name = "UsernameCol";
+            this.UsernameCol.ReadOnly = true;
+            // 
+            // IsSystemManagerCol
+            // 
+            this.IsSystemManagerCol.DataPropertyName = "IsSystemManager";
+            this.IsSystemManagerCol.HeaderText = "IsSystemManager";
+            this.IsSystemManagerCol.Name = "IsSystemManagerCol";
+            this.IsSystemManagerCol.ReadOnly = true;
+            // 
+            // CreatedTimeCol
+            // 
+            this.CreatedTimeCol.DataPropertyName = "CreatedAt";
+            this.CreatedTimeCol.HeaderText = "CreatedAt";
+            this.CreatedTimeCol.Name = "CreatedTimeCol";
+            this.CreatedTimeCol.ReadOnly = true;
+            // 
+            // IsActiveCol
+            // 
+            this.IsActiveCol.DataPropertyName = "Active";
+            this.IsActiveCol.HeaderText = "IsActive";
+            this.IsActiveCol.Name = "IsActiveCol";
+            this.IsActiveCol.ReadOnly = true;
+            this.IsActiveCol.Width = 60;
+            // 
+            // PasswordCol
+            // 
+            this.PasswordCol.DataPropertyName = "PasswordHash";
+            this.PasswordCol.HeaderText = "Password";
+            this.PasswordCol.Name = "PasswordCol";
+            this.PasswordCol.ReadOnly = true;
+            // 
+            // EmployeeGUIDCol
+            // 
+            this.EmployeeGUIDCol.DataPropertyName = "EmployeeGlobalId";
+            this.EmployeeGUIDCol.HeaderText = "EmployeeGUID";
+            this.EmployeeGUIDCol.Name = "EmployeeGUIDCol";
+            this.EmployeeGUIDCol.ReadOnly = true;
             // 
             // groupBox1
             // 
@@ -310,19 +363,31 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.OldLace;
+            this.panel2.Controls.Add(this.pictureBox4);
             this.panel2.Controls.Add(this.valueBox);
             this.panel2.Controls.Add(this.collumBox);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.filterLab);
-            this.panel2.Location = new System.Drawing.Point(12, 67);
+            this.panel2.Location = new System.Drawing.Point(16, 67);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(456, 46);
+            this.panel2.Size = new System.Drawing.Size(500, 46);
             this.panel2.TabIndex = 4;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.OldLace;
+            this.pictureBox4.BackgroundImage = global::SolbergBakery2531.UI.Properties.Resources.global_search;
+            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox4.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(46, 46);
+            this.pictureBox4.TabIndex = 22;
+            this.pictureBox4.TabStop = false;
             // 
             // valueBox
             // 
             this.valueBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valueBox.Location = new System.Drawing.Point(104, 14);
+            this.valueBox.Location = new System.Drawing.Point(145, 12);
             this.valueBox.Name = "valueBox";
             this.valueBox.Size = new System.Drawing.Size(166, 20);
             this.valueBox.TabIndex = 16;
@@ -330,7 +395,7 @@
             // collumBox
             // 
             this.collumBox.FormattingEnabled = true;
-            this.collumBox.Location = new System.Drawing.Point(320, 13);
+            this.collumBox.Location = new System.Drawing.Point(361, 11);
             this.collumBox.Name = "collumBox";
             this.collumBox.Size = new System.Drawing.Size(121, 21);
             this.collumBox.TabIndex = 19;
@@ -339,7 +404,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(281, 13);
+            this.label3.Location = new System.Drawing.Point(322, 11);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(33, 20);
             this.label3.TabIndex = 18;
@@ -349,7 +414,7 @@
             // 
             this.filterLab.AutoSize = true;
             this.filterLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.filterLab.Location = new System.Drawing.Point(15, 14);
+            this.filterLab.Location = new System.Drawing.Point(56, 12);
             this.filterLab.Name = "filterLab";
             this.filterLab.Size = new System.Drawing.Size(83, 20);
             this.filterLab.TabIndex = 16;
@@ -378,57 +443,6 @@
             this.rtnBtn.Text = "Return";
             this.rtnBtn.UseVisualStyleBackColor = true;
             this.rtnBtn.Click += new System.EventHandler(this.rtnBtn_Click);
-            // 
-            // GUIDCol
-            // 
-            this.GUIDCol.DataPropertyName = "Id";
-            this.GUIDCol.HeaderText = "GUID";
-            this.GUIDCol.Name = "GUIDCol";
-            this.GUIDCol.ReadOnly = true;
-            this.GUIDCol.Width = 40;
-            // 
-            // UsernameCol
-            // 
-            this.UsernameCol.DataPropertyName = "Username";
-            this.UsernameCol.HeaderText = "Username";
-            this.UsernameCol.Name = "UsernameCol";
-            this.UsernameCol.ReadOnly = true;
-            // 
-            // IsSystemManagerCol
-            // 
-            this.IsSystemManagerCol.DataPropertyName = "IsSystemManager";
-            this.IsSystemManagerCol.HeaderText = "IsSystemManager";
-            this.IsSystemManagerCol.Name = "IsSystemManagerCol";
-            this.IsSystemManagerCol.ReadOnly = true;
-            // 
-            // CreatedTimeCol
-            // 
-            this.CreatedTimeCol.DataPropertyName = "CreatedAt";
-            this.CreatedTimeCol.HeaderText = "CreatedAt";
-            this.CreatedTimeCol.Name = "CreatedTimeCol";
-            this.CreatedTimeCol.ReadOnly = true;
-            // 
-            // IsActiveCol
-            // 
-            this.IsActiveCol.DataPropertyName = "Active";
-            this.IsActiveCol.HeaderText = "IsActive";
-            this.IsActiveCol.Name = "IsActiveCol";
-            this.IsActiveCol.ReadOnly = true;
-            this.IsActiveCol.Width = 60;
-            // 
-            // PasswordCol
-            // 
-            this.PasswordCol.DataPropertyName = "PasswordHash";
-            this.PasswordCol.HeaderText = "Password";
-            this.PasswordCol.Name = "PasswordCol";
-            this.PasswordCol.ReadOnly = true;
-            // 
-            // EmployeeGUIDCol
-            // 
-            this.EmployeeGUIDCol.DataPropertyName = "EmployeeGlobalId";
-            this.EmployeeGUIDCol.HeaderText = "EmployeeGUID";
-            this.EmployeeGUIDCol.Name = "EmployeeGUIDCol";
-            this.EmployeeGUIDCol.ReadOnly = true;
             // 
             // UserAccessManagement
             // 
@@ -461,6 +475,7 @@
             this.panel5.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -501,5 +516,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn IsActiveCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn PasswordCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeGUIDCol;
+        private System.Windows.Forms.PictureBox pictureBox4;
     }
 }

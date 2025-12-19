@@ -11,6 +11,7 @@ namespace SolbergBakery2531.DAL.Data
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductOpt> ProductOtps { get; set; }
         public DbSet<StaffHistory> StaffHistories { get; set; }
+        public DbSet<ProdCategory> ProdCategories { get; set; }
         public BakeryDbContext(string connectionString) : base(connectionString)
         {
             // Constructor for the DAL to receive a specific connection string if I really wanted to, or needed to use multiple DBs.
