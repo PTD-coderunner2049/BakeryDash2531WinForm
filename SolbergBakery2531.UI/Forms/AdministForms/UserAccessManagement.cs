@@ -40,7 +40,7 @@ namespace SolbergBakery2531.UI
         {
             if (collumBox.Items.Count == 0)
             {
-                collumBox.Items.AddRange(new string[] { "Username", "Role", "Status", "Date", "User GUID", "Staff GUID" });
+                collumBox.Items.AddRange(new string[] { "Username", "Id", "CreatedAt", "EmployeeGlobalId" });
                 collumBox.SelectedIndex = 0;
             }
         }

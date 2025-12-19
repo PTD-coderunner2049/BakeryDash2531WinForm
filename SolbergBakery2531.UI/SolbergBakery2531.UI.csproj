@@ -75,6 +75,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\AdministForms\EmploymentHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdministForms\EmploymentHistory.Designer.cs">
+      <DependentUpon>EmploymentHistory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AdministForms\StaffInfoManagement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +115,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="_utils\DataGridExtensions.cs" />
     <Compile Include="_utils\_utils.cs" />
+    <EmbeddedResource Include="Forms\AdministForms\EmploymentHistory.resx">
+      <DependentUpon>EmploymentHistory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdministForms\StaffInfoManagement.resx">
       <DependentUpon>StaffInfoManagement.cs</DependentUpon>
     </EmbeddedResource>

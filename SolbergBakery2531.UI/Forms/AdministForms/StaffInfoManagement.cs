@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Runtime.Remoting.Contexts;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SolbergBakery2531.UI.Forms.AdministForms;
 
 namespace SolbergBakery2531.UI
 {
@@ -142,9 +143,9 @@ namespace SolbergBakery2531.UI
 
         private async void ApplyFilterAsync()
         {
+            await UIUtils.ShowToast("Updating...", "SolbergBakery", 1000);
             string filterColumn = collumBox.SelectedItem.ToString();
             string filterValue = valueBox.Text.Trim();
-            await UIUtils.ShowToast("Updating...", "SolbergBakery", 1000);
 
             _staffService.GetFilteredStaff(_fullDataTable, filterColumn, filterValue);
         }
@@ -277,9 +278,17 @@ namespace SolbergBakery2531.UI
             birthText.Clear();
         }
 
-        private void historyBtn_Click(object sender, EventArgs e)
+        private async void historyBtn_Click(object sender, EventArgs e)
         {
-
+            DataRow dataRow = StaffGrid.GetSelectedRow();
+            if (dataRow == null)
+            {
+                await UIUtils.ShowToast("Object's History not found!", "SolbergBakery", 1000);
+                return;
+            }
+            Guid empGuid = Guid.Empty;
+            Guid.TryParse(staffGUIDText.Text, out empGuid);
+            new EmploymentHistory(empGuid, FnameText.Text + " " + LnameText.Text).Show();
         }
 
         private void rtnBtn_Click(object sender, EventArgs e)

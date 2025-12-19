@@ -13,6 +13,14 @@ namespace SolbergBakery2531.BLL
         {
             return new CRUD().GetStaffs();
         }
+        public DataTable HistoryFetch(Guid Id)
+        {
+            return new CRUD().GetHistories(Id);
+        }
+        public bool SaveHistory(Guid staffId, string hr_feedback)
+        {
+            return new CRUD().svHistory(staffId, hr_feedback);
+        }
         public bool SaveStaff(
             Guid empGuid,
             string email,

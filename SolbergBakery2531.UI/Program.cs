@@ -1,4 +1,5 @@
 ﻿using SolbergBakery2531.BLL;
+using SolbergBakery2531.UI.Forms.AdministForms;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +18,8 @@ namespace SolbergBakery2531.UI
             //Application.Run(new StaffInfoManagement());
             //Application.Run(new UserAccessManagement());
             new LogIn().Show();
+            //new EmploymentHistory().Show();
+
             Application.Run();
         }
     }

@@ -57,9 +57,9 @@
             this.rtnBtn = new MaterialSkin.Controls.MaterialFlatButton();
             this.GUIDCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UsernameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RoleCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IsSystemManagerCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CreatedTimeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StatusCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IsActiveCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PasswordCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EmployeeGUIDCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.UserGrid)).BeginInit();
@@ -93,9 +93,9 @@
             this.UserGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.GUIDCol,
             this.UsernameCol,
-            this.RoleCol,
+            this.IsSystemManagerCol,
             this.CreatedTimeCol,
-            this.StatusCol,
+            this.IsActiveCol,
             this.PasswordCol,
             this.EmployeeGUIDCol});
             this.UserGrid.GridColor = System.Drawing.Color.Brown;
@@ -381,7 +381,7 @@
             // 
             // GUIDCol
             // 
-            this.GUIDCol.DataPropertyName = "UserGlobalId";
+            this.GUIDCol.DataPropertyName = "Id";
             this.GUIDCol.HeaderText = "GUID";
             this.GUIDCol.Name = "GUIDCol";
             this.GUIDCol.ReadOnly = true;
@@ -394,12 +394,12 @@
             this.UsernameCol.Name = "UsernameCol";
             this.UsernameCol.ReadOnly = true;
             // 
-            // RoleCol
+            // IsSystemManagerCol
             // 
-            this.RoleCol.DataPropertyName = "IsSystemManager";
-            this.RoleCol.HeaderText = "IsSystemManager";
-            this.RoleCol.Name = "RoleCol";
-            this.RoleCol.ReadOnly = true;
+            this.IsSystemManagerCol.DataPropertyName = "IsSystemManager";
+            this.IsSystemManagerCol.HeaderText = "IsSystemManager";
+            this.IsSystemManagerCol.Name = "IsSystemManagerCol";
+            this.IsSystemManagerCol.ReadOnly = true;
             // 
             // CreatedTimeCol
             // 
@@ -408,13 +408,13 @@
             this.CreatedTimeCol.Name = "CreatedTimeCol";
             this.CreatedTimeCol.ReadOnly = true;
             // 
-            // StatusCol
+            // IsActiveCol
             // 
-            this.StatusCol.DataPropertyName = "Active";
-            this.StatusCol.HeaderText = "Status";
-            this.StatusCol.Name = "StatusCol";
-            this.StatusCol.ReadOnly = true;
-            this.StatusCol.Width = 60;
+            this.IsActiveCol.DataPropertyName = "Active";
+            this.IsActiveCol.HeaderText = "IsActive";
+            this.IsActiveCol.Name = "IsActiveCol";
+            this.IsActiveCol.ReadOnly = true;
+            this.IsActiveCol.Width = 60;
             // 
             // PasswordCol
             // 
@@ -496,9 +496,9 @@
         private MaterialSkin.Controls.MaterialFlatButton rtnBtn;
         private System.Windows.Forms.DataGridViewTextBoxColumn GUIDCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn UsernameCol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RoleCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IsSystemManagerCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn CreatedTimeCol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn StatusCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IsActiveCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn PasswordCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeGUIDCol;
     }
