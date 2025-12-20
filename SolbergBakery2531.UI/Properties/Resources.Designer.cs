@@ -103,6 +103,26 @@ namespace SolbergBakery2531.UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Barrier {
+            get {
+                object obj = ResourceManager.GetObject("Barrier", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ChatGPT_Image_Dec_20__2025__08_37_22_PM {
+            get {
+                object obj = ResourceManager.GetObject("ChatGPT Image Dec 20, 2025, 08_37_22 PM", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap E1 {
             get {
                 object obj = ResourceManager.GetObject("E1", resourceCulture);

@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Node1");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Node0", new System.Windows.Forms.TreeNode[] {
-            treeNode4});
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Node2");
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Node1");
+            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Node0", new System.Windows.Forms.TreeNode[] {
+            treeNode16});
+            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("Node2");
             this.svBtn = new MaterialSkin.Controls.MaterialFlatButton();
             this.delBtn = new MaterialSkin.Controls.MaterialFlatButton();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -59,7 +59,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.VisualDisplay = new System.Windows.Forms.PictureBox();
             this.VisualListView = new System.Windows.Forms.DataGridView();
-            this.VisualCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.svWarnLab = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -82,6 +81,8 @@
             this.DDateLab = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.VisualCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VisualBytes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProdGrid)).BeginInit();
@@ -240,14 +241,14 @@
             this.ProdGrid.Name = "ProdGrid";
             this.ProdGrid.ReadOnly = true;
             this.ProdGrid.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ProdGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ProdGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.ProdGrid.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.ProdGrid.Size = new System.Drawing.Size(630, 528);
             this.ProdGrid.TabIndex = 27;
@@ -312,15 +313,15 @@
             this.ProdTree.BackColor = System.Drawing.Color.OldLace;
             this.ProdTree.Location = new System.Drawing.Point(19, 58);
             this.ProdTree.Name = "ProdTree";
-            treeNode4.Name = "Node1";
-            treeNode4.Text = "Node1";
-            treeNode5.Name = "Node0";
-            treeNode5.Text = "Node0";
-            treeNode6.Name = "Node2";
-            treeNode6.Text = "Node2";
+            treeNode16.Name = "Node1";
+            treeNode16.Text = "Node1";
+            treeNode17.Name = "Node0";
+            treeNode17.Text = "Node0";
+            treeNode18.Name = "Node2";
+            treeNode18.Text = "Node2";
             this.ProdTree.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode5,
-            treeNode6});
+            treeNode17,
+            treeNode18});
             this.ProdTree.Size = new System.Drawing.Size(148, 580);
             this.ProdTree.TabIndex = 31;
             // 
@@ -390,11 +391,15 @@
             // 
             // VisualDisplay
             // 
+            this.VisualDisplay.BackColor = System.Drawing.Color.DimGray;
+            this.VisualDisplay.BackgroundImage = global::SolbergBakery2531.UI.Properties.Resources.Barrier;
+            this.VisualDisplay.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.VisualDisplay.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.VisualDisplay.Dock = System.Windows.Forms.DockStyle.Right;
             this.VisualDisplay.Location = new System.Drawing.Point(174, 16);
             this.VisualDisplay.Name = "VisualDisplay";
             this.VisualDisplay.Size = new System.Drawing.Size(116, 116);
+            this.VisualDisplay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.VisualDisplay.TabIndex = 35;
             this.VisualDisplay.TabStop = false;
             // 
@@ -402,21 +407,14 @@
             // 
             this.VisualListView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.VisualListView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.VisualCol});
+            this.VisualCol,
+            this.VisualBytes});
             this.VisualListView.Dock = System.Windows.Forms.DockStyle.Left;
             this.VisualListView.Location = new System.Drawing.Point(3, 16);
             this.VisualListView.Name = "VisualListView";
             this.VisualListView.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.VisualListView.Size = new System.Drawing.Size(165, 116);
             this.VisualListView.TabIndex = 34;
-            // 
-            // VisualCol
-            // 
-            this.VisualCol.DataPropertyName = "Id";
-            this.VisualCol.HeaderText = "Visual";
-            this.VisualCol.Name = "VisualCol";
-            this.VisualCol.ReadOnly = true;
-            this.VisualCol.Width = 120;
             // 
             // svWarnLab
             // 
@@ -643,6 +641,22 @@
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
+            // VisualCol
+            // 
+            this.VisualCol.DataPropertyName = "Id";
+            this.VisualCol.HeaderText = "Visual";
+            this.VisualCol.Name = "VisualCol";
+            this.VisualCol.ReadOnly = true;
+            this.VisualCol.Width = 120;
+            // 
+            // VisualBytes
+            // 
+            this.VisualBytes.DataPropertyName = "VisualinByte";
+            this.VisualBytes.HeaderText = "VisualBytesCol";
+            this.VisualBytes.Name = "VisualBytes";
+            this.VisualBytes.ReadOnly = true;
+            this.VisualBytes.Visible = false;
+            // 
             // ProdInfoManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -738,5 +752,6 @@
         private System.Windows.Forms.DataGridView VisualListView;
         private System.Windows.Forms.PictureBox VisualDisplay;
         private System.Windows.Forms.DataGridViewTextBoxColumn VisualCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn VisualBytes;
     }
 }

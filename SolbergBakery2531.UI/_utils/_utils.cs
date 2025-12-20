@@ -10,7 +10,15 @@ namespace SolbergBakery2531._utils
     {
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn(int nLeftRect, int nTopRect, int nRightRect, int nBottomRect, int nWidthEllipse, int nHeightEllipse);
-
+        public static byte[] ImageToByteArray(Image imageIn)
+        {
+            using (var ms = new System.IO.MemoryStream())
+            {
+                // You can choose the format (Jpeg, Png, etc.)
+                imageIn.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                return ms.ToArray();
+            }
+        }
         public static async Task ShowToast(string message, string title = "BakeryDash", int durationInMs = 2200, bool isSuccess = true)
         {
             // --- Artisan Theme Colors ---

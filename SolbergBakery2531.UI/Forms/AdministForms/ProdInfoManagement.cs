@@ -70,6 +70,12 @@ namespace SolbergBakery2531.UI.Forms.AdministForms
                 VisualDisplay.Image = null;
                 return;
             }
+            byte[] imgBytes = (byte[])dataRow["VisualBytes"];
+            using (var ms = new System.IO.MemoryStream(imgBytes))
+            {
+                //VisualDisplay.SizeMode = PictureBoxSizeMode.Zoom;
+                VisualDisplay.Image = Image.FromStream(ms);
+            }
         }
         private void ProdGrid_SelectionChanged(object sender, EventArgs e)
         {
@@ -158,8 +164,10 @@ namespace SolbergBakery2531.UI.Forms.AdministForms
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 string selectedFilePath = openFileDialog.FileName;
-                VisualDisplay.Image = Image.FromFile(selectedFilePath);
-                MessageBox.Show("Selected: " + selectedFilePath);
+                Image img = Image.FromFile(selectedFilePath);
+                
+                byte[] imgBytes = UIUtils.ImageToByteArray(img);
+                VisualDisplay.Image = img;
             }
         }
     }
