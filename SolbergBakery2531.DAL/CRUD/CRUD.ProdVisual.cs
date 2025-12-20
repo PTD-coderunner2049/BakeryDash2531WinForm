@@ -7,7 +7,7 @@ namespace SolbergBakery2531.DAL
 {
     public partial class CRUD
     {
-        public DataTable GetProdVisual()
+        public DataTable GetProdVisual(Guid productId)
         {
             using (var db = new BakeryDbContext())
             {
@@ -16,7 +16,9 @@ namespace SolbergBakery2531.DAL
                 dt.Columns.Add("VisualinByte", typeof(byte[]));
                 dt.Columns.Add("ProductId", typeof(Guid));
 
-                var List = db.ProductVisuals.Select(p => new
+                var List = db.ProductVisuals
+                    .Where(p => p.ProductId == productId)
+                    .Select(p => new
                 {
                     p.Id,
                     p.VisualinByte,

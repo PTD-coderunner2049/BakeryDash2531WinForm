@@ -50,13 +50,13 @@ namespace SolbergBakery2531.UI.Forms.AdministForms
                 MessageBox.Show($"Error loading staff data: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private async void LoadProdVisualAsync()
+        private async void LoadProdVisualAsync(Guid productId)
         {
             await UIUtils.ShowToast("Loading...Visual", "SolbergBakery", 500);
             try
             {
                 VisualListView.AutoGenerateColumns = false;
-                VisualListView.DataSource = _proderve.FetchVisual(); ;
+                VisualListView.DataSource = _proderve.FetchVisual(productId); ;
 
                 VisualListView.ClearSelection();
             }
@@ -100,7 +100,7 @@ namespace SolbergBakery2531.UI.Forms.AdministForms
             CateComboBox.SelectedValue = dataRow["ProdCategoryId"];
 
             _parent.UpdateProgress(25);
-            LoadProdVisualAsync();
+            LoadProdVisualAsync((Guid)dataRow["Id"]);
             _parent.endProgress();
         }
         private void ValueBox_TextChanged(object sender, EventArgs e)
@@ -289,7 +289,7 @@ namespace SolbergBakery2531.UI.Forms.AdministForms
                 {
                     bool sucess = _proderve.SaveProdVisual(imgBytes, (Guid)dataRow["Id"]);
                     if (sucess)
-                        LoadProdVisualAsync();
+                        LoadProdVisualAsync((Guid)dataRow["Id"]);
                     else
                         MessageBox.Show("Visual without associated product in db.", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -314,14 +314,14 @@ namespace SolbergBakery2531.UI.Forms.AdministForms
             {
                 bool success = _proderve.DelProdVisual((Guid)dataRow["Id"]);
                 if (success)
-                    LoadProdVisualAsync();
+                    LoadProdVisualAsync((Guid)dataRow["Id"]);
                     VisualDisplay.Image = null;
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error deleting visual data: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            LoadProdVisualAsync();
+            LoadProdVisualAsync((Guid)dataRow["Id"]);
             _parent.endProgress();
         }
     }

@@ -13,9 +13,9 @@ namespace SolbergBakery2531.BLL
         {
             return new CRUD().GetProd();
         }
-        public DataTable FetchVisual()
+        public DataTable FetchVisual(Guid productId)
         {
-            return new CRUD().GetProdVisual();
+            return new CRUD().GetProdVisual(productId);
         }
         public DataTable FetchCate()
         {
