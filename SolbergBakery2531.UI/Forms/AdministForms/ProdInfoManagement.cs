@@ -65,6 +65,7 @@ namespace SolbergBakery2531.UI.Forms.AdministForms
                 MessageBox.Show($"Error loading visual data: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         private void VisualListView_SelectionChanged(object sender, EventArgs e)
         {
             DataRow dataRow = VisualListView.GetSelectedRow();
@@ -73,7 +74,7 @@ namespace SolbergBakery2531.UI.Forms.AdministForms
                 VisualDisplay.Image = null;
                 return;
             }
-            byte[] imgBytes = (byte[])dataRow["VisualBytes"];
+            byte[] imgBytes = (byte[])dataRow["VisualinByte"];
             using (var ms = new System.IO.MemoryStream(imgBytes))
             {
                 //VisualDisplay.SizeMode = PictureBoxSizeMode.Zoom;
@@ -102,6 +103,11 @@ namespace SolbergBakery2531.UI.Forms.AdministForms
             LoadProdVisualAsync();
             _parent.endProgress();
         }
+        private void ValueBox_TextChanged(object sender, EventArgs e)
+        {
+            ApplyFilter();
+        }
+        
         private void SetupfilterBoxes()
         {
             if (collumBox.Items.Count == 0)
@@ -119,10 +125,6 @@ namespace SolbergBakery2531.UI.Forms.AdministForms
             CateComboBox.ValueMember = "Id"; //hidden
         }
 
-        private void ValueBox_TextChanged(object sender, EventArgs e)
-        {
-            ApplyFilter();
-        }
         private async void ApplyFilter()
         {
             _parent.resetProgress();
@@ -162,16 +164,16 @@ namespace SolbergBakery2531.UI.Forms.AdministForms
             }
             VisualDisplay.Image = null;
         }
+
         private void svBtn_Click(object sender, EventArgs e)
         {
             _parent.resetProgress();
             if (!ValidateInputs()) return;
 
             DataRow dataRow = ProdGrid.GetSelectedRow();
+            bool isNew = (dataRow == null);
 
-            Guid newGuid;
-            if (dataRow == null) newGuid = Guid.NewGuid();
-            else Guid.TryParse(dataRow["Id"].ToString(), out newGuid);
+            Guid currId = isNew? Guid.NewGuid() : (Guid)dataRow["Id"];
 
             string name = NameText.Text.Trim();
             string des = DesText.Text.Trim();
@@ -183,7 +185,7 @@ namespace SolbergBakery2531.UI.Forms.AdministForms
             try
             {
                 bool success = _proderve.SaveProd(
-                  newGuid,
+                  currId,
                   name,
                   des,
                   note,
@@ -195,7 +197,7 @@ namespace SolbergBakery2531.UI.Forms.AdministForms
 
                 if (success)
                 {
-                    svWarnLab.Text = (newGuid == Guid.Empty ? "New Product record created successfully!" : "Staff record updated successfully!");
+                    svWarnLab.Text = (isNew ? "New Product record created successfully!" : "Product record updated successfully!");
                     svWarnLab.ForeColor = Color.Green;
                     LoadProdDataAsync();
                 }
@@ -281,11 +283,15 @@ namespace SolbergBakery2531.UI.Forms.AdministForms
                 imgBytes = UIUtils.ImageToByteArray(img);
                 VisualDisplay.Image = img;
 
-            _parent.UpdateProgress(50);
-                try {
-                    bool sucess = _proderve.SaveProdVisual((Guid)dataRow["Id"], imgBytes, Guid.NewGuid());
+                _parent.UpdateProgress(50);
+
+                try
+                {
+                    bool sucess = _proderve.SaveProdVisual(imgBytes, (Guid)dataRow["Id"]);
                     if (sucess)
                         LoadProdVisualAsync();
+                    else
+                        MessageBox.Show("Visual without associated product in db.", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 catch (Exception ex)
                 {
@@ -294,7 +300,6 @@ namespace SolbergBakery2531.UI.Forms.AdministForms
                 _parent.endProgress();
             }
         }
-
         private async void delVbtn_Click(object sender, EventArgs e)
         {
             _parent.resetProgress();

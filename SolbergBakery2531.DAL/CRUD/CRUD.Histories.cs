@@ -1,4 +1,5 @@
 ﻿using SolbergBakery2531.DAL.Data;
+using SolbergBakery2531.DAL.Model;
 using System;
 using System.Data;
 using System.Linq;
@@ -39,7 +40,27 @@ namespace SolbergBakery2531.DAL
                 return dt;
             }
         }
-
+        public void Historian(BakeryDbContext db, Guid Id, bool OngoingStatus)
+        {
+            if (OngoingStatus)
+            {
+                db.StaffHistories.Add(new StaffHistory
+                {
+                    StaffId = Id,
+                    Start = DateTime.UtcNow,
+                    Ongoing = OngoingStatus
+                });
+            }
+            else
+            {
+                var ongoingHistory = db.StaffHistories.FirstOrDefault(h => h.StaffId == Id && h.Ongoing);
+                if (ongoingHistory != null)
+                {
+                    ongoingHistory.End = DateTime.UtcNow;
+                    ongoingHistory.Ongoing = OngoingStatus;
+                }
+            }
+        }
         public bool svHistory(Guid staffId, string hr_feedback)
         {
             try

@@ -23,15 +23,15 @@ namespace SolbergBakery2531.BLL
         }
         public bool SaveProd(Guid Id, string Name, string Des, string Note, decimal Price, DateTime ADate, DateTime DDate,Guid cateId)
         {
-            return new CRUD().SaveProd(Id, Name, Des, Note, Price, ADate, DDate);
+            return new CRUD().SaveProd(Id, Name, Des, Note, Price, ADate, DDate, cateId);
         }
         public bool DelProd(Guid Id)
         {
             return new CRUD().RemoveProd(Id);
         }
-        public bool SaveProdVisual(Guid Id, byte[] visual, Guid prodId)
+        public bool SaveProdVisual(byte[] visual, Guid prodId)
         {
-            return new CRUD().InsertProdVisual(Id, visual, Id);
+            return new CRUD().InsertProdVisual(visual, prodId);
         }
         public bool DelProdVisual(Guid Id)
         {

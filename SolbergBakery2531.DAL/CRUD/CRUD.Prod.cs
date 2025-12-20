@@ -1,4 +1,5 @@
 ﻿using SolbergBakery2531.DAL.Data;
+using SolbergBakery2531.DAL.Model;
 using System;
 using System.Data;
 using System.Linq;
@@ -49,33 +50,7 @@ namespace SolbergBakery2531.DAL
                 return dt;
             }
         }
-        public DataTable GetProdVisual()
-        {
-            using (var db = new BakeryDbContext())
-            {
-                DataTable dt = new DataTable();
-                dt.Columns.Add("Id", typeof(Guid));
-                dt.Columns.Add("VisualinByte", typeof(byte[]));
-                dt.Columns.Add("ProductId", typeof(Guid));
-
-                var List = db.ProductVisuals.Select(p => new
-                {
-                    p.Id,
-                    p.VisualinByte,
-                    p.ProductId,
-            }).ToList();
-
-                foreach (var p in List)
-                {
-                    dt.Rows.Add(
-                        p.Id,
-                        p.VisualinByte,
-                        p.ProductId
-                    );
-                }
-                return dt;
-            }
-        }
+        
         public DataTable GetProdCate()
         {
             using (var db = new BakeryDbContext())
@@ -104,21 +79,57 @@ namespace SolbergBakery2531.DAL
             }
         }
 
-        public bool SaveProd(Guid id, string name, string des, string note, decimal price, DateTime aDate, DateTime dDate)
+        public bool SaveProd(Guid id, string name, string des, string note, decimal price, DateTime aDate, DateTime dDate, Guid cateId)
         {
-            throw new NotImplementedException();
+            using (var db = new BakeryDbContext())
+            {
+                var product = db.Products.FirstOrDefault(p => p.Id == id);
+
+                if (product != null)
+                {
+                    product.Name = name;
+                    product.Description = des;
+                    product.Note = note;
+                    product.Pricing = price;
+                    product.AvailableDate = aDate;
+                    product.DiscontinueDate = dDate;
+                    product.ProdCategoryId = cateId;
+                }
+                else
+                {
+                    var newProd = new Product
+                    {
+                        Id = id == Guid.Empty ? Guid.NewGuid() : id,
+                        Name = name,
+                        Description = des,
+                        Note = note,
+                        Pricing = price,
+                        AvailableDate = aDate,
+                        DiscontinueDate = dDate,
+                        ProdCategoryId = cateId
+                    };
+                    db.Products.Add(newProd);
+                }
+
+                return db.SaveChanges() > 0;
+            }
         }
-        public bool InsertProdVisual(Guid Id, byte[] visual, Guid prodId)
-        {
-            throw new NotImplementedException();
-        }
+
         public bool RemoveProd(Guid id)
         {
-            throw new NotImplementedException();
-        }
-        public bool RemoveProdVisual(Guid id)
-        {
-            throw new NotImplementedException();
+            using (var db = new BakeryDbContext())
+            {
+                var product = db.Products.FirstOrDefault(p => p.Id == id);
+                if (product != null)
+                {
+                    var visuals = db.ProductVisuals.Where(v => v.ProductId == id);
+                    db.ProductVisuals.RemoveRange(visuals);
+
+                    db.Products.Remove(product);
+                    return db.SaveChanges() > 0;
+                }
+                return false;
+            }
         }
     }
 }

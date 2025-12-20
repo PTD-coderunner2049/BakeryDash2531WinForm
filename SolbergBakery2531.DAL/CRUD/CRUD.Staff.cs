@@ -128,42 +128,8 @@ namespace SolbergBakery2531.DAL
                 return db.SaveChanges() > 0;
             }
         }
-        public void Historian(BakeryDbContext db, Guid Id, bool OngoingStatus)
-        {
-            if (OngoingStatus)
-            {
-                db.StaffHistories.Add(new StaffHistory
-                {
-                    StaffId = Id,
-                    Start = DateTime.UtcNow,
-                    Ongoing = OngoingStatus
-                });
-            }
-            else
-            {
-                var ongoingHistory = db.StaffHistories.FirstOrDefault(h => h.StaffId == Id && h.Ongoing);
-                if (ongoingHistory != null)
-                {
-                    ongoingHistory.End = DateTime.UtcNow;
-                    ongoingHistory.Ongoing = OngoingStatus;
-                }
-            }
-        }
+
         public bool RemoveStaff(Guid empGuid)
-        {
-            using (var db = new BakeryDbContext())
-            {
-                var staff = db.Staffs.FirstOrDefault(s => s.Id == empGuid);
-                if (staff != null)
-                {
-                    db.Staffs.Remove(staff);
-                    db.SaveChanges();
-                    return true;
-                }
-                return false;
-            }
-        }
-        public bool RemovexStaff(Guid empGuid)
         {
             using (var db = new BakeryDbContext())
             {

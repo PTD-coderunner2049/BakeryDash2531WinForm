@@ -70,6 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CRUD\CRUD.Authorization.cs" />
+    <Compile Include="CRUD\CRUD.ProdVisual.cs" />
     <Compile Include="CRUD\CRUD.Histories.cs" />
     <Compile Include="CRUD\CRUD.Registry.cs" />
     <Compile Include="CRUD\CRUD.Staff.cs" />
@@ -98,6 +99,10 @@
     <Compile Include="Migrations\202512192227445_addProdName.cs" />
     <Compile Include="Migrations\202512192227445_addProdName.Designer.cs">
       <DependentUpon>202512192227445_addProdName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202512201947043_increaseStringLimitProductAttribute.cs" />
+    <Compile Include="Migrations\202512201947043_increaseStringLimitProductAttribute.Designer.cs">
+      <DependentUpon>202512201947043_increaseStringLimitProductAttribute.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\ProdCategory.cs" />
     <Compile Include="Model\ProductVisual.cs" />
@@ -133,6 +138,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202512192227445_addProdName.resx">
       <DependentUpon>202512192227445_addProdName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202512201947043_increaseStringLimitProductAttribute.resx">
+      <DependentUpon>202512201947043_increaseStringLimitProductAttribute.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

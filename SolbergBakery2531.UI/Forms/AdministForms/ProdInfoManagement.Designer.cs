@@ -252,6 +252,7 @@
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.OldLace;
+            this.panel7.Controls.Add(this.svWarnLab);
             this.panel7.Controls.Add(this.groupBox1);
             this.panel7.Controls.Add(this.panel9);
             this.panel7.Controls.Add(this.label1);
@@ -265,10 +266,9 @@
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.addVbtn);
+            this.groupBox1.Controls.Add(this.VisualListView);
             this.groupBox1.Controls.Add(this.delVbtn);
             this.groupBox1.Controls.Add(this.VisualDisplay);
-            this.groupBox1.Controls.Add(this.VisualListView);
-            this.groupBox1.Controls.Add(this.svWarnLab);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox1.Location = new System.Drawing.Point(15, 278);
             this.groupBox1.Name = "groupBox1";
@@ -282,7 +282,7 @@
             this.addVbtn.BackColor = System.Drawing.Color.Black;
             this.addVbtn.BackgroundImage = global::SolbergBakery2531.UI.Properties.Resources.add_square48;
             this.addVbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.addVbtn.Location = new System.Drawing.Point(255, 153);
+            this.addVbtn.Location = new System.Drawing.Point(258, 159);
             this.addVbtn.Name = "addVbtn";
             this.addVbtn.Size = new System.Drawing.Size(32, 32);
             this.addVbtn.TabIndex = 36;
@@ -294,7 +294,7 @@
             this.delVbtn.BackColor = System.Drawing.Color.Black;
             this.delVbtn.BackgroundImage = global::SolbergBakery2531.UI.Properties.Resources.box_remove48;
             this.delVbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.delVbtn.Location = new System.Drawing.Point(255, 19);
+            this.delVbtn.Location = new System.Drawing.Point(260, 19);
             this.delVbtn.Name = "delVbtn";
             this.delVbtn.Size = new System.Drawing.Size(32, 32);
             this.delVbtn.TabIndex = 33;
@@ -306,9 +306,7 @@
             this.VisualDisplay.BackColor = System.Drawing.Color.DimGray;
             this.VisualDisplay.BackgroundImage = global::SolbergBakery2531.UI.Properties.Resources.Barrier;
             this.VisualDisplay.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.VisualDisplay.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.VisualDisplay.Dock = System.Windows.Forms.DockStyle.Right;
-            this.VisualDisplay.Location = new System.Drawing.Point(118, 16);
+            this.VisualDisplay.Location = new System.Drawing.Point(121, 19);
             this.VisualDisplay.Name = "VisualDisplay";
             this.VisualDisplay.Size = new System.Drawing.Size(172, 172);
             this.VisualDisplay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -321,8 +319,7 @@
             this.VisualListView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.VisualCol,
             this.VisualBytes});
-            this.VisualListView.Dock = System.Windows.Forms.DockStyle.Left;
-            this.VisualListView.Location = new System.Drawing.Point(3, 16);
+            this.VisualListView.Location = new System.Drawing.Point(2, 19);
             this.VisualListView.Name = "VisualListView";
             this.VisualListView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.VisualListView.Size = new System.Drawing.Size(97, 172);
@@ -348,11 +345,11 @@
             // 
             this.svWarnLab.AutoSize = true;
             this.svWarnLab.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.svWarnLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.svWarnLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.svWarnLab.ForeColor = System.Drawing.Color.Firebrick;
-            this.svWarnLab.Location = new System.Drawing.Point(5, 135);
+            this.svWarnLab.Location = new System.Drawing.Point(18, 515);
             this.svWarnLab.Name = "svWarnLab";
-            this.svWarnLab.Size = new System.Drawing.Size(49, 16);
+            this.svWarnLab.Size = new System.Drawing.Size(49, 13);
             this.svWarnLab.TabIndex = 33;
             this.svWarnLab.Text = "              ";
             this.svWarnLab.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -670,7 +667,6 @@
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.addVbtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.delVbtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.VisualDisplay)).EndInit();

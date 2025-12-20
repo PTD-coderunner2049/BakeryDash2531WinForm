@@ -14,10 +14,10 @@ namespace SolbergBakery2531.DAL.Model
         [StringLength(30)]
         public string Name { get; set; }
         [Required]
-        [StringLength(300)]
+        [StringLength(1000)]
         public string Description { get; set; }
         [Required]
-        [StringLength(300)]
+        [StringLength(1000)]
         public string Note { get; set; } //Tasting advice or smthing
         public DateTime AvailableDate { get; set; } = DateTime.UtcNow;
         public DateTime DiscontinueDate { get; set; } = DateTime.UtcNow;
