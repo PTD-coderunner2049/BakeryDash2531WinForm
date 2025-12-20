@@ -31,13 +31,17 @@ namespace SolbergBakery2531.BLL
             fullTable.DefaultView.RowFilter = expression;
             return fullTable.DefaultView;
         }
-        public string ValidateInputs(string na, string des, string note, string pri)
+        public string ValidateInputs(string na, string des, string note, string pri, DateTime AD, DateTime DD)
         {
             if (string.IsNullOrWhiteSpace(des) ||
                 string.IsNullOrWhiteSpace(na) ||
                 string.IsNullOrWhiteSpace(note) ||
                 string.IsNullOrWhiteSpace(pri))
                 return "All information fields except availabilities are required.";
+            if (!decimal.TryParse(pri, out decimal pricing) || pricing < 0)
+                return "Pricing must be a valid non-negative decimal number.";
+            if(AD > DD)
+                return "Available Date cannot be later than Discontinue Date.";
             return null;
         }
     }

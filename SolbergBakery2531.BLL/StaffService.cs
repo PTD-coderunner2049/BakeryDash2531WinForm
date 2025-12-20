@@ -66,13 +66,9 @@ namespace SolbergBakery2531.BLL
                 string.IsNullOrWhiteSpace(payrateText))
                 return "All staff information fields are required.";
             if (gendercount != 1)
-            {
                 return "Please select one gender.";
-            }
             if (!decimal.TryParse(payrateText, out decimal payrate))
-            {
                 return "Pay Rate must be a valid decimal number.";
-            }
             return null;
         }
     }

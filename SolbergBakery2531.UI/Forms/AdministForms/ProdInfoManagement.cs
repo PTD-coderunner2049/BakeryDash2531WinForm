@@ -88,7 +88,7 @@ namespace SolbergBakery2531.UI.Forms.AdministForms
         }
         private bool ValidateInputs()
         {
-            string res = _proderve.ValidateInputs(NameText.Text, DesText.Text, NoteText.Text, PriceText.Text);
+            string res = _proderve.ValidateInputs(NameText.Text, DesText.Text, NoteText.Text, PriceText.Text,ADateText.Value, DDateText.Value);
 
             svWarnLab.Text = res;
             return string.IsNullOrEmpty(res);
@@ -98,8 +98,8 @@ namespace SolbergBakery2531.UI.Forms.AdministForms
             DesText.Clear();
             NoteText.Clear();
             PriceText.Clear();
-            ADateText.Clear();
-            DDateText.Clear();
+            ADateText.Refresh();
+            DDateText.Refresh();
             VisualList.Clear();
             NameText.Clear();
         }

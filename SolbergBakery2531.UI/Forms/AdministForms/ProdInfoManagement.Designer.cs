@@ -45,53 +45,54 @@
             this.rtnBtn = new MaterialSkin.Controls.MaterialFlatButton();
             this.title = new System.Windows.Forms.Label();
             this.ProdGrid = new System.Windows.Forms.DataGridView();
-            this.ProdTree = new System.Windows.Forms.TreeView();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.DesText = new System.Windows.Forms.TextBox();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.DesLab = new System.Windows.Forms.Label();
-            this.NoteLab = new System.Windows.Forms.Label();
-            this.NoteText = new System.Windows.Forms.TextBox();
-            this.ADateLab = new System.Windows.Forms.Label();
-            this.DDateLab = new System.Windows.Forms.Label();
-            this.PriceLab = new System.Windows.Forms.Label();
-            this.PriceText = new System.Windows.Forms.TextBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.VisualList = new System.Windows.Forms.ListView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.svWarnLab = new System.Windows.Forms.Label();
-            this.ADateText = new System.Windows.Forms.MaskedTextBox();
-            this.DDateText = new System.Windows.Forms.MaskedTextBox();
             this.GUIDCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DescriptionCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PricingCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AvailableDateCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiscontinueDateCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NameText = new System.Windows.Forms.TextBox();
+            this.ProdTree = new System.Windows.Forms.TreeView();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.svWarnLab = new System.Windows.Forms.Label();
+            this.VisualList = new System.Windows.Forms.ListView();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.NameLab = new System.Windows.Forms.Label();
+            this.DesLab = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.NameText = new System.Windows.Forms.TextBox();
+            this.DesText = new System.Windows.Forms.TextBox();
+            this.NoteText = new System.Windows.Forms.TextBox();
+            this.PriceText = new System.Windows.Forms.TextBox();
+            this.PriceLab = new System.Windows.Forms.Label();
+            this.NoteLab = new System.Windows.Forms.Label();
+            this.ADateLab = new System.Windows.Forms.Label();
+            this.DDateLab = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.VisualFlowList = new System.Windows.Forms.FlowLayoutPanel();
+            this.ADateText = new System.Windows.Forms.DateTimePicker();
+            this.DDateText = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProdGrid)).BeginInit();
             this.panel7.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.panel9.SuspendLayout();
-            this.panel10.SuspendLayout();
-            this.panel11.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.panel9.SuspendLayout();
+            this.panel11.SuspendLayout();
+            this.panel10.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // svBtn
@@ -247,299 +248,6 @@
             this.ProdGrid.Size = new System.Drawing.Size(630, 528);
             this.ProdGrid.TabIndex = 27;
             // 
-            // ProdTree
-            // 
-            this.ProdTree.BackColor = System.Drawing.Color.OldLace;
-            this.ProdTree.Location = new System.Drawing.Point(19, 58);
-            this.ProdTree.Name = "ProdTree";
-            treeNode1.Name = "Node1";
-            treeNode1.Text = "Node1";
-            treeNode2.Name = "Node0";
-            treeNode2.Text = "Node0";
-            treeNode3.Name = "Node2";
-            treeNode3.Text = "Node2";
-            this.ProdTree.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode2,
-            treeNode3});
-            this.ProdTree.Size = new System.Drawing.Size(148, 580);
-            this.ProdTree.TabIndex = 31;
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.OldLace;
-            this.panel7.Controls.Add(this.panel1);
-            this.panel7.Controls.Add(this.groupBox1);
-            this.panel7.Controls.Add(this.panel9);
-            this.panel7.Controls.Add(this.label1);
-            this.panel7.Controls.Add(this.groupBox2);
-            this.panel7.Location = new System.Drawing.Point(851, 110);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(323, 528);
-            this.panel7.TabIndex = 29;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Maroon;
-            this.label1.Location = new System.Drawing.Point(947, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 13);
-            this.label1.TabIndex = 18;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox2.Controls.Add(this.NameLab);
-            this.groupBox2.Controls.Add(this.DesLab);
-            this.groupBox2.Controls.Add(this.flowLayoutPanel1);
-            this.groupBox2.Controls.Add(this.PriceLab);
-            this.groupBox2.Controls.Add(this.NoteLab);
-            this.groupBox2.Controls.Add(this.ADateLab);
-            this.groupBox2.Controls.Add(this.DDateLab);
-            this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox2.Location = new System.Drawing.Point(15, 3);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(293, 269);
-            this.groupBox2.TabIndex = 2;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "ProductInfo";
-            // 
-            // panel9
-            // 
-            this.panel9.Controls.Add(this.panel4);
-            this.panel9.Controls.Add(this.panel11);
-            this.panel9.Controls.Add(this.panel10);
-            this.panel9.Location = new System.Drawing.Point(15, 475);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(293, 40);
-            this.panel9.TabIndex = 23;
-            // 
-            // panel10
-            // 
-            this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel10.Controls.Add(this.delBtn);
-            this.panel10.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel10.Location = new System.Drawing.Point(0, 0);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(100, 40);
-            this.panel10.TabIndex = 21;
-            // 
-            // panel11
-            // 
-            this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel11.Controls.Add(this.svBtn);
-            this.panel11.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel11.Location = new System.Drawing.Point(193, 0);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(100, 40);
-            this.panel11.TabIndex = 22;
-            // 
-            // DesText
-            // 
-            this.DesText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DesText.Location = new System.Drawing.Point(3, 31);
-            this.DesText.Multiline = true;
-            this.DesText.Name = "DesText";
-            this.DesText.Size = new System.Drawing.Size(187, 61);
-            this.DesText.TabIndex = 14;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.NameText);
-            this.flowLayoutPanel1.Controls.Add(this.DesText);
-            this.flowLayoutPanel1.Controls.Add(this.NoteText);
-            this.flowLayoutPanel1.Controls.Add(this.PriceText);
-            this.flowLayoutPanel1.Controls.Add(this.ADateText);
-            this.flowLayoutPanel1.Controls.Add(this.DDateText);
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(100, 19);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(193, 250);
-            this.flowLayoutPanel1.TabIndex = 32;
-            // 
-            // DesLab
-            // 
-            this.DesLab.AutoSize = true;
-            this.DesLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DesLab.Location = new System.Drawing.Point(7, 53);
-            this.DesLab.Name = "DesLab";
-            this.DesLab.Size = new System.Drawing.Size(81, 16);
-            this.DesLab.TabIndex = 17;
-            this.DesLab.Text = "Description :";
-            // 
-            // NoteLab
-            // 
-            this.NoteLab.AutoSize = true;
-            this.NoteLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NoteLab.Location = new System.Drawing.Point(43, 92);
-            this.NoteLab.Name = "NoteLab";
-            this.NoteLab.Size = new System.Drawing.Size(45, 16);
-            this.NoteLab.TabIndex = 21;
-            this.NoteLab.Text = " Note :";
-            // 
-            // NoteText
-            // 
-            this.NoteText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NoteText.Location = new System.Drawing.Point(3, 98);
-            this.NoteText.Multiline = true;
-            this.NoteText.Name = "NoteText";
-            this.NoteText.Size = new System.Drawing.Size(187, 61);
-            this.NoteText.TabIndex = 33;
-            // 
-            // ADateLab
-            // 
-            this.ADateLab.AutoSize = true;
-            this.ADateLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ADateLab.Location = new System.Drawing.Point(18, 187);
-            this.ADateLab.Name = "ADateLab";
-            this.ADateLab.Size = new System.Drawing.Size(70, 16);
-            this.ADateLab.TabIndex = 25;
-            this.ADateLab.Text = "Available :";
-            this.ADateLab.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // DDateLab
-            // 
-            this.DDateLab.AutoSize = true;
-            this.DDateLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DDateLab.Location = new System.Drawing.Point(5, 215);
-            this.DDateLab.Name = "DDateLab";
-            this.DDateLab.Size = new System.Drawing.Size(83, 16);
-            this.DDateLab.TabIndex = 26;
-            this.DDateLab.Text = "Discontinue :";
-            this.DDateLab.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // PriceLab
-            // 
-            this.PriceLab.AutoSize = true;
-            this.PriceLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PriceLab.Location = new System.Drawing.Point(19, 159);
-            this.PriceLab.Name = "PriceLab";
-            this.PriceLab.Size = new System.Drawing.Size(69, 16);
-            this.PriceLab.TabIndex = 27;
-            this.PriceLab.Text = "Pricing [€]:";
-            this.PriceLab.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // PriceText
-            // 
-            this.PriceText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PriceText.Location = new System.Drawing.Point(3, 165);
-            this.PriceText.Name = "PriceText";
-            this.PriceText.Size = new System.Drawing.Size(187, 22);
-            this.PriceText.TabIndex = 35;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.BackgroundImage = global::SolbergBakery2531.UI.Properties.Resources.edit_2fill;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(1128, 58);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(46, 46);
-            this.pictureBox2.TabIndex = 32;
-            this.pictureBox2.TabStop = false;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.svWarnLab);
-            this.groupBox1.Controls.Add(this.VisualList);
-            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox1.Location = new System.Drawing.Point(15, 278);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(293, 135);
-            this.groupBox1.TabIndex = 33;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "ProductVisualList";
-            // 
-            // VisualList
-            // 
-            this.VisualList.HideSelection = false;
-            this.VisualList.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1});
-            this.VisualList.Location = new System.Drawing.Point(1, 19);
-            this.VisualList.Name = "VisualList";
-            this.VisualList.Size = new System.Drawing.Size(292, 114);
-            this.VisualList.TabIndex = 33;
-            this.VisualList.UseCompatibleStateImageBehavior = false;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Location = new System.Drawing.Point(16, 419);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(293, 40);
-            this.panel1.TabIndex = 24;
-            // 
-            // panel3
-            // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.materialFlatButton1);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(293, 40);
-            this.panel3.TabIndex = 23;
-            // 
-            // materialFlatButton1
-            // 
-            this.materialFlatButton1.AutoSize = true;
-            this.materialFlatButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialFlatButton1.BackColor = System.Drawing.Color.PapayaWhip;
-            this.materialFlatButton1.Depth = 0;
-            this.materialFlatButton1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.materialFlatButton1.Location = new System.Drawing.Point(0, 0);
-            this.materialFlatButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialFlatButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialFlatButton1.Name = "materialFlatButton1";
-            this.materialFlatButton1.Primary = false;
-            this.materialFlatButton1.Size = new System.Drawing.Size(291, 38);
-            this.materialFlatButton1.TabIndex = 3;
-            this.materialFlatButton1.Text = "Insert";
-            this.materialFlatButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.materialFlatButton1.UseVisualStyleBackColor = false;
-            // 
-            // panel4
-            // 
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(100, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(93, 40);
-            this.panel4.TabIndex = 24;
-            // 
-            // svWarnLab
-            // 
-            this.svWarnLab.AutoSize = true;
-            this.svWarnLab.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.svWarnLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.svWarnLab.ForeColor = System.Drawing.Color.Firebrick;
-            this.svWarnLab.Location = new System.Drawing.Point(5, 135);
-            this.svWarnLab.Name = "svWarnLab";
-            this.svWarnLab.Size = new System.Drawing.Size(49, 16);
-            this.svWarnLab.TabIndex = 33;
-            this.svWarnLab.Text = "              ";
-            this.svWarnLab.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // ADateText
-            // 
-            this.ADateText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ADateText.Location = new System.Drawing.Point(3, 193);
-            this.ADateText.Mask = "00/00/0000";
-            this.ADateText.Name = "ADateText";
-            this.ADateText.Size = new System.Drawing.Size(187, 22);
-            this.ADateText.TabIndex = 35;
-            this.ADateText.ValidatingType = typeof(System.DateTime);
-            // 
-            // DDateText
-            // 
-            this.DDateText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DDateText.Location = new System.Drawing.Point(3, 221);
-            this.DDateText.Mask = "00/00/0000";
-            this.DDateText.Name = "DDateText";
-            this.DDateText.Size = new System.Drawing.Size(187, 22);
-            this.DDateText.TabIndex = 36;
-            this.DDateText.ValidatingType = typeof(System.DateTime);
-            // 
             // GUIDCol
             // 
             this.GUIDCol.DataPropertyName = "Id";
@@ -595,13 +303,174 @@
             this.DiscontinueDateCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.DiscontinueDateCol.Width = 120;
             // 
-            // NameText
+            // ProdTree
             // 
-            this.NameText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NameText.Location = new System.Drawing.Point(3, 3);
-            this.NameText.Name = "NameText";
-            this.NameText.Size = new System.Drawing.Size(187, 22);
-            this.NameText.TabIndex = 37;
+            this.ProdTree.BackColor = System.Drawing.Color.OldLace;
+            this.ProdTree.Location = new System.Drawing.Point(19, 58);
+            this.ProdTree.Name = "ProdTree";
+            treeNode1.Name = "Node1";
+            treeNode1.Text = "Node1";
+            treeNode2.Name = "Node0";
+            treeNode2.Text = "Node0";
+            treeNode3.Name = "Node2";
+            treeNode3.Text = "Node2";
+            this.ProdTree.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode2,
+            treeNode3});
+            this.ProdTree.Size = new System.Drawing.Size(148, 580);
+            this.ProdTree.TabIndex = 31;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.OldLace;
+            this.panel7.Controls.Add(this.panel1);
+            this.panel7.Controls.Add(this.groupBox1);
+            this.panel7.Controls.Add(this.panel9);
+            this.panel7.Controls.Add(this.label1);
+            this.panel7.Controls.Add(this.groupBox2);
+            this.panel7.Location = new System.Drawing.Point(851, 110);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(323, 528);
+            this.panel7.TabIndex = 29;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Location = new System.Drawing.Point(16, 419);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(293, 40);
+            this.panel1.TabIndex = 24;
+            // 
+            // panel3
+            // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.materialFlatButton1);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(293, 40);
+            this.panel3.TabIndex = 23;
+            // 
+            // materialFlatButton1
+            // 
+            this.materialFlatButton1.AutoSize = true;
+            this.materialFlatButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialFlatButton1.BackColor = System.Drawing.Color.PapayaWhip;
+            this.materialFlatButton1.Depth = 0;
+            this.materialFlatButton1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.materialFlatButton1.Location = new System.Drawing.Point(0, 0);
+            this.materialFlatButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialFlatButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialFlatButton1.Name = "materialFlatButton1";
+            this.materialFlatButton1.Primary = false;
+            this.materialFlatButton1.Size = new System.Drawing.Size(291, 38);
+            this.materialFlatButton1.TabIndex = 3;
+            this.materialFlatButton1.Text = "Insert";
+            this.materialFlatButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.materialFlatButton1.UseVisualStyleBackColor = false;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.svWarnLab);
+            this.groupBox1.Controls.Add(this.VisualList);
+            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.groupBox1.Location = new System.Drawing.Point(15, 278);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(293, 135);
+            this.groupBox1.TabIndex = 33;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "ProductVisualList";
+            // 
+            // svWarnLab
+            // 
+            this.svWarnLab.AutoSize = true;
+            this.svWarnLab.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.svWarnLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.svWarnLab.ForeColor = System.Drawing.Color.Firebrick;
+            this.svWarnLab.Location = new System.Drawing.Point(5, 135);
+            this.svWarnLab.Name = "svWarnLab";
+            this.svWarnLab.Size = new System.Drawing.Size(49, 16);
+            this.svWarnLab.TabIndex = 33;
+            this.svWarnLab.Text = "              ";
+            this.svWarnLab.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // VisualList
+            // 
+            this.VisualList.HideSelection = false;
+            this.VisualList.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem1});
+            this.VisualList.Location = new System.Drawing.Point(1, 19);
+            this.VisualList.Name = "VisualList";
+            this.VisualList.Size = new System.Drawing.Size(292, 114);
+            this.VisualList.TabIndex = 33;
+            this.VisualList.UseCompatibleStateImageBehavior = false;
+            // 
+            // panel9
+            // 
+            this.panel9.Controls.Add(this.panel4);
+            this.panel9.Controls.Add(this.panel11);
+            this.panel9.Controls.Add(this.panel10);
+            this.panel9.Location = new System.Drawing.Point(15, 475);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(293, 40);
+            this.panel9.TabIndex = 23;
+            // 
+            // panel4
+            // 
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(100, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(93, 40);
+            this.panel4.TabIndex = 24;
+            // 
+            // panel11
+            // 
+            this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel11.Controls.Add(this.svBtn);
+            this.panel11.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel11.Location = new System.Drawing.Point(193, 0);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(100, 40);
+            this.panel11.TabIndex = 22;
+            // 
+            // panel10
+            // 
+            this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel10.Controls.Add(this.delBtn);
+            this.panel10.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel10.Location = new System.Drawing.Point(0, 0);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(100, 40);
+            this.panel10.TabIndex = 21;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Maroon;
+            this.label1.Location = new System.Drawing.Point(947, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 13);
+            this.label1.TabIndex = 18;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox2.Controls.Add(this.NameLab);
+            this.groupBox2.Controls.Add(this.DesLab);
+            this.groupBox2.Controls.Add(this.flowLayoutPanel1);
+            this.groupBox2.Controls.Add(this.PriceLab);
+            this.groupBox2.Controls.Add(this.NoteLab);
+            this.groupBox2.Controls.Add(this.ADateLab);
+            this.groupBox2.Controls.Add(this.DDateLab);
+            this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.groupBox2.Location = new System.Drawing.Point(15, 3);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(293, 269);
+            this.groupBox2.TabIndex = 2;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "ProductInfo";
             // 
             // NameLab
             // 
@@ -613,12 +482,150 @@
             this.NameLab.TabIndex = 33;
             this.NameLab.Text = "Name :";
             // 
+            // DesLab
+            // 
+            this.DesLab.AutoSize = true;
+            this.DesLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DesLab.Location = new System.Drawing.Point(7, 53);
+            this.DesLab.Name = "DesLab";
+            this.DesLab.Size = new System.Drawing.Size(81, 16);
+            this.DesLab.TabIndex = 17;
+            this.DesLab.Text = "Description :";
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.NameText);
+            this.flowLayoutPanel1.Controls.Add(this.DesText);
+            this.flowLayoutPanel1.Controls.Add(this.NoteText);
+            this.flowLayoutPanel1.Controls.Add(this.PriceText);
+            this.flowLayoutPanel1.Controls.Add(this.ADateText);
+            this.flowLayoutPanel1.Controls.Add(this.DDateText);
+            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(100, 19);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(193, 250);
+            this.flowLayoutPanel1.TabIndex = 32;
+            // 
+            // NameText
+            // 
+            this.NameText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NameText.Location = new System.Drawing.Point(3, 3);
+            this.NameText.Name = "NameText";
+            this.NameText.Size = new System.Drawing.Size(187, 22);
+            this.NameText.TabIndex = 37;
+            // 
+            // DesText
+            // 
+            this.DesText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DesText.Location = new System.Drawing.Point(3, 31);
+            this.DesText.Multiline = true;
+            this.DesText.Name = "DesText";
+            this.DesText.Size = new System.Drawing.Size(187, 61);
+            this.DesText.TabIndex = 14;
+            // 
+            // NoteText
+            // 
+            this.NoteText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NoteText.Location = new System.Drawing.Point(3, 98);
+            this.NoteText.Multiline = true;
+            this.NoteText.Name = "NoteText";
+            this.NoteText.Size = new System.Drawing.Size(187, 61);
+            this.NoteText.TabIndex = 33;
+            // 
+            // PriceText
+            // 
+            this.PriceText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PriceText.Location = new System.Drawing.Point(3, 165);
+            this.PriceText.Name = "PriceText";
+            this.PriceText.Size = new System.Drawing.Size(187, 22);
+            this.PriceText.TabIndex = 35;
+            // 
+            // PriceLab
+            // 
+            this.PriceLab.AutoSize = true;
+            this.PriceLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PriceLab.Location = new System.Drawing.Point(16, 187);
+            this.PriceLab.Name = "PriceLab";
+            this.PriceLab.Size = new System.Drawing.Size(72, 16);
+            this.PriceLab.TabIndex = 27;
+            this.PriceLab.Text = "Pricing [€] :";
+            this.PriceLab.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // NoteLab
+            // 
+            this.NoteLab.AutoSize = true;
+            this.NoteLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NoteLab.Location = new System.Drawing.Point(43, 92);
+            this.NoteLab.Name = "NoteLab";
+            this.NoteLab.Size = new System.Drawing.Size(45, 16);
+            this.NoteLab.TabIndex = 21;
+            this.NoteLab.Text = " Note :";
+            // 
+            // ADateLab
+            // 
+            this.ADateLab.AutoSize = true;
+            this.ADateLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ADateLab.Location = new System.Drawing.Point(18, 217);
+            this.ADateLab.Name = "ADateLab";
+            this.ADateLab.Size = new System.Drawing.Size(70, 16);
+            this.ADateLab.TabIndex = 25;
+            this.ADateLab.Text = "Available :";
+            this.ADateLab.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // DDateLab
+            // 
+            this.DDateLab.AutoSize = true;
+            this.DDateLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DDateLab.Location = new System.Drawing.Point(5, 245);
+            this.DDateLab.Name = "DDateLab";
+            this.DDateLab.Size = new System.Drawing.Size(83, 16);
+            this.DDateLab.TabIndex = 26;
+            this.DDateLab.Text = "Discontinue :";
+            this.DDateLab.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.BackgroundImage = global::SolbergBakery2531.UI.Properties.Resources.edit_2fill;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(1128, 58);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(46, 46);
+            this.pictureBox2.TabIndex = 32;
+            this.pictureBox2.TabStop = false;
+            // 
+            // VisualFlowList
+            // 
+            this.VisualFlowList.Location = new System.Drawing.Point(562, 505);
+            this.VisualFlowList.Name = "VisualFlowList";
+            this.VisualFlowList.Size = new System.Drawing.Size(200, 100);
+            this.VisualFlowList.TabIndex = 34;
+            // 
+            // ADateText
+            // 
+            this.ADateText.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ADateText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ADateText.Location = new System.Drawing.Point(3, 193);
+            this.ADateText.Name = "ADateText";
+            this.ADateText.Size = new System.Drawing.Size(187, 22);
+            this.ADateText.TabIndex = 35;
+            // 
+            // DDateText
+            // 
+            this.DDateText.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DDateText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DDateText.Location = new System.Drawing.Point(3, 221);
+            this.DDateText.Name = "DDateText";
+            this.DDateText.Size = new System.Drawing.Size(187, 22);
+            this.DDateText.TabIndex = 38;
+            // 
             // ProdInfoManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::SolbergBakery2531.UI.Properties.Resources.ARDECHOISVUEHAUTcopie;
             this.ClientSize = new System.Drawing.Size(1190, 650);
+            this.Controls.Add(this.VisualFlowList);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.ProdTree);
@@ -637,21 +644,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.ProdGrid)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.panel9.ResumeLayout(false);
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
-            this.panel11.ResumeLayout(false);
-            this.panel11.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.panel9.ResumeLayout(false);
+            this.panel11.ResumeLayout(false);
+            this.panel11.PerformLayout();
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -686,15 +693,12 @@
         private System.Windows.Forms.Label PriceLab;
         private System.Windows.Forms.TextBox PriceText;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ListView VisualList;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
         private MaterialSkin.Controls.MaterialFlatButton materialFlatButton1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label svWarnLab;
-        private System.Windows.Forms.MaskedTextBox ADateText;
-        private System.Windows.Forms.MaskedTextBox DDateText;
         private System.Windows.Forms.DataGridViewTextBoxColumn GUIDCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn DescriptionCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn NameCol;
@@ -703,5 +707,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DiscontinueDateCol;
         private System.Windows.Forms.Label NameLab;
         private System.Windows.Forms.TextBox NameText;
+        private System.Windows.Forms.ListView VisualList;
+        private System.Windows.Forms.FlowLayoutPanel VisualFlowList;
+        private System.Windows.Forms.DateTimePicker ADateText;
+        private System.Windows.Forms.DateTimePicker DDateText;
     }
 }
