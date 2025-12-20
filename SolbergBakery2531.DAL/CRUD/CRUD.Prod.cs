@@ -50,7 +50,50 @@ namespace SolbergBakery2531.DAL
                 return dt;
             }
         }
-        
+        public DataTable GetProd(Guid cateId)
+        {
+            using (var db = new BakeryDbContext())
+            {
+                DataTable dt = new DataTable();
+                dt.Columns.Add("Id", typeof(Guid));
+                dt.Columns.Add("Description", typeof(string));
+                dt.Columns.Add("Note", typeof(string));
+                dt.Columns.Add("AvailableDate", typeof(DateTime));
+                dt.Columns.Add("DiscontinueDate", typeof(DateTime));
+                dt.Columns.Add("ProdCategoryId", typeof(Guid));
+                dt.Columns.Add("Pricing", typeof(decimal));
+                dt.Columns.Add("Name", typeof(string));
+
+                var filteredList = db.Products
+                    .Where(p => p.ProdCategoryId == cateId)
+                    .Select(p => new
+                    {
+                        p.Id,
+                        p.Description,
+                        p.Note,
+                        p.AvailableDate,
+                        p.DiscontinueDate,
+                        p.ProdCategoryId,
+                        p.Pricing,
+                        p.Name,
+                    }).ToList();
+
+                foreach (var p in filteredList)
+                {
+                    dt.Rows.Add(
+                        p.Id,
+                        p.Description,
+                        p.Note,
+                        p.AvailableDate,
+                        p.DiscontinueDate,
+                        p.ProdCategoryId,
+                        p.Pricing,
+                        p.Name
+                    );
+                }
+                return dt;
+            }
+        }
         public DataTable GetProdCate()
         {
             using (var db = new BakeryDbContext())

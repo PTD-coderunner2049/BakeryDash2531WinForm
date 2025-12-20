@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel7 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.HRFeedbackText = new System.Windows.Forms.TextBox();
@@ -36,7 +37,6 @@
             this.rtnBtn = new MaterialSkin.Controls.MaterialFlatButton();
             this.svBtn = new MaterialSkin.Controls.MaterialFlatButton();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.viewGroup = new System.Windows.Forms.GroupBox();
             this.historyView = new System.Windows.Forms.DataGridView();
             this.StartCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,6 +56,17 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(352, 44);
             this.panel7.TabIndex = 33;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Maroon;
+            this.label2.Location = new System.Drawing.Point(81, 4);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(210, 29);
+            this.label2.TabIndex = 23;
+            this.label2.Text = "Employment History";
             // 
             // panel1
             // 
@@ -81,7 +92,7 @@
             this.HRFeedbackText.Location = new System.Drawing.Point(0, 19);
             this.HRFeedbackText.Multiline = true;
             this.HRFeedbackText.Name = "HRFeedbackText";
-            this.HRFeedbackText.Size = new System.Drawing.Size(352, 197);
+            this.HRFeedbackText.Size = new System.Drawing.Size(352, 111);
             this.HRFeedbackText.TabIndex = 36;
             // 
             // feedbackGroup
@@ -134,17 +145,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(352, 46);
             this.panel3.TabIndex = 34;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Maroon;
-            this.label2.Location = new System.Drawing.Point(81, 4);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(210, 29);
-            this.label2.TabIndex = 23;
-            this.label2.Text = "Employment History";
             // 
             // viewGroup
             // 
@@ -211,7 +211,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.Name = "EmploymentHistory";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EmploymentHistory";
             this.TopMost = true;
             this.panel7.ResumeLayout(false);

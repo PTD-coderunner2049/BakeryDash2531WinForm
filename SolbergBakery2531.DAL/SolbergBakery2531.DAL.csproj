@@ -104,6 +104,10 @@
     <Compile Include="Migrations\202512201947043_increaseStringLimitProductAttribute.Designer.cs">
       <DependentUpon>202512201947043_increaseStringLimitProductAttribute.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202512202051208_addQuantityProd.cs" />
+    <Compile Include="Migrations\202512202051208_addQuantityProd.Designer.cs">
+      <DependentUpon>202512202051208_addQuantityProd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\ProdCategory.cs" />
     <Compile Include="Model\ProductVisual.cs" />
     <Compile Include="Session\CurrSess.cs" />
@@ -141,6 +145,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202512201947043_increaseStringLimitProductAttribute.resx">
       <DependentUpon>202512201947043_increaseStringLimitProductAttribute.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202512202051208_addQuantityProd.resx">
+      <DependentUpon>202512202051208_addQuantityProd.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

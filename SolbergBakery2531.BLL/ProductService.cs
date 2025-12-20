@@ -13,6 +13,10 @@ namespace SolbergBakery2531.BLL
         {
             return new CRUD().GetProd();
         }
+        public DataTable Fetch(Guid cateId)
+        {
+            return new CRUD().GetProd(cateId);
+        }
         public DataTable FetchVisual(Guid productId)
         {
             return new CRUD().GetProdVisual(productId);

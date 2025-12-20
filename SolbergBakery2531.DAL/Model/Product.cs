@@ -14,6 +14,8 @@ namespace SolbergBakery2531.DAL.Model
         [StringLength(30)]
         public string Name { get; set; }
         [Required]
+        public int quantityInStock { get; set; }
+        [Required]
         [StringLength(1000)]
         public string Description { get; set; }
         [Required]
@@ -21,7 +23,6 @@ namespace SolbergBakery2531.DAL.Model
         public string Note { get; set; } //Tasting advice or smthing
         public DateTime AvailableDate { get; set; } = DateTime.UtcNow;
         public DateTime DiscontinueDate { get; set; } = DateTime.UtcNow;
-
         [Required]
         public decimal Pricing { get; set; }
         public Guid ProdCategoryId { get; set; }
