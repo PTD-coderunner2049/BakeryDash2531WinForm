@@ -56,40 +56,16 @@ namespace SolbergBakery2531.DAL
             {
                 DataTable dt = new DataTable();
                 dt.Columns.Add("Id", typeof(Guid));
-                dt.Columns.Add("Description", typeof(string));
-                dt.Columns.Add("Note", typeof(string));
-                dt.Columns.Add("AvailableDate", typeof(DateTime));
-                dt.Columns.Add("DiscontinueDate", typeof(DateTime));
-                dt.Columns.Add("ProdCategoryId", typeof(Guid));
-                dt.Columns.Add("Pricing", typeof(decimal));
                 dt.Columns.Add("Name", typeof(string));
+                dt.Columns.Add("quantityInStock", typeof(int));
 
-                var filteredList = db.Products
-                    .Where(p => p.ProdCategoryId == cateId)
-                    .Select(p => new
-                    {
-                        p.Id,
-                        p.Description,
-                        p.Note,
-                        p.AvailableDate,
-                        p.DiscontinueDate,
-                        p.ProdCategoryId,
-                        p.Pricing,
-                        p.Name,
-                    }).ToList();
-
-                foreach (var p in filteredList)
+                var list = db.Products.Where(p => p.ProdCategoryId == cateId).ToList();
+                foreach (var p in list)
                 {
                     dt.Rows.Add(
                         p.Id,
-                        p.Description,
-                        p.Note,
-                        p.AvailableDate,
-                        p.DiscontinueDate,
-                        p.ProdCategoryId,
-                        p.Pricing,
-                        p.Name
-                    );
+                        p.Name,
+                        p.quantityInStock);
                 }
                 return dt;
             }
@@ -169,6 +145,19 @@ namespace SolbergBakery2531.DAL
                     db.ProductVisuals.RemoveRange(visuals);
 
                     db.Products.Remove(product);
+                    return db.SaveChanges() > 0;
+                }
+                return false;
+            }
+        }
+        public bool UpdateStockLevel(Guid prodId, int newQuantity)
+        {
+            using (var db = new BakeryDbContext())
+            {
+                var product = db.Products.FirstOrDefault(p => p.Id == prodId);
+                if (product != null)
+                {
+                    product.quantityInStock = newQuantity;
                     return db.SaveChanges() > 0;
                 }
                 return false;

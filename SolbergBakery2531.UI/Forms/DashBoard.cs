@@ -216,5 +216,12 @@ namespace SolbergBakery2531.UI
             this.Text = "Solberg's Bakery - Product Managment";
             LoadFormToPanel(Dashing(), new ProdInfoManagement(this));
         }
+
+        private void inventoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            panelBack.Controls.Clear();
+            this.Text = "Solberg's Bakery - Inventory Reconcillier";
+            LoadFormToPanel(Dashing(), new InventoryReconcilier());
+        }
     }
 }

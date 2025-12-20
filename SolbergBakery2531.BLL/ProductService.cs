@@ -9,37 +9,20 @@ namespace SolbergBakery2531.BLL
 {
     public class ProductService
     {
-        public DataTable Fetch()
+        public DataTable Fetch() => new CRUD().GetProd();
+        public DataTable Fetch(Guid cateId) => new CRUD().GetProd(cateId);
+        public DataTable FetchVisual(Guid productId) => new CRUD().GetProdVisual(productId);
+        public DataTable FetchCate() => new CRUD().GetProdCate();
+        public bool DelProd(Guid Id) => new CRUD().RemoveProd(Id);
+        public bool SaveProdVisual(byte[] visual, Guid prodId) => new CRUD().InsertProdVisual(visual, prodId);
+        public bool DelProdVisual(Guid Id) => new CRUD().RemoveProdVisual(Id);
+        public bool UpdateStock(Guid prodId, int quantity)
         {
-            return new CRUD().GetProd();
+            return new CRUD().UpdateStockLevel(prodId, quantity);
         }
-        public DataTable Fetch(Guid cateId)
-        {
-            return new CRUD().GetProd(cateId);
-        }
-        public DataTable FetchVisual(Guid productId)
-        {
-            return new CRUD().GetProdVisual(productId);
-        }
-        public DataTable FetchCate()
-        {
-            return new CRUD().GetProdCate();
-        }
-        public bool SaveProd(Guid Id, string Name, string Des, string Note, decimal Price, DateTime ADate, DateTime DDate,Guid cateId)
+        public bool SaveProd(Guid Id, string Name, string Des, string Note, decimal Price, DateTime ADate, DateTime DDate, Guid cateId)
         {
             return new CRUD().SaveProd(Id, Name, Des, Note, Price, ADate, DDate, cateId);
-        }
-        public bool DelProd(Guid Id)
-        {
-            return new CRUD().RemoveProd(Id);
-        }
-        public bool SaveProdVisual(byte[] visual, Guid prodId)
-        {
-            return new CRUD().InsertProdVisual(visual, prodId);
-        }
-        public bool DelProdVisual(Guid Id)
-        {
-            return new CRUD().RemoveProdVisual(Id);
         }
         public string ValidateInputs(string na, string des, string note, string pri, DateTime AD, DateTime DD)
         {

@@ -8,14 +8,17 @@
         private System.ComponentModel.IContainer components = null;
 
         /// <summary> 
-        /// Clean up any resources being used.
+        /// Clean up any resources being used. include timers and images
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
-            if (disposing && (components != null))
+            if (disposing)
             {
-                components.Dispose();
+                _imageTimer?.Stop();
+                _imageTimer?.Dispose();
+                foreach (var img in _images) img.Dispose();
+                if (components != null) components.Dispose();
             }
             base.Dispose(disposing);
         }
