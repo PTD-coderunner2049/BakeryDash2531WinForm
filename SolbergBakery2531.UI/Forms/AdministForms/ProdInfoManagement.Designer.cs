@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Node1");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Node0", new System.Windows.Forms.TreeNode[] {
-            treeNode1});
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Node2");
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Node1");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Node0", new System.Windows.Forms.TreeNode[] {
+            treeNode4});
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Node2");
             this.svBtn = new MaterialSkin.Controls.MaterialFlatButton();
             this.delBtn = new MaterialSkin.Controls.MaterialFlatButton();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -55,10 +55,12 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
+            this.InsBtn = new MaterialSkin.Controls.MaterialFlatButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.VisualDisplay = new System.Windows.Forms.PictureBox();
+            this.VisualListView = new System.Windows.Forms.DataGridView();
+            this.VisualCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.svWarnLab = new System.Windows.Forms.Label();
-            this.VisualList = new System.Windows.Forms.ListView();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
@@ -72,14 +74,14 @@
             this.DesText = new System.Windows.Forms.TextBox();
             this.NoteText = new System.Windows.Forms.TextBox();
             this.PriceText = new System.Windows.Forms.TextBox();
+            this.ADateText = new System.Windows.Forms.DateTimePicker();
+            this.DDateText = new System.Windows.Forms.DateTimePicker();
             this.PriceLab = new System.Windows.Forms.Label();
             this.NoteLab = new System.Windows.Forms.Label();
             this.ADateLab = new System.Windows.Forms.Label();
             this.DDateLab = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.VisualFlowList = new System.Windows.Forms.FlowLayoutPanel();
-            this.ADateText = new System.Windows.Forms.DateTimePicker();
-            this.DDateText = new System.Windows.Forms.DateTimePicker();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProdGrid)).BeginInit();
@@ -87,6 +89,8 @@
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.VisualDisplay)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VisualListView)).BeginInit();
             this.panel9.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -236,14 +240,14 @@
             this.ProdGrid.Name = "ProdGrid";
             this.ProdGrid.ReadOnly = true;
             this.ProdGrid.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ProdGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ProdGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.ProdGrid.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.ProdGrid.Size = new System.Drawing.Size(630, 528);
             this.ProdGrid.TabIndex = 27;
@@ -308,15 +312,15 @@
             this.ProdTree.BackColor = System.Drawing.Color.OldLace;
             this.ProdTree.Location = new System.Drawing.Point(19, 58);
             this.ProdTree.Name = "ProdTree";
-            treeNode1.Name = "Node1";
-            treeNode1.Text = "Node1";
-            treeNode2.Name = "Node0";
-            treeNode2.Text = "Node0";
-            treeNode3.Name = "Node2";
-            treeNode3.Text = "Node2";
+            treeNode4.Name = "Node1";
+            treeNode4.Text = "Node1";
+            treeNode5.Name = "Node0";
+            treeNode5.Text = "Node0";
+            treeNode6.Name = "Node2";
+            treeNode6.Text = "Node2";
             this.ProdTree.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode2,
-            treeNode3});
+            treeNode5,
+            treeNode6});
             this.ProdTree.Size = new System.Drawing.Size(148, 580);
             this.ProdTree.TabIndex = 31;
             // 
@@ -344,36 +348,38 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.materialFlatButton1);
+            this.panel3.Controls.Add(this.InsBtn);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(293, 40);
             this.panel3.TabIndex = 23;
             // 
-            // materialFlatButton1
+            // InsBtn
             // 
-            this.materialFlatButton1.AutoSize = true;
-            this.materialFlatButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialFlatButton1.BackColor = System.Drawing.Color.PapayaWhip;
-            this.materialFlatButton1.Depth = 0;
-            this.materialFlatButton1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.materialFlatButton1.Location = new System.Drawing.Point(0, 0);
-            this.materialFlatButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialFlatButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialFlatButton1.Name = "materialFlatButton1";
-            this.materialFlatButton1.Primary = false;
-            this.materialFlatButton1.Size = new System.Drawing.Size(291, 38);
-            this.materialFlatButton1.TabIndex = 3;
-            this.materialFlatButton1.Text = "Insert";
-            this.materialFlatButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.materialFlatButton1.UseVisualStyleBackColor = false;
+            this.InsBtn.AutoSize = true;
+            this.InsBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.InsBtn.BackColor = System.Drawing.Color.PapayaWhip;
+            this.InsBtn.Depth = 0;
+            this.InsBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.InsBtn.Location = new System.Drawing.Point(0, 0);
+            this.InsBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.InsBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.InsBtn.Name = "InsBtn";
+            this.InsBtn.Primary = false;
+            this.InsBtn.Size = new System.Drawing.Size(291, 38);
+            this.InsBtn.TabIndex = 3;
+            this.InsBtn.Text = "Insert";
+            this.InsBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.InsBtn.UseVisualStyleBackColor = false;
+            this.InsBtn.Click += new System.EventHandler(this.InsBtn_Click);
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.VisualDisplay);
+            this.groupBox1.Controls.Add(this.VisualListView);
             this.groupBox1.Controls.Add(this.svWarnLab);
-            this.groupBox1.Controls.Add(this.VisualList);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox1.Location = new System.Drawing.Point(15, 278);
             this.groupBox1.Name = "groupBox1";
@@ -381,6 +387,36 @@
             this.groupBox1.TabIndex = 33;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ProductVisualList";
+            // 
+            // VisualDisplay
+            // 
+            this.VisualDisplay.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.VisualDisplay.Dock = System.Windows.Forms.DockStyle.Right;
+            this.VisualDisplay.Location = new System.Drawing.Point(174, 16);
+            this.VisualDisplay.Name = "VisualDisplay";
+            this.VisualDisplay.Size = new System.Drawing.Size(116, 116);
+            this.VisualDisplay.TabIndex = 35;
+            this.VisualDisplay.TabStop = false;
+            // 
+            // VisualListView
+            // 
+            this.VisualListView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.VisualListView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.VisualCol});
+            this.VisualListView.Dock = System.Windows.Forms.DockStyle.Left;
+            this.VisualListView.Location = new System.Drawing.Point(3, 16);
+            this.VisualListView.Name = "VisualListView";
+            this.VisualListView.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.VisualListView.Size = new System.Drawing.Size(165, 116);
+            this.VisualListView.TabIndex = 34;
+            // 
+            // VisualCol
+            // 
+            this.VisualCol.DataPropertyName = "Id";
+            this.VisualCol.HeaderText = "Visual";
+            this.VisualCol.Name = "VisualCol";
+            this.VisualCol.ReadOnly = true;
+            this.VisualCol.Width = 120;
             // 
             // svWarnLab
             // 
@@ -394,17 +430,6 @@
             this.svWarnLab.TabIndex = 33;
             this.svWarnLab.Text = "              ";
             this.svWarnLab.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // VisualList
-            // 
-            this.VisualList.HideSelection = false;
-            this.VisualList.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1});
-            this.VisualList.Location = new System.Drawing.Point(1, 19);
-            this.VisualList.Name = "VisualList";
-            this.VisualList.Size = new System.Drawing.Size(292, 114);
-            this.VisualList.TabIndex = 33;
-            this.VisualList.UseCompatibleStateImageBehavior = false;
             // 
             // panel9
             // 
@@ -540,6 +565,24 @@
             this.PriceText.Size = new System.Drawing.Size(187, 22);
             this.PriceText.TabIndex = 35;
             // 
+            // ADateText
+            // 
+            this.ADateText.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ADateText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ADateText.Location = new System.Drawing.Point(3, 193);
+            this.ADateText.Name = "ADateText";
+            this.ADateText.Size = new System.Drawing.Size(187, 22);
+            this.ADateText.TabIndex = 35;
+            // 
+            // DDateText
+            // 
+            this.DDateText.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DDateText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DDateText.Location = new System.Drawing.Point(3, 221);
+            this.DDateText.Name = "DDateText";
+            this.DDateText.Size = new System.Drawing.Size(187, 22);
+            this.DDateText.TabIndex = 38;
+            // 
             // PriceLab
             // 
             this.PriceLab.AutoSize = true;
@@ -594,30 +637,11 @@
             this.pictureBox2.TabIndex = 32;
             this.pictureBox2.TabStop = false;
             // 
-            // VisualFlowList
+            // imageList1
             // 
-            this.VisualFlowList.Location = new System.Drawing.Point(562, 505);
-            this.VisualFlowList.Name = "VisualFlowList";
-            this.VisualFlowList.Size = new System.Drawing.Size(200, 100);
-            this.VisualFlowList.TabIndex = 34;
-            // 
-            // ADateText
-            // 
-            this.ADateText.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ADateText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ADateText.Location = new System.Drawing.Point(3, 193);
-            this.ADateText.Name = "ADateText";
-            this.ADateText.Size = new System.Drawing.Size(187, 22);
-            this.ADateText.TabIndex = 35;
-            // 
-            // DDateText
-            // 
-            this.DDateText.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DDateText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DDateText.Location = new System.Drawing.Point(3, 221);
-            this.DDateText.Name = "DDateText";
-            this.DDateText.Size = new System.Drawing.Size(187, 22);
-            this.DDateText.TabIndex = 38;
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // ProdInfoManagement
             // 
@@ -625,7 +649,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::SolbergBakery2531.UI.Properties.Resources.ARDECHOISVUEHAUTcopie;
             this.ClientSize = new System.Drawing.Size(1190, 650);
-            this.Controls.Add(this.VisualFlowList);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.ProdTree);
@@ -649,6 +672,8 @@
             this.panel3.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.VisualDisplay)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VisualListView)).EndInit();
             this.panel9.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
@@ -696,7 +721,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
-        private MaterialSkin.Controls.MaterialFlatButton materialFlatButton1;
+        private MaterialSkin.Controls.MaterialFlatButton InsBtn;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label svWarnLab;
         private System.Windows.Forms.DataGridViewTextBoxColumn GUIDCol;
@@ -707,9 +732,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DiscontinueDateCol;
         private System.Windows.Forms.Label NameLab;
         private System.Windows.Forms.TextBox NameText;
-        private System.Windows.Forms.ListView VisualList;
-        private System.Windows.Forms.FlowLayoutPanel VisualFlowList;
         private System.Windows.Forms.DateTimePicker ADateText;
         private System.Windows.Forms.DateTimePicker DDateText;
+        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.DataGridView VisualListView;
+        private System.Windows.Forms.PictureBox VisualDisplay;
+        private System.Windows.Forms.DataGridViewTextBoxColumn VisualCol;
     }
 }

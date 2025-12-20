@@ -13,6 +13,10 @@ namespace SolbergBakery2531.BLL
         {
             return new CRUD().GetProd();
         }
+        public DataTable FetchVisual()
+        {
+            return new CRUD().GetProdVisual();
+        }
         //public bool SaveProd(Guid staffId, string username, string passwordHash, bool Active)
         //{
         //    return new CRUD().UpsertUser(staffId, username, passwordHash, Active);

@@ -26,6 +26,7 @@ namespace SolbergBakery2531.UI.Forms.AdministForms
             SetupfilterBoxes();
             LoadProdDataAsync();
             ProdGrid.SelectionChanged += ProdGrid_SelectionChanged;
+            VisualListView.SelectionChanged += VisualListView_SelectionChanged;
             valueBox.TextChanged += ValueBox_TextChanged;
             collumBox.SelectedIndexChanged += (s, e) => ApplyFilter();
         }
@@ -46,6 +47,30 @@ namespace SolbergBakery2531.UI.Forms.AdministForms
                 MessageBox.Show($"Error loading staff data: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private async void LoadProdVisualAsync()
+        {
+            await UIUtils.ShowToast("Loading...Visual", "SolbergBakery", 500);
+            try
+            {
+                VisualListView.AutoGenerateColumns = false;
+                VisualListView.DataSource = _proderve.FetchVisual(); ;
+
+                VisualListView.ClearSelection();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading visual data: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void VisualListView_SelectionChanged(object sender, EventArgs e)
+        {
+            DataRow dataRow = VisualListView.GetSelectedRow();
+            if (dataRow == null)
+            {
+                VisualDisplay.Image = null;
+                return;
+            }
+        }
         private void ProdGrid_SelectionChanged(object sender, EventArgs e)
         {
             _parent.resetProgress();
@@ -55,13 +80,16 @@ namespace SolbergBakery2531.UI.Forms.AdministForms
                 ClearInputs();
                 return;
             }
-            _parent.UpdateProgress(50);
+            _parent.UpdateProgress(25);
             DesText.Text = dataRow["Description"].ToString();
             NoteText.Text = dataRow["Note"].ToString();
             PriceText.Text = dataRow["Pricing"].ToString();
             ADateText.Text = dataRow["AvailableDate"].ToString();
             DDateText.Text = dataRow["DiscontinueDate"].ToString();
             NameText.Text = dataRow["Name"].ToString();
+
+            _parent.UpdateProgress(25);
+            LoadProdVisualAsync();
             _parent.endProgress();
         }
         private void SetupfilterBoxes()
@@ -100,8 +128,8 @@ namespace SolbergBakery2531.UI.Forms.AdministForms
             PriceText.Clear();
             ADateText.Refresh();
             DDateText.Refresh();
-            VisualList.Clear();
             NameText.Clear();
+            VisualListView.Rows.Clear();
         }
         private void svBtn_Click(object sender, EventArgs e)
         {
@@ -110,13 +138,29 @@ namespace SolbergBakery2531.UI.Forms.AdministForms
             _parent.endProgress();
             ValidateInputs(); //HERE
         }
-
         private void delBtn_Click(object sender, EventArgs e)
         {
             _parent.resetProgress();
             _parent.UpdateProgress(50);
             _parent.endProgress();
             //HERE
+        }
+
+        private void InsBtn_Click(object sender, EventArgs e)
+        {
+            //Open the file dialog to select an image
+            OpenFileDialog openFileDialog = new OpenFileDialog
+            {
+                Title = "Select Product Image",
+                Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif",
+                InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)
+            };
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string selectedFilePath = openFileDialog.FileName;
+                VisualDisplay.Image = Image.FromFile(selectedFilePath);
+                MessageBox.Show("Selected: " + selectedFilePath);
+            }
         }
     }
 }

@@ -6,6 +6,7 @@ namespace SolbergBakery2531.DAL
 {
     public partial class CRUD
     {
+
         public DataTable GetProd()
         {
             using (var db = new BakeryDbContext())
@@ -30,7 +31,7 @@ namespace SolbergBakery2531.DAL
                     p.ProdCategoryId,
                     p.Pricing,
                     p.Name,
-            }).ToList();
+                }).ToList();
 
                 foreach (var p in List)
                 {
@@ -43,6 +44,33 @@ namespace SolbergBakery2531.DAL
                         p.ProdCategoryId,
                         p.Pricing,
                         p.Name
+                    );
+                }
+                return dt;
+            }
+        }
+        public DataTable GetProdVisual()
+        {
+            using (var db = new BakeryDbContext())
+            {
+                DataTable dt = new DataTable();
+                dt.Columns.Add("Id", typeof(Guid));
+                dt.Columns.Add("VisualinByte", typeof(byte[]));
+                dt.Columns.Add("ProductId", typeof(Guid));
+
+                var List = db.ProductVisuals.Select(p => new
+                {
+                    p.Id,
+                    p.VisualinByte,
+                    p.ProductId,
+            }).ToList();
+
+                foreach (var p in List)
+                {
+                    dt.Rows.Add(
+                        p.Id,
+                        p.VisualinByte,
+                        p.ProductId
                     );
                 }
                 return dt;
