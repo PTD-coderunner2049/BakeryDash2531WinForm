@@ -141,7 +141,8 @@ namespace SolbergBakery2531.UI
             string filterColumn = collumBox.SelectedItem.ToString();
             string filterValue = valueBox.Text.Trim();
 
-            _userve.GetFilteredUser(_fullDataTable, filterColumn, filterValue);
+            _fullDataTable.DefaultView.RowFilter =
+                BLLUtils.GetFilteredView(filterColumn, filterValue);
         }
         private void ValueBox_TextChanged(object sender, EventArgs e)
         {

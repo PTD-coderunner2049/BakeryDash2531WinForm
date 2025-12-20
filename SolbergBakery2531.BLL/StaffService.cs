@@ -44,16 +44,6 @@ namespace SolbergBakery2531.BLL
         {
             return new CRUD().RemoveStaff(empGuid);
         }
-        public DataView GetFilteredStaff(DataTable fullTable, string columnName, string filterValue)
-        {
-            if (fullTable == null) return null;
-
-            string safeValue = filterValue.Replace("'", "''");
-            string expression = $"CONVERT({columnName}, 'System.String') LIKE '%{safeValue}%'";
-
-            fullTable.DefaultView.RowFilter = expression;
-            return fullTable.DefaultView;
-        }
         public string ValidateInputs(string FnameText, string LnameText, string emailText, string phoneText,
             string ssnText, string payrateText, string birthText,
             int gendercount)

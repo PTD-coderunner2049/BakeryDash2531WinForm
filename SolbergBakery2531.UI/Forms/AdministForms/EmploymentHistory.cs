@@ -1,13 +1,7 @@
 ﻿using SolbergBakery2531._utils;
 using SolbergBakery2531.BLL;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SolbergBakery2531.UI.Forms.AdministForms
@@ -27,8 +21,6 @@ namespace SolbergBakery2531.UI.Forms.AdministForms
 
             viewGroup.Text = $"Employment History - Staff: {fullname}";
             historyView.SelectionChanged += History_SelectionChanged;
-
-
         }
         private async void LoadHistoryAsync()
         {
@@ -64,7 +56,6 @@ namespace SolbergBakery2531.UI.Forms.AdministForms
         {
             this.Dispose();
         }
-
         private async void svBtn_ClickAsync (object sender, EventArgs e)
         {
             DataRow dataRow = historyView.GetSelectedRow();

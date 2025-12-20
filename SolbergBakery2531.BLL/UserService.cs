@@ -21,16 +21,6 @@ namespace SolbergBakery2531.BLL
         {
             return new CRUD().RemoveUser(staffId);
         }
-        public DataView GetFilteredUser(DataTable fullTable, string columnName, string filterValue)
-        {
-            if (fullTable == null) return null;
-
-            string safeValue = filterValue.Replace("'", "''");
-            string expression = $"CONVERT({columnName}, 'System.String') LIKE '%{safeValue}%'";
-
-            fullTable.DefaultView.RowFilter = expression;
-            return fullTable.DefaultView;
-        }
         public string ValidateInputs(string username, string password)
         {
             if (string.IsNullOrWhiteSpace(username) ||

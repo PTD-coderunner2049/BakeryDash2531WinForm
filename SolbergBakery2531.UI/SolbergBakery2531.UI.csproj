@@ -178,10 +178,14 @@
   <ItemGroup>
     <Content Include="assets\A.png" />
     <None Include="assets\ARDECHOISVUEHAUTcopie.png" />
+    <None Include="assets\add-square24.png" />
+    <None Include="assets\add-square48.png" />
     <Content Include="assets\B.png" />
     <Content Include="assets\BANNIERE_BUCHE_TAIGA_HAUT_copie.png" />
     <None Include="assets\ChatGPT Image Dec 20, 2025, 08_37_22 PM.png" />
     <None Include="assets\Barrier.png" />
+    <None Include="assets\box-remove24.png" />
+    <None Include="assets\box-remove48.png" />
     <Content Include="assets\E1.png" />
     <Content Include="assets\E2.png" />
     <None Include="assets\filter-add.png" />

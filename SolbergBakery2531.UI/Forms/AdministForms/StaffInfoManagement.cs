@@ -160,7 +160,9 @@ namespace SolbergBakery2531.UI
             string filterValue = valueBox.Text.Trim();
             _parent.UpdateProgress(50);
 
-            _staffService.GetFilteredStaff(_fullDataTable, filterColumn, filterValue);
+            _fullDataTable.DefaultView.RowFilter =
+                BLLUtils.GetFilteredView(filterColumn, filterValue);
+
             _parent.endProgress();
         }
 
@@ -295,7 +297,6 @@ namespace SolbergBakery2531.UI
             LnameText.Clear();
             emailText.Clear();
             payrateText.Clear();
-            //employdateText.Clear();
             birthText.Clear();
          
             _parent.endProgress();

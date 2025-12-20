@@ -64,6 +64,7 @@
     <Compile Include="StaffService.cs" />
     <Compile Include="ProductService.cs" />
     <Compile Include="UserService.cs" />
+    <Compile Include="_utils\_utils.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SolbergBakery2531.DAL\SolbergBakery2531.DAL.csproj">

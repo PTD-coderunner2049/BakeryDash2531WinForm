@@ -73,6 +73,26 @@ namespace SolbergBakery2531.UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add_square24 {
+            get {
+                object obj = ResourceManager.GetObject("add-square24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap add_square48 {
+            get {
+                object obj = ResourceManager.GetObject("add-square48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ARDECHOISVUEHAUTcopie {
             get {
                 object obj = ResourceManager.GetObject("ARDECHOISVUEHAUTcopie", resourceCulture);
@@ -106,6 +126,26 @@ namespace SolbergBakery2531.UI.Properties {
         internal static System.Drawing.Bitmap Barrier {
             get {
                 object obj = ResourceManager.GetObject("Barrier", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap box_remove24 {
+            get {
+                object obj = ResourceManager.GetObject("box-remove24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap box_remove48 {
+            get {
+                object obj = ResourceManager.GetObject("box-remove48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

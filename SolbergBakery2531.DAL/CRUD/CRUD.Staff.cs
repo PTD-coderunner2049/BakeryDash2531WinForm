@@ -90,18 +90,13 @@ namespace SolbergBakery2531.DAL
                     staff.Birth = birth;
                     staff.SSN = ssn;
                     staff.PayratePerHrs = pay;
-                    //staff.EmployedAt = employedAt;
                     staff.IsSystemManager = isManager;
                     staff.Active = Active;
 
                 }
                 else //insert
                 {
-                    if (db.Staffs.Any(s => s.SSN == ssn))
-                    {
-                        return false;
-                    }
-                    if (db.Staffs.Any(s => s.Email == email))
+                    if (db.Staffs.Any(s => s.SSN == ssn || s.Email == email))
                     {
                         return false;
                     }
@@ -117,48 +112,22 @@ namespace SolbergBakery2531.DAL
                         Birth = birth,
                         SSN = ssn,
                         PayratePerHrs = pay,
-                        //EmployedAt = employedAt,
                         IsSystemManager = isManager,
                         Active = Active
                     };
                     db.Staffs.Add(newStaff);
+                    bool result = db.SaveChanges() > 0;
 
-                    if (Active) Historian(db, newStaff.Id, Active);
+                    if (Active)
+                    {
+                        Historian(db, newStaff.Id, Active);
+                        result = db.SaveChanges() > 0;
+                    }
+                    return result;
                 }
-
                 return db.SaveChanges() > 0;
             }
         }
-        //public void Historian(BakeryDbContext db, Guid staffId, bool isBecomingActive)
-        //{
-        //    if (isBecomingActive)
-        //    {
-        //        bool alreadyHasActive = db.StaffHistories.Any(h => h.StaffId == staffId && h.Ongoing);
-
-        //        if (!alreadyHasActive)
-        //        {
-        //            db.StaffHistories.Add(new StaffHistory
-        //            {
-        //                StaffId = staffId,
-        //                Start = DateTime.Now,
-        //                Ongoing = true
-        //            });
-        //        }
-        //    }
-        //    else
-        //    {
-        //        var ongoingHistory = db.StaffHistories
-        //                               .Where(h => h.StaffId == staffId && h.Ongoing)
-        //                               .OrderByDescending(h => h.Start)
-        //                               .FirstOrDefault();
-
-        //        if (ongoingHistory != null)
-        //        {
-        //            ongoingHistory.End = DateTime.Now;
-        //            ongoingHistory.Ongoing = false;
-        //        }
-        //    }
-        //}
         public void Historian(BakeryDbContext db, Guid Id, bool OngoingStatus)
         {
             if (OngoingStatus)
@@ -180,10 +149,6 @@ namespace SolbergBakery2531.DAL
                 }
             }
         }
-
-        /// <summary>
-        /// Removes a staff record based on Id.
-        /// </summary>
         public bool RemoveStaff(Guid empGuid)
         {
             using (var db = new BakeryDbContext())

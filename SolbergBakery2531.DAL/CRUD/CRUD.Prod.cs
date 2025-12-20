@@ -76,5 +76,49 @@ namespace SolbergBakery2531.DAL
                 return dt;
             }
         }
+        public DataTable GetProdCate()
+        {
+            using (var db = new BakeryDbContext())
+            {
+                DataTable dt = new DataTable();
+                dt.Columns.Add("Id", typeof(Guid));
+                dt.Columns.Add("Name", typeof(string));
+                dt.Columns.Add("EngName", typeof(string));
+
+                var List = db.ProdCategories.Select(p => new
+                {
+                    p.Id,
+                    p.Name,
+                    p.EngName,
+                }).ToList();
+
+                foreach (var p in List)
+                {
+                    dt.Rows.Add(
+                        p.Id,
+                        p.Name,
+                        p.EngName
+                    );
+                }
+                return dt;
+            }
+        }
+
+        public bool SaveProd(Guid id, string name, string des, string note, decimal price, DateTime aDate, DateTime dDate)
+        {
+            throw new NotImplementedException();
+        }
+        public bool InsertProdVisual(Guid Id, byte[] visual, Guid prodId)
+        {
+            throw new NotImplementedException();
+        }
+        public bool RemoveProd(Guid id)
+        {
+            throw new NotImplementedException();
+        }
+        public bool RemoveProdVisual(Guid id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

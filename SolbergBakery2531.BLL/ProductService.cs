@@ -17,23 +17,25 @@ namespace SolbergBakery2531.BLL
         {
             return new CRUD().GetProdVisual();
         }
-        //public bool SaveProd(Guid staffId, string username, string passwordHash, bool Active)
-        //{
-        //    return new CRUD().UpsertUser(staffId, username, passwordHash, Active);
-        //}
-        //public bool DelProd(Guid staffId)
-        //{
-        //    return new CRUD().RemoveUser(staffId);
-        //}
-        public DataView GetFilteredProd(DataTable fullTable, string columnName, string filterValue)
+        public DataTable FetchCate()
         {
-            if (fullTable == null) return null;
-
-            string safeValue = filterValue.Replace("'", "''");
-            string expression = $"CONVERT({columnName}, 'System.String') LIKE '%{safeValue}%'";
-
-            fullTable.DefaultView.RowFilter = expression;
-            return fullTable.DefaultView;
+            return new CRUD().GetProdCate();
+        }
+        public bool SaveProd(Guid Id, string Name, string Des, string Note, decimal Price, DateTime ADate, DateTime DDate,Guid cateId)
+        {
+            return new CRUD().SaveProd(Id, Name, Des, Note, Price, ADate, DDate);
+        }
+        public bool DelProd(Guid Id)
+        {
+            return new CRUD().RemoveProd(Id);
+        }
+        public bool SaveProdVisual(Guid Id, byte[] visual, Guid prodId)
+        {
+            return new CRUD().InsertProdVisual(Id, visual, Id);
+        }
+        public bool DelProdVisual(Guid Id)
+        {
+            return new CRUD().RemoveProdVisual(Id);
         }
         public string ValidateInputs(string na, string des, string note, string pri, DateTime AD, DateTime DD)
         {
