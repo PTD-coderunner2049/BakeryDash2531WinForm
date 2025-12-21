@@ -15,7 +15,13 @@ namespace SolbergBakery2531.BLL
         public DataTable FetchCate() => new CRUD().GetProdCate();
 
 
-        public bool DelProd(Guid Id) => new CRUD().RemoveProd(Id);
+        public bool DelProd(Guid Id)
+        {
+            CRUD crud = new CRUD();
+            crud.RemoveProdVisualsByProductId(Id);
+            Product prod = crud.GetProdSingle(Id);
+            return crud.RemoveProd(prod);
+        }
         public bool SaveProdVisual(byte[] visual, Guid prodId) => new CRUD().InsertProdVisual(visual, prodId);
         public bool DelProdVisual(Guid Id) => new CRUD().RemoveProdVisual(Id);
 

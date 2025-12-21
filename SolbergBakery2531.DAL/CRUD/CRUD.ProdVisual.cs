@@ -1,6 +1,7 @@
 ﻿using SolbergBakery2531.DAL.Data;
 using SolbergBakery2531.DAL.Model;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 namespace SolbergBakery2531.DAL
@@ -36,6 +37,18 @@ namespace SolbergBakery2531.DAL
                 return dt;
             }
         }
+        //        var visuals = db.ProductVisuals.Where(v => v.ProductId == id);
+        public List<ProductVisual> GetProductVisualsByProductId(Guid productId)
+        {
+            using (var db = new BakeryDbContext())
+            {
+                return db.ProductVisuals
+                    .Where(pv => pv.ProductId == productId)
+                    .ToList();
+            }
+        }
+
+
         public bool InsertProdVisual(byte[] visualBytes, Guid prodId)
         {
             using (var db = new BakeryDbContext())
@@ -61,6 +74,19 @@ namespace SolbergBakery2531.DAL
                 if (visual != null)
                 {
                     db.ProductVisuals.Remove(visual);
+                    return db.SaveChanges() > 0;
+                }
+                return false;
+            }
+        }
+        public bool RemoveProdVisualsByProductId(Guid productId)
+        {
+            using (var db = new BakeryDbContext())
+            {
+                var visuals = db.ProductVisuals.Where(v => v.ProductId == productId).ToList();
+                if (visuals.Any())
+                {
+                    db.ProductVisuals.RemoveRange(visuals);
                     return db.SaveChanges() > 0;
                 }
                 return false;

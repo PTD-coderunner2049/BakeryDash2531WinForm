@@ -44,11 +44,7 @@ namespace SolbergBakery2531.BLL
         {
             CRUD crud = new CRUD();
             Staff staff = crud.GetStaffSingle(empGuid);
-            if (staff == null)
-            {
-                return false;
-            }
-            return new CRUD().RemoveStaff(staff);
+            return crud.RemoveStaff(staff);
         }
         public string ValidateInputs(string FnameText, string LnameText, string emailText, string phoneText,
             string ssnText, string payrateText, string birthText,

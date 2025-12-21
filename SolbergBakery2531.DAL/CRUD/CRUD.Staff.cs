@@ -143,11 +143,11 @@ namespace SolbergBakery2531.DAL
             {
                 if (staff != null)
                 {
-                    db.Staffs.Attach(staff);
-                    db.Staffs.Remove(staff);
-                    return db.SaveChanges() > 0;
+                    return false;
                 }
-                return false;
+                db.Staffs.Attach(staff);
+                db.Staffs.Remove(staff);
+                return db.SaveChanges() > 0;
             }
         }
     }

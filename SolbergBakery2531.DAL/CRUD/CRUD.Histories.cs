@@ -80,7 +80,7 @@ namespace SolbergBakery2531.DAL
                         return true;
                     }
 
-                    return false; // Record not found
+                    return false;
                 }
             }
             catch

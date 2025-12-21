@@ -140,21 +140,31 @@ namespace SolbergBakery2531.DAL
                 return db.Products.FirstOrDefault(p => p.Id == id);
             }
         }
-        public bool RemoveProd(Guid id)
+        public bool RemoveProd(Product prod)
         {
             using (var db = new BakeryDbContext())
             {
-                var product = db.Products.FirstOrDefault(p => p.Id == id);
-                if (product != null)
+                if (prod != null)
                 {
-                    var visuals = db.ProductVisuals.Where(v => v.ProductId == id);
-                    db.ProductVisuals.RemoveRange(visuals);
-
-                    db.Products.Remove(product);
-                    return db.SaveChanges() > 0;
+                    return false;
                 }
-                return false;
+                db.Products.Attach(prod);
+                db.Products.Remove(prod);
+                return db.SaveChanges() > 0;
             }
+            //using (var db = new BakeryDbContext())
+            //{
+            //    var product = db.Products.FirstOrDefault(p => p.Id == id);
+            //    if (product != null)
+            //    {
+            //        var visuals = db.ProductVisuals.Where(v => v.ProductId == id);
+            //        db.ProductVisuals.RemoveRange(visuals);
+
+            //        db.Products.Remove(product);
+            //        return db.SaveChanges() > 0;
+            //    }
+            //    return false;
+            //}
         }
         public bool UpdateStockLevel(Guid prodId, int newQuantity)
         {
