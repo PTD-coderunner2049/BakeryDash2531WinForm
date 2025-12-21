@@ -109,6 +109,7 @@
       <DependentUpon>202512202051208_addQuantityProd.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\ProdCategory.cs" />
+    <Compile Include="Model\StaffDisplayDTO.cs" />
     <Compile Include="Model\ProductVisual.cs" />
     <Compile Include="Session\CurrSess.cs" />
     <Compile Include="Data\BakeryDbContext.cs" />

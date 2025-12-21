@@ -8,37 +8,45 @@ namespace SolbergBakery2531.DAL
 {
     public partial class CRUD
     {
-        public DataTable GetProdVisual(Guid productId)
+        public List<ProductVisual> GetProdVisual(Guid productId)
         {
             using (var db = new BakeryDbContext())
             {
-                DataTable dt = new DataTable();
-                dt.Columns.Add("Id", typeof(Guid));
-                dt.Columns.Add("VisualinByte", typeof(byte[]));
-                dt.Columns.Add("ProductId", typeof(Guid));
-
-                var List = db.ProductVisuals
-                    .Where(p => p.ProductId == productId)
-                    .Select(p => new
-                {
-                    p.Id,
-                    p.VisualinByte,
-                    p.ProductId,
-                }).ToList();
-
-                foreach (var p in List)
-                {
-                    dt.Rows.Add(
-                        p.Id,
-                        p.VisualinByte,
-                        p.ProductId
-                    );
-                }
-                return dt;
+                return db.ProductVisuals
+                         .Where(p => p.ProductId == productId)
+                         .ToList();
             }
         }
-        //        var visuals = db.ProductVisuals.Where(v => v.ProductId == id);
-        public List<ProductVisual> GetProductVisualsByProductId(Guid productId)
+        //public DataTable GetProdxxxVisual(Guid productId)
+        //{
+        //    using (var db = new BakeryDbContext())
+        //    {
+        //        DataTable dt = new DataTable();
+        //        dt.Columns.Add("Id", typeof(Guid));
+        //        dt.Columns.Add("VisualinByte", typeof(byte[]));
+        //        dt.Columns.Add("ProductId", typeof(Guid));
+
+        //        var List = db.ProductVisuals
+        //            .Where(p => p.ProductId == productId)
+        //            .Select(p => new
+        //        {
+        //            p.Id,
+        //            p.VisualinByte,
+        //            p.ProductId,
+        //        }).ToList();
+
+        //        foreach (var p in List)
+        //        {
+        //            dt.Rows.Add(
+        //                p.Id,
+        //                p.VisualinByte,
+        //                p.ProductId
+        //            );
+        //        }
+        //        return dt;
+        //    }
+        //}
+        public List<ProductVisual> GetProdVByProdId(Guid productId)
         {
             using (var db = new BakeryDbContext())
             {
@@ -49,7 +57,7 @@ namespace SolbergBakery2531.DAL
         }
 
 
-        public bool InsertProdVisual(byte[] visualBytes, Guid prodId)
+        public bool InsertProdV(byte[] visualBytes, Guid prodId)
         {
             using (var db = new BakeryDbContext())
             {
@@ -66,7 +74,7 @@ namespace SolbergBakery2531.DAL
                 return db.SaveChanges() > 0;
             }
         }
-        public bool RemoveProdVisual(Guid visualId)
+        public bool RemoveProdV(Guid visualId)
         {
             using (var db = new BakeryDbContext())
             {
@@ -79,7 +87,7 @@ namespace SolbergBakery2531.DAL
                 return false;
             }
         }
-        public bool RemoveProdVisualsByProductId(Guid productId)
+        public bool RemoveProdVByProdId(Guid productId)
         {
             using (var db = new BakeryDbContext())
             {

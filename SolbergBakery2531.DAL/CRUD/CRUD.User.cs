@@ -1,50 +1,58 @@
 ﻿using SolbergBakery2531.DAL.Data;
 using SolbergBakery2531.DAL.Model;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 namespace SolbergBakery2531.DAL
 {
     public partial class CRUD
     {
-        public DataTable GetUsers()
+        //public DataTable GetUxxsers()
+        //{
+        //    using (var db = new BakeryDbContext())
+        //    {
+        //        DataTable dt = new DataTable();
+        //        //dt.Columns.Add("EmployeeGlobalId", typeof(Guid)); // Staff's GUID
+        //        dt.Columns.Add("Id", typeof(Guid));     // User's GUID
+        //        dt.Columns.Add("Username", typeof(string));
+        //        dt.Columns.Add("CreatedAt", typeof(DateTime));
+        //        dt.Columns.Add("Active", typeof(bool));
+        //        dt.Columns.Add("PasswordHash", typeof(string));
+        //        dt.Columns.Add("IsSystemManager", typeof(bool));
+
+        //        var userList = db.Users.Select(u => new
+        //        {
+        //            u.Id,
+        //            u.Username,
+        //            u.CreatedAt,
+        //            u.Active,
+        //            u.PasswordHash,
+        //            // navigation
+        //            //EmpGuid = u.AccociatedStaff.Id,
+        //            IsManager = u.AccociatedStaff.IsSystemManager
+        //        }).ToList();
+
+        //        foreach (var u in userList)
+        //        {
+        //            dt.Rows.Add(
+        //                //u.EmpGuid,
+        //                u.Id,
+        //                u.Username,
+        //                u.CreatedAt,
+        //                u.Active,
+        //                u.PasswordHash,
+        //                u.IsManager
+        //            );
+        //        }
+        //        return dt;
+        //    }
+        //}
+        public List<User> GetUsers()
         {
             using (var db = new BakeryDbContext())
             {
-                DataTable dt = new DataTable();
-                //dt.Columns.Add("EmployeeGlobalId", typeof(Guid)); // Staff's GUID
-                dt.Columns.Add("Id", typeof(Guid));     // User's GUID
-                dt.Columns.Add("Username", typeof(string));
-                dt.Columns.Add("CreatedAt", typeof(DateTime));
-                dt.Columns.Add("Active", typeof(bool));
-                dt.Columns.Add("PasswordHash", typeof(string));
-                dt.Columns.Add("IsSystemManager", typeof(bool));
-
-                var userList = db.Users.Select(u => new
-                {
-                    u.Id,
-                    u.Username,
-                    u.CreatedAt,
-                    u.Active,
-                    u.PasswordHash,
-                    // navigation
-                    //EmpGuid = u.AccociatedStaff.Id,
-                    IsManager = u.AccociatedStaff.IsSystemManager
-                }).ToList();
-
-                foreach (var u in userList)
-                {
-                    dt.Rows.Add(
-                        //u.EmpGuid,
-                        u.Id,
-                        u.Username,
-                        u.CreatedAt,
-                        u.Active,
-                        u.PasswordHash,
-                        u.IsManager
-                    );
-                }
-                return dt;
+                return db.Users.Include("AccociatedStaff").ToList();
             }
         }
         public User GetUserSingle(Guid staffId)

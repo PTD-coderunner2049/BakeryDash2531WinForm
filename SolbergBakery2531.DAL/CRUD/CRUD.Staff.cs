@@ -10,64 +10,18 @@ namespace SolbergBakery2531.DAL
 {
     public partial class CRUD
     {
-        public DataTable GetStaffs()
+        public List<StaffDisplayDTO> GetStaffs()
         {
             using (var db = new BakeryDbContext())
             {
-                DataTable dt = new DataTable();
-                dt.Columns.Add("Id", typeof(Guid));
-                dt.Columns.Add("FirstName", typeof(string));
-                dt.Columns.Add("LastName", typeof(string));
-                dt.Columns.Add("Email", typeof(string));
-                dt.Columns.Add("PhoneContact", typeof(string));
-                dt.Columns.Add("Gender", typeof(string));
-                dt.Columns.Add("Birth", typeof(DateTime));
-                dt.Columns.Add("SSN", typeof(string));
-                dt.Columns.Add("LastHistoryStart", typeof(DateTime));
-                dt.Columns.Add("PayratePerHrs", typeof(decimal));
-                dt.Columns.Add("IsSystemManager", typeof(bool));
-                dt.Columns.Add("Active", typeof(bool));
-
-                var staffList = db.Staffs.Select(s => new
+                return db.Staffs.Select(s => new StaffDisplayDTO
                 {
-                    s.Id,
-                    s.FirstName,
-                    s.LastName,
-                    s.Email,
-                    s.PhoneContact,
-                    s.Gender,
-                    s.Birth,
-                    s.SSN,
-                    //s.EmployedAt,
-                    s.PayratePerHrs,
-                    s.IsSystemManager,
-                    s.Active,
-                    
-                    //History navigation is a collection, so I cant take it all yet, it better to LinQ it all when need later)
-                    LastHistoryStart = s.Histories 
+                    Staff = s,
+                    LastHistoryStart = s.Histories
                         .OrderByDescending(h => h.Start)
                         .Select(h => (DateTime?)h.Start)
                         .FirstOrDefault()
                 }).ToList();
-
-                foreach (var s in staffList)
-                {
-                    dt.Rows.Add(
-                        s.Id,
-                        s.FirstName,
-                        s.LastName,
-                        s.Email,
-                        s.PhoneContact,
-                        s.Gender,
-                        s.Birth,
-                        s.SSN,
-                        s.LastHistoryStart,
-                        s.PayratePerHrs,
-                        s.IsSystemManager,
-                        s.Active
-                    );
-                }
-                return dt;
             }
         }
         public Staff GetStaffSingle(Guid empGuid)

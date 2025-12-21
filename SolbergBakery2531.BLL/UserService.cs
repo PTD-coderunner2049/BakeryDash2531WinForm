@@ -11,7 +11,28 @@ namespace SolbergBakery2531.BLL
     {
         public DataTable Fetch()
         {
-            return new CRUD().GetUsers();
+            var users = new CRUD().GetUsers();
+
+            DataTable dt = new DataTable();
+            dt.Columns.Add("Id", typeof(Guid));
+            dt.Columns.Add("Username", typeof(string));
+            dt.Columns.Add("CreatedAt", typeof(DateTime));
+            dt.Columns.Add("Active", typeof(bool));
+            dt.Columns.Add("PasswordHash", typeof(string));
+            dt.Columns.Add("IsSystemManager", typeof(bool));
+
+            foreach (var u in users)
+            {
+                dt.Rows.Add(
+                    u.Id,
+                    u.Username,
+                    u.CreatedAt,
+                    u.Active,
+                    u.PasswordHash,
+                    u.AccociatedStaff?.IsSystemManager ?? false
+                );
+            }
+            return dt;
         }
         public bool SaveUser(Guid staffId, string username, string passwordHash, bool Active)
         {

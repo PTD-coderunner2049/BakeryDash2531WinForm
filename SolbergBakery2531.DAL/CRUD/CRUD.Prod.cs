@@ -1,6 +1,7 @@
 ﻿using SolbergBakery2531.DAL.Data;
 using SolbergBakery2531.DAL.Model;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 namespace SolbergBakery2531.DAL
@@ -8,93 +9,66 @@ namespace SolbergBakery2531.DAL
     public partial class CRUD
     {
 
-        public DataTable GetProd()
+        public List<Product> GetProd()
         {
             using (var db = new BakeryDbContext())
             {
-                DataTable dt = new DataTable();
-                dt.Columns.Add("Id", typeof(Guid));
-                dt.Columns.Add("Description", typeof(string));
-                dt.Columns.Add("Note", typeof(string));
-                dt.Columns.Add("AvailableDate", typeof(DateTime));
-                dt.Columns.Add("DiscontinueDate", typeof(DateTime));
-                dt.Columns.Add("ProdCategoryId", typeof(Guid));
-                dt.Columns.Add("Pricing", typeof(decimal));
-                dt.Columns.Add("Name", typeof(string));
+                return db.Products.ToList();
+            }
+            //using (var db = new BakeryDbContext())
+            //{
+            //    DataTable dt = new DataTable();
+            //    dt.Columns.Add("Id", typeof(Guid));
+            //    dt.Columns.Add("Description", typeof(string));
+            //    dt.Columns.Add("Note", typeof(string));
+            //    dt.Columns.Add("AvailableDate", typeof(DateTime));
+            //    dt.Columns.Add("DiscontinueDate", typeof(DateTime));
+            //    dt.Columns.Add("ProdCategoryId", typeof(Guid));
+            //    dt.Columns.Add("Pricing", typeof(decimal));
+            //    dt.Columns.Add("Name", typeof(string));
 
-                var List = db.Products.Select(p => new
-                {
-                    p.Id,
-                    p.Description,
-                    p.Note,
-                    p.AvailableDate,
-                    p.DiscontinueDate,
-                    p.ProdCategoryId,
-                    p.Pricing,
-                    p.Name,
-                }).ToList();
+            //    var List = db.Products.Select(p => new
+            //    {
+            //        p.Id,
+            //        p.Description,
+            //        p.Note,
+            //        p.AvailableDate,
+            //        p.DiscontinueDate,
+            //        p.ProdCategoryId,
+            //        p.Pricing,
+            //        p.Name,
+            //    }).ToList();
 
-                foreach (var p in List)
-                {
-                    dt.Rows.Add(
-                        p.Id,
-                        p.Description,
-                        p.Note,
-                        p.AvailableDate,
-                        p.DiscontinueDate,
-                        p.ProdCategoryId,
-                        p.Pricing,
-                        p.Name
-                    );
-                }
-                return dt;
+            //    foreach (var p in List)
+            //    {
+            //        dt.Rows.Add(
+            //            p.Id,
+            //            p.Description,
+            //            p.Note,
+            //            p.AvailableDate,
+            //            p.DiscontinueDate,
+            //            p.ProdCategoryId,
+            //            p.Pricing,
+            //            p.Name
+            //        );
+            //    }
+            //    return dt;
+            //}
+        }
+        public List<Product> GetProd(Guid cateId)
+        {
+            using (var db = new BakeryDbContext())
+            {
+                return db.Products
+                         .Where(p => p.ProdCategoryId == cateId)
+                         .ToList();
             }
         }
-        public DataTable GetProd(Guid cateId)
+        public List<ProdCategory> GetProdCate()
         {
             using (var db = new BakeryDbContext())
             {
-                DataTable dt = new DataTable();
-                dt.Columns.Add("Id", typeof(Guid));
-                dt.Columns.Add("Name", typeof(string));
-                dt.Columns.Add("quantityInStock", typeof(int));
-
-                var list = db.Products.Where(p => p.ProdCategoryId == cateId).ToList();
-                foreach (var p in list)
-                {
-                    dt.Rows.Add(
-                        p.Id,
-                        p.Name,
-                        p.quantityInStock);
-                }
-                return dt;
-            }
-        }
-        public DataTable GetProdCate()
-        {
-            using (var db = new BakeryDbContext())
-            {
-                DataTable dt = new DataTable();
-                dt.Columns.Add("Id", typeof(Guid));
-                dt.Columns.Add("Name", typeof(string));
-                dt.Columns.Add("EngName", typeof(string));
-
-                var List = db.ProdCategories.Select(p => new
-                {
-                    p.Id,
-                    p.Name,
-                    p.EngName,
-                }).ToList();
-
-                foreach (var p in List)
-                {
-                    dt.Rows.Add(
-                        p.Id,
-                        p.Name,
-                        p.EngName
-                    );
-                }
-                return dt;
+                return db.ProdCategories.ToList();
             }
         }
 

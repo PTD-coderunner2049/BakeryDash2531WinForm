@@ -1,43 +1,53 @@
 ﻿using SolbergBakery2531.DAL.Data;
 using SolbergBakery2531.DAL.Model;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 namespace SolbergBakery2531.DAL
 {
     public partial class CRUD
     {
-        public DataTable GetHistories(Guid Id)
+        //public DataTable GetHistxxxxxories(Guid Id)
+        //{
+        //    using (var db = new BakeryDbContext())
+        //    {
+        //        DataTable dt = new DataTable();
+        //        dt.Columns.Add("StartDate", typeof(DateTime));
+        //        dt.Columns.Add("EndDate", typeof(DateTime));
+        //        dt.Columns.Add("Ongoing", typeof(bool));
+        //        dt.Columns.Add("FeedBack", typeof(string));
+
+        //        var HistoryRecords = db.StaffHistories
+        //            .Where(h => h.StaffId == Id)
+        //            .Select(h => new
+        //            {
+        //                h.Start,
+        //                h.End,
+        //                h.Ongoing,
+        //                h.HR_Feedback,
+        //            })
+        //            .ToList();
+
+        //        foreach (var h in HistoryRecords)
+        //        {
+        //            dt.Rows.Add(
+        //                h.Start,
+        //                h.End,
+        //                h.Ongoing,
+        //                h.HR_Feedback
+        //            );
+        //        }
+        //        return dt;
+        //    }
+        //}
+        public List<StaffHistory> GetHistories(Guid staffId)
         {
             using (var db = new BakeryDbContext())
             {
-                DataTable dt = new DataTable();
-                dt.Columns.Add("StartDate", typeof(DateTime));
-                dt.Columns.Add("EndDate", typeof(DateTime));
-                dt.Columns.Add("Ongoing", typeof(bool));
-                dt.Columns.Add("FeedBack", typeof(string));
-
-                var HistoryRecords = db.StaffHistories
-                    .Where(h => h.StaffId == Id)
-                    .Select(h => new
-                    {
-                        h.Start,
-                        h.End,
-                        h.Ongoing,
-                        h.HR_Feedback,
-                    })
-                    .ToList();
-
-                foreach (var h in HistoryRecords)
-                {
-                    dt.Rows.Add(
-                        h.Start,
-                        h.End,
-                        h.Ongoing,
-                        h.HR_Feedback
-                    );
-                }
-                return dt;
+                return db.StaffHistories
+                         .Where(h => h.StaffId == staffId)
+                         .ToList();
             }
         }
         public void Historian(BakeryDbContext db, Guid Id, bool OngoingStatus)
