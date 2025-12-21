@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.svBtn = new MaterialSkin.Controls.MaterialFlatButton();
             this.delBtn = new MaterialSkin.Controls.MaterialFlatButton();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -42,26 +42,28 @@
             this.title = new System.Windows.Forms.Label();
             this.ProdGrid = new System.Windows.Forms.DataGridView();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.svWarnLab = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.addVbtn = new System.Windows.Forms.PictureBox();
-            this.delVbtn = new System.Windows.Forms.PictureBox();
-            this.VisualDisplay = new System.Windows.Forms.PictureBox();
             this.VisualListView = new System.Windows.Forms.DataGridView();
             this.VisualCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.VisualBytes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.svWarnLab = new System.Windows.Forms.Label();
+            this.delVbtn = new System.Windows.Forms.PictureBox();
+            this.VisualDisplay = new System.Windows.Forms.PictureBox();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.CateLab = new System.Windows.Forms.Label();
             this.NameLab = new System.Windows.Forms.Label();
             this.DesLab = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.NameText = new System.Windows.Forms.TextBox();
             this.DesText = new System.Windows.Forms.TextBox();
             this.NoteText = new System.Windows.Forms.TextBox();
+            this.CateComboBox = new System.Windows.Forms.ComboBox();
             this.PriceText = new System.Windows.Forms.TextBox();
             this.ADateText = new System.Windows.Forms.DateTimePicker();
             this.DDateText = new System.Windows.Forms.DateTimePicker();
@@ -71,11 +73,9 @@
             this.DDateLab = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.CateComboBox = new System.Windows.Forms.ComboBox();
-            this.CateLab = new System.Windows.Forms.Label();
             this.GUIDCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DescriptionCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DescriptionCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PricingCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AvailableDateCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiscontinueDateCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -85,9 +85,9 @@
             this.panel7.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.addVbtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VisualListView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.delVbtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.VisualDisplay)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.VisualListView)).BeginInit();
             this.panel9.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -223,11 +223,11 @@
             this.ProdGrid.BackgroundColor = System.Drawing.Color.PapayaWhip;
             this.ProdGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.ProdGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
-            this.ProdGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ProdGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.ProdGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.GUIDCol,
-            this.DescriptionCol,
             this.NameCol,
+            this.DescriptionCol,
             this.PricingCol,
             this.AvailableDateCol,
             this.DiscontinueDateCol});
@@ -237,14 +237,14 @@
             this.ProdGrid.Name = "ProdGrid";
             this.ProdGrid.ReadOnly = true;
             this.ProdGrid.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ProdGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ProdGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.ProdGrid.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.ProdGrid.Size = new System.Drawing.Size(630, 528);
             this.ProdGrid.TabIndex = 27;
@@ -261,6 +261,19 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(323, 528);
             this.panel7.TabIndex = 29;
+            // 
+            // svWarnLab
+            // 
+            this.svWarnLab.AutoSize = true;
+            this.svWarnLab.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.svWarnLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.svWarnLab.ForeColor = System.Drawing.Color.Firebrick;
+            this.svWarnLab.Location = new System.Drawing.Point(18, 515);
+            this.svWarnLab.Name = "svWarnLab";
+            this.svWarnLab.Size = new System.Drawing.Size(49, 13);
+            this.svWarnLab.TabIndex = 33;
+            this.svWarnLab.Text = "              ";
+            this.svWarnLab.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // groupBox1
             // 
@@ -288,30 +301,6 @@
             this.addVbtn.TabIndex = 36;
             this.addVbtn.TabStop = false;
             this.addVbtn.Click += new System.EventHandler(this.addVbtn_Click);
-            // 
-            // delVbtn
-            // 
-            this.delVbtn.BackColor = System.Drawing.Color.Black;
-            this.delVbtn.BackgroundImage = global::SolbergBakery2531.UI.Properties.Resources.box_remove48;
-            this.delVbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.delVbtn.Location = new System.Drawing.Point(260, 19);
-            this.delVbtn.Name = "delVbtn";
-            this.delVbtn.Size = new System.Drawing.Size(32, 32);
-            this.delVbtn.TabIndex = 33;
-            this.delVbtn.TabStop = false;
-            this.delVbtn.Click += new System.EventHandler(this.delVbtn_Click);
-            // 
-            // VisualDisplay
-            // 
-            this.VisualDisplay.BackColor = System.Drawing.Color.DimGray;
-            this.VisualDisplay.BackgroundImage = global::SolbergBakery2531.UI.Properties.Resources.Barrier;
-            this.VisualDisplay.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.VisualDisplay.Location = new System.Drawing.Point(121, 19);
-            this.VisualDisplay.Name = "VisualDisplay";
-            this.VisualDisplay.Size = new System.Drawing.Size(172, 172);
-            this.VisualDisplay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.VisualDisplay.TabIndex = 35;
-            this.VisualDisplay.TabStop = false;
             // 
             // VisualListView
             // 
@@ -341,18 +330,29 @@
             this.VisualBytes.ReadOnly = true;
             this.VisualBytes.Visible = false;
             // 
-            // svWarnLab
+            // delVbtn
             // 
-            this.svWarnLab.AutoSize = true;
-            this.svWarnLab.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.svWarnLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.svWarnLab.ForeColor = System.Drawing.Color.Firebrick;
-            this.svWarnLab.Location = new System.Drawing.Point(18, 515);
-            this.svWarnLab.Name = "svWarnLab";
-            this.svWarnLab.Size = new System.Drawing.Size(49, 13);
-            this.svWarnLab.TabIndex = 33;
-            this.svWarnLab.Text = "              ";
-            this.svWarnLab.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.delVbtn.BackColor = System.Drawing.Color.Black;
+            this.delVbtn.BackgroundImage = global::SolbergBakery2531.UI.Properties.Resources.box_remove48;
+            this.delVbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.delVbtn.Location = new System.Drawing.Point(260, 19);
+            this.delVbtn.Name = "delVbtn";
+            this.delVbtn.Size = new System.Drawing.Size(32, 32);
+            this.delVbtn.TabIndex = 33;
+            this.delVbtn.TabStop = false;
+            this.delVbtn.Click += new System.EventHandler(this.delVbtn_Click);
+            // 
+            // VisualDisplay
+            // 
+            this.VisualDisplay.BackColor = System.Drawing.Color.DimGray;
+            this.VisualDisplay.BackgroundImage = global::SolbergBakery2531.UI.Properties.Resources.Barrier;
+            this.VisualDisplay.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.VisualDisplay.Location = new System.Drawing.Point(121, 19);
+            this.VisualDisplay.Name = "VisualDisplay";
+            this.VisualDisplay.Size = new System.Drawing.Size(172, 172);
+            this.VisualDisplay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.VisualDisplay.TabIndex = 35;
+            this.VisualDisplay.TabStop = false;
             // 
             // panel9
             // 
@@ -421,6 +421,17 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "ProductInfo";
             // 
+            // CateLab
+            // 
+            this.CateLab.AutoSize = true;
+            this.CateLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CateLab.Location = new System.Drawing.Point(20, 161);
+            this.CateLab.Name = "CateLab";
+            this.CateLab.Size = new System.Drawing.Size(68, 16);
+            this.CateLab.TabIndex = 34;
+            this.CateLab.Text = "Category :";
+            this.CateLab.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // NameLab
             // 
             this.NameLab.AutoSize = true;
@@ -481,6 +492,15 @@
             this.NoteText.Name = "NoteText";
             this.NoteText.Size = new System.Drawing.Size(187, 35);
             this.NoteText.TabIndex = 33;
+            // 
+            // CateComboBox
+            // 
+            this.CateComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CateComboBox.FormattingEnabled = true;
+            this.CateComboBox.Location = new System.Drawing.Point(3, 139);
+            this.CateComboBox.Name = "CateComboBox";
+            this.CateComboBox.Size = new System.Drawing.Size(187, 24);
+            this.CateComboBox.TabIndex = 33;
             // 
             // PriceText
             // 
@@ -568,26 +588,6 @@
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
-            // CateComboBox
-            // 
-            this.CateComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CateComboBox.FormattingEnabled = true;
-            this.CateComboBox.Location = new System.Drawing.Point(3, 139);
-            this.CateComboBox.Name = "CateComboBox";
-            this.CateComboBox.Size = new System.Drawing.Size(187, 24);
-            this.CateComboBox.TabIndex = 33;
-            // 
-            // CateLab
-            // 
-            this.CateLab.AutoSize = true;
-            this.CateLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CateLab.Location = new System.Drawing.Point(20, 161);
-            this.CateLab.Name = "CateLab";
-            this.CateLab.Size = new System.Drawing.Size(68, 16);
-            this.CateLab.TabIndex = 34;
-            this.CateLab.Text = "Category :";
-            this.CateLab.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // GUIDCol
             // 
             this.GUIDCol.DataPropertyName = "Id";
@@ -598,15 +598,6 @@
             this.GUIDCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.GUIDCol.Width = 40;
             // 
-            // DescriptionCol
-            // 
-            this.DescriptionCol.DataPropertyName = "Description";
-            this.DescriptionCol.HeaderText = "Description";
-            this.DescriptionCol.Name = "DescriptionCol";
-            this.DescriptionCol.ReadOnly = true;
-            this.DescriptionCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.DescriptionCol.Width = 115;
-            // 
             // NameCol
             // 
             this.NameCol.DataPropertyName = "Name";
@@ -615,6 +606,15 @@
             this.NameCol.ReadOnly = true;
             this.NameCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.NameCol.Width = 115;
+            // 
+            // DescriptionCol
+            // 
+            this.DescriptionCol.DataPropertyName = "Description";
+            this.DescriptionCol.HeaderText = "Description";
+            this.DescriptionCol.Name = "DescriptionCol";
+            this.DescriptionCol.ReadOnly = true;
+            this.DescriptionCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.DescriptionCol.Width = 115;
             // 
             // PricingCol
             // 
@@ -668,9 +668,9 @@
             this.panel7.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.addVbtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VisualListView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.delVbtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.VisualDisplay)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.VisualListView)).EndInit();
             this.panel9.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
@@ -731,8 +731,8 @@
         private System.Windows.Forms.Label CateLab;
         private System.Windows.Forms.ComboBox CateComboBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn GUIDCol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DescriptionCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn NameCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DescriptionCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn PricingCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn AvailableDateCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiscontinueDateCol;
