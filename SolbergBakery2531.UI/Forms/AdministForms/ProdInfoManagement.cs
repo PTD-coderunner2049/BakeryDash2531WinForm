@@ -305,6 +305,7 @@ namespace SolbergBakery2531.UI.Forms.AdministForms
         {
             _parent.resetProgress();
             DataRow dataRow = VisualListView.GetSelectedRow();
+            DataRow PdataRow = ProdGrid.GetSelectedRow();
             if (dataRow == null)
             {
                 await UIUtils.ShowToast("Nothing to remove...", "SolbergBakery", 500);
@@ -315,7 +316,7 @@ namespace SolbergBakery2531.UI.Forms.AdministForms
             {
                 bool success = _proderve.DelProdVisual((Guid)dataRow["Id"]);
                 if (success)
-                    LoadProdVisualAsync((Guid)dataRow["Id"]);
+                    LoadProdVisualAsync((Guid)PdataRow["Id"]);
                     VisualDisplay.Image = null;
             }
             catch (Exception ex)
