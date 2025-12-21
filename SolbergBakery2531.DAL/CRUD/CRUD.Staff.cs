@@ -70,6 +70,15 @@ namespace SolbergBakery2531.DAL
                 return dt;
             }
         }
+        public Staff GetStaffSingle(Guid empGuid)
+        {
+            using (var db = new BakeryDbContext())
+            {
+                return db.Staffs.FirstOrDefault(s => s.Id == empGuid);
+            }
+        }
+
+
         public bool UpsertStaff(Guid empGuid, string email, string fName, string lName, string phone, string gender, DateTime birth, string ssn, decimal pay, bool isManager, bool Active)
         {
             using (var db = new BakeryDbContext())
@@ -128,17 +137,15 @@ namespace SolbergBakery2531.DAL
                 return db.SaveChanges() > 0;
             }
         }
-
-        public bool RemoveStaff(Guid empGuid)
+        public bool RemoveStaff(Staff staff)
         {
             using (var db = new BakeryDbContext())
             {
-                var staff = db.Staffs.FirstOrDefault(s => s.Id == empGuid);
                 if (staff != null)
                 {
+                    db.Staffs.Attach(staff);
                     db.Staffs.Remove(staff);
-                    db.SaveChanges();
-                    return true;
+                    return db.SaveChanges() > 0;
                 }
                 return false;
             }

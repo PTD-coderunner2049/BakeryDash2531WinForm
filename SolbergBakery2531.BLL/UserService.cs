@@ -19,7 +19,13 @@ namespace SolbergBakery2531.BLL
         }
         public bool DelUser(Guid staffId)
         {
-            return new CRUD().RemoveUser(staffId);
+            CRUD crud = new CRUD();
+            User user = crud.GetUserSingle(staffId);
+            if ( user == null)
+            {
+                return false;
+            }
+            return crud.RemoveUser(user);
         }
         public string ValidateInputs(string username, string password)
         {

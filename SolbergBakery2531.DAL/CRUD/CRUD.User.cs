@@ -47,6 +47,15 @@ namespace SolbergBakery2531.DAL
                 return dt;
             }
         }
+        public User GetUserSingle(Guid staffId)
+        {
+            using (var db = new BakeryDbContext())
+            {
+                return db.Users.FirstOrDefault(u => u.Id == staffId);
+            }
+        }
+
+
         public bool UpsertUser(Guid employeeGuid, string username, string password, bool Active)
         {
             using (var db = new BakeryDbContext())
@@ -87,23 +96,33 @@ namespace SolbergBakery2531.DAL
                 return db.SaveChanges() > 0;
             }
         }
-
-        public bool RemoveUser(Guid employeeGuid)
+        public bool RemoveUser(User user)
         {
             using (var db = new BakeryDbContext())
             {
-                var staff = db.Staffs.FirstOrDefault(s => s.Id == employeeGuid);
-                if (staff == null) return false;
-
-                var user = db.Users.FirstOrDefault(u => u.Id == staff.Id);
-                if (user != null)
-                {
-                    db.Users.Remove(user);
-                    db.SaveChanges();
-                    return true;
-                }
-                return false;
+                if (user == null)
+                    return false;
+                db.Users.Attach(user);
+                db.Users.Remove(user);
+                return db.SaveChanges() > 0;
             }
         }
+        //public bool RemovexxxxUser(Guid employeeGuid)
+        //{
+        //    using (var db = new BakeryDbContext())
+        //    {
+        //        var staff = db.Staffs.FirstOrDefault(s => s.Id == employeeGuid);
+        //        if (staff == null) return false;
+
+        //        var user = db.Users.FirstOrDefault(u => u.Id == staff.Id);
+        //        if (user != null)
+        //        {
+        //            db.Users.Remove(user);
+        //            db.SaveChanges();
+        //            return true;
+        //        }
+        //        return false;
+        //    }
+        //}
     }
 }

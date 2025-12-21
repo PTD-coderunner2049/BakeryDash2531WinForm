@@ -30,6 +30,9 @@
         {
             this.QuantityBar = new System.Windows.Forms.Panel();
             this.QuantityflowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.currQuantityLab = new MaterialSkin.Controls.MaterialLabel();
+            this.CLab = new MaterialSkin.Controls.MaterialLabel();
             this.QuantityToAddBar = new System.Windows.Forms.TrackBar();
             this.panel2 = new System.Windows.Forms.Panel();
             this.QuantityToAddLab = new MaterialSkin.Controls.MaterialLabel();
@@ -42,18 +45,15 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.svBtn = new MaterialSkin.Controls.MaterialFlatButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.currQuantityLab = new MaterialSkin.Controls.MaterialLabel();
-            this.CLab = new MaterialSkin.Controls.MaterialLabel();
             this.QuantityBar.SuspendLayout();
             this.QuantityflowLayoutPanel.SuspendLayout();
+            this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.QuantityToAddBar)).BeginInit();
             this.panel2.SuspendLayout();
             this.viewGroup.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // QuantityBar
@@ -79,6 +79,41 @@
             this.QuantityflowLayoutPanel.Name = "QuantityflowLayoutPanel";
             this.QuantityflowLayoutPanel.Size = new System.Drawing.Size(381, 114);
             this.QuantityflowLayoutPanel.TabIndex = 48;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.currQuantityLab);
+            this.panel4.Controls.Add(this.CLab);
+            this.panel4.Location = new System.Drawing.Point(3, 3);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(378, 19);
+            this.panel4.TabIndex = 49;
+            // 
+            // currQuantityLab
+            // 
+            this.currQuantityLab.AutoSize = true;
+            this.currQuantityLab.Depth = 0;
+            this.currQuantityLab.Font = new System.Drawing.Font("Roboto", 11F);
+            this.currQuantityLab.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.currQuantityLab.Location = new System.Drawing.Point(253, 0);
+            this.currQuantityLab.MouseState = MaterialSkin.MouseState.HOVER;
+            this.currQuantityLab.Name = "currQuantityLab";
+            this.currQuantityLab.Size = new System.Drawing.Size(17, 19);
+            this.currQuantityLab.TabIndex = 48;
+            this.currQuantityLab.Text = "0";
+            // 
+            // CLab
+            // 
+            this.CLab.AutoSize = true;
+            this.CLab.Depth = 0;
+            this.CLab.Font = new System.Drawing.Font("Roboto", 11F);
+            this.CLab.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.CLab.Location = new System.Drawing.Point(3, 0);
+            this.CLab.MouseState = MaterialSkin.MouseState.HOVER;
+            this.CLab.Name = "CLab";
+            this.CLab.Size = new System.Drawing.Size(244, 19);
+            this.CLab.TabIndex = 47;
+            this.CLab.Text = "Inventory Status by Potential Order:";
             // 
             // QuantityToAddBar
             // 
@@ -137,6 +172,7 @@
             // 
             // ProductFlowLayoutPanel
             // 
+            this.ProductFlowLayoutPanel.AutoScroll = true;
             this.ProductFlowLayoutPanel.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ProductFlowLayoutPanel.Location = new System.Drawing.Point(0, 19);
             this.ProductFlowLayoutPanel.Name = "ProductFlowLayoutPanel";
@@ -209,41 +245,6 @@
             this.pictureBox1.TabIndex = 42;
             this.pictureBox1.TabStop = false;
             // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.currQuantityLab);
-            this.panel4.Controls.Add(this.CLab);
-            this.panel4.Location = new System.Drawing.Point(3, 3);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(378, 19);
-            this.panel4.TabIndex = 49;
-            // 
-            // currQuantityLab
-            // 
-            this.currQuantityLab.AutoSize = true;
-            this.currQuantityLab.Depth = 0;
-            this.currQuantityLab.Font = new System.Drawing.Font("Roboto", 11F);
-            this.currQuantityLab.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.currQuantityLab.Location = new System.Drawing.Point(253, 0);
-            this.currQuantityLab.MouseState = MaterialSkin.MouseState.HOVER;
-            this.currQuantityLab.Name = "currQuantityLab";
-            this.currQuantityLab.Size = new System.Drawing.Size(17, 19);
-            this.currQuantityLab.TabIndex = 48;
-            this.currQuantityLab.Text = "0";
-            // 
-            // CLab
-            // 
-            this.CLab.AutoSize = true;
-            this.CLab.Depth = 0;
-            this.CLab.Font = new System.Drawing.Font("Roboto", 11F);
-            this.CLab.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.CLab.Location = new System.Drawing.Point(3, 0);
-            this.CLab.MouseState = MaterialSkin.MouseState.HOVER;
-            this.CLab.Name = "CLab";
-            this.CLab.Size = new System.Drawing.Size(244, 19);
-            this.CLab.TabIndex = 47;
-            this.CLab.Text = "Inventory Status by Potential Order:";
-            // 
             // InventoryReconcilier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -257,6 +258,8 @@
             this.QuantityBar.ResumeLayout(false);
             this.QuantityflowLayoutPanel.ResumeLayout(false);
             this.QuantityflowLayoutPanel.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.QuantityToAddBar)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -266,8 +269,6 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }

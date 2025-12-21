@@ -133,7 +133,13 @@ namespace SolbergBakery2531.DAL
                 return db.SaveChanges() > 0;
             }
         }
-
+        public Product GetProdSingle(Guid id)
+        {
+            using (var db = new BakeryDbContext())
+            {
+                return db.Products.FirstOrDefault(p => p.Id == id);
+            }
+        }
         public bool RemoveProd(Guid id)
         {
             using (var db = new BakeryDbContext())

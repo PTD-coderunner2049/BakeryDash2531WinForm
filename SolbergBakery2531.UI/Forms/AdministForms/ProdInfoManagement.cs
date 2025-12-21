@@ -59,6 +59,7 @@ namespace SolbergBakery2531.UI.Forms.AdministForms
                 VisualListView.DataSource = _proderve.FetchVisual(productId); ;
 
                 VisualListView.ClearSelection();
+                VisualListView.Rows[0].Selected = true;
             }
             catch (Exception ex)
             {

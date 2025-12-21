@@ -13,9 +13,13 @@ namespace SolbergBakery2531.BLL
         public DataTable Fetch(Guid cateId) => new CRUD().GetProd(cateId);
         public DataTable FetchVisual(Guid productId) => new CRUD().GetProdVisual(productId);
         public DataTable FetchCate() => new CRUD().GetProdCate();
+
+
         public bool DelProd(Guid Id) => new CRUD().RemoveProd(Id);
         public bool SaveProdVisual(byte[] visual, Guid prodId) => new CRUD().InsertProdVisual(visual, prodId);
         public bool DelProdVisual(Guid Id) => new CRUD().RemoveProdVisual(Id);
+
+
         public bool UpdateStock(Guid prodId, int quantity)
         {
             return new CRUD().UpdateStockLevel(prodId, quantity);
