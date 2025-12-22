@@ -28,8 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.svBtn = new MaterialSkin.Controls.MaterialFlatButton();
             this.delBtn = new MaterialSkin.Controls.MaterialFlatButton();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -78,7 +77,6 @@
             this.ADateLab = new System.Windows.Forms.Label();
             this.DDateLab = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProdGrid)).BeginInit();
@@ -237,14 +235,14 @@
             this.ProdGrid.Name = "ProdGrid";
             this.ProdGrid.ReadOnly = true;
             this.ProdGrid.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ProdGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ProdGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.ProdGrid.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.ProdGrid.Size = new System.Drawing.Size(630, 528);
             this.ProdGrid.TabIndex = 27;
@@ -637,12 +635,6 @@
             this.pictureBox2.TabIndex = 32;
             this.pictureBox2.TabStop = false;
             // 
-            // imageList1
-            // 
-            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            // 
             // ProdInfoManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -721,7 +713,6 @@
         private System.Windows.Forms.TextBox NameText;
         private System.Windows.Forms.DateTimePicker ADateText;
         private System.Windows.Forms.DateTimePicker DDateText;
-        private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.DataGridView VisualListView;
         private System.Windows.Forms.PictureBox VisualDisplay;
         private System.Windows.Forms.PictureBox addVbtn;

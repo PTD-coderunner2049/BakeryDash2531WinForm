@@ -120,13 +120,14 @@
             // orderingToolStripMenuItem
             // 
             this.orderingToolStripMenuItem.Name = "orderingToolStripMenuItem";
-            this.orderingToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.orderingToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.orderingToolStripMenuItem.Text = "Ordering";
+            this.orderingToolStripMenuItem.Click += new System.EventHandler(this.orderingToolStripMenuItem_Click);
             // 
             // returnToolStripMenuItem
             // 
             this.returnToolStripMenuItem.Name = "returnToolStripMenuItem";
-            this.returnToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.returnToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.returnToolStripMenuItem.Text = "Return";
             // 
             // xXToolStripMenuItem1
@@ -179,6 +180,7 @@
             this.toolStripTextGreet.BackColor = System.Drawing.Color.PapayaWhip;
             this.toolStripTextGreet.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.toolStripTextGreet.Enabled = false;
+            this.toolStripTextGreet.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextGreet.Name = "toolStripTextGreet";
             this.toolStripTextGreet.Size = new System.Drawing.Size(55, 20);
             this.toolStripTextGreet.Text = "Greeting!!";
@@ -250,6 +252,7 @@
             this.orderBtn.TabIndex = 0;
             this.orderBtn.Text = "New Order";
             this.orderBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.orderBtn.Click += new System.EventHandler(this.orderBtn_Click);
             // 
             // panel6
             // 

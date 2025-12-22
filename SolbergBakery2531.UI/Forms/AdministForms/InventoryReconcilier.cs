@@ -15,14 +15,14 @@ namespace SolbergBakery2531.UI.Forms.AdministForms
         public InventoryReconcilier()
         {
             InitializeComponent();
-            this.Load += InventoryReconcilier_Load;
+            InventoryReconcilier_Load();
             ProductTreeView.AfterSelect += ProductTreeView_AfterSelect;
             QuantityToAddBar.ValueChanged += QuantityToAddBar_ValueChanged;
         }
 
 
 
-        private void InventoryReconcilier_Load(object sender, EventArgs e)
+        private void InventoryReconcilier_Load()
         {
             LoadCategories();
             QuantityflowLayoutPanel.Visible = false;
@@ -38,6 +38,7 @@ namespace SolbergBakery2531.UI.Forms.AdministForms
                 ProductTreeView.Nodes.Add(node);
             }
         }
+
         private void ProductTreeView_AfterSelect(object sender, TreeViewEventArgs e)
         {
             QuantityflowLayoutPanel.Visible = false;
@@ -71,6 +72,7 @@ namespace SolbergBakery2531.UI.Forms.AdministForms
                 currQuantityLab.Text = _selectedCard.CurrentStock.ToString();
             }
         }
+
         private void QuantityToAddBar_ValueChanged(object sender, EventArgs e)
         {
             if (_selectedCard == null) return;

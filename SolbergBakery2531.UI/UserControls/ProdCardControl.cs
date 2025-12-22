@@ -17,8 +17,8 @@ namespace SolbergBakery2531.UI.UserControls
     public partial class ProdCardControl : UserControl
     {
         public Guid ProductId { get; private set; }
-        public int CurrentStock { get; private set; }
         public new string ProductName { get; private set; }
+        public int CurrentStock { get; private set; }
 
         private List<Image> _images = new List<Image>();
         private int _currentImageIndex = 0;

@@ -46,13 +46,15 @@ namespace SolbergBakery2531.BLL
             dt.Columns.Add("Id", typeof(Guid));
             dt.Columns.Add("Name", typeof(string));
             dt.Columns.Add("quantityInStock", typeof(int));
+            dt.Columns.Add("Pricing", typeof(decimal));
 
             foreach (var p in products)
             {
                 dt.Rows.Add(
                     p.Id,
                     p.Name,
-                    p.quantityInStock
+                    p.quantityInStock,
+                    p.Pricing
                 );
             }
             return dt;

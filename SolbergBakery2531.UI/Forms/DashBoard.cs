@@ -1,4 +1,5 @@
 ﻿using SolbergBakery2531.BLL;
+using SolbergBakery2531.UI.Forms;
 using SolbergBakery2531.UI.Forms.AdministForms;
 using System;
 using System.Collections.Generic;
@@ -222,6 +223,20 @@ namespace SolbergBakery2531.UI
             panelBack.Controls.Clear();
             this.Text = "Solberg's Bakery - Inventory Reconcillier";
             LoadFormToPanel(Dashing(), new InventoryReconcilier());
+        }
+
+        private void orderingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            panelBack.Controls.Clear();
+            this.Text = "Solberg's Bakery - Order Complier";
+            LoadFormToPanel(Dashing(), new OrderComplier());
+        }
+
+        private void orderBtn_Click(object sender, EventArgs e)
+        {
+            panelBack.Controls.Clear();
+            this.Text = "Solberg's Bakery - Order Complier";
+            LoadFormToPanel(Dashing(), new OrderComplier());
         }
     }
 }

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.QuantityBar = new System.Windows.Forms.Panel();
+            this.QuantityBox = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.viewGroup = new System.Windows.Forms.GroupBox();
             this.ProductFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
@@ -45,8 +45,7 @@
             this.ProductTreeView = new System.Windows.Forms.TreeView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Title = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.QuantityBar.SuspendLayout();
+            this.QuantityBox.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.viewGroup.SuspendLayout();
             this.QuantityflowLayoutPanel.SuspendLayout();
@@ -55,19 +54,18 @@
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // QuantityBar
+            // QuantityBox
             // 
-            this.QuantityBar.BackColor = System.Drawing.Color.OldLace;
-            this.QuantityBar.Controls.Add(this.flowLayoutPanel1);
-            this.QuantityBar.Controls.Add(this.ProductTreeView);
-            this.QuantityBar.Controls.Add(this.panel1);
-            this.QuantityBar.Location = new System.Drawing.Point(12, 12);
-            this.QuantityBar.Name = "QuantityBar";
-            this.QuantityBar.Size = new System.Drawing.Size(575, 587);
-            this.QuantityBar.TabIndex = 41;
+            this.QuantityBox.BackColor = System.Drawing.Color.OldLace;
+            this.QuantityBox.Controls.Add(this.flowLayoutPanel1);
+            this.QuantityBox.Controls.Add(this.ProductTreeView);
+            this.QuantityBox.Controls.Add(this.panel1);
+            this.QuantityBox.Location = new System.Drawing.Point(12, 12);
+            this.QuantityBox.Name = "QuantityBox";
+            this.QuantityBox.Size = new System.Drawing.Size(575, 587);
+            this.QuantityBox.TabIndex = 41;
             // 
             // flowLayoutPanel1
             // 
@@ -106,7 +104,7 @@
             this.QuantityflowLayoutPanel.Controls.Add(this.panel2);
             this.QuantityflowLayoutPanel.Location = new System.Drawing.Point(3, 351);
             this.QuantityflowLayoutPanel.Name = "QuantityflowLayoutPanel";
-            this.QuantityflowLayoutPanel.Size = new System.Drawing.Size(481, 114);
+            this.QuantityflowLayoutPanel.Size = new System.Drawing.Size(433, 114);
             this.QuantityflowLayoutPanel.TabIndex = 48;
             // 
             // panel4
@@ -122,12 +120,12 @@
             // 
             this.currQuantityLab.AutoSize = true;
             this.currQuantityLab.Depth = 0;
-            this.currQuantityLab.Font = new System.Drawing.Font("Roboto", 11F);
+            this.currQuantityLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.currQuantityLab.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.currQuantityLab.Location = new System.Drawing.Point(253, 0);
             this.currQuantityLab.MouseState = MaterialSkin.MouseState.HOVER;
             this.currQuantityLab.Name = "currQuantityLab";
-            this.currQuantityLab.Size = new System.Drawing.Size(17, 19);
+            this.currQuantityLab.Size = new System.Drawing.Size(16, 18);
             this.currQuantityLab.TabIndex = 48;
             this.currQuantityLab.Text = "0";
             // 
@@ -135,12 +133,12 @@
             // 
             this.CLab.AutoSize = true;
             this.CLab.Depth = 0;
-            this.CLab.Font = new System.Drawing.Font("Roboto", 11F);
+            this.CLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.CLab.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.CLab.Location = new System.Drawing.Point(3, 0);
             this.CLab.MouseState = MaterialSkin.MouseState.HOVER;
             this.CLab.Name = "CLab";
-            this.CLab.Size = new System.Drawing.Size(244, 19);
+            this.CLab.Size = new System.Drawing.Size(239, 18);
             this.CLab.TabIndex = 47;
             this.CLab.Text = "Inventory Status by Potential Order:";
             // 
@@ -167,12 +165,12 @@
             // 
             this.QuantityToAddLab.AutoSize = true;
             this.QuantityToAddLab.Depth = 0;
-            this.QuantityToAddLab.Font = new System.Drawing.Font("Roboto", 11F);
+            this.QuantityToAddLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.QuantityToAddLab.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.QuantityToAddLab.Location = new System.Drawing.Point(144, 0);
             this.QuantityToAddLab.MouseState = MaterialSkin.MouseState.HOVER;
             this.QuantityToAddLab.Name = "QuantityToAddLab";
-            this.QuantityToAddLab.Size = new System.Drawing.Size(17, 19);
+            this.QuantityToAddLab.Size = new System.Drawing.Size(16, 18);
             this.QuantityToAddLab.TabIndex = 48;
             this.QuantityToAddLab.Text = "0";
             // 
@@ -180,12 +178,12 @@
             // 
             this.QLab.AutoSize = true;
             this.QLab.Depth = 0;
-            this.QLab.Font = new System.Drawing.Font("Roboto", 11F);
+            this.QLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.QLab.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.QLab.Location = new System.Drawing.Point(3, 0);
             this.QLab.MouseState = MaterialSkin.MouseState.HOVER;
             this.QLab.Name = "QLab";
-            this.QLab.Size = new System.Drawing.Size(135, 19);
+            this.QLab.Size = new System.Drawing.Size(130, 18);
             this.QLab.TabIndex = 47;
             this.QLab.Text = "Quantity modified :";
             // 
@@ -243,29 +241,18 @@
             this.Title.Text = "Inventory Reconcilier Interface";
             this.Title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::SolbergBakery2531.UI.Properties.Resources.ARDECHOISVUEHAUTcopie;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox1.Location = new System.Drawing.Point(593, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(581, 611);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 42;
-            this.pictureBox1.TabStop = false;
-            // 
             // InventoryReconcilier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1174, 611);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.QuantityBar);
+            this.BackgroundImage = global::SolbergBakery2531.UI.Properties.Resources.ARDECHOISVUEHAUTcopie;
+            this.ClientSize = new System.Drawing.Size(1190, 650);
+            this.Controls.Add(this.QuantityBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "InventoryReconcilier";
             this.Text = "InventoryReconcilier";
-            this.QuantityBar.ResumeLayout(false);
+            this.QuantityBox.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.viewGroup.ResumeLayout(false);
             this.QuantityflowLayoutPanel.ResumeLayout(false);
@@ -279,14 +266,13 @@
             this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel QuantityBar;
+        private System.Windows.Forms.Panel QuantityBox;
         private System.Windows.Forms.Label Title;
         private MaterialSkin.Controls.MaterialFlatButton svBtn;
         private System.Windows.Forms.GroupBox viewGroup;
@@ -299,7 +285,6 @@
         private MaterialSkin.Controls.MaterialLabel QLab;
         private System.Windows.Forms.Panel panel2;
         private MaterialSkin.Controls.MaterialLabel QuantityToAddLab;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel4;
         private MaterialSkin.Controls.MaterialLabel currQuantityLab;
         private MaterialSkin.Controls.MaterialLabel CLab;
