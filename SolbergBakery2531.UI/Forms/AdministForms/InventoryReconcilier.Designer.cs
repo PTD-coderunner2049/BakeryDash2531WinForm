@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.QuantityBar = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.viewGroup = new System.Windows.Forms.GroupBox();
+            this.ProductFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.QuantityflowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.currQuantityLab = new MaterialSkin.Controls.MaterialLabel();
@@ -37,25 +40,22 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.QuantityToAddLab = new MaterialSkin.Controls.MaterialLabel();
             this.QLab = new MaterialSkin.Controls.MaterialLabel();
-            this.viewGroup = new System.Windows.Forms.GroupBox();
-            this.ProductFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.svBtn = new MaterialSkin.Controls.MaterialFlatButton();
             this.ProductTreeView = new System.Windows.Forms.TreeView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Title = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.svBtn = new MaterialSkin.Controls.MaterialFlatButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.QuantityBar.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
+            this.viewGroup.SuspendLayout();
             this.QuantityflowLayoutPanel.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.QuantityToAddBar)).BeginInit();
             this.panel2.SuspendLayout();
-            this.viewGroup.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // QuantityBar
@@ -68,6 +68,35 @@
             this.QuantityBar.Name = "QuantityBar";
             this.QuantityBar.Size = new System.Drawing.Size(575, 587);
             this.QuantityBar.TabIndex = 41;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.viewGroup);
+            this.flowLayoutPanel1.Controls.Add(this.QuantityflowLayoutPanel);
+            this.flowLayoutPanel1.Controls.Add(this.panel3);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(136, 50);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(436, 534);
+            this.flowLayoutPanel1.TabIndex = 49;
+            // 
+            // viewGroup
+            // 
+            this.viewGroup.Controls.Add(this.ProductFlowLayoutPanel);
+            this.viewGroup.Location = new System.Drawing.Point(3, 3);
+            this.viewGroup.Name = "viewGroup";
+            this.viewGroup.Size = new System.Drawing.Size(433, 342);
+            this.viewGroup.TabIndex = 44;
+            this.viewGroup.TabStop = false;
+            this.viewGroup.Text = "Avaiable";
+            // 
+            // ProductFlowLayoutPanel
+            // 
+            this.ProductFlowLayoutPanel.AutoScroll = true;
+            this.ProductFlowLayoutPanel.BackColor = System.Drawing.Color.DimGray;
+            this.ProductFlowLayoutPanel.Location = new System.Drawing.Point(0, 19);
+            this.ProductFlowLayoutPanel.Name = "ProductFlowLayoutPanel";
+            this.ProductFlowLayoutPanel.Size = new System.Drawing.Size(426, 317);
+            this.ProductFlowLayoutPanel.TabIndex = 0;
             // 
             // QuantityflowLayoutPanel
             // 
@@ -160,24 +189,30 @@
             this.QLab.TabIndex = 47;
             this.QLab.Text = "Quantity modified :";
             // 
-            // viewGroup
+            // panel3
             // 
-            this.viewGroup.Controls.Add(this.ProductFlowLayoutPanel);
-            this.viewGroup.Location = new System.Drawing.Point(3, 3);
-            this.viewGroup.Name = "viewGroup";
-            this.viewGroup.Size = new System.Drawing.Size(433, 342);
-            this.viewGroup.TabIndex = 44;
-            this.viewGroup.TabStop = false;
-            this.viewGroup.Text = "Avaiable";
+            this.panel3.Controls.Add(this.svBtn);
+            this.panel3.Location = new System.Drawing.Point(3, 471);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(426, 46);
+            this.panel3.TabIndex = 42;
             // 
-            // ProductFlowLayoutPanel
+            // svBtn
             // 
-            this.ProductFlowLayoutPanel.AutoScroll = true;
-            this.ProductFlowLayoutPanel.BackColor = System.Drawing.Color.DimGray;
-            this.ProductFlowLayoutPanel.Location = new System.Drawing.Point(0, 19);
-            this.ProductFlowLayoutPanel.Name = "ProductFlowLayoutPanel";
-            this.ProductFlowLayoutPanel.Size = new System.Drawing.Size(426, 317);
-            this.ProductFlowLayoutPanel.TabIndex = 0;
+            this.svBtn.AutoSize = true;
+            this.svBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.svBtn.Depth = 0;
+            this.svBtn.Dock = System.Windows.Forms.DockStyle.Right;
+            this.svBtn.Location = new System.Drawing.Point(273, 0);
+            this.svBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.svBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.svBtn.Name = "svBtn";
+            this.svBtn.Primary = false;
+            this.svBtn.Size = new System.Drawing.Size(153, 46);
+            this.svBtn.TabIndex = 38;
+            this.svBtn.Text = "Apply modification";
+            this.svBtn.UseVisualStyleBackColor = true;
+            this.svBtn.Click += new System.EventHandler(this.svBtn_Click);
             // 
             // ProductTreeView
             // 
@@ -208,31 +243,6 @@
             this.Title.Text = "Inventory Reconcilier Interface";
             this.Title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.svBtn);
-            this.panel3.Location = new System.Drawing.Point(3, 471);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(426, 46);
-            this.panel3.TabIndex = 42;
-            // 
-            // svBtn
-            // 
-            this.svBtn.AutoSize = true;
-            this.svBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.svBtn.Depth = 0;
-            this.svBtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.svBtn.Location = new System.Drawing.Point(273, 0);
-            this.svBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.svBtn.MouseState = MaterialSkin.MouseState.HOVER;
-            this.svBtn.Name = "svBtn";
-            this.svBtn.Primary = false;
-            this.svBtn.Size = new System.Drawing.Size(153, 46);
-            this.svBtn.TabIndex = 38;
-            this.svBtn.Text = "Apply modification";
-            this.svBtn.UseVisualStyleBackColor = true;
-            this.svBtn.Click += new System.EventHandler(this.svBtn_Click);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = global::SolbergBakery2531.UI.Properties.Resources.ARDECHOISVUEHAUTcopie;
@@ -245,16 +255,6 @@
             this.pictureBox1.TabIndex = 42;
             this.pictureBox1.TabStop = false;
             // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.viewGroup);
-            this.flowLayoutPanel1.Controls.Add(this.QuantityflowLayoutPanel);
-            this.flowLayoutPanel1.Controls.Add(this.panel3);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(136, 50);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(436, 534);
-            this.flowLayoutPanel1.TabIndex = 49;
-            // 
             // InventoryReconcilier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -266,6 +266,8 @@
             this.Name = "InventoryReconcilier";
             this.Text = "InventoryReconcilier";
             this.QuantityBar.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.viewGroup.ResumeLayout(false);
             this.QuantityflowLayoutPanel.ResumeLayout(false);
             this.QuantityflowLayoutPanel.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -273,13 +275,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.QuantityToAddBar)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.viewGroup.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
