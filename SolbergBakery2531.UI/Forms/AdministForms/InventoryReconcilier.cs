@@ -9,7 +9,7 @@ namespace SolbergBakery2531.UI.Forms.AdministForms
 {
     public partial class InventoryReconcilier : Form
     {
-        private ProductService _service = new ProductService();
+        private readonly ProductService _service = new ProductService();
         private ProdCardControl _selectedCard = null;
 
         public InventoryReconcilier()

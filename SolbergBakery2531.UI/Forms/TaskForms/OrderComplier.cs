@@ -2,14 +2,17 @@
 using SolbergBakery2531.BLL;
 using SolbergBakery2531.UI.UserControls;
 using System;
+using System.Collections.Generic;
 using System.Data;
+using SolbergBakery2531.BLL.DTOModels;
 using System.Windows.Forms;
 
 namespace SolbergBakery2531.UI.Forms
 {
     public partial class OrderComplier : Form
     {
-        private OrderService _orvice = new OrderService();
+        private readonly ProductService _service = new ProductService();
+        private readonly OrderService _orvice = new OrderService();
         private ProdCardControl _selectedCard = null;
         public OrderComplier()
         {
@@ -23,15 +26,15 @@ namespace SolbergBakery2531.UI.Forms
             LoadCategories();
             OrderGrid.AllowUserToAddRows = false;
             OrderGrid.CellValidating += OrderGrid_CellValidating;
-            OrderGrid.CellClick += (s, e) => {
+            OrderGrid.CellClick += (s, e) =>
+            {
                 if (e.ColumnIndex == OrderGrid.Columns["QuantityCol"].Index && e.RowIndex >= 0)
                 {
                     OrderGrid.BeginEdit(true);
                 }
             };
         }
-        private void OrderGrid_CellValidating(object sender,
-            DataGridViewCellValidatingEventArgs e)
+        private void OrderGrid_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
         {
             if (OrderGrid.Columns[e.ColumnIndex].Name == "QuantityCol")
             {
@@ -42,8 +45,10 @@ namespace SolbergBakery2531.UI.Forms
                     return;
                 }
 
-                int stockLimit = Convert.ToInt32(OrderGrid.Rows[e.RowIndex].Cells["StockLimitCol"].Value);
-                //BLL
+                var limitValue = OrderGrid.Rows[e.RowIndex].Cells["StockLimitCol"].Value;
+                int stockLimit = limitValue != null ? Convert.ToInt32(limitValue) : 0;
+
+                // BLL
                 if (!_orvice.ValidateQuantity(newQty, stockLimit, out string error))
                 {
                     _ = UIUtils.ShowToast(error, "Compiler", 1000);
@@ -115,6 +120,34 @@ namespace SolbergBakery2531.UI.Forms
                 }
             }
         }
+        private async void complieBtn_Click(object sender, EventArgs e)
+        {
+            if (OrderGrid.Rows.Count == 0) return;
 
+            using (SaveFileDialog sfd = new SaveFileDialog { Filter = "PDF Files|*.pdf" })
+            {
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    var orderData = new List<OrderItemDTO>();
+                    foreach (DataGridViewRow row in OrderGrid.Rows)
+                    {
+                        orderData.Add(new OrderItemDTO
+                        {
+                            ProductId = (Guid)row.Cells["GUIDCol"].Value,
+                            Name = row.Cells["NameCol"].Value.ToString(),
+                            Price = Convert.ToDecimal(row.Cells["PricingCol"].Value),
+                            Quantity = Convert.ToInt32(row.Cells["QuantityCol"].Value)
+                        });
+                    }
+                    bool success = await _orvice.ExportOrderToPdf(sfd.FileName, orderData);
+
+                    if (success)
+                    {
+                        _ = UIUtils.ShowToast("PDF Generated!", "Success", 1000);
+                        OrderGrid.Rows.Clear();
+                    }
+                }
+            }
+        }
     }
 }

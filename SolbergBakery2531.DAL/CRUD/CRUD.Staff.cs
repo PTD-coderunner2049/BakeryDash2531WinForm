@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System.Linq;
+using SolbergBakery2531.DAL.DTOModels;
 
 namespace SolbergBakery2531.DAL
 {

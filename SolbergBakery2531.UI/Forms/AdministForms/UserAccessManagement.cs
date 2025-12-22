@@ -16,7 +16,7 @@ namespace SolbergBakery2531.UI
     {
         private readonly UserService _userve;
         private DataTable _fullDataTable;
-        private DashBoard _parent;
+        private readonly DashBoard _parent;
         public UserAccessManagement(DashBoard Parent)
         {
             InitializeComponent();

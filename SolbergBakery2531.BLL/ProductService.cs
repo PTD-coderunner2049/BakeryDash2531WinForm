@@ -59,6 +59,23 @@ namespace SolbergBakery2531.BLL
             }
             return dt;
         }
+        public DataTable FetchProductById(Guid Id)
+        {
+            var p = new CRUD().GetProdSingle(Id);
+
+            DataTable dt = new DataTable();
+            dt.Columns.Add("Id", typeof(Guid));
+            dt.Columns.Add("Name", typeof(string));
+            dt.Columns.Add("quantityInStock", typeof(int));
+            dt.Columns.Add("Pricing", typeof(decimal));
+
+            if (p != null)
+            {
+                dt.Rows.Add(p.Id, p.Name, p.quantityInStock, p.Pricing);
+            }
+
+            return dt;
+        }
         public DataTable FetchCate()
         {
             var categories = new CRUD().GetProdCate();
@@ -106,9 +123,9 @@ namespace SolbergBakery2531.BLL
         public bool DelProdVisual(Guid Id) => new CRUD().RemoveProdV(Id);
 
 
-        public bool UpdateStock(Guid prodId, int quantity)
+        public bool UpdateStock(Guid prodId, int newQuantity)
         {
-            return new CRUD().UpdateStockLevel(prodId, quantity);
+            return new CRUD().UpdateStockLevel(prodId, newQuantity);
         }
         public bool SaveProd(Guid Id, string Name, string Des, string Note, decimal Price, DateTime ADate, DateTime DDate, Guid cateId)
         {

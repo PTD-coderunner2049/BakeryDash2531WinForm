@@ -16,7 +16,7 @@ namespace SolbergBakery2531.UI
     {
         private readonly StaffService _staffService;
         private DataTable _fullDataTable;
-        private DashBoard _parent;
+        private readonly DashBoard _parent;
 
         public StaffInfoManagement(DashBoard Parent)
         {

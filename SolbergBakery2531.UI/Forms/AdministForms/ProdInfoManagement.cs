@@ -17,7 +17,7 @@ namespace SolbergBakery2531.UI.Forms.AdministForms
     {
         private readonly ProductService _proderve;
         private DataTable _fullDataTable;
-        private DashBoard _parent;
+        private readonly DashBoard _parent;
         public ProdInfoManagement(DashBoard Parent)
         {
             InitializeComponent();
@@ -50,7 +50,7 @@ namespace SolbergBakery2531.UI.Forms.AdministForms
                 MessageBox.Show($"Error loading staff data: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private async void LoadProdVisualAsync(Guid productId)
+        private void LoadProdVisualAsync(Guid productId)
         {
             _ = UIUtils.ShowToast("Loading...Visual", "SolbergBakery", 500);
             try
