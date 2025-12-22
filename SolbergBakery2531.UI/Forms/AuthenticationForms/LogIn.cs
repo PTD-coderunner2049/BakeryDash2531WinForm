@@ -36,14 +36,14 @@ namespace SolbergBakery2531.UI
             return new AutorizationService().UserLooker(emailField.Text, passField.Text);
         }
 
-        private async void loginBtn_Click(object sender, EventArgs e)
+        private void loginBtn_Click(object sender, EventArgs e)
         {
-            await UIUtils.ShowToast("Loging in...", "SolbergBakery:", 1000);
+            _ = UIUtils.ShowToast("Loging in...", "SolbergBakery:", 1000);
 
             if (SearchUser())
             {
-                await UIUtils.ShowToast("Welcome back to Solberg's Bakery!", "Login Success", 1000);
-                //await ShowAutoClosingMessageBox("Welcome back to Solberg's Bakery!", 1000);
+                _ = UIUtils.ShowToast("Welcome back to Solberg's Bakery!", "Login Success", 1000);
+                //_ = ShowAutoClosingMessageBox("Welcome back to Solberg's Bakery!", 1000);
                 new DashBoard().Show();
                 this.Dispose();
             }
@@ -62,10 +62,10 @@ namespace SolbergBakery2531.UI
             }
         }
 
-        private async void toSignUpBtn_Click(object sender, EventArgs e)
+        private void toSignUpBtn_Click(object sender, EventArgs e)
         {
             new Regis().Show();
-            await UIUtils.ShowToast("Loading...", "SolbergBakery:", 200);
+            _ = UIUtils.ShowToast("Loading...", "SolbergBakery:", 200);
             this.Dispose();
         }
     }

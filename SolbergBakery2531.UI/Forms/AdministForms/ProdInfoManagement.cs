@@ -33,9 +33,9 @@ namespace SolbergBakery2531.UI.Forms.AdministForms
             
             collumBox.SelectedIndexChanged += (s, e) => ApplyFilter();
         }
-        private async void LoadProdDataAsync()
+        private void LoadProdDataAsync()
         {
-            await UIUtils.ShowToast("Loading...", "SolbergBakery", 1000);
+            _ = UIUtils.ShowToast("Loading...", "SolbergBakery", 1000);
             try
             {
                 ProdGrid.AutoGenerateColumns = false;
@@ -52,7 +52,7 @@ namespace SolbergBakery2531.UI.Forms.AdministForms
         }
         private async void LoadProdVisualAsync(Guid productId)
         {
-            await UIUtils.ShowToast("Loading...Visual", "SolbergBakery", 500);
+            _ = UIUtils.ShowToast("Loading...Visual", "SolbergBakery", 500);
             try
             {
                 VisualListView.AutoGenerateColumns = false;
@@ -126,10 +126,10 @@ namespace SolbergBakery2531.UI.Forms.AdministForms
             CateComboBox.ValueMember = "Id"; //hidden
         }
 
-        private async void ApplyFilter()
+        private void ApplyFilter()
         {
             _parent.resetProgress();
-            await UIUtils.ShowToast("Updating...", "SolbergBakery", 1000);
+            _ = UIUtils.ShowToast("Updating...", "SolbergBakery", 1000);
             string filterColumn = collumBox.SelectedItem.ToString();
             string filterValue = valueBox.Text.Trim();
             _parent.UpdateProgress(50);
@@ -259,12 +259,12 @@ namespace SolbergBakery2531.UI.Forms.AdministForms
             }
             _parent.endProgress();
         }
-        private async void addVbtn_Click(object sender, EventArgs e)
+        private void addVbtn_Click(object sender, EventArgs e)
         {
             DataRow dataRow = ProdGrid.GetSelectedRow();
             if (dataRow == null)
             {
-                await UIUtils.ShowToast("Please pick an existing product before injecting visuals...", "SolbergBakery", 500);
+                _ = UIUtils.ShowToast("Please pick an existing product before injecting visuals...", "SolbergBakery", 500);
                 return;
             }
 
@@ -301,15 +301,15 @@ namespace SolbergBakery2531.UI.Forms.AdministForms
                 _parent.endProgress();
             }
         }
-        private async void delVbtn_Click(object sender, EventArgs e)
+        private void delVbtn_Click(object sender, EventArgs e)
         {
             _parent.resetProgress();
             DataRow dataRow = VisualListView.GetSelectedRow();
             DataRow PdataRow = ProdGrid.GetSelectedRow();
             if (dataRow == null)
             {
-                await UIUtils.ShowToast("Nothing to remove...", "SolbergBakery", 500);
-                await UIUtils.ShowToast("Pick a Visual", "SolbergBakery", 500);
+                _ = UIUtils.ShowToast("Nothing to remove...", "SolbergBakery", 500);
+                _ = UIUtils.ShowToast("Pick a Visual", "SolbergBakery", 500);
                 return;
             }
             try

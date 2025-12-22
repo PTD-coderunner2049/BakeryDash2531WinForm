@@ -58,9 +58,9 @@ namespace SolbergBakery2531.UI
                 }
             };
         }
-        private async void LoadUserDataAsync()
+        private void LoadUserDataAsync()
         {
-            await UIUtils.ShowToast("Loading...", "SolbergBakery", 1000);
+            _ = UIUtils.ShowToast("Loading...", "SolbergBakery", 1000);
 
             try
             {
@@ -134,9 +134,9 @@ namespace SolbergBakery2531.UI
             //    row.Cells["RoleCol"].Value = (bool)rowData["IsSystemManager"] ? "Manager" : "Staff";
             //}
         }
-        private async void ApplyFilter()
+        private void ApplyFilter()
         {
-            await UIUtils.ShowToast("Updating...", "SolbergBakery", 1000);
+            _ = UIUtils.ShowToast("Updating...", "SolbergBakery", 1000);
 
             string filterColumn = collumBox.SelectedItem.ToString();
             string filterValue = valueBox.Text.Trim();

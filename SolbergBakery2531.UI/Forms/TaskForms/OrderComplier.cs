@@ -9,13 +9,12 @@ namespace SolbergBakery2531.UI.Forms
 {
     public partial class OrderComplier : Form
     {
-        private ProductService _service = new ProductService();
+        private OrderService _orvice = new OrderService();
         private ProdCardControl _selectedCard = null;
         public OrderComplier()
         {
             InitializeComponent();
             OrderComplier_Load();
-
 
             ProductTreeView.AfterSelect += ProductTreeView_AfterSelect;
         }
@@ -31,28 +30,23 @@ namespace SolbergBakery2531.UI.Forms
                 }
             };
         }
-        private async void OrderGrid_CellValidating(object sender,
+        private void OrderGrid_CellValidating(object sender,
             DataGridViewCellValidatingEventArgs e)
         {
             if (OrderGrid.Columns[e.ColumnIndex].Name == "QuantityCol")
             {
-                int newQty;
-                if (!int.TryParse(e.FormattedValue.ToString(), out newQty))
+                if (!int.TryParse(e.FormattedValue.ToString(), out int newQty))
                 {
-                    await UIUtils.ShowToast("Please enter a valid whole number.", "Compiler", 1000);
+                    _ = UIUtils.ShowToast("Please enter a valid number.", "Compiler", 1000);
                     e.Cancel = true;
                     return;
                 }
 
                 int stockLimit = Convert.ToInt32(OrderGrid.Rows[e.RowIndex].Cells["StockLimitCol"].Value);
-                if (newQty > stockLimit)
+                //BLL
+                if (!_orvice.ValidateQuantity(newQty, stockLimit, out string error))
                 {
-                    await UIUtils.ShowToast($"Sorry! Only {stockLimit} items available in stock.", "Compiler", 1000);
-                    e.Cancel = true;
-                }
-                else if (newQty < 1)
-                {
-                    await UIUtils.ShowToast("Quantity must be at least 1.", "Compiler", 1000);
+                    _ = UIUtils.ShowToast(error, "Compiler", 1000);
                     e.Cancel = true;
                 }
             }
@@ -89,7 +83,7 @@ namespace SolbergBakery2531.UI.Forms
                 }
             }
         }
-        private async void Card_Click(object sender, EventArgs e)
+        private void Card_Click(object sender, EventArgs e)
         {
             _selectedCard = sender as ProdCardControl;
             if (_selectedCard != null)
@@ -104,7 +98,7 @@ namespace SolbergBakery2531.UI.Forms
                         if (currentQty + 1 <= stockLimit)
                             row.Cells["QuantityCol"].Value = currentQty + 1;
                         else
-                            await UIUtils.ShowToast($"Cannot add more than {stockLimit} items for {_selectedCard.ProductName}.", "Compiler", 1000);
+                            _ = UIUtils.ShowToast($"Cannot add more than {stockLimit} items for {_selectedCard.ProductName}.", "Compiler", 1000);
                         exists = true;
                         break;
                     }

@@ -84,27 +84,27 @@ namespace SolbergBakery2531.UI.Forms.AdministForms
             int newTotal = _selectedCard.CurrentStock + adjustment;
             _service.UpdateStock(_selectedCard.ProductId, newTotal);
         }
-        private async void svBtn_Click(object sender, EventArgs e)
+        private void svBtn_Click(object sender, EventArgs e)
         {
             if (_selectedCard == null) return;
 
             int adjustment = QuantityToAddBar.Value;
             if (adjustment == 0)
             {
-                await UIUtils.ShowToast("Adjustment is zero. No changes to save.", "Reconsilier", 1000);
+                _ = UIUtils.ShowToast("Adjustment is zero. No changes to save.", "Reconsilier", 1000);
                 return;
             }
 
             int newTotal = _selectedCard.CurrentStock + adjustment;
             if (newTotal < 0)
             {
-                await UIUtils.ShowToast("Adjustment exceeded availability, stockpile expired.", "Reconsilier", 1000);
+                _ = UIUtils.ShowToast("Adjustment exceeded availability, stockpile expired.", "Reconsilier", 1000);
                 newTotal = 0;
             }
             _service.UpdateStock(_selectedCard.ProductId, newTotal);
 
             QuantityflowLayoutPanel.Visible = false;
-            await UIUtils.ShowToast($"Stock for {_selectedCard.ProductName} updated to {newTotal}.", "Reconsilier", 1000);
+            _ = UIUtils.ShowToast($"Stock for {_selectedCard.ProductName} updated to {newTotal}.", "Reconsilier", 1000);
             //refresh
             if (ProductTreeView.SelectedNode != null)
                 ProductTreeView_AfterSelect(ProductTreeView, new TreeViewEventArgs(ProductTreeView.SelectedNode));

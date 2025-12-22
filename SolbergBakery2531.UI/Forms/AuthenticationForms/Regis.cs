@@ -42,24 +42,24 @@ namespace SolbergBakery2531.UI
             regisBtn.Enabled = isEmailValid && passwordsMatch && userFilled;
         }
 
-        private async void toLogInBtn_Click(object sender, EventArgs e)
+        private void toLogInBtn_Click(object sender, EventArgs e)
         {
             new LogIn().Show();
-            await UIUtils.ShowToast("Loading...", "SolbergBakery:", 200);
+            _ = UIUtils.ShowToast("Loading...", "SolbergBakery:", 200);
             this.Dispose();
         }
 
-        private async void regisBtn_ClickAsync(object sender, EventArgs e)
+        private void regisBtn_ClickAsync(object sender, EventArgs e)
         {
             bool? res = _reserve.UserRegister(employeeGUIDField.Text, userField.Text, passField.Text);
             if (res == true)
             {
-                await UIUtils.ShowToast("Registration successful! You can now log in.", "RegistryService:", 1000);
+                _ = UIUtils.ShowToast("Registration successful! You can now log in.", "RegistryService:", 1000);
                 new LogIn().Show();
                 this.Dispose();
             }
             else if (res == null)
-                await UIUtils.ShowToast("Invalid Employee GUID. Please check and try again.", "RegistryService:", 1000);
+                _ = UIUtils.ShowToast("Invalid Employee GUID. Please check and try again.", "RegistryService:", 1000);
             else
                 MessageBox.Show("Registration failed! Username or Email may already be in use.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }

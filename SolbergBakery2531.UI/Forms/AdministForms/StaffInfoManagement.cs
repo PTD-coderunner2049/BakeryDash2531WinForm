@@ -71,9 +71,9 @@ namespace SolbergBakery2531.UI
             }
         }
 
-        private async void LoadStaffDataAsync()
+        private void LoadStaffDataAsync()
         {
-            await UIUtils.ShowToast("Loading...", "SolbergBakery", 1000);
+            _ = UIUtils.ShowToast("Loading...", "SolbergBakery", 1000);
 
             try
             {
@@ -151,11 +151,11 @@ namespace SolbergBakery2531.UI
             _parent.endProgress();
         }
 
-        private async void ApplyFilterAsync()
+        private void ApplyFilterAsync()
         {
             _parent.resetProgress();
 
-            await UIUtils.ShowToast("Updating...", "SolbergBakery", 1000);
+            _ = UIUtils.ShowToast("Updating...", "SolbergBakery", 1000);
             string filterColumn = collumBox.SelectedItem.ToString();
             string filterValue = valueBox.Text.Trim();
             _parent.UpdateProgress(50);
@@ -302,14 +302,14 @@ namespace SolbergBakery2531.UI
             _parent.endProgress();
         }
 
-        private async void historyBtn_Click(object sender, EventArgs e)
+        private void historyBtn_Click(object sender, EventArgs e)
         {
             _parent.resetProgress();
 
             DataRow dataRow = StaffGrid.GetSelectedRow();
             if (dataRow == null)
             {
-                await UIUtils.ShowToast("Object's History not found!", "SolbergBakery", 1000);
+                _ = UIUtils.ShowToast("Object's History not found!", "SolbergBakery", 1000);
                 return;
             }
             Guid empGuid = Guid.Empty;

@@ -22,9 +22,9 @@ namespace SolbergBakery2531.UI.Forms.AdministForms
             viewGroup.Text = $"Employment History - Staff: {fullname}";
             historyView.SelectionChanged += History_SelectionChanged;
         }
-        private async void LoadHistoryAsync()
+        private void LoadHistoryAsync()
         {
-            await UIUtils.ShowToast("Loading...", "SolbergBakery", 1000);
+            _ = UIUtils.ShowToast("Loading...", "SolbergBakery", 1000);
 
             try
             {
@@ -56,15 +56,15 @@ namespace SolbergBakery2531.UI.Forms.AdministForms
         {
             this.Dispose();
         }
-        private async void svBtn_ClickAsync (object sender, EventArgs e)
+        private void svBtn_ClickAsync (object sender, EventArgs e)
         {
             DataRow dataRow = historyView.GetSelectedRow();
             if (dataRow == null)
             {
-                await UIUtils.ShowToast("Oldrecords are Immutable! Ongoing record in the otherhand...", "Historian", 2000);
+                _ = UIUtils.ShowToast("Oldrecords are Immutable! Ongoing record in the otherhand...", "Historian", 2000);
                 return;
             }
-            await UIUtils.ShowToast("Updating current feedback...", "Historian", 2000);
+            _ = UIUtils.ShowToast("Updating current feedback...", "Historian", 2000);
             _staffService.SaveHistory(_Id, HRFeedbackText.Text);
             LoadHistoryAsync();
         }
