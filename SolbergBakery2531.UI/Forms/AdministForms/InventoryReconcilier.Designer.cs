@@ -218,7 +218,7 @@
             // 
             this.ProductTreeView.Location = new System.Drawing.Point(5, 50);
             this.ProductTreeView.Name = "ProductTreeView";
-            this.ProductTreeView.Size = new System.Drawing.Size(121, 462);
+            this.ProductTreeView.Size = new System.Drawing.Size(121, 517);
             this.ProductTreeView.TabIndex = 45;
             // 
             // panel1

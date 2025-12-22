@@ -41,6 +41,12 @@
             this.rtnBtn = new MaterialSkin.Controls.MaterialFlatButton();
             this.title = new System.Windows.Forms.Label();
             this.ProdGrid = new System.Windows.Forms.DataGridView();
+            this.GUIDCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DescriptionCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PricingCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AvailableDateCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiscontinueDateCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel7 = new System.Windows.Forms.Panel();
             this.svWarnLab = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -73,12 +79,6 @@
             this.DDateLab = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.GUIDCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DescriptionCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PricingCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AvailableDateCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiscontinueDateCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProdGrid)).BeginInit();
@@ -249,6 +249,61 @@
             this.ProdGrid.Size = new System.Drawing.Size(630, 528);
             this.ProdGrid.TabIndex = 27;
             // 
+            // GUIDCol
+            // 
+            this.GUIDCol.DataPropertyName = "Id";
+            this.GUIDCol.Frozen = true;
+            this.GUIDCol.HeaderText = "GUID";
+            this.GUIDCol.Name = "GUIDCol";
+            this.GUIDCol.ReadOnly = true;
+            this.GUIDCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.GUIDCol.Width = 40;
+            // 
+            // NameCol
+            // 
+            this.NameCol.DataPropertyName = "Name";
+            this.NameCol.HeaderText = "Name";
+            this.NameCol.Name = "NameCol";
+            this.NameCol.ReadOnly = true;
+            this.NameCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.NameCol.Width = 115;
+            // 
+            // DescriptionCol
+            // 
+            this.DescriptionCol.DataPropertyName = "Description";
+            this.DescriptionCol.HeaderText = "Description";
+            this.DescriptionCol.Name = "DescriptionCol";
+            this.DescriptionCol.ReadOnly = true;
+            this.DescriptionCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.DescriptionCol.Width = 115;
+            // 
+            // PricingCol
+            // 
+            this.PricingCol.DataPropertyName = "Pricing";
+            this.PricingCol.HeaderText = "Pricing [€]";
+            this.PricingCol.Name = "PricingCol";
+            this.PricingCol.ReadOnly = true;
+            this.PricingCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.PricingCol.Width = 80;
+            // 
+            // AvailableDateCol
+            // 
+            this.AvailableDateCol.DataPropertyName = "AvailableDate";
+            this.AvailableDateCol.HeaderText = "AvailableDate";
+            this.AvailableDateCol.Name = "AvailableDateCol";
+            this.AvailableDateCol.ReadOnly = true;
+            this.AvailableDateCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.AvailableDateCol.Width = 120;
+            // 
+            // DiscontinueDateCol
+            // 
+            this.DiscontinueDateCol.DataPropertyName = "DiscontinueDate";
+            this.DiscontinueDateCol.HeaderText = "DiscontinueDate";
+            this.DiscontinueDateCol.Name = "DiscontinueDateCol";
+            this.DiscontinueDateCol.ReadOnly = true;
+            this.DiscontinueDateCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.DiscontinueDateCol.Width = 120;
+            // 
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.OldLace;
@@ -288,7 +343,7 @@
             this.groupBox1.Size = new System.Drawing.Size(293, 191);
             this.groupBox1.TabIndex = 33;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "ProductVisualList";
+            this.groupBox1.Text = "Product\'s Visual List";
             // 
             // addVbtn
             // 
@@ -419,7 +474,7 @@
             this.groupBox2.Size = new System.Drawing.Size(293, 269);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "ProductInfo";
+            this.groupBox2.Text = "Product\'s Info";
             // 
             // CateLab
             // 
@@ -587,61 +642,6 @@
             this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            // 
-            // GUIDCol
-            // 
-            this.GUIDCol.DataPropertyName = "Id";
-            this.GUIDCol.Frozen = true;
-            this.GUIDCol.HeaderText = "GUID";
-            this.GUIDCol.Name = "GUIDCol";
-            this.GUIDCol.ReadOnly = true;
-            this.GUIDCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.GUIDCol.Width = 40;
-            // 
-            // NameCol
-            // 
-            this.NameCol.DataPropertyName = "Name";
-            this.NameCol.HeaderText = "Name";
-            this.NameCol.Name = "NameCol";
-            this.NameCol.ReadOnly = true;
-            this.NameCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.NameCol.Width = 115;
-            // 
-            // DescriptionCol
-            // 
-            this.DescriptionCol.DataPropertyName = "Description";
-            this.DescriptionCol.HeaderText = "Description";
-            this.DescriptionCol.Name = "DescriptionCol";
-            this.DescriptionCol.ReadOnly = true;
-            this.DescriptionCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.DescriptionCol.Width = 115;
-            // 
-            // PricingCol
-            // 
-            this.PricingCol.DataPropertyName = "Pricing";
-            this.PricingCol.HeaderText = "Pricing [€]";
-            this.PricingCol.Name = "PricingCol";
-            this.PricingCol.ReadOnly = true;
-            this.PricingCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.PricingCol.Width = 80;
-            // 
-            // AvailableDateCol
-            // 
-            this.AvailableDateCol.DataPropertyName = "AvailableDate";
-            this.AvailableDateCol.HeaderText = "AvailableDate";
-            this.AvailableDateCol.Name = "AvailableDateCol";
-            this.AvailableDateCol.ReadOnly = true;
-            this.AvailableDateCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.AvailableDateCol.Width = 120;
-            // 
-            // DiscontinueDateCol
-            // 
-            this.DiscontinueDateCol.DataPropertyName = "DiscontinueDate";
-            this.DiscontinueDateCol.HeaderText = "DiscontinueDate";
-            this.DiscontinueDateCol.Name = "DiscontinueDateCol";
-            this.DiscontinueDateCol.ReadOnly = true;
-            this.DiscontinueDateCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.DiscontinueDateCol.Width = 120;
             // 
             // ProdInfoManagement
             // 

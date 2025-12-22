@@ -39,8 +39,9 @@
             this.xXToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.xXToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.productsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.accessToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.employeesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.accessToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inventoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripTextGreet = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripTextUserName = new System.Windows.Forms.ToolStripTextBox();
             this.GeneralProgBar = new System.Windows.Forms.ProgressBar();
@@ -50,31 +51,13 @@
             this.orderBtn = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.statBtn = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.LogOutPad = new System.Windows.Forms.Panel();
-            this.panel18 = new System.Windows.Forms.Panel();
-            this.panel17 = new System.Windows.Forms.Panel();
-            this.panel16 = new System.Windows.Forms.Panel();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.panel15 = new System.Windows.Forms.Panel();
-            this.panel14 = new System.Windows.Forms.Panel();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.inventoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dashMenuStrip.SuspendLayout();
             this.panelBack.SuspendLayout();
             this.centralPanel.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel8.SuspendLayout();
             this.SuspendLayout();
             // 
             // dashMenuStrip
@@ -166,36 +149,43 @@
             // productsToolStripMenuItem
             // 
             this.productsToolStripMenuItem.Name = "productsToolStripMenuItem";
-            this.productsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.productsToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.productsToolStripMenuItem.Text = "Products";
             this.productsToolStripMenuItem.Click += new System.EventHandler(this.productsToolStripMenuItem_Click);
-            // 
-            // accessToolStripMenuItem
-            // 
-            this.accessToolStripMenuItem.Name = "accessToolStripMenuItem";
-            this.accessToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.accessToolStripMenuItem.Text = "Access";
-            this.accessToolStripMenuItem.Click += new System.EventHandler(this.accessToolStripMenuItem_Click);
             // 
             // employeesToolStripMenuItem
             // 
             this.employeesToolStripMenuItem.Name = "employeesToolStripMenuItem";
-            this.employeesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.employeesToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.employeesToolStripMenuItem.Text = "Employees";
             this.employeesToolStripMenuItem.Click += new System.EventHandler(this.employeesToolStripMenuItem_Click);
+            // 
+            // accessToolStripMenuItem
+            // 
+            this.accessToolStripMenuItem.Name = "accessToolStripMenuItem";
+            this.accessToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.accessToolStripMenuItem.Text = "Access";
+            this.accessToolStripMenuItem.Click += new System.EventHandler(this.accessToolStripMenuItem_Click);
+            // 
+            // inventoryToolStripMenuItem
+            // 
+            this.inventoryToolStripMenuItem.Name = "inventoryToolStripMenuItem";
+            this.inventoryToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.inventoryToolStripMenuItem.Text = "Inventory";
+            this.inventoryToolStripMenuItem.Click += new System.EventHandler(this.inventoryToolStripMenuItem_Click);
             // 
             // toolStripTextGreet
             // 
             this.toolStripTextGreet.BackColor = System.Drawing.Color.PapayaWhip;
             this.toolStripTextGreet.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.toolStripTextGreet.Enabled = false;
-            this.toolStripTextGreet.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextGreet.Name = "toolStripTextGreet";
             this.toolStripTextGreet.Size = new System.Drawing.Size(55, 20);
             this.toolStripTextGreet.Text = "Greeting!!";
             // 
             // toolStripTextUserName
             // 
+            this.toolStripTextUserName.BackColor = System.Drawing.Color.PapayaWhip;
             this.toolStripTextUserName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.toolStripTextUserName.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.toolStripTextUserName.Enabled = false;
@@ -221,9 +211,7 @@
             // 
             this.panelBack.BackColor = System.Drawing.Color.Transparent;
             this.panelBack.Controls.Add(this.centralPanel);
-            this.panelBack.Controls.Add(this.panel2);
             this.panelBack.Controls.Add(this.panel4);
-            this.panelBack.Controls.Add(this.panel3);
             this.panelBack.Controls.Add(this.panel1);
             this.panelBack.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelBack.Location = new System.Drawing.Point(0, 27);
@@ -236,12 +224,11 @@
             this.centralPanel.BackColor = System.Drawing.Color.Transparent;
             this.centralPanel.Controls.Add(this.panel5);
             this.centralPanel.Controls.Add(this.panel6);
-            this.centralPanel.Controls.Add(this.panel7);
             this.centralPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.centralPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.centralPanel.Location = new System.Drawing.Point(400, 150);
             this.centralPanel.Name = "centralPanel";
-            this.centralPanel.Size = new System.Drawing.Size(380, 350);
+            this.centralPanel.Size = new System.Drawing.Size(780, 500);
             this.centralPanel.TabIndex = 12;
             // 
             // panel5
@@ -284,158 +271,14 @@
             this.statBtn.Text = "Statistic";
             this.statBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel7
-            // 
-            this.panel7.Location = new System.Drawing.Point(3, 235);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(373, 110);
-            this.panel7.TabIndex = 2;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(780, 150);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(400, 350);
-            this.panel2.TabIndex = 16;
-            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Transparent;
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel4.Location = new System.Drawing.Point(0, 150);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(400, 350);
+            this.panel4.Size = new System.Drawing.Size(400, 500);
             this.panel4.TabIndex = 15;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Transparent;
-            this.panel3.Controls.Add(this.panel8);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 500);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1180, 150);
-            this.panel3.TabIndex = 14;
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.Transparent;
-            this.panel8.Controls.Add(this.LogOutPad);
-            this.panel8.Controls.Add(this.panel18);
-            this.panel8.Controls.Add(this.panel17);
-            this.panel8.Controls.Add(this.panel16);
-            this.panel8.Controls.Add(this.panel13);
-            this.panel8.Controls.Add(this.panel15);
-            this.panel8.Controls.Add(this.panel14);
-            this.panel8.Controls.Add(this.panel12);
-            this.panel8.Controls.Add(this.panel11);
-            this.panel8.Controls.Add(this.panel10);
-            this.panel8.Controls.Add(this.panel9);
-            this.panel8.Location = new System.Drawing.Point(12, 6);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1168, 100);
-            this.panel8.TabIndex = 12;
-            // 
-            // LogOutPad
-            // 
-            this.LogOutPad.BackColor = System.Drawing.Color.Transparent;
-            this.LogOutPad.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.LogOutPad.Location = new System.Drawing.Point(1063, 0);
-            this.LogOutPad.Name = "LogOutPad";
-            this.LogOutPad.Size = new System.Drawing.Size(100, 100);
-            this.LogOutPad.TabIndex = 15;
-            // 
-            // panel18
-            // 
-            this.panel18.BackColor = System.Drawing.Color.Transparent;
-            this.panel18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel18.Location = new System.Drawing.Point(957, 0);
-            this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(100, 100);
-            this.panel18.TabIndex = 15;
-            // 
-            // panel17
-            // 
-            this.panel17.BackColor = System.Drawing.Color.Transparent;
-            this.panel17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel17.Location = new System.Drawing.Point(851, 0);
-            this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(100, 100);
-            this.panel17.TabIndex = 14;
-            // 
-            // panel16
-            // 
-            this.panel16.BackColor = System.Drawing.Color.Transparent;
-            this.panel16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel16.Location = new System.Drawing.Point(745, 0);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(100, 100);
-            this.panel16.TabIndex = 14;
-            // 
-            // panel13
-            // 
-            this.panel13.BackColor = System.Drawing.Color.Transparent;
-            this.panel13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel13.Location = new System.Drawing.Point(427, 0);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(100, 100);
-            this.panel13.TabIndex = 14;
-            // 
-            // panel15
-            // 
-            this.panel15.BackColor = System.Drawing.Color.Transparent;
-            this.panel15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel15.Location = new System.Drawing.Point(639, 0);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(100, 100);
-            this.panel15.TabIndex = 14;
-            // 
-            // panel14
-            // 
-            this.panel14.BackColor = System.Drawing.Color.Transparent;
-            this.panel14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel14.Location = new System.Drawing.Point(533, 0);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(100, 100);
-            this.panel14.TabIndex = 14;
-            // 
-            // panel12
-            // 
-            this.panel12.BackColor = System.Drawing.Color.Transparent;
-            this.panel12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel12.Location = new System.Drawing.Point(321, 0);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(100, 100);
-            this.panel12.TabIndex = 14;
-            // 
-            // panel11
-            // 
-            this.panel11.BackColor = System.Drawing.Color.Transparent;
-            this.panel11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel11.Location = new System.Drawing.Point(215, 0);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(100, 100);
-            this.panel11.TabIndex = 14;
-            // 
-            // panel10
-            // 
-            this.panel10.BackColor = System.Drawing.Color.Transparent;
-            this.panel10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel10.Location = new System.Drawing.Point(109, 0);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(100, 100);
-            this.panel10.TabIndex = 14;
-            // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.Transparent;
-            this.panel9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel9.Location = new System.Drawing.Point(3, 0);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(100, 100);
-            this.panel9.TabIndex = 13;
             // 
             // panel1
             // 
@@ -445,13 +288,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1180, 150);
             this.panel1.TabIndex = 13;
-            // 
-            // inventoryToolStripMenuItem
-            // 
-            this.inventoryToolStripMenuItem.Name = "inventoryToolStripMenuItem";
-            this.inventoryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.inventoryToolStripMenuItem.Text = "Inventory";
-            this.inventoryToolStripMenuItem.Click += new System.EventHandler(this.inventoryToolStripMenuItem_Click);
             // 
             // DashBoard
             // 
@@ -473,8 +309,6 @@
             this.centralPanel.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel8.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -503,22 +337,7 @@
         private System.Windows.Forms.Label orderBtn;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label statBtn;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Panel LogOutPad;
-        private System.Windows.Forms.Panel panel18;
-        private System.Windows.Forms.Panel panel17;
-        private System.Windows.Forms.Panel panel16;
-        private System.Windows.Forms.Panel panel13;
-        private System.Windows.Forms.Panel panel15;
-        private System.Windows.Forms.Panel panel14;
-        private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ToolStripMenuItem inventoryToolStripMenuItem;
     }

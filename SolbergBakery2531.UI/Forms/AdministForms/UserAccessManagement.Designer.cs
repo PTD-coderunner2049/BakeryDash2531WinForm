@@ -444,7 +444,7 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImage = global::SolbergBakery2531.UI.Properties.Resources.edit_2fill;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(1073, 67);
+            this.pictureBox1.Location = new System.Drawing.Point(1085, 67);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(46, 46);
             this.pictureBox1.TabIndex = 26;
