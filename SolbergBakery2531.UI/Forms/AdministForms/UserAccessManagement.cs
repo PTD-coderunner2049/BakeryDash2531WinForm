@@ -82,7 +82,6 @@ namespace SolbergBakery2531.UI
             passText.Clear();
             usernameText.Clear();
             staffGUIDText.Clear();
-            UserCheckBox.SetItemChecked(0, false);
 
             foreach (int i in UserCheckBox.CheckedIndices) UserCheckBox.SetItemChecked(i, false);
         }
@@ -94,23 +93,16 @@ namespace SolbergBakery2531.UI
                 ClearInputs();
                 return;
             }
-            //DataGridViewRow row = UserGrid.SelectedRows[0];
-
-            //if (UserGrid.SelectedRows.Count == 0 || row == null || row.IsNewRow)
-            //{
-            //    ClearInputs();
-            //    return;
-            //}
-            //DataRow dataRow = ((DataRowView)row.DataBoundItem).Row;
 
             staffGUIDText.Text = dataRow["Id"].ToString();
             usernameText.Text = dataRow["Username"].ToString();
+            passText.Text ="***hashed***";
             //passText.Text = dataRow["PasswordHash"].ToString();
 
-            bool isRoleManager = (bool)dataRow["IsSystemManager"];
+            bool isRoleManager = (bool)dataRow["IsSystemManager"];
             bool Active = (bool)dataRow["Active"];
-            UserCheckBox.SetItemChecked(0, Active);
-            UserCheckBox.SetItemChecked(1, isRoleManager);
+            UserCheckBox.SetItemChecked(0, isRoleManager);
+            UserCheckBox.SetItemChecked(1, Active);
         }
         private void LoadUserxxxxxxxxxxxxxData()
         {
