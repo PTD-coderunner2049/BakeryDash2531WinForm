@@ -1,12 +1,13 @@
-﻿using SolbergBakery2531.BLL.DTOModels;
+﻿using QuestPDF.Fluent;
+using QuestPDF.Helpers;
+using QuestPDF.Infrastructure;
+using SolbergBakery2531.BLL.DTOModels;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.IO;
 using System.Threading.Tasks;
-using QuestPDF.Fluent;
-using QuestPDF.Helpers;
-using QuestPDF.Infrastructure;
 
 namespace SolbergBakery2531.BLL
 {
@@ -33,37 +34,72 @@ namespace SolbergBakery2531.BLL
         {
             try
             {
+                // 1. Generate the PDF Document
                 await Task.Run(() => {
-                    using (StreamWriter sw = new StreamWriter(filePath))
+                    QuestPDF.Settings.License = LicenseType.Community;
+
+                    Document.Create(container =>
                     {
-                        sw.WriteLine("SOLBERG BAKERY - RECEIPT");
-                        sw.WriteLine($"Date: {DateTime.Now}");
-                        sw.WriteLine("--------------------------");
-                        foreach (var item in items)
+                        container.Page(page =>
                         {
-                            sw.WriteLine($"{item.Name.PadRight(15)} x{item.Quantity} @ {item.Price:C}");
-                        }
-                    }
+                            page.Margin(50);
+                            page.Header().Text("SOLBERG BAKERY").FontSize(20).SemiBold().FontColor(Colors.Blue.Medium);
+
+                            page.Content().PaddingVertical(10).Table(table =>
+                            {
+                                table.ColumnsDefinition(columns =>
+                                {
+                                    columns.RelativeColumn(3); // Name
+                                    columns.RelativeColumn(1); // Qty
+                                    columns.RelativeColumn(2); // Price
+                                    columns.RelativeColumn(2); // Total
+                                });
+
+                                // Header Row
+                                table.Header(header =>
+                                {
+                                    header.Cell().Text("Product");
+                                    header.Cell().Text("Qty");
+                                    header.Cell().Text("Price");
+                                    header.Cell().Text("Total");
+                                });
+
+                                // Item Rows
+                                foreach (var item in items)
+                                {
+                                    table.Cell().Text(item.Name);
+                                    table.Cell().Text(item.Quantity.ToString());
+                                    table.Cell().Text($"{item.Price:C}");
+                                    table.Cell().Text($"{(item.Price * item.Quantity):C}");
+                                }
+                            });
+
+                            page.Footer().AlignCenter().Text(x => {
+                                x.Span("Page ");
+                                x.CurrentPageNumber();
+                            });
+                        });
+                    }).GeneratePdf(filePath);
                 });
 
+                // 2. Logic for Stock Update (Same as your original)
                 var prodService = new ProductService();
-
                 foreach (var item in items)
                 {
-                    DataTable dt = prodService.FetchProductById((Guid)item.ProductId);
+                    // Note: Consider moving this to a single batch update for better performance
+                    DataTable dt = prodService.FetchProductById(item.ProductId);
                     if (dt.Rows.Count > 0)
                     {
                         int currentStock = Convert.ToInt32(dt.Rows[0]["quantityInStock"]);
-                        int remainingStock = currentStock - item.Quantity;
-                        
-                        prodService.UpdateStock(item.ProductId, remainingStock);
+                        prodService.UpdateStock(item.ProductId, currentStock - item.Quantity);
                     }
                 }
 
                 return true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                Debug.WriteLine(ex.Message);
                 return false;
             }
         }

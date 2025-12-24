@@ -49,6 +49,9 @@
             this.complieBtn = new MaterialSkin.Controls.MaterialFlatButton();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.revBtn = new MaterialSkin.Controls.MaterialFlatButton();
+            this.ClrBtn = new MaterialSkin.Controls.MaterialFlatButton();
+            this.removeWarnLab = new MaterialSkin.Controls.MaterialLabel();
             this.viewGroup.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.SelectionBox.SuspendLayout();
@@ -149,6 +152,7 @@
             // 
             // orderGroupBox
             // 
+            this.orderGroupBox.Controls.Add(this.removeWarnLab);
             this.orderGroupBox.Controls.Add(this.OrderGrid);
             this.orderGroupBox.Location = new System.Drawing.Point(3, 3);
             this.orderGroupBox.Name = "orderGroupBox";
@@ -183,7 +187,7 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.OrderGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.OrderGrid.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.OrderGrid.Size = new System.Drawing.Size(436, 451);
+            this.OrderGrid.Size = new System.Drawing.Size(436, 435);
             this.OrderGrid.TabIndex = 28;
             // 
             // GUIDCol
@@ -225,6 +229,8 @@
             // 
             // panel8
             // 
+            this.panel8.Controls.Add(this.ClrBtn);
+            this.panel8.Controls.Add(this.revBtn);
             this.panel8.Controls.Add(this.complieBtn);
             this.panel8.Location = new System.Drawing.Point(3, 485);
             this.panel8.Name = "panel8";
@@ -270,6 +276,54 @@
             this.label1.Text = "Drafting Order";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // revBtn
+            // 
+            this.revBtn.AutoSize = true;
+            this.revBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.revBtn.Depth = 0;
+            this.revBtn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.revBtn.Location = new System.Drawing.Point(0, 0);
+            this.revBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.revBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.revBtn.Name = "revBtn";
+            this.revBtn.Primary = false;
+            this.revBtn.Size = new System.Drawing.Size(109, 46);
+            this.revBtn.TabIndex = 39;
+            this.revBtn.Text = "Undraft Item";
+            this.revBtn.UseVisualStyleBackColor = true;
+            this.revBtn.Click += new System.EventHandler(this.revBtn_Click);
+            // 
+            // ClrBtn
+            // 
+            this.ClrBtn.AutoSize = true;
+            this.ClrBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClrBtn.Depth = 0;
+            this.ClrBtn.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ClrBtn.Location = new System.Drawing.Point(271, 0);
+            this.ClrBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.ClrBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.ClrBtn.Name = "ClrBtn";
+            this.ClrBtn.Primary = false;
+            this.ClrBtn.Size = new System.Drawing.Size(54, 46);
+            this.ClrBtn.TabIndex = 41;
+            this.ClrBtn.Text = "Clear";
+            this.ClrBtn.UseVisualStyleBackColor = true;
+            this.ClrBtn.Click += new System.EventHandler(this.ClrBtn_Click);
+            // 
+            // removeWarnLab
+            // 
+            this.removeWarnLab.AutoSize = true;
+            this.removeWarnLab.Depth = 0;
+            this.removeWarnLab.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.removeWarnLab.Font = new System.Drawing.Font("Roboto", 11F);
+            this.removeWarnLab.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.removeWarnLab.Location = new System.Drawing.Point(3, 454);
+            this.removeWarnLab.MouseState = MaterialSkin.MouseState.HOVER;
+            this.removeWarnLab.Name = "removeWarnLab";
+            this.removeWarnLab.Size = new System.Drawing.Size(82, 19);
+            this.removeWarnLab.TabIndex = 41;
+            this.removeWarnLab.Text = "Drafting.....";
+            // 
             // OrderComplier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -289,6 +343,7 @@
             this.panel5.ResumeLayout(false);
             this.flowLayoutPanel2.ResumeLayout(false);
             this.orderGroupBox.ResumeLayout(false);
+            this.orderGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OrderGrid)).EndInit();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
@@ -319,5 +374,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn PricingCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn QuantityCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn StockLimitCol;
+        private MaterialSkin.Controls.MaterialFlatButton revBtn;
+        private MaterialSkin.Controls.MaterialFlatButton ClrBtn;
+        private MaterialSkin.Controls.MaterialLabel removeWarnLab;
     }
 }

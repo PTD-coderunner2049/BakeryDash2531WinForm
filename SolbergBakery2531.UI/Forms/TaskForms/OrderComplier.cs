@@ -33,6 +33,7 @@ namespace SolbergBakery2531.UI.Forms
                     OrderGrid.BeginEdit(true);
                 }
             };
+            removeWarnLab.ForeColor = System.Drawing.Color.Black;
         }
         private void OrderGrid_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
         {
@@ -148,6 +149,35 @@ namespace SolbergBakery2531.UI.Forms
                     }
                 }
             }
+        }
+
+        private void revBtn_Click(object sender, EventArgs e)
+        {
+            DataRow dataRow = OrderGrid.GetSelectedRow();
+            if (dataRow != null)
+            {
+                removeWarnLab.Text = "This item is already drafted via source bonding (for debuging reason) and cannot be removed.";
+                removeWarnLab.ForeColor = System.Drawing.Color.Maroon;
+                return;
+            }
+            DataGridViewRow gridRow = OrderGrid.GetSelectedGridRow();
+            if (gridRow == null)
+            {
+                removeWarnLab.Text = "Pick a drafted item to remove it from the drafting bill";
+                removeWarnLab.ForeColor = System.Drawing.Color.Maroon;
+                return;
+            }
+            OrderGrid.Rows.Remove(gridRow);
+
+            removeWarnLab.Text = "Undrafted item.";
+            removeWarnLab.ForeColor = System.Drawing.Color.Green;
+        }
+
+        private void ClrBtn_Click(object sender, EventArgs e)
+        {
+            OrderGrid.Rows.Clear();
+            removeWarnLab.Text = "Undrafted Bill.";
+            removeWarnLab.ForeColor = System.Drawing.Color.Green;
         }
     }
 }
