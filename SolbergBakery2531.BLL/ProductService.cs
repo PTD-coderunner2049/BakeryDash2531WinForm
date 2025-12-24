@@ -131,6 +131,11 @@ namespace SolbergBakery2531.BLL
         {
             return new CRUD().LogStockHistory(productId, changeQty, importVal, saleVal, source);
         }
+        public void RunImport(Guid ProductId, int Quantity, decimal Price, int currentStock)
+        {
+            LogStock(ProductId, Quantity, Price * 0.9m, Price, "From Import");
+            UpdateStock(ProductId, currentStock + Quantity);
+        }
         public bool SaveProd(Guid Id, string Name, string Des, string Note, decimal Price, DateTime ADate, DateTime DDate, Guid cateId)
         {
             return new CRUD().SaveProd(Id, Name, Des, Note, Price, ADate, DDate, cateId);
@@ -148,5 +153,6 @@ namespace SolbergBakery2531.BLL
                 return "Available Date cannot be later than Discontinue Date.";
             return null;
         }
+    
     }
 }

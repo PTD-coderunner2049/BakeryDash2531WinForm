@@ -53,7 +53,8 @@ namespace SolbergBakery2531.UI.Forms.AdministForms
                     var card = new ProdCardControl(
                         (Guid)row["Id"],
                         row["Name"].ToString(),
-                        (int)row["quantityInStock"]
+                        (int)row["quantityInStock"],
+                        (decimal)row["Pricing"]
                     );
                     card.Click += Card_Click;
                     ProductFlowLayoutPanel.Controls.Add(card);
@@ -101,7 +102,8 @@ namespace SolbergBakery2531.UI.Forms.AdministForms
                 _ = UIUtils.ShowToast("Adjustment exceeded availability, stockpile expired.", "Reconsilier", 1000);
                 newTotal = 0;
             }
-            _service.UpdateStock(_selectedCard.ProductId, newTotal);
+            //_service.UpdateStock(_selectedCard.ProductId, newTotal);
+            _service.RunImport(_selectedCard.ProductId, adjustment, _selectedCard.Price, _selectedCard.CurrentStock);
 
             QuantityflowLayoutPanel.Visible = false;
             _ = UIUtils.ShowToast($"Stock for {_selectedCard.ProductName} updated to {newTotal}.", "Reconsilier", 1000);

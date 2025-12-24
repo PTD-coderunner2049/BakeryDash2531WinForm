@@ -81,9 +81,9 @@ namespace SolbergBakery2531.UI.Forms
                     var card = new ProdCardControl(
                         (Guid)row["Id"],
                         row["Name"].ToString(),
-                        (int)row["quantityInStock"]
+                        (int)row["quantityInStock"],
+                        (decimal)row["Pricing"]
                     );
-                    card.Tag = row["Pricing"];
                     card.Click += Card_Click;
                     ProductFlowLayoutPanel.Controls.Add(card);
                 }
@@ -114,7 +114,7 @@ namespace SolbergBakery2531.UI.Forms
                     OrderGrid.Rows.Add(
                         _selectedCard.ProductId,
                         _selectedCard.ProductName,
-                        _selectedCard.Tag,
+                        _selectedCard.Price,
                         1, //Qantity coll, solo 1 for single click event
                         _selectedCard.CurrentStock
                     );

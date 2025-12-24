@@ -19,17 +19,19 @@ namespace SolbergBakery2531.UI.UserControls
         public Guid ProductId { get; private set; }
         public new string ProductName { get; private set; }
         public int CurrentStock { get; private set; }
+        public decimal Price { get; private set; }
 
         private List<Image> _images = new List<Image>();
         private int _currentImageIndex = 0;
         private Timer _imageTimer;
 
-        public ProdCardControl(Guid productId, string name, int stock)
+        public ProdCardControl(Guid productId, string name, int stock, decimal price)
         {
             InitializeComponent();
             ProductId = productId;
             ProductName = name;
             CurrentStock = stock;
+            Price = price;
 
             ItemNameSmall.Text = ProductName;
             SetupImages();
