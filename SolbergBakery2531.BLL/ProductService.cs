@@ -127,6 +127,10 @@ namespace SolbergBakery2531.BLL
         {
             return new CRUD().UpdateStockLevel(prodId, newQuantity);
         }
+        public bool LogStock(Guid productId, int changeQty, decimal importVal, decimal saleVal, string source)
+        {
+            return new CRUD().LogStockHistory(productId, changeQty, importVal, saleVal, source);
+        }
         public bool SaveProd(Guid Id, string Name, string Des, string Note, decimal Price, DateTime ADate, DateTime DDate, Guid cateId)
         {
             return new CRUD().SaveProd(Id, Name, Des, Note, Price, ADate, DDate, cateId);

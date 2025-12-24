@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace SolbergBakery2531.BLL
@@ -81,20 +82,6 @@ namespace SolbergBakery2531.BLL
                         });
                     }).GeneratePdf(filePath);
                 });
-
-                // 2. Logic for Stock Update (Same as your original)
-                var prodService = new ProductService();
-                foreach (var item in items)
-                {
-                    // Note: Consider moving this to a single batch update for better performance
-                    DataTable dt = prodService.FetchProductById(item.ProductId);
-                    if (dt.Rows.Count > 0)
-                    {
-                        int currentStock = Convert.ToInt32(dt.Rows[0]["quantityInStock"]);
-                        prodService.UpdateStock(item.ProductId, currentStock - item.Quantity);
-                    }
-                }
-
                 return true;
             }
             catch (Exception ex)
@@ -102,6 +89,25 @@ namespace SolbergBakery2531.BLL
                 Debug.WriteLine(ex.Message);
                 return false;
             }
+        }
+        public bool RunPurchase(List<OrderItemDTO> items)
+        {
+            if (!items.Any())
+            {
+                return false;
+            }
+            var prodService = new ProductService();
+            foreach (var item in items)
+            {
+                DataTable dt = prodService.FetchProductById(item.ProductId);
+                if (dt.Rows.Count > 0)
+                {
+                    int currentStock = Convert.ToInt32(dt.Rows[0]["quantityInStock"]);
+                    prodService.LogStock(item.ProductId, -item.Quantity, item.Price * 0.9m, item.Price, "From Order");
+                    prodService.UpdateStock(item.ProductId, currentStock - item.Quantity);
+                }
+            }
+            return true;
         }
     } 
 }

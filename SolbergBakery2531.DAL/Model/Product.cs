@@ -28,6 +28,7 @@ namespace SolbergBakery2531.DAL.Model
         public Guid ProdCategoryId { get; set; }
         [ForeignKey("ProdCategoryId")]
         public virtual ProdCategory AssociatedCategory { get; set; }
+        public virtual ICollection<StaffHistory> Histories { get; set; }
         public virtual ICollection<ProductVisual> ProductVisuals { get; set; }
     }
 }

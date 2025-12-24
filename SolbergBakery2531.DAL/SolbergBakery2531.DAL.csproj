@@ -108,9 +108,14 @@
     <Compile Include="Migrations\202512202051208_addQuantityProd.Designer.cs">
       <DependentUpon>202512202051208_addQuantityProd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202512240808216_addProdHis.cs" />
+    <Compile Include="Migrations\202512240808216_addProdHis.Designer.cs">
+      <DependentUpon>202512240808216_addProdHis.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\DTOModels\StaffDisplayDTO.cs" />
     <Compile Include="Model\ProdCategory.cs" />
     <Compile Include="Model\ProductVisual.cs" />
+    <Compile Include="Model\ProductHistory.cs.cs" />
     <Compile Include="Session\CurrSess.cs" />
     <Compile Include="Data\BakeryDbContext.cs" />
     <Compile Include="Migrations\Configuration.cs" />
@@ -149,6 +154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202512202051208_addQuantityProd.resx">
       <DependentUpon>202512202051208_addQuantityProd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202512240808216_addProdHis.resx">
+      <DependentUpon>202512240808216_addProdHis.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -140,8 +140,8 @@ namespace SolbergBakery2531.UI.Forms
                             Quantity = Convert.ToInt32(row.Cells["QuantityCol"].Value)
                         });
                     }
-                    bool success = await _orvice.ExportOrderToPdf(sfd.FileName, orderData);
-
+                    await _orvice.ExportOrderToPdf(sfd.FileName, orderData);
+                    bool success = _orvice.RunPurchase(orderData);
                     if (success)
                     {
                         _ = UIUtils.ShowToast("PDF Generated!", "Success", 1000);

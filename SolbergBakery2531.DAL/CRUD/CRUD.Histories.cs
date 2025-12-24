@@ -8,6 +8,7 @@ namespace SolbergBakery2531.DAL
 {
     public partial class CRUD
     {
+
         //public DataTable GetHistxxxxxories(Guid Id)
         //{
         //    using (var db = new BakeryDbContext())
@@ -42,6 +43,7 @@ namespace SolbergBakery2531.DAL
         //    }
         //}
         public List<StaffHistory> GetHistories(Guid staffId)
+        //human history
         {
             using (var db = new BakeryDbContext())
             {
@@ -95,6 +97,66 @@ namespace SolbergBakery2531.DAL
             }
             catch
             {
+                return false;
+            }
+        }
+
+
+
+        public bool LogStockHistory(Guid productId, int changeQty, decimal importVal, decimal saleVal, string source)
+        {
+        //prod history
+            using (var db = new BakeryDbContext())
+            {
+                var product = db.Products.FirstOrDefault(p => p.Id == productId);
+                if (product == null) return false;
+
+                var history = new ProductHistory
+                {
+                    ChangeId = Guid.NewGuid(),
+                    ProductId = productId,
+                    ChangeQuantity = changeQty,
+                    ImportValue = importVal,
+                    SaleValue = saleVal,
+                    Source = source,
+                    ChangeOccur = DateTime.Now
+                };
+                db.ProductHistories.Add(history);
+                return db.SaveChanges() > 0;
+            }
+        }
+
+        public List<ProductHistory> GetHistoryByProduct(Guid productId)
+        {
+            using (var db = new BakeryDbContext())
+            {
+                return db.ProductHistories
+                         .Where(h => h.ProductId == productId)
+                         .OrderByDescending(h => h.ChangeOccur)
+                         .ToList();
+            }
+        }
+
+        public List<ProductHistory> GetAllHistory()
+        {
+            using (var db = new BakeryDbContext())
+            {
+                return db.ProductHistories
+                         .OrderByDescending(h => h.ChangeOccur)
+                         .ToList();
+            }
+        }
+
+        public bool RemoveHistoryEntry(Guid changeId)
+        {
+            using (var db = new BakeryDbContext())
+            {
+                var entry = db.ProductHistories.FirstOrDefault(h => h.ChangeId == changeId);
+                if (entry != null)
+                {
+                    db.ProductHistories.Remove(entry);
+                    return db.SaveChanges() > 0;
+                }
                 return false;
             }
         }
