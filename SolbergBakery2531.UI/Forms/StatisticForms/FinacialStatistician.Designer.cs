@@ -39,9 +39,15 @@
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.SaleGroupBox = new System.Windows.Forms.GroupBox();
             this.TopsaleGrid = new System.Windows.Forms.DataGridView();
+            this.GUIDCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QuantityCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalProfitCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.GrossLab1 = new MaterialSkin.Controls.MaterialLabel();
+            this.ProfitLab11 = new MaterialSkin.Controls.MaterialLabel();
             this.ProfitLab = new MaterialSkin.Controls.MaterialLabel();
             this.GrossLab = new MaterialSkin.Controls.MaterialLabel();
             this.FinancialChart_Gross = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -49,12 +55,6 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.YearFilterComboBox = new System.Windows.Forms.ComboBox();
             this.FinancialChart_Profit = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.ProfitLab11 = new MaterialSkin.Controls.MaterialLabel();
-            this.GrossLab1 = new MaterialSkin.Controls.MaterialLabel();
-            this.GUIDCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QuantityCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalProfitCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel5.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.SaleGroupBox.SuspendLayout();
@@ -122,6 +122,37 @@
             this.TopsaleGrid.Size = new System.Drawing.Size(436, 492);
             this.TopsaleGrid.TabIndex = 28;
             // 
+            // GUIDCol
+            // 
+            this.GUIDCol.DataPropertyName = "Id";
+            this.GUIDCol.HeaderText = "GUID";
+            this.GUIDCol.Name = "GUIDCol";
+            this.GUIDCol.ReadOnly = true;
+            this.GUIDCol.Visible = false;
+            // 
+            // NameCol
+            // 
+            this.NameCol.DataPropertyName = "Name";
+            this.NameCol.HeaderText = "Name";
+            this.NameCol.Name = "NameCol";
+            this.NameCol.ReadOnly = true;
+            this.NameCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.NameCol.Width = 200;
+            // 
+            // QuantityCol
+            // 
+            this.QuantityCol.DataPropertyName = "Quantity";
+            this.QuantityCol.HeaderText = "Quantity";
+            this.QuantityCol.Name = "QuantityCol";
+            this.QuantityCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // TotalProfitCol
+            // 
+            this.TotalProfitCol.DataPropertyName = "Profit";
+            this.TotalProfitCol.HeaderText = "TotalProfit";
+            this.TotalProfitCol.Name = "TotalProfitCol";
+            this.TotalProfitCol.ReadOnly = true;
+            // 
             // panel9
             // 
             this.panel9.Controls.Add(this.label1);
@@ -155,6 +186,34 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(542, 20);
             this.panel8.TabIndex = 42;
+            // 
+            // GrossLab1
+            // 
+            this.GrossLab1.AutoSize = true;
+            this.GrossLab1.Depth = 0;
+            this.GrossLab1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.GrossLab1.Font = new System.Drawing.Font("Roboto", 11F);
+            this.GrossLab1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.GrossLab1.Location = new System.Drawing.Point(428, 0);
+            this.GrossLab1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.GrossLab1.Name = "GrossLab1";
+            this.GrossLab1.Size = new System.Drawing.Size(57, 19);
+            this.GrossLab1.TabIndex = 44;
+            this.GrossLab1.Text = "Gross: ";
+            // 
+            // ProfitLab11
+            // 
+            this.ProfitLab11.AutoSize = true;
+            this.ProfitLab11.Depth = 0;
+            this.ProfitLab11.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ProfitLab11.Font = new System.Drawing.Font("Roboto", 11F);
+            this.ProfitLab11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.ProfitLab11.Location = new System.Drawing.Point(54, 0);
+            this.ProfitLab11.MouseState = MaterialSkin.MouseState.HOVER;
+            this.ProfitLab11.Name = "ProfitLab11";
+            this.ProfitLab11.Size = new System.Drawing.Size(54, 19);
+            this.ProfitLab11.TabIndex = 43;
+            this.ProfitLab11.Text = "Profit: ";
             // 
             // ProfitLab
             // 
@@ -256,65 +315,6 @@
             this.FinancialChart_Profit.Size = new System.Drawing.Size(554, 254);
             this.FinancialChart_Profit.TabIndex = 54;
             this.FinancialChart_Profit.Text = "FinancialChart_Profit";
-            // 
-            // ProfitLab11
-            // 
-            this.ProfitLab11.AutoSize = true;
-            this.ProfitLab11.Depth = 0;
-            this.ProfitLab11.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ProfitLab11.Font = new System.Drawing.Font("Roboto", 11F);
-            this.ProfitLab11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.ProfitLab11.Location = new System.Drawing.Point(54, 0);
-            this.ProfitLab11.MouseState = MaterialSkin.MouseState.HOVER;
-            this.ProfitLab11.Name = "ProfitLab11";
-            this.ProfitLab11.Size = new System.Drawing.Size(54, 19);
-            this.ProfitLab11.TabIndex = 43;
-            this.ProfitLab11.Text = "Profit: ";
-            // 
-            // GrossLab1
-            // 
-            this.GrossLab1.AutoSize = true;
-            this.GrossLab1.Depth = 0;
-            this.GrossLab1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.GrossLab1.Font = new System.Drawing.Font("Roboto", 11F);
-            this.GrossLab1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.GrossLab1.Location = new System.Drawing.Point(428, 0);
-            this.GrossLab1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.GrossLab1.Name = "GrossLab1";
-            this.GrossLab1.Size = new System.Drawing.Size(57, 19);
-            this.GrossLab1.TabIndex = 44;
-            this.GrossLab1.Text = "Gross: ";
-            // 
-            // GUIDCol
-            // 
-            this.GUIDCol.DataPropertyName = "Id";
-            this.GUIDCol.HeaderText = "GUID";
-            this.GUIDCol.Name = "GUIDCol";
-            this.GUIDCol.ReadOnly = true;
-            this.GUIDCol.Visible = false;
-            // 
-            // NameCol
-            // 
-            this.NameCol.DataPropertyName = "Name";
-            this.NameCol.HeaderText = "Name";
-            this.NameCol.Name = "NameCol";
-            this.NameCol.ReadOnly = true;
-            this.NameCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.NameCol.Width = 200;
-            // 
-            // QuantityCol
-            // 
-            this.QuantityCol.DataPropertyName = "Quantity";
-            this.QuantityCol.HeaderText = "Quantity";
-            this.QuantityCol.Name = "QuantityCol";
-            this.QuantityCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // TotalProfitCol
-            // 
-            this.TotalProfitCol.DataPropertyName = "Profit";
-            this.TotalProfitCol.HeaderText = "TotalProfit";
-            this.TotalProfitCol.Name = "TotalProfitCol";
-            this.TotalProfitCol.ReadOnly = true;
             // 
             // FinacialStatistician
             // 

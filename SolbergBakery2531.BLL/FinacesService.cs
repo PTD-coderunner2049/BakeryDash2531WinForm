@@ -51,7 +51,7 @@ namespace SolbergBakery2531.BLL
         public DataTable GetFinancialStatsByCategory(int year, int? month)
         {
             var histories = _crud.GetAllHistory();
-            var categories = _crud.GetProdCate(); //
+            var categories = _crud.GetProdCate();
             var products = _crud.GetProd();
 
             // Filter by Date
@@ -69,8 +69,8 @@ namespace SolbergBakery2531.BLL
                 var catProdIds = products.Where(p => p.ProdCategoryId == cat.Id).Select(p => p.Id).ToList();
                 var catHistory = histories.Where(h => catProdIds.Contains(h.ProductId)).ToList();
 
-                decimal profit = catHistory.Sum(h => h.TotalWorth);
-                decimal gross = catHistory.Where(h => h.Source == "From Order")
+                decimal gross = catHistory.Sum(h => h.TotalWorth);
+                decimal profit = catHistory.Where(h => h.Source == "From Order")
                                           .Sum(h => (decimal)Math.Abs(h.ChangeQuantity) * h.SaleValue);
 
                 dt.Rows.Add(cat.Name, profit, gross);
