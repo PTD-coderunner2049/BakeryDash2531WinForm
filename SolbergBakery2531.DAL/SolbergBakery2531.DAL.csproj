@@ -112,6 +112,18 @@
     <Compile Include="Migrations\202512240808216_addProdHis.Designer.cs">
       <DependentUpon>202512240808216_addProdHis.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202512240824278_upProdHis.cs" />
+    <Compile Include="Migrations\202512240824278_upProdHis.Designer.cs">
+      <DependentUpon>202512240824278_upProdHis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202512240859514_updateWorthValueForProdH.cs" />
+    <Compile Include="Migrations\202512240859514_updateWorthValueForProdH.Designer.cs">
+      <DependentUpon>202512240859514_updateWorthValueForProdH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202512240904132_updateWorthValueForProdH2.cs" />
+    <Compile Include="Migrations\202512240904132_updateWorthValueForProdH2.Designer.cs">
+      <DependentUpon>202512240904132_updateWorthValueForProdH2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\DTOModels\StaffDisplayDTO.cs" />
     <Compile Include="Model\ProdCategory.cs" />
     <Compile Include="Model\ProductVisual.cs" />
@@ -157,6 +169,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202512240808216_addProdHis.resx">
       <DependentUpon>202512240808216_addProdHis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202512240824278_upProdHis.resx">
+      <DependentUpon>202512240824278_upProdHis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202512240859514_updateWorthValueForProdH.resx">
+      <DependentUpon>202512240859514_updateWorthValueForProdH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202512240904132_updateWorthValueForProdH2.resx">
+      <DependentUpon>202512240904132_updateWorthValueForProdH2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

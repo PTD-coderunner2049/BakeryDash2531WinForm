@@ -108,8 +108,23 @@ namespace SolbergBakery2531.DAL
         //prod history
             using (var db = new BakeryDbContext())
             {
-                var product = db.Products.FirstOrDefault(p => p.Id == productId);
-                if (product == null) return false;
+                //var product = db.Products.FirstOrDefault(p => p.Id == productId);
+                //if (product == null) return false;
+                // this method would never becall without a product anyway.
+                decimal worth = 0;
+
+                if (source == "From Order")
+                {
+                    worth = (saleVal - importVal) * Math.Abs(changeQty);
+                }
+                else if (source == "Admin/Waste")
+                {
+                    worth = importVal * changeQty;
+                }
+                else
+                {
+                    worth = (saleVal - importVal) * changeQty;
+                }// Solid profit - Total lost - Potential profit
 
                 var history = new ProductHistory
                 {
@@ -119,7 +134,8 @@ namespace SolbergBakery2531.DAL
                     ImportValue = importVal,
                     SaleValue = saleVal,
                     Source = source,
-                    ChangeOccur = DateTime.Now
+                    TotalWorth = worth,
+                    ChangeOccur = DateTime.Now,
                 };
                 db.ProductHistories.Add(history);
                 return db.SaveChanges() > 0;

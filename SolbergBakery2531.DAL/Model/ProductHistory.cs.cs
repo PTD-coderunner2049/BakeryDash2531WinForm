@@ -19,9 +19,7 @@ namespace SolbergBakery2531.DAL.Model
         public decimal ImportValue { get; set; }
         [Required]
         public decimal SaleValue { get; set; }
-
-
-        public decimal TotalWorth => ChangeQuantity * SaleValue;
+        public decimal TotalWorth { get; set;}
 
         public Guid ProductId { get; set; }
         [ForeignKey("ProductId")]
