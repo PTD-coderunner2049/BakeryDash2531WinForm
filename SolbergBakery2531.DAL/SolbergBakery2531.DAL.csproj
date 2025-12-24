@@ -110,7 +110,6 @@
     </Compile>
     <Compile Include="Model\DTOModels\StaffDisplayDTO.cs" />
     <Compile Include="Model\ProdCategory.cs" />
-    <Compile Include="Model\ProductHistory.cs" />
     <Compile Include="Model\ProductVisual.cs" />
     <Compile Include="Session\CurrSess.cs" />
     <Compile Include="Data\BakeryDbContext.cs" />
