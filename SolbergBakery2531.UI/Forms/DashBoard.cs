@@ -1,5 +1,4 @@
-﻿using SolbergBakery2531._utils;
-using SolbergBakery2531.BLL;
+﻿using SolbergBakery2531.BLL;
 using SolbergBakery2531.UI.Forms;
 using SolbergBakery2531.UI.Forms.AdministForms;
 using System;
@@ -58,7 +57,6 @@ namespace SolbergBakery2531.UI
         }
         public void Board_Load()
         {
-
             GeneralProgBar.Value = 0;
             GeneralProgBar.Step = 20;
 
