@@ -118,7 +118,7 @@ namespace SolbergBakery2531.DAL
         {
             using (var db = new BakeryDbContext())
             {
-                if (prod != null)
+                if (prod == null)
                 {
                     return false;
                 }
