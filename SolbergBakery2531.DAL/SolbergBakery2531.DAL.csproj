@@ -70,6 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CRUD\CRUD.Authorization.cs" />
+    <Compile Include="CRUD\CRUD.Finaces.cs" />
     <Compile Include="CRUD\CRUD.ProdVisual.cs" />
     <Compile Include="CRUD\CRUD.Histories.cs" />
     <Compile Include="CRUD\CRUD.Registry.cs" />

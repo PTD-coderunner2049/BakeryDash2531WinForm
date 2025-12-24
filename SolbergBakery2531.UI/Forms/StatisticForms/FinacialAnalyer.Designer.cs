@@ -1,6 +1,6 @@
-﻿namespace SolbergBakery2531.UI.Forms
+﻿namespace SolbergBakery2531.UI.Forms.StatisticForms
 {
-    partial class OrderComplier
+    partial class FinacialAnalyer
     {
         /// <summary>
         /// Required designer variable.
@@ -29,13 +29,6 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.ProductTreeView = new System.Windows.Forms.TreeView();
-            this.ProductFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.viewGroup = new System.Windows.Forms.GroupBox();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.SelectionBox = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.Title = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.orderGroupBox = new System.Windows.Forms.GroupBox();
@@ -52,10 +45,6 @@
             this.complieBtn = new MaterialSkin.Controls.MaterialFlatButton();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.viewGroup.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
-            this.SelectionBox.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.orderGroupBox.SuspendLayout();
@@ -64,82 +53,15 @@
             this.panel9.SuspendLayout();
             this.SuspendLayout();
             // 
-            // ProductTreeView
-            // 
-            this.ProductTreeView.Location = new System.Drawing.Point(5, 50);
-            this.ProductTreeView.Name = "ProductTreeView";
-            this.ProductTreeView.Size = new System.Drawing.Size(121, 517);
-            this.ProductTreeView.TabIndex = 45;
-            // 
-            // ProductFlowLayoutPanel
-            // 
-            this.ProductFlowLayoutPanel.AutoScroll = true;
-            this.ProductFlowLayoutPanel.BackColor = System.Drawing.Color.DimGray;
-            this.ProductFlowLayoutPanel.Location = new System.Drawing.Point(0, 19);
-            this.ProductFlowLayoutPanel.Name = "ProductFlowLayoutPanel";
-            this.ProductFlowLayoutPanel.Size = new System.Drawing.Size(426, 495);
-            this.ProductFlowLayoutPanel.TabIndex = 0;
-            // 
-            // viewGroup
-            // 
-            this.viewGroup.Controls.Add(this.ProductFlowLayoutPanel);
-            this.viewGroup.Location = new System.Drawing.Point(3, 3);
-            this.viewGroup.Name = "viewGroup";
-            this.viewGroup.Size = new System.Drawing.Size(433, 514);
-            this.viewGroup.TabIndex = 44;
-            this.viewGroup.TabStop = false;
-            this.viewGroup.Text = "Avaiable";
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.viewGroup);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(136, 50);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(436, 517);
-            this.flowLayoutPanel1.TabIndex = 49;
-            // 
-            // SelectionBox
-            // 
-            this.SelectionBox.BackColor = System.Drawing.Color.OldLace;
-            this.SelectionBox.Controls.Add(this.flowLayoutPanel1);
-            this.SelectionBox.Controls.Add(this.ProductTreeView);
-            this.SelectionBox.Controls.Add(this.panel1);
-            this.SelectionBox.Location = new System.Drawing.Point(12, 12);
-            this.SelectionBox.Name = "SelectionBox";
-            this.SelectionBox.Size = new System.Drawing.Size(575, 587);
-            this.SelectionBox.TabIndex = 42;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.Title);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(575, 44);
-            this.panel1.TabIndex = 42;
-            // 
-            // Title
-            // 
-            this.Title.AutoSize = true;
-            this.Title.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Title.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Title.ForeColor = System.Drawing.Color.Maroon;
-            this.Title.Location = new System.Drawing.Point(0, 0);
-            this.Title.Name = "Title";
-            this.Title.Size = new System.Drawing.Size(270, 29);
-            this.Title.TabIndex = 23;
-            this.Title.Text = "Order Complier Interface";
-            this.Title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.OldLace;
             this.panel5.Controls.Add(this.flowLayoutPanel2);
             this.panel5.Controls.Add(this.panel9);
-            this.panel5.Location = new System.Drawing.Point(707, 12);
+            this.panel5.Location = new System.Drawing.Point(45, 25);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(447, 587);
-            this.panel5.TabIndex = 51;
+            this.panel5.TabIndex = 52;
             // 
             // flowLayoutPanel2
             // 
@@ -266,7 +188,6 @@
             this.ClrBtn.TabIndex = 41;
             this.ClrBtn.Text = "Clear";
             this.ClrBtn.UseVisualStyleBackColor = true;
-            this.ClrBtn.Click += new System.EventHandler(this.ClrBtn_Click);
             // 
             // revBtn
             // 
@@ -283,7 +204,6 @@
             this.revBtn.TabIndex = 39;
             this.revBtn.Text = "Undraft Item";
             this.revBtn.UseVisualStyleBackColor = true;
-            this.revBtn.Click += new System.EventHandler(this.revBtn_Click);
             // 
             // complieBtn
             // 
@@ -300,7 +220,6 @@
             this.complieBtn.TabIndex = 38;
             this.complieBtn.Text = "Complie Bill";
             this.complieBtn.UseVisualStyleBackColor = true;
-            this.complieBtn.Click += new System.EventHandler(this.complieBtn_Click);
             // 
             // panel9
             // 
@@ -324,22 +243,16 @@
             this.label1.Text = "Drafting Order";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // OrderComplier
+            // FinacialAnalyer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::SolbergBakery2531.UI.Properties.Resources.ARDECHOISVUEHAUTcopie;
             this.ClientSize = new System.Drawing.Size(1165, 650);
             this.Controls.Add(this.panel5);
-            this.Controls.Add(this.SelectionBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "OrderComplier";
-            this.Text = "OrderComplier";
-            this.viewGroup.ResumeLayout(false);
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.SelectionBox.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.Name = "FinacialAnalyer";
+            this.Text = "FinacialAnalyer";
             this.panel5.ResumeLayout(false);
             this.flowLayoutPanel2.ResumeLayout(false);
             this.orderGroupBox.ResumeLayout(false);
@@ -354,28 +267,22 @@
         }
 
         #endregion
-        private System.Windows.Forms.TreeView ProductTreeView;
-        private System.Windows.Forms.FlowLayoutPanel ProductFlowLayoutPanel;
-        private System.Windows.Forms.GroupBox viewGroup;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Panel SelectionBox;
+
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.GroupBox orderGroupBox;
-        private System.Windows.Forms.Panel panel8;
-        private MaterialSkin.Controls.MaterialFlatButton complieBtn;
+        private MaterialSkin.Controls.MaterialLabel removeWarnLab;
         private System.Windows.Forms.DataGridView OrderGrid;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label Title;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn GUIDCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn NameCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn PricingCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn QuantityCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn StockLimitCol;
-        private MaterialSkin.Controls.MaterialFlatButton revBtn;
+        private System.Windows.Forms.Panel panel8;
         private MaterialSkin.Controls.MaterialFlatButton ClrBtn;
-        private MaterialSkin.Controls.MaterialLabel removeWarnLab;
+        private MaterialSkin.Controls.MaterialFlatButton revBtn;
+        private MaterialSkin.Controls.MaterialFlatButton complieBtn;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Label label1;
     }
 }

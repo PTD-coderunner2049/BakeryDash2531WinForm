@@ -123,6 +123,12 @@
     <Compile Include="Forms\DashBoard.Designer.cs">
       <DependentUpon>DashBoard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\StatisticForms\FinacialAnalyer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\StatisticForms\FinacialAnalyer.Designer.cs">
+      <DependentUpon>FinacialAnalyer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\TaskForms\OrderComplier.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DashBoard.resx">
       <DependentUpon>DashBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StatisticForms\FinacialAnalyer.resx">
+      <DependentUpon>FinacialAnalyer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TaskForms\OrderComplier.resx">
       <DependentUpon>OrderComplier.cs</DependentUpon>

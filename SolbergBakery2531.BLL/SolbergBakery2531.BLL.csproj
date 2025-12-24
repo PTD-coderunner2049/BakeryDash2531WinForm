@@ -70,6 +70,7 @@
     <Compile Include="SessionService.cs" />
     <Compile Include="StaffService.cs" />
     <Compile Include="ProductService.cs" />
+    <Compile Include="FinacesService.cs" />
     <Compile Include="UserService.cs" />
     <Compile Include="_utils\_utils.cs" />
   </ItemGroup>
