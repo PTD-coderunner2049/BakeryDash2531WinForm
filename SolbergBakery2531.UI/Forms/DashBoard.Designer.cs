@@ -120,14 +120,14 @@
             // orderingToolStripMenuItem
             // 
             this.orderingToolStripMenuItem.Name = "orderingToolStripMenuItem";
-            this.orderingToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.orderingToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.orderingToolStripMenuItem.Text = "Ordering";
             this.orderingToolStripMenuItem.Click += new System.EventHandler(this.orderingToolStripMenuItem_Click);
             // 
             // returnToolStripMenuItem
             // 
             this.returnToolStripMenuItem.Name = "returnToolStripMenuItem";
-            this.returnToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.returnToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.returnToolStripMenuItem.Text = "Return";
             // 
             // xXToolStripMenuItem1
@@ -135,6 +135,7 @@
             this.xXToolStripMenuItem1.Name = "xXToolStripMenuItem1";
             this.xXToolStripMenuItem1.Size = new System.Drawing.Size(88, 20);
             this.xXToolStripMenuItem1.Text = "Sale\'s Satistic";
+            this.xXToolStripMenuItem1.Click += new System.EventHandler(this.xXToolStripMenuItem1_Click);
             // 
             // xXToolStripMenuItem2
             // 
@@ -273,6 +274,7 @@
             this.statBtn.TabIndex = 1;
             this.statBtn.Text = "Statistic";
             this.statBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.statBtn.Click += new System.EventHandler(this.statBtn_Click);
             // 
             // panel4
             // 

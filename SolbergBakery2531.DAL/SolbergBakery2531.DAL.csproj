@@ -125,6 +125,7 @@
     <Compile Include="Migrations\202512240904132_updateWorthValueForProdH2.Designer.cs">
       <DependentUpon>202512240904132_updateWorthValueForProdH2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\DTOModels\ProductHDisplayDTO.cs" />
     <Compile Include="Model\DTOModels\StaffDisplayDTO.cs" />
     <Compile Include="Model\ProdCategory.cs" />
     <Compile Include="Model\ProductVisual.cs" />

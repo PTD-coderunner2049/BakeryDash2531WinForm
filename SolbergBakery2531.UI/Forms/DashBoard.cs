@@ -2,6 +2,7 @@
 using SolbergBakery2531.BLL;
 using SolbergBakery2531.UI.Forms;
 using SolbergBakery2531.UI.Forms.AdministForms;
+using SolbergBakery2531.UI.Forms.StatisticForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -198,7 +199,6 @@ namespace SolbergBakery2531.UI
             Panel foundation = new Panel();
             foundation.BackColor = Color.Transparent;
             foundation.Dock = DockStyle.Fill;
-            foundation.BackgroundImage =
             foundation.BackgroundImage = Properties.Resources.HDHD_1080;
             foundation.BackgroundImageLayout = ImageLayout.Stretch;
             panelBack.Controls.Add(foundation);
@@ -239,6 +239,18 @@ namespace SolbergBakery2531.UI
             panelBack.Controls.Clear();
             this.Text = "Solberg's Bakery - Order Complier";
             LoadFormToPanel(Dashing(), new OrderComplier());
+        }
+
+        private void statBtn_Click(object sender, EventArgs e)
+        {
+            xXToolStripMenuItem1_Click(sender, e);
+        }
+
+        private void xXToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            panelBack.Controls.Clear();
+            this.Text = "Solberg's Bakery - Statistician";
+            LoadFormToPanel(Dashing(), new FinacialStatistician());
         }
     }
 }
